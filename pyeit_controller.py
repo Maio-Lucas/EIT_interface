@@ -22,8 +22,8 @@ class EITsolver:
         self.method = method
         self.n_el = n_el
         self,fd = fd
-        self.h0 = h0
-        self.mesh_obj = self.__create_mesh__(n_el = n_el, fd=fd, h0=h0)
+        self.h0 = h0        
+        self.mesh_obj = mesh.create(n_el, h0=h0, fd=fd)
         self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
         self.__create_vec_se_to_diff__()
 
@@ -36,13 +36,8 @@ class EITsolver:
             eit.setup(p=0.50, lamb=0.01, perm=1, jac_normalized=True)
 
         elif method == "jac":
-            pts = self.mesh_obj.node
-            tri = self.mesh_obj.element
-            x, y = pts[:, 0], pts[:, 1]
             eit = jac.JAC(self.mesh_obj, self.protocol_obj)
             eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
-            ds = eit.solve(v1, v0, normalize=True)
-            ds_n = sim2pts(pts, tri, np.real(ds))
         else:
             raise Exception(f'Method {method} unknown.')
 
@@ -75,8 +70,8 @@ class EITsolver:
                     plot_ref.set_data(self.image)
             # IMPLEMENTAR MÉTODOS BP E JAC
             elif self.method=='bp':
-                ds = 192.0 * eit.solve(self.Vmeas, self.Vref, normalize=True)
-            
+                self.image = np.real(ds_med_frame)
+
             elif self.method =='jac':
 
                 pass

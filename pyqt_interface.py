@@ -1,5 +1,5 @@
 import sys
-
+import numpy as np
 from PyQt6.QtCore import QSize, Qt, QTimer
 from PyQt6.QtGui import (
     QPixmap,
