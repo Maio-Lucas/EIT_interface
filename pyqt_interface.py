@@ -18,11 +18,33 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+import matplotlib
+matplotlib.use('QtAgg')
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
+from pyeit_controller import EITsolver
+
+class MplCanvas(FigureCanvas):
+
+    def __init__(self, parent=None, width=2.5, height=2, dpi=100):
+        self.fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = self.fig.add_subplot(111)
+        super(MplCanvas, self).__init__(self.fig)
+
+class Color(QWidget):
+
+    def __init__(self, color):
+        super(Color, self).__init__()
+        self.setAutoFillBackground(True)
+
+        palette = self.palette()
+        palette.setColor(QPalette.ColorRole.Window, QColor(color))
+        self.setPalette(palette)
 
 class MainWindow(QMainWindow):
 
-    def __init__(self):
+    def __init__(self, data, nframes):
         super(MainWindow, self).__init__()
 
         # MainWindow configuration
@@ -44,7 +66,7 @@ class MainWindow(QMainWindow):
         fHeader = QFont("Humanst777", 50, weight=625) # UFABC standard font
         headerText.setFont(fHeader)
 
-        layout_header.addWidget(logoUFABC,0,0)
+        # layout_header.addWidget(logoUFABC,0,0)
         layout_header.addWidget(headerText,0,1)
 
         # User interface layout
@@ -71,7 +93,8 @@ class MainWindow(QMainWindow):
         tabs.addTab(Color('gray'), 'Controls')
 
         buttonBP = QPushButton('BP', tabs)
-
+        buttonBP.clicked.connect(on_button_click)
+        buttonBP.setGeometry(0, 0, 100, 50)
         self.eitImage = MplCanvas(self) # plot
 
         layout_gui.addWidget(tabs)
@@ -92,24 +115,24 @@ class MainWindow(QMainWindow):
         # Setup a timer to trigger the redraw by calling update_plot.
         self.timer = QTimer()
         self.timer.setInterval(10)
-        self.timer.timeout.connect(self.update_plot)
+        self.timer.timeout.connect(lambda: self.update_plot(data, nframes))
         self.timer.start()
 
         # Other commands
-        self.mySover = EitSolver(method='greit', h0=0.04)
+        self.mySover = EITsolver(method='greit', h0=0.1)
         self._plotImage_ref = None
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
         self.init_plots()
-        self.update_plot()
+        self.update_plot(data, nframes)
     
     def init_plots(self):
         self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
         self.eitImage.fig.colorbar(self._plotImage_ref)
     
-    def update_plot(self):
-        self.dataSE = dados[self.frameCounter]
+    def update_plot(self, data, nframes):
+        self.dataSE = data[self.frameCounter]
         if self.frameCounter==0:
             self.mySover.setVref(self.dataSE)
         
@@ -141,7 +164,7 @@ class MainWindow(QMainWindow):
         if self.frameCounter==nframes:
             self.frameCounter=0
 
-    def update_plot_random(self):
+    def update_plot_random(self, nframes):
         self.data = np.random.random_sample((32,32)) # generate random imagem for debug
         self.dataSE = np.random.random_sample((64,1)) # generate random measurements for debug
         self.dataDiff = np.random.random_sample((64,1)) # generate random measurements for debug
@@ -174,3 +197,6 @@ class MainWindow(QMainWindow):
         self.frameCounter = self.frameCounter + 1
         if self.frameCounter==nframes:
             self.frameCounter=0
+
+def on_button_click():
+    print("Button clicked!")
