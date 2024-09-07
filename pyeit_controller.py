@@ -14,7 +14,7 @@ from pyeit.mesh.wrapper import PyEITAnomaly_Circle
 
 #Investigar como alterar a posição dos eletrodos
 class EITsolver:
-    def __init__(self, n_el=8, fd=shape.circle, h0=0.1, method='greit', parser_meas="rotate_meas", lamb=0.01, p=0.5):
+    def __init__(self, n_el=8, fd=shape.circle, h0=0.2, method='greit', parser_meas="rotate_meas", lamb=0.1, p=0.5):
         self.Vref=np.asarray([])
         self.Vmeas=np.asarray([])
         self.vec_a_all=np.asarray([])
@@ -63,20 +63,29 @@ class EITsolver:
     
     def updateImage(self, Vse, plot_ref=None):
         self.Vmeas = self.se_to_diff(Vse)
-        ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+
         if self.method=='greit':
-            x, y, ds_med_frame = self.eit.mask_value(ds_med_frame, mask_value=np.nan) #para 'greit'
+            ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+            x, y ,ds_med_frame = self.eit.mask_value(ds_med_frame, mask_value=np.nan) #para 'greit'
             self.image = np.real(ds_med_frame)
-            #print(f'imagem {self.image[15]}')
+            
             if plot_ref!=None:
                 plot_ref.set_data(self.image)
-        # IMPLEMENTAR MÉTODOS BP E JAC
+        
         elif self.method=='bp':
-            self.image = np.real(ds_med_frame)
+            self.image = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+
+            if plot_ref!=None:
+                plot_ref.set_data(self.image)
 
         elif self.method =='jac':
+            ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+            ds_med_frame_n = sim2pts(self.mesh_obj.node, self.mesh_obj.element, np.real(ds_med_frame))
+            # self.image = self.mesh_obj.node[:, 0], self.mesh_obj.node[:, 1], self.mesh_obj.element, ds_med_frame_n
+            self.image = ds_med_frame_n
 
-            pass
-
+            if plot_ref!=None:
+                plot_ref.set_data(self.image)
+                
         return self.image
 
