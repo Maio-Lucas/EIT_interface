@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 
+dados = np.loadtxt('dados_gravados_0123678c.txt')
+(nframes,nmed) = dados.shape
+
 # Example node positions (coordinates)
 # For a 32x32 grid, you would typically have a list of coordinates.
 x = np.linspace(0, 1, 32)

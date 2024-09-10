@@ -24,20 +24,24 @@ class EITsolver:
         self.fd = fd
         self.h0 = h0        
         self.mesh_obj = mesh.create(n_el, h0=h0, fd=fd)
-        self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
-        self.__create_vec_se_to_diff__()
-
+        
         if method == "bp":
+            self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
+            self.__create_vec_se_to_diff__()
             self.eit = bp.BP(self.mesh_obj, self.protocol_obj)
             self.eit.setup(weight="none")
 
         elif method == "greit":
+            self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
+            self.__create_vec_se_to_diff__()
             self.eit = greit.GREIT(self.mesh_obj, self.protocol_obj)
-            self.eit.setup(p=0.50, lamb=0.01, perm=1, jac_normalized=True)
+            self.eit.setup(p=0.50, lamb=0.01, perm=1)
 
         elif method == "jac":
+            self.protocol_obj = protocol.create(n_el, dist_exc=8, step_meas=1, parser_meas="std")
+            self.__create_vec_se_to_diff__()
             self.eit = jac.JAC(self.mesh_obj, self.protocol_obj)
-            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
+            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1)
         else:
             raise Exception(f'Method {method} unknown.')
 
@@ -88,4 +92,3 @@ class EITsolver:
                 plot_ref.set_data(self.image)
                 
         return self.image
-

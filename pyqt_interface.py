@@ -26,7 +26,7 @@ import matplotlib.tri as tri
 
 from pyeit_controller import EITsolver
 
-method = 'jac'
+method = 'greit'
 
 class MplCanvas(FigureCanvas):
 
