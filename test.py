@@ -1,29 +1,52 @@
+import sys
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.tri as tri
+from PyQt6.QtCore import QSize, Qt, QTimer
+from PyQt6.QtGui import (
+    QPixmap,
+    QPalette,
+    QColor,
+    QFont,
+)
+from PyQt6.QtWidgets import (
+    QApplication,
+    QGridLayout,
+    QHBoxLayout,
+    QLabel,
+    QComboBox,
+    QMainWindow,
+    QPushButton,
+    QTabWidget,
+    QVBoxLayout,
+    QWidget,
+)
+class MainWindow(QMainWindow):
 
-dados = np.loadtxt('dados_gravados_0123678c.txt')
-(nframes,nmed) = dados.shape
+    def __init__(self):
+        super(MainWindow, self).__init__()
 
-# Example node positions (coordinates)
-# For a 32x32 grid, you would typically have a list of coordinates.
-x = np.linspace(0, 1, 32)
-y = np.linspace(0, 1, 32)
-X, Y = np.meshgrid(x, y)
+        self.setWindowTitle("My App")
 
-# Flatten the grid coordinates
-x_flat = X.flatten()
-y_flat = Y.flatten()
+        widget = QComboBox()
+        widget.addItems(["One", "Two", "Three"])
 
-# Create a Delaunay triangulation of the grid (this is a placeholder, actual mesh could be different)
-triangulation = tri.Triangulation(x_flat, y_flat)
+        # Sends the current index (position) of the selected item.
+        widget.currentIndexChanged.connect( self.index_changed )
 
-z = np.zeros_like(x_flat)
+        # There is an alternate signal to send the text.
+        widget.currentTextChanged.connect( self.text_changed )
 
-# Plot using tripcolor
-plt.figure(figsize=(6, 6))
-plt.gca().set_aspect('equal')
-tripcolor_plot = plt.tripcolor(triangulation, z, shading='flat', vmin=-0.75, vmax=0.75, cmap='viridis')
-plt.colorbar(tripcolor_plot)
-plt.title('EIT Data Visualization using Tripcolor')
-plt.show()
+        self.setCentralWidget(widget)
+
+
+    def index_changed(self, i): # i is an int
+        print(i)
+
+    def text_changed(self, s): # s is a str
+        print(s)
+
+app = QApplication(sys.argv)
+
+window = MainWindow()
+window.show()
+
+app.exec()

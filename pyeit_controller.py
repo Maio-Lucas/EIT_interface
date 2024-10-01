@@ -14,7 +14,7 @@ from pyeit.mesh.wrapper import PyEITAnomaly_Circle
 
 #Investigar como alterar a posição dos eletrodos
 class EITsolver:
-    def __init__(self, n_el=8, fd=shape.circle, h0=0.2, method='greit', parser_meas="rotate_meas", lamb=0.1, p=0.5):
+    def __init__(self, n_el=8, fd=shape.circle, h0=0.1, method='greit', parser_meas="rotate_meas", lamb=0.01, p=0.5):
         self.Vref=np.asarray([])
         self.Vmeas=np.asarray([])
         self.vec_a_all=np.asarray([])
@@ -25,23 +25,20 @@ class EITsolver:
         self.h0 = h0        
         self.mesh_obj = mesh.create(n_el, h0=h0, fd=fd)
         
+        self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
+        self.__create_vec_se_to_diff__()
+
         if method == "bp":
-            self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
-            self.__create_vec_se_to_diff__()
             self.eit = bp.BP(self.mesh_obj, self.protocol_obj)
             self.eit.setup(weight="none")
 
         elif method == "greit":
-            self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
-            self.__create_vec_se_to_diff__()
             self.eit = greit.GREIT(self.mesh_obj, self.protocol_obj)
-            self.eit.setup(p=0.50, lamb=0.01, perm=1)
+            self.eit.setup(p=p, lamb=lamb, perm=1, jac_normalized=True)
 
         elif method == "jac":
-            self.protocol_obj = protocol.create(n_el, dist_exc=8, step_meas=1, parser_meas="std")
-            self.__create_vec_se_to_diff__()
             self.eit = jac.JAC(self.mesh_obj, self.protocol_obj)
-            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1)
+            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
         else:
             raise Exception(f'Method {method} unknown.')
 
@@ -65,11 +62,37 @@ class EITsolver:
         
         self.Vref = self.se_to_diff(VrefSe)
     
+    def recreate_mesh(self, n_el=8, fd=shape.circle, h0=0.1, method='greit', parser_meas="rotate_meas", lamb=0.01, p=0.5):
+        self.method = method
+        self.n_el = n_el
+        self.fd = fd
+        self.h0 = h0        
+        self.mesh_obj = mesh.create(n_el, h0=h0, fd=fd)
+        
+        self.protocol_obj = protocol.create(n_el, dist_exc=1, step_meas=1, parser_meas=parser_meas)
+        self.__create_vec_se_to_diff__()
+
+        if method == "bp":
+            self.eit = bp.BP(self.mesh_obj, self.protocol_obj)
+            self.eit.setup(weight="none")
+
+        elif method == "greit":
+            self.eit = greit.GREIT(self.mesh_obj, self.protocol_obj)
+            self.eit.setup(p=p, lamb=lamb, perm=1, jac_normalized=True)
+
+        elif method == "jac":
+            self.eit = jac.JAC(self.mesh_obj, self.protocol_obj)
+            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
+        else:
+            raise Exception(f'Method {method} unknown.')
+
+
     def updateImage(self, Vse, plot_ref=None):
         self.Vmeas = self.se_to_diff(Vse)
 
+        ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+
         if self.method=='greit':
-            ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
             x, y ,ds_med_frame = self.eit.mask_value(ds_med_frame, mask_value=np.nan) #para 'greit'
             self.image = np.real(ds_med_frame)
             
@@ -77,7 +100,8 @@ class EITsolver:
                 plot_ref.set_data(self.image)
         
         elif self.method=='bp':
-            self.image = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+            pts = self.mesh_obj.node
+            tri = self.mesh_obj.element
 
             if plot_ref!=None:
                 plot_ref.set_data(self.image)

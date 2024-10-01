@@ -12,6 +12,7 @@ from pyeit.eit.fem import EITForward
 from pyeit.eit.interp2d import sim2pts
 from pyeit.mesh.shape import thorax
 import pyeit.eit.protocol as protocol
+import pyeit.mesh.shape as shape
 from pyeit.mesh.wrapper import PyEITAnomaly_Circle
 
 """ 0. build mesh """
@@ -21,7 +22,7 @@ if use_customize_shape:
     # Mesh shape is specified with fd parameter in the instantiation, e.g : fd=thorax
     mesh_obj = mesh.create(n_el, h0=0.1, fd=thorax)
 else:
-    mesh_obj = mesh.create(n_el, h0=0.1)
+    mesh_obj = mesh.create(n_el, h0=0.1, fd=shape.rectangle)
 
 # extract node, element, alpha
 pts = mesh_obj.node
@@ -61,7 +62,7 @@ fig.set_size_inches(9, 4)
 
 ax = axes[0]
 delta_perm = mesh_new.perm - mesh_obj.perm
-# im = ax.tripcolor(x, y, tri, np.real(delta_perm), shading="flat")
+im = ax.tripcolor(x, y, tri, np.real(delta_perm), shading="flat")
 ax.set_aspect("equal")
 
 # plot EIT reconstruction

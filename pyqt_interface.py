@@ -12,6 +12,7 @@ from PyQt6.QtWidgets import (
     QGridLayout,
     QHBoxLayout,
     QLabel,
+    QComboBox,
     QMainWindow,
     QPushButton,
     QTabWidget,
@@ -23,6 +24,7 @@ matplotlib.use('QtAgg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.tri as tri
+import matplotlib.pyplot as plt
 
 from pyeit_controller import EITsolver
 
@@ -108,6 +110,15 @@ class MainWindow(QMainWindow):
         buttonGREIT.clicked.connect(lambda: on_button_click(self, data, nframes, button='greit'))
         buttonGREIT.setGeometry(15, 85, 50, 25)
 
+        shapeSelector = QComboBox(tabConfig)
+        shapeSelector.addItems(["Circle", "Ellipse", "Rectangle"])
+        shapeSelector.setGeometry(200, 25, 150, 25)
+
+        shapeSelector.currentIndexChanged.connect( self.index_changed )
+
+        # There is an alternate signal to send the text.
+        shapeSelector.currentTextChanged.connect( self.text_changed )
+
         self.tabs.addTab(tabConfig, 'Solver Config')
 
         self.tabs.addTab(measurements_widget, 'Measurements')
@@ -191,6 +202,10 @@ class MainWindow(QMainWindow):
             z = np.random.rand(len(x_flat))
             self._plotImage_ref = self.eitImage.axes.tripcolor(triangulation, z, shading='flat', vmin=-0.75, vmax=0.75, cmap='viridis')
             self.eitImage.fig.colorbar(self._plotImage_ref)
+
+        elif method=='bp':
+            fig = plt.figure(figsize=(6, 4.5))
+            ax1 = plt.gca()
     
     def update_plot(self, data, nframes):
         #aqui preciso reconhecer o método antes de atualizar, porque o imshow não está funcionando igual ao tripcolor.
@@ -226,9 +241,23 @@ class MainWindow(QMainWindow):
         if self.frameCounter==nframes:
             self.frameCounter=0
 
+    def index_changed(window_instance, data, nframes):
+        global method
+        method = method
+        print(f"Method set to: {method}")
+        window_instance.update_solver(data, nframes, method)
+
+    def text_changed(window_instance, data, nframes):
+        global method
+        method = method
+        print(f"Method set to: {method}")
+        window_instance.update_solver(data, nframes, method)
+
 def on_button_click(window_instance, data, nframes, button='greit'):
     global method
     method = button
     print(f"Method set to: {method}")
     window_instance.update_solver(data, nframes, method)
+
+
 
