@@ -39,6 +39,7 @@ class EITsolver:
         elif method == "jac":
             self.eit = jac.JAC(self.mesh_obj, self.protocol_obj)
             self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
+            print('Básico funciona')
         else:
             raise Exception(f'Method {method} unknown.')
 
@@ -107,10 +108,16 @@ class EITsolver:
                 plot_ref.set_data(self.image)
 
         elif self.method =='jac':
-            ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
             ds_med_frame_n = sim2pts(self.mesh_obj.node, self.mesh_obj.element, np.real(ds_med_frame))
             # self.image = self.mesh_obj.node[:, 0], self.mesh_obj.node[:, 1], self.mesh_obj.element, ds_med_frame_n
-            self.image = ds_med_frame_n
+            #self.image = ds_med_frame_n
+
+            # extract node, element, alpha
+            pts = self.mesh_obj.node
+            tri = self.mesh_obj.element
+
+            ds_n = sim2pts(pts, tri, np.real(ds_med_frame))
+            self.image = ds_n
 
             if plot_ref!=None:
                 plot_ref.set_data(self.image)

@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 
 from pyeit_controller import EITsolver
 
-method = 'greit'
+method = 'jac'
 
 class MplCanvas(FigureCanvas):
 
@@ -186,21 +186,7 @@ class MainWindow(QMainWindow):
             self.eitImage.fig.colorbar(self._plotImage_ref)
             
         elif method=='jac':
-            x = np.linspace(0, 1, 32)
-            y = np.linspace(0, 1, 32)
-            X, Y = np.meshgrid(x, y)
-
-            # Flatten the grid coordinates
-            x_flat = X.flatten()
-            y_flat = Y.flatten()
-
-            # Create a Delaunay triangulation of the grid (this is a placeholder, actual mesh could be different)
-            triangulation = tri.Triangulation(x_flat, y_flat)
-
-            # Example data at each node (this would be your actual data)
-            # Using random data here, but replace it with your solution data.
-            z = np.random.rand(len(x_flat))
-            self._plotImage_ref = self.eitImage.axes.tripcolor(triangulation, z, shading='flat', vmin=-0.75, vmax=0.75, cmap='viridis')
+            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
             self.eitImage.fig.colorbar(self._plotImage_ref)
 
         elif method=='bp':
