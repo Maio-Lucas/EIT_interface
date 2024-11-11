@@ -25,7 +25,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.tri as tri
 import matplotlib.pyplot as plt
-
+from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 
 method = 'jac'
@@ -49,7 +49,10 @@ class Color(QWidget):
 
 class MainWindow(QMainWindow):
 
+    #Initiate the window containing the graphs data
     def __init__(self, data, nframes):
+        self.data = data
+
         super(MainWindow, self).__init__()
 
         # MainWindow configuration
@@ -154,7 +157,7 @@ class MainWindow(QMainWindow):
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
-        self.init_plots(method)
+        self.init_plots(method=method)
         self.update_plot(data, nframes)
 
     def update_solver(self, data, nframes, method='greit'):
@@ -177,24 +180,32 @@ class MainWindow(QMainWindow):
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
-        self.init_plots(method)
+        self.init_plots(method=method)
         self.update_plot(data, nframes)
     
     def init_plots(self, colorbar=0, method='greit'):
         if method=='greit': 
             self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
             self.eitImage.fig.colorbar(self._plotImage_ref)
-            
-        elif method=='jac':
-            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
-            self.eitImage.fig.colorbar(self._plotImage_ref)
+        
+        elif method == 'jac' or method == 'bp':
+            self.mySolver.setframes(self.data)
+            if method=='jac':
 
-        elif method=='bp':
-            fig = plt.figure(figsize=(6, 4.5))
-            ax1 = plt.gca()
+                pts = self.mySolver.mesh_obj.node
+                tri = self.mySolver.mesh_obj.element
+
+                ds_n = self.mySolver.image
+                # draw
+                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+                #self.eitImage.fig.colorbar(self._plotImage_ref)
+
+            else:
+                fig = plt.figure(figsize=(6, 4.5))
+                ax1 = plt.gca()
     
     def update_plot(self, data, nframes):
-        #aqui preciso reconhecer o método antes de atualizar, porque o imshow não está funcionando igual ao tripcolor.
+
         self.dataSE = data[self.frameCounter]
         if self.frameCounter==0:
             self.mySolver.setVref(self.dataSE)

@@ -39,9 +39,10 @@ class EITsolver:
         elif method == "jac":
             self.eit = jac.JAC(self.mesh_obj, self.protocol_obj)
             self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
-            print('Básico funciona')
+
         else:
             raise Exception(f'Method {method} unknown.')
+        
 
     def __create_vec_se_to_diff__(self):
         vec_a_all = np.array([])
@@ -87,14 +88,21 @@ class EITsolver:
         else:
             raise Exception(f'Method {method} unknown.')
 
+    def setframes(self, Vse):
+        self.Vse = Vse
+        self.Vmeas = self.se_to_diff(Vse)
+        self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+
+        # extract node, element, alpha
+        # pts = self.mesh_obj.node
+        # tri = self.mesh_obj.element
+        self.ds_n = sim2pts(self.mesh_obj.node, self.mesh_obj.element, np.real(self.ds_med_frame))
 
     def updateImage(self, Vse, plot_ref=None):
-        self.Vmeas = self.se_to_diff(Vse)
-
-        ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
+        self.setframes(self.Vse)
 
         if self.method=='greit':
-            x, y ,ds_med_frame = self.eit.mask_value(ds_med_frame, mask_value=np.nan) #para 'greit'
+            x, y ,ds_med_frame = self.eit.mask_value(self.ds_med_frame, mask_value=np.nan) #para 'greit'
             self.image = np.real(ds_med_frame)
             
             if plot_ref!=None:
@@ -108,18 +116,16 @@ class EITsolver:
                 plot_ref.set_data(self.image)
 
         elif self.method =='jac':
-            ds_med_frame_n = sim2pts(self.mesh_obj.node, self.mesh_obj.element, np.real(ds_med_frame))
-            # self.image = self.mesh_obj.node[:, 0], self.mesh_obj.node[:, 1], self.mesh_obj.element, ds_med_frame_n
-            #self.image = ds_med_frame_n
 
             # extract node, element, alpha
             pts = self.mesh_obj.node
             tri = self.mesh_obj.element
 
-            ds_n = sim2pts(pts, tri, np.real(ds_med_frame))
-            self.image = ds_n
+            self.image = sim2pts(pts, tri, np.real(self.ds_med_frame))
 
             if plot_ref!=None:
-                plot_ref.set_data(self.image)
+                plot_ref.set_array(self.image)
+
+                print(plot_ref.get_array())
                 
         return self.image
