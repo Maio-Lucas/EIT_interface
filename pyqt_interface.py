@@ -190,12 +190,13 @@ class MainWindow(QMainWindow):
         
         elif method == 'jac' or method == 'bp':
             self.mySolver.setframes(self.data)
+
             if method=='jac':
 
                 pts = self.mySolver.mesh_obj.node
                 tri = self.mySolver.mesh_obj.element
 
-                ds_n = self.mySolver.image
+                ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
                 # draw
                 self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
                 #self.eitImage.fig.colorbar(self._plotImage_ref)
