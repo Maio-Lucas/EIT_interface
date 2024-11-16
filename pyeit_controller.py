@@ -62,6 +62,7 @@ class EITsolver:
     
     def setVref(self, VrefSe):
         
+        print("aqui2")
         self.Vref = self.se_to_diff(VrefSe)
     
     def recreate_mesh(self, n_el=8, fd=shape.circle, h0=0.1, method='greit', parser_meas="rotate_meas", lamb=0.01, p=0.5):
@@ -88,18 +89,22 @@ class EITsolver:
         else:
             raise Exception(f'Method {method} unknown.')
 
-    def setframes(self, Vse):
+    def setframes(self, Vse, method):
         self.Vse = Vse
         self.Vmeas = self.se_to_diff(Vse)
+        print("Vmeas Shape: ", self.Vmeas.shape)
+        print("Vref Shape: ", self.Vref.shape)
         self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
 
         # extract node, element, alpha
-        # pts = self.mesh_obj.node
-        # tri = self.mesh_obj.element
-        self.ds_n = sim2pts(self.mesh_obj.node, self.mesh_obj.element, np.real(self.ds_med_frame))
 
-    def updateImage(self, Vse, plot_ref=None):
-        self.setframes(self.Vse)
+        if(method == "jac" or method =="bp"):
+            pts = self.mesh_obj.node
+            tri = self.mesh_obj.element
+            self.ds_n = sim2pts(pts, tri, np.real(self.ds_med_frame))
+
+    def updateImage(self, Vse, method,plot_ref=None):
+        self.setframes(Vse, method)
 
         if self.method=='greit':
             x, y ,ds_med_frame = self.eit.mask_value(self.ds_med_frame, mask_value=np.nan) #para 'greit'
@@ -126,6 +131,5 @@ class EITsolver:
             if plot_ref!=None:
                 plot_ref.set_array(self.image)
 
-                print(plot_ref.get_array())
                 
         return self.image

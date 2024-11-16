@@ -13,7 +13,7 @@ dados = np.loadtxt('dados_gravados_0123678c.txt')
 app = QApplication(sys.argv)
 
 #Call the developed window 
-window = MainWindow(dados, nframes)
+window = MainWindow(dados, nframes, method='jac')
 window.show()
 
 app.exec()
