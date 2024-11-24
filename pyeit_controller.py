@@ -62,7 +62,6 @@ class EITsolver:
     
     def setVref(self, VrefSe):
         
-        print("aqui2")
         self.Vref = self.se_to_diff(VrefSe)
     
     def recreate_mesh(self, n_el=8, fd=shape.circle, h0=0.1, method='greit', parser_meas="rotate_meas", lamb=0.01, p=0.5):
@@ -92,8 +91,6 @@ class EITsolver:
     def setframes(self, Vse, method):
         self.Vse = Vse
         self.Vmeas = self.se_to_diff(Vse)
-        print("Vmeas Shape: ", self.Vmeas.shape)
-        print("Vref Shape: ", self.Vref.shape)
         self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
 
         # extract node, element, alpha
