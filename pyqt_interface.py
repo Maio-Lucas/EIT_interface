@@ -113,14 +113,14 @@ class MainWindow(QMainWindow):
         buttonGREIT.clicked.connect(lambda: on_button_click(self, data, nframes, button='greit'))
         buttonGREIT.setGeometry(15, 85, 50, 25)
 
-        shapeSelector = QComboBox(tabConfig)
+        """ shapeSelector = QComboBox(tabConfig)
         shapeSelector.addItems(["Circle", "Ellipse", "Rectangle"])
         shapeSelector.setGeometry(200, 25, 150, 25)
 
         shapeSelector.currentIndexChanged.connect( self.index_changed )
 
         # There is an alternate signal to send the text.
-        shapeSelector.currentTextChanged.connect( self.text_changed )
+        shapeSelector.currentTextChanged.connect( self.text_changed ) """
 
         self.tabs.addTab(tabConfig, 'Solver Config')
 
@@ -188,7 +188,6 @@ class MainWindow(QMainWindow):
         self.dataSE = data[self.frameCounter]
         if self.frameCounter==0:
             self.mySolver.setVref(self.dataSE)
-            print("aqui")
 
         if method=='greit': 
             self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
@@ -209,8 +208,12 @@ class MainWindow(QMainWindow):
                 self.eitImage.fig.colorbar(self._plotImage_ref)
 
             else:
-                fig = plt.figure(figsize=(6, 4.5))
-                ax1 = plt.gca()
+                pts = self.mySolver.mesh_obj.node
+                tri = self.mySolver.mesh_obj.element
+
+                # draw
+                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
+                self.eitImage.fig.colorbar(self._plotImage_ref)
     
     def update_plot(self, data, nframes, method):
         
@@ -228,16 +231,25 @@ class MainWindow(QMainWindow):
         else: # update data
             self._plotDiff_ref.set_ydata(self.dataDiff)
 
+        
         self.mySolver.updateImage(self.dataSE, method , self._plotImage_ref)
         
-        if method=='jac':
+        if method == 'jac':
+            self._plotImage_ref.remove()
 
-                pts = self.mySolver.mesh_obj.node
-                tri = self.mySolver.mesh_obj.element
+            pts = self.mySolver.mesh_obj.node
+            tri = self.mySolver.mesh_obj.element
 
-                ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
-                # draw
-                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+            ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
+            # draw
+            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+
+        elif method == 'bp':
+            self._plotImage_ref.remove()
+            pts = self.mySolver.mesh_obj.node
+            tri = self.mySolver.mesh_obj.element
+
+            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
         
         # Update titles
         self.eitImage.axes.set_title(f"Frame {self.frameCounter}")

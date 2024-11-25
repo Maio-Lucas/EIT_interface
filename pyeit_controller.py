@@ -94,10 +94,9 @@ class EITsolver:
         self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
 
         # extract node, element, alpha
-
-        if(method == "jac" or method =="bp"):
-            pts = self.mesh_obj.node
-            tri = self.mesh_obj.element
+        pts = self.mesh_obj.node
+        tri = self.mesh_obj.element
+        if(method == "jac"):
             self.ds_n = sim2pts(pts, tri, np.real(self.ds_med_frame))
 
     def updateImage(self, Vse, method,plot_ref=None):
@@ -114,8 +113,10 @@ class EITsolver:
             pts = self.mesh_obj.node
             tri = self.mesh_obj.element
 
+            self.image = np.real(self.ds_med_frame)
+
             if plot_ref!=None:
-                plot_ref.set_data(self.image)
+                plot_ref.set_array(self.image)
 
         elif self.method =='jac':
 
@@ -123,7 +124,7 @@ class EITsolver:
             pts = self.mesh_obj.node
             tri = self.mesh_obj.element
 
-            self.image = sim2pts(pts, tri, np.real(self.ds_med_frame))
+            self.image = sim2pts(pts, tri, self.ds_med_frame)
 
             if plot_ref!=None:
                 plot_ref.set_array(self.image)
