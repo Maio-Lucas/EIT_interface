@@ -5,13 +5,15 @@ from PyQt6.QtWidgets import QApplication
 from pyqt_interface import MainWindow
 import sys
 
+#Start of all code by reading the txt file with the data
 dados = np.loadtxt('dados_gravados_0123678c.txt')
 (nframes,nmed) = dados.shape
 
-
+#Instantiate PyQt application
 app = QApplication(sys.argv)
 
-window = MainWindow(dados, nframes)
+#Call the developed window 
+window = MainWindow(dados, nframes, method='bp')
 window.show()
 
 app.exec()

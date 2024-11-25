@@ -25,10 +25,10 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.tri as tri
 import matplotlib.pyplot as plt
-
+from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 
-method = 'jac'
+i = 0
 
 class MplCanvas(FigureCanvas):
 
@@ -49,7 +49,10 @@ class Color(QWidget):
 
 class MainWindow(QMainWindow):
 
-    def __init__(self, data, nframes):
+    #Initiate the window containing the graphs data
+    def __init__(self, data, nframes, method='greit'):
+        self.data = data
+
         super(MainWindow, self).__init__()
 
         # MainWindow configuration
@@ -110,14 +113,14 @@ class MainWindow(QMainWindow):
         buttonGREIT.clicked.connect(lambda: on_button_click(self, data, nframes, button='greit'))
         buttonGREIT.setGeometry(15, 85, 50, 25)
 
-        shapeSelector = QComboBox(tabConfig)
+        """ shapeSelector = QComboBox(tabConfig)
         shapeSelector.addItems(["Circle", "Ellipse", "Rectangle"])
         shapeSelector.setGeometry(200, 25, 150, 25)
 
         shapeSelector.currentIndexChanged.connect( self.index_changed )
 
         # There is an alternate signal to send the text.
-        shapeSelector.currentTextChanged.connect( self.text_changed )
+        shapeSelector.currentTextChanged.connect( self.text_changed ) """
 
         self.tabs.addTab(tabConfig, 'Solver Config')
 
@@ -145,7 +148,7 @@ class MainWindow(QMainWindow):
         # Setup a timer to trigger the redraw by calling update_plot.
         self.timer = QTimer()
         self.timer.setInterval(50)
-        self.timer.timeout.connect(lambda: self.update_plot(data, nframes))
+        self.timer.timeout.connect(lambda: self.update_plot(data, nframes, method=method))
         self.timer.start()
         
         # Other commands
@@ -154,8 +157,8 @@ class MainWindow(QMainWindow):
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
-        self.init_plots(method)
-        self.update_plot(data, nframes)
+        self.init_plots(data=data, method=method)
+        self.update_plot(data, nframes, method=method)
 
     def update_solver(self, data, nframes, method='greit'):
         """Reinitialize the solver with the new method."""
@@ -168,7 +171,7 @@ class MainWindow(QMainWindow):
         # Setup a timer to trigger the redraw by calling update_plot.
         self.timer = QTimer()
         self.timer.setInterval(50)
-        self.timer.timeout.connect(lambda: self.update_plot(data, nframes))
+        self.timer.timeout.connect(lambda: self.update_plot(data, nframes, method=method))
         self.timer.start()
 
         self.mySolver = EITsolver(method=method, h0=0.1)
@@ -177,28 +180,44 @@ class MainWindow(QMainWindow):
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
-        self.init_plots(method)
-        self.update_plot(data, nframes)
+        self.init_plots(data=data, method=method)
+        self.update_plot(data, nframes, method=method)
     
-    def init_plots(self, colorbar=0, method='greit'):
-        if method=='greit': 
-            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
-            self.eitImage.fig.colorbar(self._plotImage_ref)
-            
-        elif method=='jac':
-            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
-            self.eitImage.fig.colorbar(self._plotImage_ref)
-
-        elif method=='bp':
-            fig = plt.figure(figsize=(6, 4.5))
-            ax1 = plt.gca()
-    
-    def update_plot(self, data, nframes):
-        #aqui preciso reconhecer o método antes de atualizar, porque o imshow não está funcionando igual ao tripcolor.
+    def init_plots(self, data, method='greit'):
+        
         self.dataSE = data[self.frameCounter]
         if self.frameCounter==0:
             self.mySolver.setVref(self.dataSE)
+
+        if method=='greit': 
+            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
+            self.eitImage.fig.colorbar(self._plotImage_ref)
         
+        elif method == 'jac' or method == 'bp':
+
+            self.mySolver.setframes(Vse=self.data[self.frameCounter], method=method)
+
+            if method=='jac':
+
+                pts = self.mySolver.mesh_obj.node
+                tri = self.mySolver.mesh_obj.element
+
+                ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
+                # draw
+                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+                self.eitImage.fig.colorbar(self._plotImage_ref)
+
+            else:
+                pts = self.mySolver.mesh_obj.node
+                tri = self.mySolver.mesh_obj.element
+
+                # draw
+                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
+                self.eitImage.fig.colorbar(self._plotImage_ref)
+    
+    def update_plot(self, data, nframes, method):
+        
+        self.dataSE = data[self.frameCounter]
         self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
 
         if self._plotSE_ref is None: # 1st time, new plot
@@ -208,10 +227,29 @@ class MainWindow(QMainWindow):
 
         if self._plotDiff_ref is None: # 1st time, new plot
             self._plotDiff_ref = self.eitMeasurementsDiff.axes.plot(self.dataDiff)[0]
+
         else: # update data
             self._plotDiff_ref.set_ydata(self.dataDiff)
+
         
-        self.mySolver.updateImage(self.dataSE, self._plotImage_ref)
+        self.mySolver.updateImage(self.dataSE, method , self._plotImage_ref)
+        
+        if method == 'jac':
+            self._plotImage_ref.remove()
+
+            pts = self.mySolver.mesh_obj.node
+            tri = self.mySolver.mesh_obj.element
+
+            ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
+            # draw
+            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+
+        elif method == 'bp':
+            self._plotImage_ref.remove()
+            pts = self.mySolver.mesh_obj.node
+            tri = self.mySolver.mesh_obj.element
+
+            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
         
         # Update titles
         self.eitImage.axes.set_title(f"Frame {self.frameCounter}")
