@@ -28,7 +28,6 @@ import matplotlib.pyplot as plt
 from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 
-i = 0
 
 class MplCanvas(FigureCanvas):
 

@@ -6,7 +6,8 @@ from pyqt_interface import MainWindow
 import sys
 
 #Start of all code by reading the txt file with the data
-dados = np.loadtxt('dados_gravados_0123678c.txt')
+
+dados = np.loadtxt('stored_data/dados_gravados_0123678c.txt')
 (nframes,nmed) = dados.shape
 
 #Instantiate PyQt application
