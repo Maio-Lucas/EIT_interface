@@ -1,22 +1,73 @@
-import pyeit_controller
-import pyqt_interface
-import numpy as np
-from PyQt6.QtWidgets import QApplication
-from pyqt_interface import MainWindow
+# import pyeit_controller
+# import pyqt_interface
+# import numpy as np
+# from PyQt6.QtWidgets import QApplication
+# from pyqt_interface import MainWindow
+# import sys
+# import pyqtgraph as pg
+# from pyqtgraph.Qt import QtCore
+
+# #Start of all code by reading the txt file with the data
+
+# dados = np.loadtxt('stored_data/dados_gravados_0123678c.txt')
+# (nframes,nmed) = dados.shape
+
+# #Instantiate PyQt application
+# app = QApplication(sys.argv)
+
+# #Call the developed window 
+# window = MainWindow(dados, nframes, method='bp')
+# window.show()
+
+# app.exec()
+
+# """Criar Selecionador de shape!!!"""
+
 import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
+import numpy as np
 
-#Start of all code by reading the txt file with the data
-
+# Load the same data
 dados = np.loadtxt('stored_data/dados_gravados_0123678c.txt')
-(nframes,nmed) = dados.shape
+(nframes, nmed) = dados.shape
 
-#Instantiate PyQt application
-app = QApplication(sys.argv)
+class LauncherWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
-#Call the developed window 
-window = MainWindow(dados, nframes, method='bp')
-window.show()
+        self.setWindowTitle("EIT Interface Launcher")
+        self.setFixedSize(300, 150)
 
-app.exec()
+        # Buttons
+        btn_pyqt6 = QPushButton("Launch PyQt6 (Matplotlib)")
+        btn_pyqtgraph = QPushButton("Launch PyQtGraph")
 
-"""Criar Selecionador de shape!!!"""
+        btn_pyqt6.clicked.connect(self.launch_pyqt6)
+        btn_pyqtgraph.clicked.connect(self.launch_pyqtgraph)
+
+        # Layout
+        layout = QVBoxLayout()
+        layout.addWidget(btn_pyqt6)
+        layout.addWidget(btn_pyqtgraph)
+
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+
+    def launch_pyqt6(self):
+        from pyqt_interface import MainWindow
+        self.app = MainWindow(dados, nframes, method='bp')
+        self.app.show()
+        self.close()
+
+    def launch_pyqtgraph(self):
+        from pyqtgraph_interface import MainWindowPG  # You will create this file
+        self.app = MainWindowPG(dados, nframes, method='bp')
+        self.app.show()
+        self.close()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    launcher = LauncherWindow()
+    launcher.show()
+    sys.exit(app.exec())

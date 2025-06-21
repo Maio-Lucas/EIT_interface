@@ -27,6 +27,7 @@ import matplotlib.tri as tri
 import matplotlib.pyplot as plt
 from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
+import pyqtgraph as pg
 
 
 class MplCanvas(FigureCanvas):
@@ -46,13 +47,13 @@ class Color(QWidget):
         palette.setColor(QPalette.ColorRole.Window, QColor(color))
         self.setPalette(palette)
 
-class MainWindow(QMainWindow):
+class MainWindowPG(QMainWindow):
 
     #Initiate the window containing the graphs data
     def __init__(self, data, nframes, method='greit'):
         self.data = data
 
-        super(MainWindow, self).__init__()
+        super(MainWindowPG, self).__init__()
 
         # MainWindow configuration
         self.setWindowTitle("EITduino")
@@ -161,8 +162,15 @@ class MainWindow(QMainWindow):
 
     def update_solver(self, data, nframes, method='greit'):
         """Reinitialize the solver with the new method."""
-        self.eitMeasurementsSE = MplCanvas(self, width=10, height=2) # plot
-        self.eitMeasurementsDiff = MplCanvas(self, width=10, height=2) # plot
+        self.eitMeasurementsSE = pg.PlotWidget(title="Single-Ended Measurements")
+        self.eitMeasurementsSE.setLabel('left', 'Voltage')
+        self.eitMeasurementsSE.setLabel('bottom', 'Electrode Index')
+        self.eitMeasurementsSE.showGrid(x=True, y=True)
+
+        self.eitMeasurementsDiff = pg.PlotWidget(title="Differential Measurements")
+        self.eitMeasurementsDiff.setLabel('left', 'Voltage')
+        self.eitMeasurementsDiff.setLabel('bottom', 'Electrode Index')
+        self.eitMeasurementsDiff.showGrid(x=True, y=True)
 
         self.eitImage = MplCanvas(self)
         self.layout_gui.addWidget(self.eitImage,0,1)
@@ -191,10 +199,9 @@ class MainWindow(QMainWindow):
         if method=='greit': 
             self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
             self.eitImage.fig.colorbar(self._plotImage_ref)
-            print("Image shape:", ds_n.shape)
         
         elif method == 'jac' or method == 'bp':
-            
+
             self.mySolver.setframes(Vse=self.data[self.frameCounter], method=method)
 
             if method=='jac':
@@ -203,7 +210,6 @@ class MainWindow(QMainWindow):
                 tri = self.mySolver.mesh_obj.element
 
                 ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
-                print("Image shape:", ds_n.shape)
                 # draw
                 self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
                 self.eitImage.fig.colorbar(self._plotImage_ref)
@@ -222,15 +228,15 @@ class MainWindow(QMainWindow):
         self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
 
         if self._plotSE_ref is None: # 1st time, new plot
-            self._plotSE_ref = self.eitMeasurementsSE.axes.plot(self.dataSE)[0]
+            self._plotSE_ref = self.eitMeasurementsSE.plot(self.dataSE, pen='b')
         else: # update data
-            self._plotSE_ref.set_ydata(self.dataSE)
+            self._plotSE_ref.setData(self.dataSE)
 
         if self._plotDiff_ref is None: # 1st time, new plot
-            self._plotDiff_ref = self.eitMeasurementsDiff.axes.plot(self.dataDiff)[0]
-
+            self._plotDiff_ref = self.eitMeasurementsDiff.plot(self.dataDiff, pen='b')
+            
         else: # update data
-            self._plotDiff_ref.set_ydata(self.dataDiff)
+            self._plotDiff_ref.setData(self.dataDiff)
 
         
         self.mySolver.updateImage(self.dataSE, method , self._plotImage_ref)
