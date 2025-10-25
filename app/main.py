@@ -61,7 +61,7 @@ class LauncherWindow(QMainWindow):
         self.close()
 
     def launch_pyqtgraph(self):
-        from pyqtgraph_interface import MainWindowPG  # You will create this file
+        from pyqtgraph_interface import MainWindowPG 
         self.app = MainWindowPG(dados, nframes, method='bp')
         self.app.show()
         self.close()
