@@ -1,2 +1,17 @@
 # Remove all .pyc files inside __pycache__
 __pycache__/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.env
+
+
+# IPython
+profile_default/
+ipython_config.py
