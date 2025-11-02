@@ -1,294 +1,223 @@
-import sys
+# app/pyqtgraph_interface.py
+from PyQt6.QtWidgets import QMainWindow, QWidget, QGridLayout
+from PyQt6.QtCore import QTimer
 import numpy as np
-from PyQt6.QtCore import QSize, Qt, QTimer
-from PyQt6.QtGui import (
-    QPixmap,
-    QPalette,
-    QColor,
-    QFont,
-)
-from PyQt6.QtWidgets import (
-    QApplication,
-    QGridLayout,
-    QHBoxLayout,
-    QLabel,
-    QComboBox,
-    QMainWindow,
-    QPushButton,
-    QTabWidget,
-    QVBoxLayout,
-    QWidget,
-)
-import matplotlib
-matplotlib.use('QtAgg')
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
-import matplotlib.tri as tri
-import matplotlib.pyplot as plt
-from pyeit.eit.interp2d import sim2pts
-from pyeit_controller import EITsolver
 import pyqtgraph as pg
 
+# Interpolação sobre triangulação (somente para cálculo, não renderiza MPL)
+import matplotlib.tri as mtri
 
-class MplCanvas(FigureCanvas):
+from pyeit_controller import EITsolver
+from pyeit.eit.interp2d import sim2pts  # elemento -> nó
 
-    def __init__(self, parent=None, width=2.5, height=2, dpi=100):
-        self.fig = Figure(figsize=(width, height), dpi=dpi)
-        self.axes = self.fig.add_subplot(111)
-        super(MplCanvas, self).__init__(self.fig)
-
-class Color(QWidget):
-
-    def __init__(self, color):
-        super(Color, self).__init__()
-        self.setAutoFillBackground(True)
-
-        palette = self.palette()
-        palette.setColor(QPalette.ColorRole.Window, QColor(color))
-        self.setPalette(palette)
 
 class MainWindowPG(QMainWindow):
-
-    #Initiate the window containing the graphs data
     def __init__(self, data, nframes, method='greit'):
+        super().__init__()
+        self.setWindowTitle("EITduino (PyQtGraph)")
         self.data = data
+        self.nframes = nframes
+        self.method = method if method in ('greit', 'bp', 'jac') else 'greit'
+        self.frame = 0
 
-        super(MainWindowPG, self).__init__()
+        # ---- Config visual do PG
+        pg.setConfigOptions(antialias=True)
+        pg.setConfigOption('background', 'w')
+        pg.setConfigOption('foreground', 'k')
 
-        # MainWindow configuration
-        self.setWindowTitle("EITduino")
-        self.setMinimumSize(QSize(800, 600))
-        palette = self.palette()
-        palette.setColor(QPalette.ColorRole.Window, QColor('white'))
-        self.setPalette(palette)
+        # ---- Curvas SE / Diff
+        self.plotSE = pg.PlotWidget(title="Single-Ended")
+        self.plotSE.showGrid(x=True, y=True, alpha=0.3)
+        self.plotDiff = pg.PlotWidget(title="Differential")
+        self.plotDiff.showGrid(x=True, y=True, alpha=0.3)
+        self.curveSE = self.plotSE.plot(pen=pg.mkPen('#1f77b4', width=1.2))
+        self.curveDiff = self.plotDiff.plot(pen=pg.mkPen('#ff7f0e', width=1.2))
 
-        # Application Header layout
-        layout_header = QGridLayout()
-        layout_header.setColumnStretch(0,1) # logo
-        layout_header.setColumnStretch(1,10) # header text
+        # ---- Imagem (usaremos para GREIT e BP rasterizado)
+        # Documentação: ImageView + setImage
+        self.imageView = pg.ImageView(view=pg.PlotItem())
+        self.imageView.view.setAspectLocked(True)  # mantém aspecto 1:1
+        # Fazemos o sistema de coordenadas ter origem "em baixo" (equivalente ao origin='lower')
+        self.imageView.getView().invertY(True)
 
-        logoUFABC = QLabel("")
-        logoUFABC.setPixmap(QPixmap('logo_UFABC.png').scaled(75,75))
-        headerText = QLabel("EITduino")
-        headerText.setStyleSheet("QLabel { color : #006633; font size : 40; }"); # UFABC standard color
-        fHeader = QFont("Humanst777", 50, weight=625) # UFABC standard font
-        headerText.setFont(fHeader)
+        # ---- Layout
+        grid = QGridLayout()
+        grid.addWidget(self.plotSE,    0, 0)
+        grid.addWidget(self.plotDiff,  1, 0)
+        grid.addWidget(self.imageView, 0, 1, 2, 1)
+        container = QWidget()
+        container.setLayout(grid)
+        self.setCentralWidget(container)
 
-        # layout_header.addWidget(logoUFABC,0,0)
-        layout_header.addWidget(headerText,0,1)
+        # ---- Solver (pyEIT)
+        self.solver = EITsolver(method=self.method, h0=0.1)
+        self.solver.setVref(self.data[self.frame])
 
-        # User interface layout
-        self.layout_gui = QGridLayout()
-        self.layout_gui.setColumnStretch(0,1) # controls tabs
-        self.layout_gui.setColumnMinimumWidth(0,400)
-        self.layout_gui.setColumnStretch(1,10) # image
+        # ---- Preparar malha/grade (para BP/JAC)
+        self._prepare_grid_and_triangulation()
 
-        self.eitMeasurementsSE = MplCanvas(self, width=10, height=2) # plot
-        self.eitMeasurementsDiff = MplCanvas(self, width=10, height=2) # plot
+        # ---- Primeira renderização
+        self._init_plots()
 
-        layout_measurements = QVBoxLayout()
-        layout_measurements.addWidget(self.eitMeasurementsSE)
-        layout_measurements.addWidget(self.eitMeasurementsDiff)
-        measurements_widget = QWidget()
-        measurements_widget.setLayout(layout_measurements)
-
-        self.tabs = QTabWidget()
-
-        # Create first tab content
-        tabConfig = QWidget()
-        tabConfig_layout = QVBoxLayout()
-        tabConfig_label = Color('red')
-        tabConfig_layout.addWidget(tabConfig_label)
-        tabConfig.setLayout(tabConfig_layout)
-
-        buttonBP = QPushButton('BP', tabConfig)
-        buttonBP.clicked.connect(lambda: on_button_click(self, data, nframes, button='bp'))
-        buttonBP.setGeometry(15, 25, 50, 25)
-
-        buttonJAC = QPushButton('JAC', tabConfig)
-        buttonJAC.clicked.connect(lambda: on_button_click(self, data, nframes, button='jac'))
-        buttonJAC.setGeometry(15, 55, 50, 25)
-
-        buttonGREIT = QPushButton('GREIT', tabConfig)
-        buttonGREIT.clicked.connect(lambda: on_button_click(self, data, nframes, button='greit'))
-        buttonGREIT.setGeometry(15, 85, 50, 25)
-
-        """ shapeSelector = QComboBox(tabConfig)
-        shapeSelector.addItems(["Circle", "Ellipse", "Rectangle"])
-        shapeSelector.setGeometry(200, 25, 150, 25)
-
-        shapeSelector.currentIndexChanged.connect( self.index_changed )
-
-        # There is an alternate signal to send the text.
-        shapeSelector.currentTextChanged.connect( self.text_changed ) """
-
-        self.tabs.addTab(tabConfig, 'Solver Config')
-
-        self.tabs.addTab(measurements_widget, 'Measurements')
-
-        self.tabs.addTab(Color('gray'), 'Controls')
-
-        self.eitImage = MplCanvas(self) # plot
-
-        self.layout_gui.addWidget(self.tabs)
-        self.layout_gui.addWidget(self.eitImage,0,1)
-
-        # Main window layout
-        layout_main = QGridLayout()
-        layout_main.setRowStretch(0,1) # header layout
-        layout_main.setRowStretch(1,10) # gui layout
-        layout_main.addLayout(layout_header,0,0)
-        layout_main.addLayout(self.layout_gui,1,0)
-        
-        # Defining central widget
-        main_widget = QWidget()
-        main_widget.setLayout(layout_main)
-        self.setCentralWidget(main_widget)
-
-        # Setup a timer to trigger the redraw by calling update_plot.
-        self.timer = QTimer()
-        self.timer.setInterval(50)
-        self.timer.timeout.connect(lambda: self.update_plot(data, nframes, method=method))
-        self.timer.start()
-        
-        # Other commands
-        self.mySolver = EITsolver(method=method, h0=0.1)
-        self._plotImage_ref = None
-        self._plotSE_ref = None
-        self._plotDiff_ref = None
-        self.frameCounter = 0
-        self.init_plots(data=data, method=method)
-        self.update_plot(data, nframes, method=method)
-
-    def update_solver(self, data, nframes, method='greit'):
-        """Reinitialize the solver with the new method."""
-        self.eitMeasurementsSE = pg.PlotWidget(title="Single-Ended Measurements")
-        self.eitMeasurementsSE.setLabel('left', 'Voltage')
-        self.eitMeasurementsSE.setLabel('bottom', 'Electrode Index')
-        self.eitMeasurementsSE.showGrid(x=True, y=True)
-
-        self.eitMeasurementsDiff = pg.PlotWidget(title="Differential Measurements")
-        self.eitMeasurementsDiff.setLabel('left', 'Voltage')
-        self.eitMeasurementsDiff.setLabel('bottom', 'Electrode Index')
-        self.eitMeasurementsDiff.showGrid(x=True, y=True)
-
-        self.eitImage = MplCanvas(self)
-        self.layout_gui.addWidget(self.eitImage,0,1)
-
-        # Setup a timer to trigger the redraw by calling update_plot.
-        self.timer = QTimer()
-        self.timer.setInterval(50)
-        self.timer.timeout.connect(lambda: self.update_plot(data, nframes, method=method))
+        # ---- Timer único
+        self.timer = QTimer(self)
+        self.timer.setInterval(50)  # ~20 FPS
+        self.timer.timeout.connect(self._tick)
         self.timer.start()
 
-        self.mySolver = EITsolver(method=method, h0=0.1)
-        print(f"Solver updated to use method: {method}")
-        self._plotImage_ref = None
-        self._plotSE_ref = None
-        self._plotDiff_ref = None
-        self.frameCounter = 0
-        self.init_plots(data=data, method=method)
-        self.update_plot(data, nframes, method=method)
-    
-    def init_plots(self, data, method='greit'):
-        
-        self.dataSE = data[self.frameCounter]
-        if self.frameCounter==0:
-            self.mySolver.setVref(self.dataSE)
+    # ===================== Preparação de malha/grade =====================
+    def _prepare_grid_and_triangulation(self):
+        """
+        Prepara extents, grade regular e triangulação da malha para rasterizar BP (e JAC futuramente).
+        """
+        pts = self.solver.mesh_obj.node   # (n_nodes, 2)
+        tri = self.solver.mesh_obj.element  # (n_triangles, 3)
 
-        if method=='greit': 
-            self._plotImage_ref = self.eitImage.axes.imshow(np.zeros((32,32)), vmin=-0.75, vmax=0.75, origin='lower')
-            self.eitImage.fig.colorbar(self._plotImage_ref)
-        
-        elif method == 'jac' or method == 'bp':
+        # Limites da malha
+        self.x_min, self.x_max = float(pts[:, 0].min()), float(pts[:, 0].max())
+        self.y_min, self.y_max = float(pts[:, 1].min()), float(pts[:, 1].max())
 
-            self.mySolver.setframes(Vse=self.data[self.frameCounter], method=method)
+        # Grade regular (defina a resolução desejada)
+        self.nx, self.ny = 128, 128
+        xs = np.linspace(self.x_min, self.x_max, self.nx)
+        ys = np.linspace(self.y_min, self.y_max, self.ny)
+        self.grid_x, self.grid_y = np.meshgrid(xs, ys)
 
-            if method=='jac':
+        # Triangulação (reutilizável entre os frames)
+        self._triang = mtri.Triangulation(pts[:, 0], pts[:, 1], tri)
 
-                pts = self.mySolver.mesh_obj.node
-                tri = self.mySolver.mesh_obj.element
+        # Para mapear a imagem nos eixos físicos no ImageView:
+        self.dx = (self.x_max - self.x_min) / (self.nx - 1)
+        self.dy = (self.y_max - self.y_min) / (self.ny - 1)
+        self.pos_xy = (self.x_min, self.y_min)
+        self.scale_xy = (self.dx, self.dy)
 
-                ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
-                # draw
-                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
-                self.eitImage.fig.colorbar(self._plotImage_ref)
+    # ===================== Inicialização das curvas/imagem =====================
+    def _init_plots(self):
+        se0 = self.data[self.frame]
+        diff0 = self.solver.se_to_diff(se0)
 
-            else:
-                pts = self.mySolver.mesh_obj.node
-                tri = self.mySolver.mesh_obj.element
+        self.curveSE.setData(se0.astype(float))
+        self.curveDiff.setData(diff0.astype(float))
 
-                # draw
-                self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
-                self.eitImage.fig.colorbar(self._plotImage_ref)
-    
-    def update_plot(self, data, nframes, method):
-        
-        self.dataSE = data[self.frameCounter]
-        self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
+        # Limites estáveis (não reescale a cada frame)
+        try:
+            se_min, se_max = float(self.data.min()), float(self.data.max())
+        except Exception:
+            se_min, se_max = float(se0.min()), float(se0.max())
+        self.plotSE.setYRange(se_min, se_max)
 
-        if self._plotSE_ref is None: # 1st time, new plot
-            self._plotSE_ref = self.eitMeasurementsSE.plot(self.dataSE, pen='b')
-        else: # update data
-            self._plotSE_ref.setData(self.dataSE)
+        dmin, dmax = float(diff0.min()), float(diff0.max())
+        pad = 0.05 * (dmax - dmin + 1e-9)
+        self.plotDiff.setYRange(dmin - pad, dmax + pad)
 
-        if self._plotDiff_ref is None: # 1st time, new plot
-            self._plotDiff_ref = self.eitMeasurementsDiff.plot(self.dataDiff, pen='b')
-            
-        else: # update data
-            self._plotDiff_ref.setData(self.dataDiff)
+        # Imagem inicial por método
+        if self.method == 'greit':
+            self.solver.updateImage(se0, 'greit')
+            img = np.asarray(self.solver.image, dtype=float)
+            # 1ª chamada com autoRange/autoLevels=True para inicializar
+            self.imageView.setImage(img,
+                                    autoLevels=True, autoRange=True,
+                                    pos=None, scale=None)
+        elif self.method == 'bp':
+            # Rasteriza o primeiro frame do BP
+            img_bp = self._rasterize_bp_frame(se0)
+            self.imageView.setImage(img_bp,
+                                    autoLevels=True, autoRange=True,
+                                    pos=self.pos_xy, scale=self.scale_xy)
+        else:
+            # Placeholder para outros métodos; podemos rasterizar JAC igual ao BP depois
+            self.imageView.setImage(np.zeros((self.ny, self.nx), dtype=float),
+                                    autoLevels=True, autoRange=True,
+                                    pos=self.pos_xy, scale=self.scale_xy)
 
-        
-        self.mySolver.updateImage(self.dataSE, method , self._plotImage_ref)
-        
-        if method == 'jac':
-            self._plotImage_ref.remove()
+    def _rasterize_bp_frame(self, se_vector):
+        """
+        Calcula a imagem do BP para o frame atual e rasteriza em grade regular (ny, nx).
+        Aceita retorno por nó OU por elemento, detectando automaticamente.
+        """
+        # 1) resolve BP neste frame (atualiza self.solver.ds_med_frame)
+        #    use setframes para garantir que a solução do método foi recalculada
+        self.solver.setframes(Vse=se_vector, method='bp')
 
-            pts = self.mySolver.mesh_obj.node
-            tri = self.mySolver.mesh_obj.element
+        vals = np.real(self.solver.ds_med_frame)  # vetor vindo do solver
+        pts = self.solver.mesh_obj.node           # (n_nodes, 2)
+        tri = self.solver.mesh_obj.element        # (n_triangles, 3)
 
-            ds_n = sim2pts(pts, tri, np.real(self.mySolver.ds_med_frame))
-            # draw
-            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, ds_n, shading="flat")
+        n_nodes = pts.shape[0]
+        n_tris  = tri.shape[0]
 
-        elif method == 'bp':
-            self._plotImage_ref.remove()
-            pts = self.mySolver.mesh_obj.node
-            tri = self.mySolver.mesh_obj.element
+        # 2) garanta vetor 1D
+        if vals.ndim > 1:
+            vals = np.ravel(vals)
 
-            self._plotImage_ref = self.eitImage.axes.tripcolor(pts[:, 0], pts[:, 1], tri, self.mySolver.ds_med_frame)
-        
-        # Update titles
-        self.eitImage.axes.set_title(f"Frame {self.frameCounter}")
-        self.eitMeasurementsDiff.axes.set_title(f"Differential Measurements ({self.frameCounter})")
-        self.eitMeasurementsSE.axes.set_title(f"Single Ended Measurements ({self.frameCounter})")
-        # Trigger plots to update and redraw.
-        self.eitMeasurementsSE.axes.set_ylim([self.dataSE.min(), self.dataSE.max()])
-        self.eitMeasurementsDiff.axes.set_ylim([self.dataDiff.min(), self.dataDiff.max()])
-        self.eitImage.draw()
-        self.eitMeasurementsSE.draw()
-        self.eitMeasurementsDiff.draw()
-        self.frameCounter = self.frameCounter + 1
-        if self.frameCounter==nframes:
-            self.frameCounter=0
+        # 3) determine se é nodal ou por elemento
+        if vals.shape[0] == n_nodes:
+            nodal_vals = vals
+        elif vals.shape[0] == n_tris:
+            # só converta de elemento->nó se realmente for por elemento
+            nodal_vals = sim2pts(pts, tri, vals)
+        else:
+            raise ValueError(
+                f"Formato inesperado do BP: len(vals)={vals.shape[0]} "
+                f"(n_nodes={n_nodes}, n_tris={n_tris})"
+            )
 
-    def index_changed(window_instance, data, nframes):
-        global method
-        method = method
-        print(f"Method set to: {method}")
-        window_instance.update_solver(data, nframes, method)
+        # 4) interpola para a grade (LinearTriInterpolator usa valores NODAIS)
+        interp = mtri.LinearTriInterpolator(self._triang, nodal_vals)
+        zi = interp(self.grid_x, self.grid_y)     # masked array (ny, nx)
 
-    def text_changed(window_instance, data, nframes):
-        global method
-        method = method
-        print(f"Method set to: {method}")
-        window_instance.update_solver(data, nframes, method)
+        # 5) converte para ndarray e trata NaNs (fora do domínio)
+        img = np.array(zi, dtype=float)
+        img = np.nan_to_num(img, nan=0.0)
 
-def on_button_click(window_instance, data, nframes, button='greit'):
-    global method
-    method = button
-    print(f"Method set to: {method}")
-    window_instance.update_solver(data, nframes, method)
+        return img
 
+    # ===================== Atualização por frame =====================
+    def _tick(self):
+        se = self.data[self.frame]
+        diff = self.solver.se_to_diff(se)
 
+        # Curvas
+        self.curveSE.setData(se.astype(float))
+        self.curveDiff.setData(diff.astype(float))
 
+        # Imagem por método (sem resetar zoom/níveis)
+        if self.method == 'greit':
+            self.solver.updateImage(se, 'greit')
+            img = np.asarray(self.solver.image, dtype=float)
+            self.imageView.setImage(img, autoLevels=False, autoRange=False,
+                                    pos=None, scale=None)
+
+        elif self.method == 'bp':
+            img_bp = self._rasterize_bp_frame(se)
+            self.imageView.setImage(img_bp, autoLevels=False, autoRange=False,
+                                    pos=self.pos_xy, scale=self.scale_xy)
+
+        # Próximo frame
+        self.frame = (self.frame + 1) % self.nframes
+
+    # ===================== Troca de método =====================
+    def update_solver(self, new_method: str):
+        if new_method == self.method:
+            return
+        self.timer.stop()
+        self.method = new_method
+
+        # Recria curvas
+        self.plotSE.clear()
+        self.plotDiff.clear()
+        self.curveSE = self.plotSE.plot(pen=pg.mkPen('#1f77b4', width=1.2))
+        self.curveDiff = self.plotDiff.plot(pen=pg.mkPen('#ff7f0e', width=1.2))
+
+        # Reconfigura solver e refs
+        self.solver.recreate_mesh(method=self.method, h0=0.1)
+        self.frame = 0
+        self.solver.setVref(self.data[self.frame])
+
+        # Como a malha pode mudar (método, parser etc.), refaça grade/triangulação
+        self._prepare_grid_and_triangulation()
+
+        # Reinit e segue
+        self._init_plots()
+        self.timer.start()
