@@ -9,6 +9,7 @@ from PyQt6.QtGui import (
 )
 from PyQt6.QtWidgets import (
     QApplication,
+    QMessageBox,
     QGridLayout,
     QHBoxLayout,
     QLabel,
@@ -18,6 +19,8 @@ from PyQt6.QtWidgets import (
     QTabWidget,
     QVBoxLayout,
     QWidget,
+    QDoubleSpinBox,
+    QSpinBox
 )
 import matplotlib
 matplotlib.use('QtAgg')
@@ -27,6 +30,8 @@ import matplotlib.tri as tri
 import matplotlib.pyplot as plt
 from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
+import warnings
+import time
 
 
 class MplCanvas(FigureCanvas):
@@ -90,6 +95,7 @@ class MainWindow(QMainWindow):
         self.layout_gui = QGridLayout()
         self.layout_gui.setColumnStretch(0,1) # controls tabs
         self.layout_gui.setColumnMinimumWidth(0,400)
+
         self.layout_gui.setColumnStretch(1,10) # image
 
         self.eitMeasurementsSE = MplCanvas(self, width=10, height=2) # plot
@@ -102,6 +108,19 @@ class MainWindow(QMainWindow):
         measurements_widget.setLayout(layout_measurements)
 
         self.tabs = QTabWidget()
+        
+        self.tabs.setStyleSheet("""
+            QTabBar::tab {
+                background: #222529; 
+                padding: 8px;
+            }
+            QTabBar::tab:selected {
+                background: #006633;
+                color: white;
+                font-weight: bold;
+            }
+        """)
+
 
         # Create first tab content
         tabConfig = QWidget()
@@ -134,8 +153,6 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(tabConfig, 'Solver Config')
 
         self.tabs.addTab(measurements_widget, 'Measurements')
-
-        self.tabs.addTab(Color('gray'), 'Controls')
 
         self.eitImage = MplCanvas(self) # plot
 
@@ -188,6 +205,53 @@ class MainWindow(QMainWindow):
         self.init_plots(data=data, method=method)
         self.update_plot(data, nframes, method=method)
 
+        # ---------------- Aba Controls ----------------
+        tabControls = QWidget()
+        vbox_ctrl = QVBoxLayout(tabControls)
+        vbox_ctrl.setSpacing(8)
+
+        # Colormap
+        vbox_ctrl.addWidget(QLabel("Colormap"))
+        self.cmbCmap = QComboBox()
+        self.cmbCmap.addItems(["RdBu_r", "viridis", "plasma", "inferno", "CET-D1"])
+        vbox_ctrl.addWidget(self.cmbCmap)
+
+        # Levels (vmin / vmax)
+        vbox_ctrl.addWidget(QLabel("Levels (min / max)"))
+        row_levels = QHBoxLayout()
+        self.spnVmin = QDoubleSpinBox(); self.spnVmin.setDecimals(3); self.spnVmin.setRange(-1e6, 1e6); self.spnVmin.setValue(-0.75)
+        self.spnVmax = QDoubleSpinBox(); self.spnVmax.setDecimals(3); self.spnVmax.setRange(-1e6, 1e6); self.spnVmax.setValue(+0.75)
+        row_levels.addWidget(self.spnVmin); row_levels.addWidget(self.spnVmax)
+        vbox_ctrl.addLayout(row_levels)
+
+        # Grid resolution
+        vbox_ctrl.addWidget(QLabel("Grid resolution (nx = ny)"))
+        self.spnRes = QSpinBox(); self.spnRes.setRange(32, 512); self.spnRes.setSingleStep(16)
+        self.spnRes.setValue(128)
+        vbox_ctrl.addWidget(self.spnRes)
+
+        # Botões
+        btnApplyLevels = QPushButton("Apply colormap/levels")
+        btnRebuildMesh = QPushButton("Rebuild mesh")
+        vbox_ctrl.addWidget(btnApplyLevels)
+        vbox_ctrl.addWidget(btnRebuildMesh)
+        vbox_ctrl.addStretch(1)
+
+        # Conexões
+        btnApplyLevels.clicked.connect(self._apply_levels_and_cmap)
+        btnRebuildMesh.clicked.connect(self._rebuild_mesh_from_controls)
+
+        # Adiciona aba
+        self.tabs.addTab(tabControls, "Controls")
+
+        self.add_switch_button()
+
+                
+        self._last_t = None
+        self._fps_alpha = 0.9
+        self._fps_est = 0.0
+
+
     def _on_timer(self):
         # Este método substitui o lambda
         # Ele usa os atributos atuais da classe
@@ -226,14 +290,31 @@ class MainWindow(QMainWindow):
         ax.set_xlim(*self._ax_xlim)
         ax.set_ylim(*self._ax_ylim)
         ax.set_aspect('equal', adjustable='box')  # círculo não vira elipse
+
+    def _apply_levels_and_cmap(self):
+        """Atualiza colormap e níveis no gráfico."""
+        cmap_name = self.cmbCmap.currentText()
+        try:
+            self._plotImage_ref.set_cmap(cmap_name)
+        except Exception:
+            print(f"Colormap {cmap_name} não suportado.")
+        vmin = float(self.spnVmin.value())
+        vmax = float(self.spnVmax.value())
+        if hasattr(self._plotImage_ref, 'set_clim'):
+            self._plotImage_ref.set_clim(vmin, vmax)
+        self.eitImage.draw()
     
     def update_solver(self, new_method: str):
         """Troca de método sem recriar timer/duplicar widgets."""
         if new_method == self.method:
             return
 
-        # pare o timer atual
-        self.timer.stop()
+        # para o timer atual
+        
+        try:
+            self.timer.stop()
+        except Exception:
+            pass
 
         # atualize o estado
         self.method = new_method
@@ -361,6 +442,11 @@ class MainWindow(QMainWindow):
         self.eitMeasurementsDiff.draw()
         
     def update_plot(self, data, nframes, method):
+
+        # Evita pintar em widgets destruídos/fechados, devido à mudança de interface        
+        if not self.isVisible():
+                return
+
         # Dados do frame
         self.dataSE = data[self.frameCounter]
         self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
@@ -424,11 +510,153 @@ class MainWindow(QMainWindow):
         # Próximo frame (com wrap)
         self.frameCounter = (self.frameCounter + 1) % nframes
 
+        #Tentativa de contar frame
+        t = time.perf_counter()
+        if self._last_t is not None:
+            dt = t - self._last_t
+            if dt > 0:
+                inst_fps = 1.0 / dt
+                # EMA para suavizar
+                self._fps_est = self._fps_alpha * self._fps_est + (1 - self._fps_alpha) * inst_fps
+                # Mostrar no título
+                try:
+                    self.setWindowTitle(f"EITduino — {self.method.upper()}  |  FPS: {self._fps_est:.1f}")
+                except Exception:
+                    pass
+        self._last_t = t
+
+
     def on_button_click(window_instance, data, nframes, button='greit'):    
         new_method = button
         print(f"Method set to: {new_method}")
         window_instance.update_solver(new_method)
 
+    
+    def add_switch_button(self):
+        """Botão para trocar para PyQtGraph"""
+        btn_switch = QPushButton("Switch to PyQtGraph")
+        btn_switch.clicked.connect(self.switch_to_pyqtgraph)
+        # Adicione no layout principal (por exemplo, abaixo das tabs)
+        self.layout_gui.addWidget(btn_switch, 1, 0)
+
+    
+    def switch_to_pyqtgraph(self):
+        """Fecha esta janela e abre a interface PyQtGraph de forma segura."""
+        # Pare timers e descarte recursos primeiro
+        try:
+            self._dispose_matplotlib()
+        except Exception:
+            pass
+
+        # Agende a criação da nova janela no próximo ciclo de eventos
+        from PyQt6.QtCore import QTimer
+        def _launch():
+            from pyqtgraph_interface import MainWindowPG
+            # Guarde referência global para evitar GC
+            app = QApplication.instance()
+            new_win = MainWindowPG(self.data, self.nframes, method='bp')
+            app.setProperty('active_window', new_win)
+            new_win.show()
+        QTimer.singleShot(0, _launch)
+
+        # Feche esta janela
+        self.close()
 
 
+    
+    def _rebuild_mesh_from_controls(self):
+        """Reconstrói a malha com tentativas adaptativas e fallback para elipse."""
+        n_el = self.mySolver.n_el
+        shape_name = "rectangle"  # ou use um ComboBox se quiser permitir escolha
+        res = int(self.spnRes.value())
+
+        h0_base = 0.08 if shape_name == "rectangle" else 0.1
+        h0_trials = [h0_base * (0.8 ** k) for k in range(6)]
+        success = False
+        last_err = None
+
+        for h0_try in h0_trials:
+            try:
+                fd = shape.rectangle if shape_name == "rectangle" else shape.circle
+                self.mySolver.recreate_mesh(n_el=n_el, fd=fd, method=self.method, h0=h0_try)
+                self.mySolver.setVref(self.data[0])
+                with warnings.catch_warnings():
+                    warnings.simplefilter('error')
+                    self.mySolver.setframes(self.data[0], self.method)
+                success = True
+                break
+            except Exception as e:
+                last_err = e
+                print(f"[Rebuild] Falha com h0={h0_try}: {e}")
+                continue
+
+        if not success and shape_name == "rectangle":
+            print("[Rebuild] Fallback para elipse.")
+            for h0_try in h0_trials:
+                try:
+                    self.mySolver.recreate_mesh(n_el=n_el, fd=shape.ellipse, method=self.method, h0=h0_try)
+                    self.mySolver.setVref(self.data[0])
+                    with warnings.catch_warnings():
+                        warnings.simplefilter('error')
+                        self.mySolver.setframes(self.data[0], self.method)
+                    success = True
+                    break
+                except Exception as e:
+                    last_err = e
+                    continue
+
+        if success:
+            self.spnRes.setValue(res)
+            self.init_plots(data=self.data, method=self.method)
+            self.update_plot(self.data, self.nframes, method=self.method)
+        else:
+            QMessageBox.warning(self, "Rebuild mesh", f"Falha ao reconstruir malha.\nDetalhe: {last_err}")
+
+
+    def _dispose_matplotlib(self):
+        """Para timers, limpa e descarta canvases matplotlib com segurança."""
+        try:
+            self.timer.stop()
+            self.timer.timeout.disconnect(self._on_timer)
+        except Exception:
+            pass
+
+        # Remover colorbar se existir
+        if self._colorbar_ref is not None:
+            try:
+                self._colorbar_ref.remove()
+            except Exception:
+                pass
+            self._colorbar_ref = None
+            self._cbar_ax = None
+
+        # Limpar e descartar canvases
+        for canvas in [self.eitImage, self.eitMeasurementsSE, self.eitMeasurementsDiff]:
+            try:
+                canvas.axes.cla()
+                canvas.draw()
+            except Exception:
+                pass
+            try:
+                canvas.setParent(None)
+                canvas.deleteLater()
+            except Exception:
+                pass
+
+        # Fechar figuras para garantir liberação de memória
+        try:
+            import matplotlib.pyplot as plt
+            plt.close(self.eitImage.fig)
+            plt.close(self.eitMeasurementsSE.fig)
+            plt.close(self.eitMeasurementsDiff.fig)
+        except Exception:
+            pass
+
+    def closeEvent(self, event):
+        """Garante que nada continue pintando após o fechamento da janela."""
+        try:
+            self._dispose_matplotlib()
+        except Exception:
+            pass
+        super().closeEvent(event)
 

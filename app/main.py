@@ -1,28 +1,3 @@
-# import pyeit_controller
-# import pyqt_interface
-# import numpy as np
-# from PyQt6.QtWidgets import QApplication
-# from pyqt_interface import MainWindow
-# import sys
-# import pyqtgraph as pg
-# from pyqtgraph.Qt import QtCore
-
-# #Start of all code by reading the txt file with the data
-
-# dados = np.loadtxt('stored_data/dados_gravados_0123678c.txt')
-# (nframes,nmed) = dados.shape
-
-# #Instantiate PyQt application
-# app = QApplication(sys.argv)
-
-# #Call the developed window 
-# window = MainWindow(dados, nframes, method='bp')
-# window.show()
-
-# app.exec()
-
-# """Criar Selecionador de shape!!!"""
-
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
 import numpy as np
