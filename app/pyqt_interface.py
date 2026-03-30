@@ -1,11 +1,12 @@
 import sys
 import numpy as np
-from PyQt6.QtCore import QSize, QTimer
+from PyQt6.QtCore import QSize, QTimer, Qt
 from PyQt6.QtGui import QPixmap, QPalette, QColor, QFont
 from PyQt6.QtWidgets import (
     QApplication, QMessageBox, QGridLayout, QHBoxLayout, QLabel,
     QComboBox, QMainWindow, QPushButton, QTabWidget, QVBoxLayout,
-    QWidget, QDoubleSpinBox, QSpinBox
+    QWidget, QDoubleSpinBox, QSpinBox, QSlider, QFrame, QScrollArea,
+    QSizePolicy, QToolTip
 )
 import matplotlib
 matplotlib.use('QtAgg')
@@ -17,23 +18,247 @@ from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 import warnings
 import time
+import math
 
+
+# ---------------------------------------------------------------------------
+# Canvas
+# ---------------------------------------------------------------------------
 
 class MplCanvas(FigureCanvas):
     def __init__(self, parent=None, width=2.5, height=2, dpi=100):
         self.fig = Figure(figsize=(width, height), dpi=dpi)
         self.axes = self.fig.add_subplot(111)
-        super(MplCanvas, self).__init__(self.fig)
+        super().__init__(self.fig)
 
 
-class Color(QWidget):
-    def __init__(self, color):
-        super(Color, self).__init__()
+# ---------------------------------------------------------------------------
+# Small reusable widgets
+# ---------------------------------------------------------------------------
+
+class SectionLabel(QLabel):
+    """Small uppercase section header."""
+    def __init__(self, text, parent=None):
+        super().__init__(text.upper(), parent)
+        self.setStyleSheet("""
+            QLabel {
+                font-size: 10px;
+                font-weight: 500;
+                color: #888;
+                letter-spacing: 1px;
+                padding: 10px 14px 4px 14px;
+            }
+        """)
+
+
+class Divider(QFrame):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setFrameShape(QFrame.Shape.HLine)
+        self.setStyleSheet("color: #e0e0e0; margin: 2px 0;")
+
+
+class MethodButton(QPushButton):
+    """Styled method selection button."""
+    ACTIVE_STYLE = """
+        QPushButton {
+            background: #006633;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 9px 12px;
+            font-size: 12px;
+            text-align: left;
+        }
+    """
+    INACTIVE_STYLE = """
+        QPushButton {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 9px 12px;
+            font-size: 12px;
+            text-align: left;
+        }
+        QPushButton:hover {
+            background: #ebebeb;
+        }
+    """
+
+    def __init__(self, label, tag, parent=None):
+        super().__init__(f"{label}   [{tag}]", parent)
+        self.setActive(False)
+
+    def setActive(self, active: bool):
+        self.setStyleSheet(self.ACTIVE_STYLE if active else self.INACTIVE_STYLE)
+
+
+class AlgoCard(QWidget):
+    """Algorithm description card with chips."""
+
+    ALGO_DATA = {
+        'bp': {
+            'title': 'Back Projection (BP)',
+            'desc': (
+                'O BP projeta cada diferença de tensão medida de volta ao domínio, '
+                'ao longo das regiões de maior sensibilidade da malha. É o método '
+                'mais simples: rápido e intuitivo, mas sem nenhuma regularização — '
+                'o que o torna sensível ao ruído presente nos dados.'
+            ),
+            'chips': [('Sem regularização', 'warn'), ('Sensível a ruído', 'warn'), ('Rápido', 'ok')],
+        },
+        'greit': {
+            'title': 'GREIT',
+            'desc': (
+                'O GREIT (Generalised Reconstruction algorithm for EIT) calcula uma '
+                'matriz de reconstrução linear otimizada durante a configuração. '
+                'Produz imagens em grade regular com boa supressão de ruído e '
+                'artefatos, sendo amplamente usado em aplicações pulmonares.'
+            ),
+            'chips': [('Regularização linear', 'ok'), ('Grade uniforme', 'ok'), ('Robusto a ruído', 'ok')],
+        },
+        'jac': {
+            'title': 'Jacobiano (JAC)',
+            'desc': (
+                'O método Jacobiano (ou Gauss-Newton) resolve iterativamente o '
+                'problema inverso usando a matriz de sensibilidade (Jacobiana) '
+                'e regularização de Tikhonov. Oferece maior flexibilidade e '
+                'precisão, com custo computacional mais elevado.'
+            ),
+            'chips': [('Regularização Tikhonov', 'ok'), ('Alta precisão', 'ok'), ('Mais lento', 'warn')],
+        },
+    }
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setStyleSheet("""
+            QWidget {
+                background: #f9f9f9;
+                border: 1px solid #e8e8e8;
+                border-radius: 8px;
+            }
+        """)
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(12, 10, 12, 10)
+        layout.setSpacing(6)
+        layout.setAlignment(Qt.AlignmentFlag.AlignTop)
+
+        self.title_lbl = QLabel()
+        self.title_lbl.setStyleSheet("font-size: 12px; font-weight: 500; color: #006633; border: none; background: transparent;")
+        self.title_lbl.setWordWrap(True)
+
+        self.desc_lbl = QLabel()
+        self.desc_lbl.setStyleSheet("font-size: 11px; color: #666; line-height: 1.6; border: none; background: transparent;")
+        self.desc_lbl.setWordWrap(True)
+
+        self.chips_row = QGridLayout()
+        self.chips_row.setSpacing(5)
+        self.chips_row.setContentsMargins(0, 4, 0, 0)
+
+        layout.addWidget(self.title_lbl)
+        layout.addWidget(self.desc_lbl)
+        layout.addLayout(self.chips_row)
+        layout.addStretch(1) #Pushes everything upwards inside "Como Funciona" section
+
+        self.update_method('bp')
+
+    def update_method(self, method: str):
+        data = self.ALGO_DATA.get(method, self.ALGO_DATA['bp'])
+        self.title_lbl.setText(data['title'])
+        self.desc_lbl.setText(data['desc'])
+
+        # Clear chips
+        while self.chips_row.count():
+            item = self.chips_row.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+
+        col = 0
+        for text, kind in data['chips']:
+            chip = QLabel(text)
+            chip.setWordWrap(True)
+            chip.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            chip.setMinimumWidth(70)
+            chip.setMinimumHeight(36)
+            if kind == 'ok':
+                chip.setStyleSheet(
+                    "font-size: 10px; padding: 4px 8px; border-radius: 10px; "
+                    "background: #e1f5ee; color: #0f6e56; border: 1px solid #9fe1cb;"
+                )
+            else:
+                chip.setStyleSheet(
+                    "font-size: 10px; padding: 4px 8px; border-radius: 10px; "
+                    "background: #faeeda; color: #854f0b; border: 1px solid #fac775;"
+                )
+            self.chips_row.addWidget(chip, 0, col)
+            col += 1
+
+
+class ParamRow(QWidget):
+    """Label + tooltip icon + optional explanation box."""
+    def __init__(self, label: str, tooltip: str, parent=None):
+        super().__init__(parent)
+        self.setContentsMargins(0, 0, 0, 0)
+        row = QHBoxLayout(self)
+        row.setContentsMargins(0, 0, 0, 0)
+        row.setSpacing(5)
+
+        lbl = QLabel(label)
+        lbl.setStyleSheet("font-size: 10px; color: #888;")
+
+        tip_btn = QPushButton("?")
+        tip_btn.setFixedSize(14, 14)
+        tip_btn.setStyleSheet("""
+            QPushButton {
+                border-radius: 7px;
+                border: 1px solid #ccc;
+                background: transparent;
+                color: #999;
+                font-size: 9px;
+                padding: 0;
+            }
+            QPushButton:hover { background: #f0f0f0; }
+        """)
+        tip_btn.setToolTip(tooltip)
+        tip_btn.clicked.connect(lambda: QToolTip.showText(
+            tip_btn.mapToGlobal(tip_btn.rect().bottomLeft()), tooltip
+        ))
+
+        row.addWidget(lbl)
+        row.addWidget(tip_btn)
+        row.addStretch()
+
+
+class StatCard(QWidget):
+    def __init__(self, label: str, value: str, parent=None):
+        super().__init__(parent)
+        # Set background directly via palette — bypasses stylesheet inheritance issues
         self.setAutoFillBackground(True)
         palette = self.palette()
-        palette.setColor(QPalette.ColorRole.Window, QColor(color))
+        palette.setColor(QPalette.ColorRole.Window, QColor('#f5f5f5'))
         self.setPalette(palette)
 
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(10, 7, 10, 7)
+        layout.setSpacing(2)
+
+        self._lbl = QLabel(label)
+        self._lbl.setStyleSheet("font-size: 9px; color: #999;")
+
+        self._val = QLabel(value)
+        self._val.setStyleSheet("font-size: 16px; font-weight: 500; color: #222;")
+
+        layout.addWidget(self._lbl)
+        layout.addWidget(self._val)
+
+    def setValue(self, v: str):
+        self._val.setText(v)
+
+
+# ---------------------------------------------------------------------------
+# Main Window
+# ---------------------------------------------------------------------------
 
 class MainWindow(QMainWindow):
 
@@ -43,84 +268,119 @@ class MainWindow(QMainWindow):
         self.method = method
         self._colorbar_ref = None
 
-        super(MainWindow, self).__init__()
+        super().__init__()
 
         self.setWindowTitle("EITduino")
-        self.setMinimumSize(QSize(800, 600))
-        palette = self.palette()
-        palette.setColor(QPalette.ColorRole.Window, QColor('white'))
-        self.setPalette(palette)
+        self.setMinimumSize(QSize(1100, 680))
 
-        # Header
-        layout_header = QGridLayout()
-        layout_header.setColumnStretch(0, 1)
-        layout_header.setColumnStretch(1, 10)
+        # ------------------------------------------------------------------
+        # Root layout: three columns
+        # ------------------------------------------------------------------
+        root = QWidget()
+        root_layout = QHBoxLayout(root)
+        root_layout.setContentsMargins(0, 0, 0, 0)
+        root_layout.setSpacing(0)
+        self.setCentralWidget(root)
 
-        logoUFABC = QLabel("")
+        # ---- LEFT PANEL --------------------------------------------------
+        left = QWidget()
+        left.setFixedWidth(280)
+        left.setStyleSheet("background: white; border-right: 1px solid #e8e8e8;")
+        left_layout = QVBoxLayout(left)
+        left_layout.setContentsMargins(0, 0, 0, 0)
+        left_layout.setSpacing(0)
+
+        # Header / branding
+        header = QWidget()
+        header.setFixedHeight(48)
+        header.setStyleSheet("background: #006633;")
+        header_layout = QHBoxLayout(header)
+        header_layout.setContentsMargins(14, 0, 14, 0)
+
+        logo_lbl = QLabel()
         pix = QPixmap('images/logo_UFABC.png')
         if not pix.isNull():
-            logoUFABC.setPixmap(pix.scaled(75, 75))
-        else:
-            print("Warning: logo_UFABC.png not found or invalid.")
+            logo_lbl.setPixmap(pix.scaled(32, 32, Qt.AspectRatioMode.KeepAspectRatio,
+                                           Qt.TransformationMode.SmoothTransformation))
 
-        headerText = QLabel("EITduino")
-        headerText.setStyleSheet("QLabel { color : #006633; font size : 40; }")
-        fHeader = QFont("Humanst777", 50, weight=625)
-        headerText.setFont(fHeader)
+        title_lbl = QLabel("EITduino")
+        title_lbl.setStyleSheet("color: white; font-size: 18px; font-weight: 500;")
 
-        layout_header.addWidget(logoUFABC, 0, 0)
-        layout_header.addWidget(headerText, 0, 1)
+        header_layout.addWidget(logo_lbl)
+        header_layout.addWidget(title_lbl)
+        header_layout.addStretch()
 
-        # GUI layout
-        self.layout_gui = QGridLayout()
-        self.layout_gui.setColumnStretch(0, 1)
-        self.layout_gui.setColumnMinimumWidth(0, 400)
-        self.layout_gui.setColumnStretch(1, 10)
+        left_layout.addWidget(header)
 
-        self.eitMeasurementsSE = MplCanvas(self, width=10, height=2)
-        self.eitMeasurementsDiff = MplCanvas(self, width=10, height=2)
+        # Method selection
+        left_layout.addWidget(SectionLabel("Método de Reconstrução"))
 
-        layout_measurements = QVBoxLayout()
-        layout_measurements.addWidget(self.eitMeasurementsSE)
-        layout_measurements.addWidget(self.eitMeasurementsDiff)
-        measurements_widget = QWidget()
-        measurements_widget.setLayout(layout_measurements)
+        btn_container = QWidget()
+        btn_layout = QVBoxLayout(btn_container)
+        btn_layout.setContentsMargins(12, 0, 12, 0)
+        btn_layout.setSpacing(5)
 
-        self.tabs = QTabWidget()
-        self.tabs.setStyleSheet("""
-            QTabBar::tab { background: #222529; padding: 8px; }
-            QTabBar::tab:selected { background: #006633; color: white; font-weight: bold; }
+        self.btn_bp    = MethodButton("Back Projection", "BP")
+        self.btn_greit = MethodButton("GREIT",           "GR")
+        self.btn_jac   = MethodButton("Jacobiano",       "JAC")
+
+        self.btn_bp.clicked.connect(lambda: self.update_solver('bp'))
+        self.btn_greit.clicked.connect(lambda: self.update_solver('greit'))
+        self.btn_jac.clicked.connect(lambda: self.update_solver('jac'))
+
+        btn_layout.addWidget(self.btn_bp)
+        btn_layout.addWidget(self.btn_greit)
+        btn_layout.addWidget(self.btn_jac)
+        left_layout.addWidget(btn_container)
+        left_layout.addWidget(Divider())
+
+        # Algorithm description card
+        left_layout.addWidget(SectionLabel("Como funciona"))
+        self.algo_card = AlgoCard()
+        card_wrapper = QWidget()
+        cw_layout = QVBoxLayout(card_wrapper)
+        cw_layout.setContentsMargins(12, 0, 12, 8)
+        cw_layout.addWidget(self.algo_card)
+        card_wrapper.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Expanding
+        )
+        self.algo_card.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Expanding
+        )
+        left_layout.addWidget(card_wrapper, stretch=1)
+        left_layout.addWidget(Divider())
+
+        # Compare button
+        compare_btn = QPushButton("⧉  Comparar métodos")
+        compare_btn.setStyleSheet("""
+            QPushButton {
+                margin: 10px 12px;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                background: white;
+                font-size: 11px;
+                color: #666;
+            }
+            QPushButton:hover { background: #f5f5f5; }
         """)
+        compare_btn.clicked.connect(self._open_comparison)
+        left_layout.addWidget(compare_btn)
 
-        # Solver Config tab
-        tabConfig = QWidget()
-        tabConfig_layout = QVBoxLayout()
-        tabConfig_label = Color('lightgray')
-        tabConfig_layout.addWidget(tabConfig_label)
-        tabConfig.setLayout(tabConfig_layout)
-
-        buttonBP = QPushButton('BP', tabConfig)
-        buttonBP.clicked.connect(lambda: self.update_solver('bp'))
-        buttonBP.setGeometry(15, 25, 50, 25)
-
-        buttonJAC = QPushButton('JAC', tabConfig)
-        buttonJAC.clicked.connect(lambda: self.update_solver('jac'))
-        buttonJAC.setGeometry(15, 55, 50, 25)
-
-        buttonGREIT = QPushButton('GREIT', tabConfig)
-        buttonGREIT.clicked.connect(lambda: self.update_solver('greit'))
-        buttonGREIT.setGeometry(15, 85, 50, 25)
-
-        self.tabs.addTab(tabConfig, 'Solver Config')
-        self.tabs.addTab(measurements_widget, 'Measurements')
+        # ---- CENTER PANEL ------------------------------------------------
+        center = QWidget()
+        center.setStyleSheet("background: white;")
+        center_layout = QVBoxLayout(center)
+        center_layout.setContentsMargins(0, 0, 0, 0)
+        center_layout.setSpacing(0)
 
         self.eitImage = MplCanvas(self)
         self._colorbar_ref = None
         self._cbar_ax = None
         self._ax_xlim = None
         self._ax_ylim = None
-
-        # Grid raster cache — same strategy as PyQtGraph interface
         self._raster_cache = None
         self._grid_extent = None
         self._nx = self._ny = 128
@@ -130,18 +390,202 @@ class MainWindow(QMainWindow):
         except Exception:
             pass
 
-        self.layout_gui.addWidget(self.tabs)
-        self.layout_gui.addWidget(self.eitImage, 0, 1)
+        center_layout.addWidget(self.eitImage, stretch=1)
 
-        layout_main = QGridLayout()
-        layout_main.setRowStretch(0, 1)
-        layout_main.setRowStretch(1, 10)
-        layout_main.addLayout(layout_header, 0, 0)
-        layout_main.addLayout(self.layout_gui, 1, 0)
+        # Measurement strip
+        meas_strip = QWidget()
+        meas_strip.setFixedHeight(100)
+        meas_strip.setStyleSheet("border-top: 1px solid #e8e8e8;")
+        meas_layout = QHBoxLayout(meas_strip)
+        meas_layout.setContentsMargins(0, 0, 0, 0)
+        meas_layout.setSpacing(0)
 
-        main_widget = QWidget()
-        main_widget.setLayout(layout_main)
-        self.setCentralWidget(main_widget)
+        se_widget = QWidget()
+        se_widget.setStyleSheet("border-right: 1px solid #e8e8e8;")
+        se_layout = QVBoxLayout(se_widget)
+        se_layout.setContentsMargins(10, 6, 10, 6)
+        self._se_title = QLabel("Medições Single-Ended")
+        self._se_title.setStyleSheet("font-size: 10px; color: #999;")
+        self.eitMeasurementsSE = MplCanvas(self, width=6, height=1.2)
+        self.eitMeasurementsSE.fig.patch.set_alpha(0)
+        se_layout.addWidget(self._se_title)
+        se_layout.addWidget(self.eitMeasurementsSE)
+
+        diff_widget = QWidget()
+        diff_layout = QVBoxLayout(diff_widget)
+        diff_layout.setContentsMargins(10, 6, 10, 6)
+        self._diff_title = QLabel("Medições Diferenciais")
+        self._diff_title.setStyleSheet("font-size: 10px; color: #999;")
+        self.eitMeasurementsDiff = MplCanvas(self, width=6, height=1.2)
+        self.eitMeasurementsDiff.fig.patch.set_alpha(0)
+        diff_layout.addWidget(self._diff_title)
+        diff_layout.addWidget(self.eitMeasurementsDiff)
+
+        meas_layout.addWidget(se_widget)
+        meas_layout.addWidget(diff_widget)
+        center_layout.addWidget(meas_strip)
+
+        # ---- RIGHT PANEL -------------------------------------------------
+        right_scroll = QScrollArea()
+        right_scroll.setFixedWidth(272)
+        right_scroll.setWidgetResizable(True)
+        right_scroll.setStyleSheet("QScrollArea { border: none; border-left: 1px solid #e8e8e8; background: white; }")
+
+        right = QWidget()
+        right.setStyleSheet("background: white;")
+        right_layout = QVBoxLayout(right)
+        right_layout.setContentsMargins(0, 0, 0, 12)
+        right_layout.setSpacing(0)
+        right_scroll.setWidget(right)
+
+        # -- Colormap
+        right_layout.addWidget(SectionLabel("Controles"))
+
+        def _ctrl_block(label, tooltip, widget):
+            w = QWidget()
+            l = QVBoxLayout(w)
+            l.setContentsMargins(12, 0, 12, 8)
+            l.setSpacing(4)
+            l.addWidget(ParamRow(label, tooltip))
+            l.addWidget(widget)
+            return w
+
+        self.cmbCmap = QComboBox()
+        self.cmbCmap.addItems(["RdBu_r", "viridis", "plasma", "inferno", "CET-D1"])
+        self.cmbCmap.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        right_layout.addWidget(_ctrl_block("Colormap",
+            "Paleta de cores usada para representar variações de condutividade na imagem.",
+            self.cmbCmap))
+
+        # -- Levels
+        levels_widget = QWidget()
+        lvl_layout = QHBoxLayout(levels_widget)
+        lvl_layout.setContentsMargins(0, 0, 0, 0)
+        lvl_layout.setSpacing(6)
+        self.spnVmin = QDoubleSpinBox()
+        self.spnVmin.setDecimals(3); self.spnVmin.setRange(-1e6, 1e6); self.spnVmin.setValue(-1.0)
+        self.spnVmin.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        self.spnVmax = QDoubleSpinBox()
+        self.spnVmax.setDecimals(3); self.spnVmax.setRange(-1e6, 1e6); self.spnVmax.setValue(1.0)
+        self.spnVmax.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        lvl_layout.addWidget(self.spnVmin)
+        lvl_layout.addWidget(self.spnVmax)
+        right_layout.addWidget(_ctrl_block("Níveis (min / max)",
+            "Define os limites do mapa de cores. Valores fora do intervalo ficam saturados na cor extrema.",
+            levels_widget))
+
+        # -- BP smoothing slider
+        alpha_widget = QWidget()
+        alpha_layout = QHBoxLayout(alpha_widget)
+        alpha_layout.setContentsMargins(0, 0, 0, 0)
+        alpha_layout.setSpacing(8)
+        self.sldAlpha = QSlider(Qt.Orientation.Horizontal)
+        self.sldAlpha.setRange(0, 95); self.sldAlpha.setSingleStep(5); self.sldAlpha.setValue(40)
+        self.lblAlpha = QLabel("α = 0.40")
+        self.lblAlpha.setStyleSheet("font-size: 10px; color: #888; min-width: 54px;")
+        self.sldAlpha.valueChanged.connect(self._on_alpha_changed)
+        alpha_layout.addWidget(self.sldAlpha)
+        alpha_layout.addWidget(self.lblAlpha)
+        right_layout.addWidget(_ctrl_block("Suavização BP (α)",
+            "Mistura temporal entre frames consecutivos. α = 0: sem suavização. α = 0.9: suavização intensa, mas com atraso visual.",
+            alpha_widget))
+
+        # -- Grid resolution slider
+        res_widget = QWidget()
+        res_layout = QHBoxLayout(res_widget)
+        res_layout.setContentsMargins(0, 0, 0, 0)
+        res_layout.setSpacing(8)
+        self.sldRes = QSlider(Qt.Orientation.Horizontal)
+        self.sldRes.setRange(32, 256); self.sldRes.setSingleStep(16); self.sldRes.setValue(128)
+        self.lblRes = QLabel("128 px")
+        self.lblRes.setStyleSheet("font-size: 10px; color: #888; min-width: 40px;")
+        self.sldRes.valueChanged.connect(lambda v: self.lblRes.setText(f"{v} px"))
+        res_layout.addWidget(self.sldRes)
+        res_layout.addWidget(self.lblRes)
+        right_layout.addWidget(_ctrl_block("Resolução da grade",
+            "Número de pixels por eixo na imagem interpolada. Valores maiores produzem imagens mais suaves, mas reduzem o FPS.",
+            res_widget))
+
+        right_layout.addWidget(Divider())
+
+        # -- Action buttons
+        def _action_btn(text, callback, green=False):
+            btn = QPushButton(text)
+            style = """
+                QPushButton {{
+                    margin: 0 12px;
+                    padding: 7px;
+                    border-radius: 6px;
+                    border: 1px solid {border};
+                    background: {bg};
+                    color: {fg};
+                    font-size: 11px;
+                }}
+                QPushButton:hover {{ background: {hover}; }}
+            """
+            if green:
+                btn.setStyleSheet(style.format(border="#006633", bg="transparent", fg="#006633", hover="#e8f5ee"))
+            else:
+                btn.setStyleSheet(style.format(border="#ccc", bg="#f5f5f5", fg="#555", hover="#ebebeb"))
+            btn.clicked.connect(callback)
+            return btn
+
+        btnApply   = _action_btn("Aplicar colormap / níveis", self._apply_levels_and_cmap, green=True)
+        btnRebuild = _action_btn("Reconstruir malha",         self._rebuild_mesh_from_controls)
+        btnSwitch  = _action_btn("Alternar para PyQtGraph",   self.switch_to_pyqtgraph)
+
+        for btn in [btnApply, btnRebuild, btnSwitch]:
+            wrapper = QWidget()
+            wl = QVBoxLayout(wrapper)
+            wl.setContentsMargins(0, 3, 0, 3)
+            wl.addWidget(btn)
+            right_layout.addWidget(wrapper)
+
+        right_layout.addWidget(Divider())
+
+        # -- Mesh stats
+        right_layout.addWidget(SectionLabel("Informações da malha"))
+        stats_grid = QWidget()
+        sg_layout = QGridLayout(stats_grid)
+        sg_layout.setContentsMargins(12, 0, 12, 8)
+        sg_layout.setSpacing(6)
+
+        self.stat_el   = StatCard("Eletrodos", "8")
+        self.stat_tri  = StatCard("Triângulos", "—")
+        self.stat_meas = StatCard("Medições", "—")
+        self.stat_frame= StatCard("Frame atual", "0")
+
+        sg_layout.addWidget(self.stat_el,   0, 0)
+        sg_layout.addWidget(self.stat_tri,  0, 1)
+        sg_layout.addWidget(self.stat_meas, 1, 0)
+        sg_layout.addWidget(self.stat_frame,1, 1)
+        right_layout.addWidget(stats_grid)
+        right_layout.addStretch()
+
+        # -- Assemble root
+        root_layout.addWidget(left)
+        root_layout.addWidget(center, stretch=1)
+        root_layout.addWidget(right_scroll)
+
+        # ------------------------------------------------------------------
+        # Solver init
+        # ------------------------------------------------------------------
+        self.mySolver = EITsolver(method=method, h0=0.1)
+        self._plotImage_ref = None
+        self._plotSE_ref    = None
+        self._plotDiff_ref  = None
+        self.frameCounter   = 0
+        self._last_t        = None
+        self._fps_alpha     = 0.9
+        self._fps_est       = 0.0
+        self._comparison_win = None
+
+        self.mySolver.setVref(self.data[0])
+        self._update_method_ui(method)
+        self._update_stats()
+
+        self.init_plots(data=data, method=method)
+        self.update_plot(data, nframes, method=method)
 
         # Timer
         self.timer = QTimer(self)
@@ -149,192 +593,146 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self._on_timer)
         self.timer.start()
 
-        # Solver — setVref BEFORE init_plots
-        self.mySolver = EITsolver(method=method, h0=0.1)
-        self._plotImage_ref = None
-        self._plotSE_ref = None
-        self._plotDiff_ref = None
-        self.frameCounter = 0
-
-        self.mySolver.setVref(self.data[0])
-
-        self.init_plots(data=data, method=method)
-        self.update_plot(data, nframes, method=method)
-
-        # Controls tab
-        tabControls = QWidget()
-        vbox_ctrl = QVBoxLayout(tabControls)
-        vbox_ctrl.setSpacing(8)
-
-        vbox_ctrl.addWidget(QLabel("Colormap"))
-        self.cmbCmap = QComboBox()
-        self.cmbCmap.addItems(["RdBu_r", "viridis", "plasma", "inferno", "CET-D1"])
-        vbox_ctrl.addWidget(self.cmbCmap)
-
-        vbox_ctrl.addWidget(QLabel("Levels (min / max)"))
-        row_levels = QHBoxLayout()
-        self.spnVmin = QDoubleSpinBox()
-        self.spnVmin.setDecimals(3); self.spnVmin.setRange(-1e6, 1e6); self.spnVmin.setValue(-1.0)
-        self.spnVmax = QDoubleSpinBox()
-        self.spnVmax.setDecimals(3); self.spnVmax.setRange(-1e6, 1e6); self.spnVmax.setValue(1.0)
-        row_levels.addWidget(self.spnVmin); row_levels.addWidget(self.spnVmax)
-        vbox_ctrl.addLayout(row_levels)
-
-        vbox_ctrl.addWidget(QLabel("Grid resolution (nx = ny)"))
-        self.spnRes = QSpinBox()
-        self.spnRes.setRange(32, 512); self.spnRes.setSingleStep(16); self.spnRes.setValue(128)
-        vbox_ctrl.addWidget(self.spnRes)
-
-        vbox_ctrl.addWidget(QLabel("BP smoothing (0=none, 0.9=heavy)"))
-        self.spnBPAlpha = QDoubleSpinBox()
-        self.spnBPAlpha.setDecimals(2); self.spnBPAlpha.setRange(0.0, 0.95)
-        self.spnBPAlpha.setSingleStep(0.05); self.spnBPAlpha.setValue(self.mySolver.bp_temporal_alpha)
-        vbox_ctrl.addWidget(self.spnBPAlpha)
-
-        btnApplyLevels = QPushButton("Apply colormap/levels")
-        btnRebuildMesh = QPushButton("Rebuild mesh")
-        vbox_ctrl.addWidget(btnApplyLevels)
-        vbox_ctrl.addWidget(btnRebuildMesh)
-        vbox_ctrl.addStretch(1)
-
-        btnApplyLevels.clicked.connect(self._apply_levels_and_cmap)
-        btnRebuildMesh.clicked.connect(self._rebuild_mesh_from_controls)
-        self.spnBPAlpha.valueChanged.connect(self._update_bp_alpha)
-
-        self.tabs.addTab(tabControls, "Controls")
-        self.add_switch_button()
-
-        self._last_t = None
-        self._fps_alpha = 0.9
-        self._fps_est = 0.0
-
     # ------------------------------------------------------------------
-    # Grid rasterization
+    # Raster cache
     # ------------------------------------------------------------------
 
     def _build_raster_cache(self):
-        """Pre-computes barycentric weights for each grid pixel — once per mesh."""
         pts = self.mySolver.mesh_obj.node
         tri = self.mySolver.mesh_obj.element
-
-        x_min, x_max = float(pts[:, 0].min()), float(pts[:, 0].max())
-        y_min, y_max = float(pts[:, 1].min()), float(pts[:, 1].max())
+        x_min, x_max = float(pts[:,0].min()), float(pts[:,0].max())
+        y_min, y_max = float(pts[:,1].min()), float(pts[:,1].max())
         self._grid_extent = [x_min, x_max, y_min, y_max]
-
         xs = np.linspace(x_min, x_max, self._nx)
         ys = np.linspace(y_min, y_max, self._ny)
-        grid_x, grid_y = np.meshgrid(xs, ys)
-
-        triang = mtri.Triangulation(pts[:, 0], pts[:, 1], tri)
-        X, Y = grid_x.ravel(), grid_y.ravel()
+        gx, gy = np.meshgrid(xs, ys)
+        triang = mtri.Triangulation(pts[:,0], pts[:,1], tri)
+        X, Y = gx.ravel(), gy.ravel()
         finder = triang.get_trifinder()
         tri_idx = finder(X, Y)
-
-        n_pix = tri_idx.size
-        v0 = np.full(n_pix, -1, dtype=int)
-        v1 = np.full(n_pix, -1, dtype=int)
-        v2 = np.full(n_pix, -1, dtype=int)
-        w0 = np.zeros(n_pix)
-        w1 = np.zeros(n_pix)
-        w2 = np.zeros(n_pix)
+        n = tri_idx.size
+        v0=np.full(n,-1,dtype=int); v1=v0.copy(); v2=v0.copy()
+        w0=np.zeros(n); w1=w0.copy(); w2=w0.copy()
         valid = tri_idx >= 0
-
         if np.any(valid):
             idxs = tri_idx[valid]
             for t in np.unique(idxs):
-                pix_ids = np.nonzero(valid)[0][idxs == t]
-                T = tri[t]
-                A, B, C = pts[T[0]], pts[T[1]], pts[T[2]]
-                Px, Py = X[pix_ids], Y[pix_ids]
-                den = (B[1]-C[1])*(A[0]-C[0]) + (C[0]-B[0])*(A[1]-C[1])
-                if den == 0.0:
-                    continue
-                l0 = ((B[1]-C[1])*(Px-C[0]) + (C[0]-B[0])*(Py-C[1])) / den
-                l1 = ((C[1]-A[1])*(Px-C[0]) + (A[0]-C[0])*(Py-C[1])) / den
-                l2 = 1.0 - l0 - l1
-                v0[pix_ids]=T[0]; v1[pix_ids]=T[1]; v2[pix_ids]=T[2]
-                w0[pix_ids]=l0;   w1[pix_ids]=l1;   w2[pix_ids]=l2
+                pix = np.nonzero(valid)[0][idxs==t]
+                T=tri[t]; A,B,C=pts[T[0]],pts[T[1]],pts[T[2]]
+                Px,Py=X[pix],Y[pix]
+                den=(B[1]-C[1])*(A[0]-C[0])+(C[0]-B[0])*(A[1]-C[1])
+                if den==0.: continue
+                l0=((B[1]-C[1])*(Px-C[0])+(C[0]-B[0])*(Py-C[1]))/den
+                l1=((C[1]-A[1])*(Px-C[0])+(A[0]-C[0])*(Py-C[1]))/den
+                l2=1.-l0-l1
+                v0[pix]=T[0];v1[pix]=T[1];v2[pix]=T[2]
+                w0[pix]=l0; w1[pix]=l1; w2[pix]=l2
+        self._raster_cache={"v0":v0,"v1":v1,"v2":v2,
+                             "w0":w0,"w1":w1,"w2":w2,"mask":valid}
 
-        self._raster_cache = {"v0":v0,"v1":v1,"v2":v2,
-                               "w0":w0,"w1":w1,"w2":w2,"mask":valid}
+    def _rasterize(self, nodal):
+        c=self._raster_cache; valid=c["mask"]
+        flat=np.full(c["v0"].shape,np.nan)
+        idx=np.nonzero(valid)[0]
+        flat[idx]=(c["w0"][idx]*nodal[c["v0"][idx]]+
+                   c["w1"][idx]*nodal[c["v1"][idx]]+
+                   c["w2"][idx]*nodal[c["v2"][idx]])
+        return np.ma.masked_invalid(flat.reshape(self._ny,self._nx))
 
-    def _rasterize(self, nodal_vals: np.ndarray) -> np.ndarray:
-        """Interpolates nodal values onto pixel grid using cached barycentric weights."""
-        c = self._raster_cache
-        valid = c["mask"]
-        img_flat = np.full(c["v0"].shape, np.nan)
-        idx = np.nonzero(valid)[0]
-        img_flat[idx] = (c["w0"][idx]*nodal_vals[c["v0"][idx]] +
-                         c["w1"][idx]*nodal_vals[c["v1"][idx]] +
-                         c["w2"][idx]*nodal_vals[c["v2"][idx]])
-        return img_flat.reshape(self._ny, self._nx)
-
-    def _mesh_to_nodal(self, vals: np.ndarray) -> np.ndarray:
-        """Converts per-element values to per-node if needed."""
-        pts = self.mySolver.mesh_obj.node
-        tri = self.mySolver.mesh_obj.element
-        v = np.real(vals)
-        if v.ndim > 1:
-            v = np.ravel(v)
-        if v.shape[0] == pts.shape[0]:
-            return v
-        elif v.shape[0] == tri.shape[0]:
-            return sim2pts(pts, tri, v)
+    def _mesh_to_nodal(self, vals):
+        pts=self.mySolver.mesh_obj.node; tri=self.mySolver.mesh_obj.element
+        v=np.real(vals)
+        if v.ndim>1: v=np.ravel(v)
+        if v.shape[0]==pts.shape[0]: return v
+        elif v.shape[0]==tri.shape[0]: return sim2pts(pts,tri,v)
         return np.zeros(pts.shape[0])
 
-    def _rasterize_method(self, method: str) -> np.ndarray:
-        """Returns (ny, nx) smooth grid image for bp or jac."""
-        if method == 'bp':
-            # BP: use normalized+smoothed image already in mySolver.image
-            nodal = self._mesh_to_nodal(self.mySolver.image)
-        else:
-            # JAC: convert ds_med_frame to nodal then rasterize
-            nodal = self._mesh_to_nodal(self.mySolver.ds_med_frame)
+    def _rasterize_method(self, method):
+        nodal = self._mesh_to_nodal(
+            self.mySolver.image if method=='bp' else self.mySolver.ds_med_frame
+        )
         return self._rasterize(nodal)
 
     # ------------------------------------------------------------------
-    # Helpers
+    # Electrode overlay
     # ------------------------------------------------------------------
 
-    def _update_bp_alpha(self, value):
-        self.mySolver.bp_temporal_alpha = float(value)
+    def _draw_electrode_overlay(self):
+        """Draw numbered electrode markers on the image axes."""
+        ax = self.eitImage.axes
+        mesh = self.mySolver.mesh_obj
+        pts  = mesh.node
 
-    def _on_timer(self):
-        self.update_plot(self.data, self.nframes, method=self.method)
+        # el_pos contains the node indices of the electrodes
+        el_pos = getattr(mesh, 'el_pos', None)
+        if el_pos is None:
+            return
+
+        for i, node_idx in enumerate(el_pos):
+            x, y = pts[node_idx, 0], pts[node_idx, 1]
+            ax.plot(x, y, 'o',
+                    markersize=9,
+                    color='#006633',
+                    markeredgecolor='white',
+                    markeredgewidth=1.2,
+                    zorder=5)
+            ax.text(x, y, str(i + 1),
+                    ha='center', va='center',
+                    fontsize=6, color='white',
+                    fontweight='bold', zorder=6)
+
+    # ------------------------------------------------------------------
+    # Axes helpers
+    # ------------------------------------------------------------------
+
+    def _lock_axes_extent(self):
+        pts=self.mySolver.mesh_obj.node
+        x_min,x_max=float(pts[:,0].min()),float(pts[:,0].max())
+        y_min,y_max=float(pts[:,1].min()),float(pts[:,1].max())
+        span=max(x_max-x_min,y_max-y_min)
+        margin=0.05*span
+        self._ax_xlim=(x_min-margin,x_max+margin)
+        self._ax_ylim=(y_min-margin,y_max+margin)
+        ax=self.eitImage.axes
+        ax.set_xlim(*self._ax_xlim)
+        ax.set_ylim(*self._ax_ylim)
+        ax.set_aspect('equal',adjustable='box')
+        ax.axis('off')
 
     def _attach_or_update_colorbar(self, mappable):
         from mpl_toolkits.axes_grid1 import make_axes_locatable
         if self._colorbar_ref is None or self._cbar_ax is None:
-            divider = make_axes_locatable(self.eitImage.axes)
-            self._cbar_ax = divider.append_axes("right", size="5%", pad=0.05)
-            self._colorbar_ref = self.eitImage.fig.colorbar(mappable, cax=self._cbar_ax)
+            divider=make_axes_locatable(self.eitImage.axes)
+            self._cbar_ax=divider.append_axes("right",size="4%",pad=0.05)
+            self._colorbar_ref=self.eitImage.fig.colorbar(mappable,cax=self._cbar_ax)
+            self._cbar_ax.set_ylabel("Δσ (norm.)", fontsize=7, labelpad=3)
+            self._cbar_ax.tick_params(labelsize=7)
         else:
             self._colorbar_ref.update_normal(mappable)
 
-    def _lock_axes_extent(self):
-        pts = self.mySolver.mesh_obj.node
-        x_min, x_max = float(pts[:, 0].min()), float(pts[:, 0].max())
-        y_min, y_max = float(pts[:, 1].min()), float(pts[:, 1].max())
-        span = max(x_max - x_min, y_max - y_min)
-        margin = 0.05 * span
-        self._ax_xlim = (x_min - margin, x_max + margin)
-        self._ax_ylim = (y_min - margin, y_max + margin)
-        ax = self.eitImage.axes
-        ax.set_xlim(*self._ax_xlim)
-        ax.set_ylim(*self._ax_ylim)
-        ax.set_aspect('equal', adjustable='box')
+    # ------------------------------------------------------------------
+    # UI state helpers
+    # ------------------------------------------------------------------
 
-    def _apply_levels_and_cmap(self):
-        cmap_name = self.cmbCmap.currentText()
-        try:
-            self._plotImage_ref.set_cmap(cmap_name)
-        except Exception:
-            print(f"Colormap {cmap_name} not supported.")
-        vmin = float(self.spnVmin.value())
-        vmax = float(self.spnVmax.value())
-        if hasattr(self._plotImage_ref, 'set_clim'):
-            self._plotImage_ref.set_clim(vmin, vmax)
-        self.eitImage.draw()
+    def _update_method_ui(self, method: str):
+        self.btn_bp.setActive(method == 'bp')
+        self.btn_greit.setActive(method == 'greit')
+        self.btn_jac.setActive(method == 'jac')
+        self.algo_card.update_method(method)
+
+    def _update_stats(self):
+        mesh = self.mySolver.mesh_obj
+        n_el  = self.mySolver.n_el
+        n_tri = mesh.element.shape[0] if hasattr(mesh,'element') else 0
+        n_meas= self.mySolver.Vref.size if self.mySolver.Vref.size > 0 else '—'
+        self.stat_el.setValue(str(n_el))
+        self.stat_tri.setValue(str(n_tri))
+        self.stat_meas.setValue(str(n_meas))
+
+    def _on_alpha_changed(self, value):
+        alpha = value / 100.0
+        self.lblAlpha.setText(f"α = {alpha:.2f}")
+        self.mySolver.bp_temporal_alpha = alpha
 
     # ------------------------------------------------------------------
     # Solver switching
@@ -343,22 +741,19 @@ class MainWindow(QMainWindow):
     def update_solver(self, new_method: str):
         if new_method == self.method:
             return
-        try:
-            self.timer.stop()
-        except Exception:
-            pass
+        try: self.timer.stop()
+        except Exception: pass
 
         self.method = new_method
+        self._update_method_ui(new_method)
 
         self.eitImage.axes.clear()
         self.eitMeasurementsSE.axes.clear()
         self.eitMeasurementsDiff.axes.clear()
 
         if self._colorbar_ref is not None:
-            try:
-                self._colorbar_ref.remove()
-            except Exception:
-                pass
+            try: self._colorbar_ref.remove()
+            except Exception: pass
             self._colorbar_ref = None
             self._cbar_ax = None
 
@@ -366,75 +761,74 @@ class MainWindow(QMainWindow):
         self.mySolver.setVref(self.data[0])
 
         self._plotImage_ref = None
-        self._plotSE_ref = None
-        self._plotDiff_ref = None
-        self.frameCounter = 0
+        self._plotSE_ref    = None
+        self._plotDiff_ref  = None
+        self.frameCounter   = 0
 
-        # Rebuild raster cache for new mesh
-        self._nx = self._ny = int(self.spnRes.value())
+        self._nx = self._ny = self.sldRes.value()
         self._raster_cache = None
         self._build_raster_cache()
+        self._update_stats()
 
         self.init_plots(data=self.data, method=self.method)
         self.update_plot(self.data, self.nframes, method=self.method)
         self.timer.start()
 
     # ------------------------------------------------------------------
-    # Plot initialisation
+    # Plot init
     # ------------------------------------------------------------------
 
     def init_plots(self, data, method='greit'):
-        """Initialises all plot objects. Caller must set Vref first."""
         self.frameCounter = 0
         self.dataSE = data[0]
 
-        # Measurement curves
-        self._plotSE_ref = self.eitMeasurementsSE.axes.plot(self.dataSE, lw=1)[0]
+        self._plotSE_ref = self.eitMeasurementsSE.axes.plot(self.dataSE, lw=1, color='#1f77b4')[0]
         diff0 = self.mySolver.se_to_diff(self.dataSE)
-        self._plotDiff_ref = self.eitMeasurementsDiff.axes.plot(diff0, lw=1)[0]
+        self._plotDiff_ref = self.eitMeasurementsDiff.axes.plot(diff0, lw=1, color='#ff7f0e')[0]
+
+        for canvas, ax in [(self.eitMeasurementsSE, self.eitMeasurementsSE.axes),
+                           (self.eitMeasurementsDiff, self.eitMeasurementsDiff.axes)]:
+            ax.set_facecolor('none')
+            ax.tick_params(labelsize=7)
+            canvas.fig.patch.set_alpha(0)
 
         try:
-            se_min, se_max = float(self.data.min()), float(self.data.max())
+            se_min,se_max=float(self.data.min()),float(self.data.max())
         except Exception:
-            se_min, se_max = float(self.dataSE.min()), float(self.dataSE.max())
-        self.eitMeasurementsSE.axes.set_ylim(se_min, se_max)
+            se_min,se_max=float(self.dataSE.min()),float(self.dataSE.max())
+        self.eitMeasurementsSE.axes.set_ylim(se_min,se_max)
 
-        dmin, dmax = float(diff0.min()), float(diff0.max())
-        pad = 0.05 * (dmax - dmin + 1e-9)
-        self.eitMeasurementsDiff.axes.set_ylim(dmin - pad, dmax + pad)
+        dmin,dmax=float(diff0.min()),float(diff0.max())
+        pad=0.05*(dmax-dmin+1e-9)
+        self.eitMeasurementsDiff.axes.set_ylim(dmin-pad,dmax+pad)
 
-        # Build raster cache on first call
         if self._raster_cache is None:
-            self._nx = self._ny = 128
+            self._nx=self._ny=128
             self._build_raster_cache()
 
         self._lock_axes_extent()
-
-        # Run solver for frame 0 so mySolver.image is populated
         self.mySolver.updateImage(data[self.frameCounter], method, plot_ref=None)
 
-        if method == 'greit':
-            img0 = np.real(self.mySolver.image)
-            self._plotImage_ref = self.eitImage.axes.imshow(
-                img0, origin='lower', vmin=-1.0, vmax=1.0,
-                extent=[self._ax_xlim[0], self._ax_xlim[1],
-                        self._ax_ylim[0], self._ax_ylim[1]],
-                interpolation='bilinear'
-            )
-        elif method in ('bp', 'jac'):
-            img0 = self._rasterize_method(method)
-            self._plotImage_ref = self.eitImage.axes.imshow(
-                img0, origin='lower', vmin=-1.0, vmax=1.0,
-                extent=[self._grid_extent[0], self._grid_extent[1],
-                        self._grid_extent[2], self._grid_extent[3]],
-                interpolation='bilinear'
-            )
+        vmin,vmax=float(self.spnVmin.value()),float(self.spnVmax.value())
+        cmap=self.cmbCmap.currentText()
+
+        if method=='greit':
+            img0=np.real(self.mySolver.image)
+            self._plotImage_ref=self.eitImage.axes.imshow(
+                img0,origin='lower',vmin=vmin,vmax=vmax,cmap=cmap,
+                extent=[self._ax_xlim[0],self._ax_xlim[1],
+                        self._ax_ylim[0],self._ax_ylim[1]],
+                interpolation='bilinear')
+        elif method in ('bp','jac'):
+            img0=self._rasterize_method(method)
+            self._plotImage_ref=self.eitImage.axes.imshow(
+                img0,origin='lower',vmin=vmin,vmax=vmax,cmap=cmap,
+                extent=[self._grid_extent[0],self._grid_extent[1],
+                        self._grid_extent[2],self._grid_extent[3]],
+                interpolation='bilinear')
 
         self._attach_or_update_colorbar(self._plotImage_ref)
-
-        self.eitImage.axes.set_title(f"Frame {self.frameCounter}")
-        self.eitMeasurementsSE.axes.set_title(f"Single-Ended Measurements ({self.frameCounter})")
-        self.eitMeasurementsDiff.axes.set_title(f"Differential Measurements ({self.frameCounter})")
+        self._draw_electrode_overlay()
 
         self.eitImage.draw()
         self.eitMeasurementsSE.draw()
@@ -444,32 +838,32 @@ class MainWindow(QMainWindow):
     # Per-frame update
     # ------------------------------------------------------------------
 
+    def _on_timer(self):
+        self.update_plot(self.data, self.nframes, method=self.method)
+
     def update_plot(self, data, nframes, method):
         if not self.isVisible():
             return
 
-        self.dataSE = data[self.frameCounter]
+        self.dataSE   = data[self.frameCounter]
         self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
 
         self._plotSE_ref.set_ydata(self.dataSE)
         self._plotDiff_ref.set_ydata(self.dataDiff)
 
-        # Run solver — normalization + smoothing happen inside updateImage
         self.mySolver.updateImage(self.dataSE, method, plot_ref=None)
 
-        if method == 'greit':
+        if method=='greit':
             self._plotImage_ref.set_data(np.real(self.mySolver.image))
-        elif method in ('bp', 'jac'):
-            img = self._rasterize_method(method)
+        elif method in ('bp','jac'):
+            img=self._rasterize_method(method)
             self._plotImage_ref.set_data(img)
-            self._plotImage_ref.set_clim(-1.0, 1.0)
+            self._plotImage_ref.set_clim(-1.0,1.0)
 
         self.eitImage.axes.set_xlim(*self._ax_xlim)
         self.eitImage.axes.set_ylim(*self._ax_ylim)
 
-        self.eitImage.axes.set_title(f"Frame {self.frameCounter}")
-        self.eitMeasurementsSE.axes.set_title(f"Single-Ended Measurements ({self.frameCounter})")
-        self.eitMeasurementsDiff.axes.set_title(f"Differential Measurements ({self.frameCounter})")
+        self.stat_frame.setValue(str(self.frameCounter))
 
         self.eitImage.draw()
         self.eitMeasurementsSE.draw()
@@ -481,114 +875,119 @@ class MainWindow(QMainWindow):
         if self._last_t is not None:
             dt = t - self._last_t
             if dt > 0:
-                inst_fps = 1.0 / dt
-                self._fps_est = self._fps_alpha * self._fps_est + (1 - self._fps_alpha) * inst_fps
+                inst = 1.0 / dt
+                self._fps_est = self._fps_alpha*self._fps_est + (1-self._fps_alpha)*inst
                 try:
                     self.setWindowTitle(
-                        f"EITduino — {self.method.upper()}  |  FPS: {self._fps_est:.1f}"
+                        f"EITduino  —  {self.method.upper()}  |  FPS: {self._fps_est:.1f}  |  Frame {self.frameCounter}"
                     )
                 except Exception:
                     pass
         self._last_t = t
 
     # ------------------------------------------------------------------
-    # UI helpers
+    # Controls
     # ------------------------------------------------------------------
 
-    def add_switch_button(self):
-        btn_switch = QPushButton("Switch to PyQtGraph")
-        btn_switch.clicked.connect(self.switch_to_pyqtgraph)
-        self.layout_gui.addWidget(btn_switch, 1, 0)
-
-    def switch_to_pyqtgraph(self):
+    def _apply_levels_and_cmap(self):
+        cmap=self.cmbCmap.currentText()
+        vmin=float(self.spnVmin.value())
+        vmax=float(self.spnVmax.value())
         try:
-            self._dispose_matplotlib()
+            self._plotImage_ref.set_cmap(cmap)
+            self._plotImage_ref.set_clim(vmin,vmax)
         except Exception:
             pass
-        def _launch():
-            from pyqtgraph_interface import MainWindowPG
-            app = QApplication.instance()
-            new_win = MainWindowPG(self.data, self.nframes, method=self.method)
-            app.setProperty('active_window', new_win)
-            new_win.show()
-        QTimer.singleShot(0, _launch)
-        self.close()
+        self.eitImage.draw()
 
     def _rebuild_mesh_from_controls(self):
-        n_el = self.mySolver.n_el
-        res = int(self.spnRes.value())
-        h0_trials = [0.1 * (0.8 ** k) for k in range(6)]
-        success = False
-        last_err = None
-
+        res = self.sldRes.value()
+        h0_trials=[0.1*(0.8**k) for k in range(6)]
+        success=False; last_err=None
         for h0_try in h0_trials:
             try:
                 self.mySolver.recreate_mesh(
-                    n_el=n_el, fd=self.mySolver.fd, method=self.method, h0=h0_try
-                )
+                    n_el=self.mySolver.n_el,fd=self.mySolver.fd,
+                    method=self.method,h0=h0_try)
                 self.mySolver.setVref(self.data[0])
                 with warnings.catch_warnings():
                     warnings.simplefilter('error')
-                    self.mySolver.setframes(self.data[0], self.method)
-                success = True
-                break
+                    self.mySolver.setframes(self.data[0],self.method)
+                success=True; break
             except Exception as e:
-                last_err = e
-                continue
+                last_err=e; continue
 
         if success:
-            self._nx = self._ny = res
-            self._raster_cache = None
+            self._nx=self._ny=res
+            self._raster_cache=None
             self._build_raster_cache()
             self.eitImage.axes.clear()
+            self.eitMeasurementsSE.axes.clear()
+            self.eitMeasurementsDiff.axes.clear()
             if self._colorbar_ref is not None:
-                try:
-                    self._colorbar_ref.remove()
-                except Exception:
-                    pass
-                self._colorbar_ref = None
-                self._cbar_ax = None
-            self._plotImage_ref = None
-            self._plotSE_ref = None
-            self._plotDiff_ref = None
-            self.frameCounter = 0
-            self.init_plots(data=self.data, method=self.method)
-            self.update_plot(self.data, self.nframes, method=self.method)
+                try: self._colorbar_ref.remove()
+                except Exception: pass
+                self._colorbar_ref=None; self._cbar_ax=None
+            self._plotImage_ref=None
+            self._plotSE_ref=None
+            self._plotDiff_ref=None
+            self.frameCounter=0
+            self._update_stats()
+            self.init_plots(data=self.data,method=self.method)
+            self.update_plot(self.data,self.nframes,method=self.method)
         else:
-            QMessageBox.warning(self, "Rebuild mesh", f"Failed to rebuild mesh.\nDetail: {last_err}")
+            QMessageBox.warning(self,"Reconstruir malha",
+                                f"Falha ao reconstruir.\nDetalhe: {last_err}")
+
+    # ------------------------------------------------------------------
+    # Comparison window (stub for Phase 2)
+    # ------------------------------------------------------------------
+
+    def _open_comparison(self):
+        QMessageBox.information(self, "Comparação",
+            "A janela de comparação de métodos será implementada na Fase 2.")
+
+    # ------------------------------------------------------------------
+    # Switch interface
+    # ------------------------------------------------------------------
+
+    def switch_to_pyqtgraph(self):
+        try: self._dispose_matplotlib()
+        except Exception: pass
+        def _launch():
+            from pyqtgraph_interface import MainWindowPG
+            app=QApplication.instance()
+            new_win=MainWindowPG(self.data,self.nframes,method=self.method)
+            app.setProperty('active_window',new_win)
+            new_win.show()
+        QTimer.singleShot(0,_launch)
+        self.close()
+
+    # ------------------------------------------------------------------
+    # Cleanup
+    # ------------------------------------------------------------------
 
     def _dispose_matplotlib(self):
         try:
             self.timer.stop()
             self.timer.timeout.disconnect(self._on_timer)
-        except Exception:
-            pass
+        except Exception: pass
         if self._colorbar_ref is not None:
-            try:
-                self._colorbar_ref.remove()
-            except Exception:
-                pass
-            self._colorbar_ref = None
-            self._cbar_ax = None
-        for canvas in [self.eitImage, self.eitMeasurementsSE, self.eitMeasurementsDiff]:
-            try:
-                canvas.axes.cla(); canvas.draw()
-            except Exception:
-                pass
-            try:
-                canvas.setParent(None); canvas.deleteLater()
-            except Exception:
-                pass
+            try: self._colorbar_ref.remove()
+            except Exception: pass
+            self._colorbar_ref=None; self._cbar_ax=None
+        for canvas in [self.eitImage,self.eitMeasurementsSE,self.eitMeasurementsDiff]:
+            try: canvas.axes.cla(); canvas.draw()
+            except Exception: pass
+            try: canvas.setParent(None); canvas.deleteLater()
+            except Exception: pass
         try:
             plt.close(self.eitImage.fig)
             plt.close(self.eitMeasurementsSE.fig)
             plt.close(self.eitMeasurementsDiff.fig)
-        except Exception:
-            pass
+        except Exception: pass
 
     def closeEvent(self, event):
-        try:
-            self._dispose_matplotlib()
-        except Exception:
-            pass
+        try: self._dispose_matplotlib()
+        except Exception: pass
         super().closeEvent(event)
