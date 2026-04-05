@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  4 APR 2026 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  5 APR 2026 18:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2060,6 +2060,9 @@ Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 12.
 
 
+LaTeX Warning: Label `subsec:metodos_reconstrucao_imagens' multiply defined.
+
+
 LaTeX Warning: Label `fig:one' multiply defined.
 
 )
@@ -2199,7 +2202,7 @@ Package biblatex Info: ... file 'raiz.bbl' found.
  (raiz.bbl)
 Package biblatex Info: Reference section=0 on input line 11.
 Package biblatex Info: Reference segment=0 on input line 11.
-<pictures/logo_ufabc.png, id=106, 1583.9175pt x 1029.8475pt>
+<pictures/logo_ufabc.png, id=118, 1583.9175pt x 1029.8475pt>
 File: pictures/logo_ufabc.png Graphic file (type png)
 <use pictures/logo_ufabc.png>
 Package pdftex.def Info: pictures/logo_ufabc.png  used on input line 13.
@@ -2275,36 +2278,36 @@ Cap\'{\i }tulo 2.
 Cap\'{\i }tulo 3.
 [7
 
-{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) (chapter/resultados.tex [8]
+] [8{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [9] [10] [11] [12] [13]) (chapter/resultados.tex [14]
 Cap\'{\i }tulo 4.
-<pictures/Circle_Mesh.png, id=256, 440.847pt x 658.3797pt>
+<pictures/Circle_Mesh.png, id=328, 440.847pt x 658.3797pt>
 File: pictures/Circle_Mesh.png Graphic file (type png)
 <use pictures/Circle_Mesh.png>
 Package pdftex.def Info: pictures/Circle_Mesh.png  used on input line 35.
 (pdftex.def)             Requested size: 330.63443pt x 493.78355pt.
-[9
+[15
 
 ]
-<pictures/Ellipse_Mesh.png, id=262, 440.847pt x 658.3797pt>
+<pictures/Ellipse_Mesh.png, id=335, 440.847pt x 658.3797pt>
 File: pictures/Ellipse_Mesh.png Graphic file (type png)
 <use pictures/Ellipse_Mesh.png>
 Package pdftex.def Info: pictures/Ellipse_Mesh.png  used on input line 46.
 (pdftex.def)             Requested size: 330.63443pt x 493.78355pt.
- [10 <./pictures/Circle_Mesh.png>]
-<pictures/Interface_Config.PNG, id=270, 767.2665pt x 473.3685pt>
+ [16 <./pictures/Circle_Mesh.png>]
+<pictures/Interface_Config.PNG, id=343, 767.2665pt x 473.3685pt>
 File: pictures/Interface_Config.PNG Graphic file (type png)
 <use pictures/Interface_Config.PNG>
 Package pdftex.def Info: pictures/Interface_Config.PNG  used on input line 57.
 (pdftex.def)             Requested size: 306.90115pt x 189.34404pt.
- [11 <./pictures/Ellipse_Mesh.png>]
-<pictures/PyQt_Interface_3.PNG, id=277, 768.471pt x 471.56175pt>
+ [17 <./pictures/Ellipse_Mesh.png>]
+<pictures/PyQt_Interface_3.PNG, id=350, 768.471pt x 471.56175pt>
 File: pictures/PyQt_Interface_3.PNG Graphic file (type png)
 <use pictures/PyQt_Interface_3.PNG>
 Package pdftex.def Info: pictures/PyQt_Interface_3.PNG  used on input line 66.
 (pdftex.def)             Requested size: 307.38295pt x 188.62135pt.
-) (chapter/conclusao.tex [12 <./pictures/Interface_Config.PNG> <./pictures/PyQt_Interface_3.PNG>]
+) (chapter/conclusao.tex [18 <./pictures/Interface_Config.PNG> <./pictures/PyQt_Interface_3.PNG>]
 Cap\'{\i }tulo 5.
-) [13
+) [19
 
 ]
 Overfull \hbox (8.51068pt too wide) in paragraph at lines 29--29
@@ -2326,19 +2329,19 @@ Overfull \hbox (6.50226pt too wide) in paragraph at lines 29--29
 \T1/aett/m/n/12 C3 % A7 % C3 % A3o % 20entre % 20setores % 20p % C3 % BAblico % 20e % 20privado . %20Dispon %
  []
 
-[14
+[20
 
 ]
 Overfull \hbox (9.7096pt too wide) in paragraph at lines 29--29
 []\T1/aer/m/n/12 Riverbank Com-pu-ting, \T1/aer/m/it/12 What is PyQt? \T1/aer/m/n/12 Of-fi-cial do-cu-men-ta-tion, 2026. en-de-reço: []$\T1/aett/m/n/12 https :
  []
 
-[15]
+[21]
 Overfull \hbox (3.26218pt too wide) in paragraph at lines 29--29
 \T1/aer/m/it/12 OF THE BACK-PROJECTION AL-GO-RITHM AC-COR-DING TO SAN-TOSA AND
  []
 
-[16] [17] (raiz.aux)
+[22] [23] (raiz.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2351,23 +2354,23 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `raiz.out' has not changed.
-(rerunfilecheck)             Checksum: 28B04BDA2D4CA472BA54025B30C955C9;4492.
+(rerunfilecheck)             Checksum: 432C992941797EE1A2B0EC934374566E;4862.
 Package logreq Info: Writing requests to 'raiz.run.xml'.
 \openout1 = `raiz.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 79547 strings out of 467867
- 1963142 string characters out of 5417367
- 3285181 words of memory out of 5000000
- 107229 multiletter control sequences out of 15000+600000
- 671321 words of font info for 108 fonts, out of 8000000 for 9000
+ 79590 strings out of 467867
+ 1964068 string characters out of 5417367
+ 3287035 words of memory out of 5000000
+ 107255 multiletter control sequences out of 15000+600000
+ 674322 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,11n,111p,1252b,2214s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\4GAMERS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb>
-Output written on raiz.pdf (20 pages, 495115 bytes).
+ <C:\Users\4GAMERS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on raiz.pdf (26 pages, 546035 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,48 +2,118 @@
 
 \chapter{Metodologia}
 
-A metodologia deste trabalho divide-se nas seguintes etapas: implementação dos métodos de reconstrução, avaliação comparativa entre métodos, e análise do impacto da discretização da malha na qualidade da imagem e desempenho computacional.
-Como parte do processo de aprendizado da biblioteca pyEIT, foi desenvolvido um tutorial em Google Colab que explora passo a passo a construção de malhas, simulação de anomalias e reconstrução de imagens sintéticas. Esse material, embora não faça parte da análise principal deste trabalho, está disponível no Apêndice A como recurso complementar.
+Este capítulo descreve a fundamentação física, matemática e computacional que sustenta o desenvolvimento da aplicação proposta. Inicialmente, são apresentados os princípios de funcionamento da Tomografia por Impedância Elétrica, incluindo a injeção de corrente, a medição de tensões, a formulação dos problemas direto e inverso e as razões que tornam a reconstrução de imagens em TIE um problema mal posto. Em seguida, são discutidos os três métodos de reconstrução implementados neste trabalho --- Back-Projection (BP), Jacobiano (JAC) e GREIT --- com ênfase em suas diferenças conceituais e implicações sobre as imagens obtidas. A última parte do capítulo descreve a implementação da interface desenvolvida, abordando a arquitetura da aplicação, o fluxo de dados, as estratégias de visualização adotadas e as principais decisões de projeto relacionadas à reconstrução e à interação com o usuário.
 
 \section{Preparação dos Dados}
-Os dados utilizados neste trabalho foram obtidos pelo professor Erick Leon em um experimento onde uma haste foi imersa em uma bacia com líquido envolta por eletrodos na borda do recipiente, simulando uma anomalia. Os sinais foram então registrados pelos eletrodos e correspondem a amplitudes de resposta do sistema de acordo com a variação de corrente medidas. Esses dados serão utilizados como base para as reconstruções de imagem, empregando os diferentes métodos de reconstrução disponíveis no framework pyEIT.
+\label{sec:preparacao_dados}
 
-\section{Avaliação do Impacto da Discretização da Malha}
-Após a identificação do método de reconstrução com melhor desempenho na etapa anterior, será avaliada a influência da forma e do tamanho da malha na qualidade da imagem gerada e no desempenho computacional.
+Os dados utilizados neste trabalho foram obtidos pelo professor Erick Leon em um experimento de Tomografia por Impedância Elétrica conduzido em ambiente controlado. O arranjo experimental consistiu em uma bacia preenchida com água, representando um meio condutivo homogêneo, com oito eletrodos igualmente espaçados ao longo da borda do recipiente. Esses eletrodos foram utilizados tanto para a injeção de corrente elétrica quanto para a medição das tensões resultantes na superfície do domínio.
 
-\subsection{Configurações de Malha}
-Serão testadas três geometrias de malha: circular, elíptica e retangular. Para cada uma, serão avaliadas três resoluções distintas, definidas pelo parâmetro de discretização \texttt{h0}:
+Para simular a presença de uma anomalia interna, uma haste sólida foi inserida no interior da bacia, perturbando localmente a distribuição de condutividade do meio. A posição da haste variou ao longo do experimento, produzindo alterações sucessivas no padrão de tensões medido pelos eletrodos. As aquisições foram realizadas de forma sequencial, resultando em um conjunto de 119 quadros (\textit{frames}) registrados ao longo do tempo.
 
-\begin{itemize}
-\item Malha fina: \( h_0 = 0.05 \);
-\item Malha média: \( h_0 = 0.1 \);
-\item Malha grossa: \( h_0 = 0.2 \).
-\end{itemize}
+Os sinais adquiridos correspondem a medições de tensão no formato \textit{single-ended}, ou seja, cada valor registrado representa a diferença de potencial entre um eletrodo de medição e um eletrodo de referência comum \cite{AdlerHolder2021}. Esses valores foram armazenados como tensões medidas para cada padrão de injeção de corrente aplicado, constituindo a base de dados utilizada nas reconstruções de imagem apresentadas neste trabalho.
 
-\subsection{Critérios de Avaliação}
+Esse conjunto de dados foi empregado diretamente como entrada para os métodos de reconstrução implementados no framework pyEIT, sem a realização de simulações numéricas adicionais. Dessa forma, todas as imagens reconstruídas e visualizadas na interface desenvolvida neste projeto foram obtidas a partir de medições experimentais reais, permitindo explorar o comportamento qualitativo dos diferentes métodos de reconstrução frente a perturbações físicas do meio condutivo. Os dados seguem o protocolo de medição descrito na Seção~\ref{sec:fundamentos_tie}.
 
-\begin{itemize}
-\item \textbf{Consistência Visual:} Avaliação qualitativa da forma da anomalia reconstruída em diferentes configurações de malha.
-\item \textbf{Desempenho Computacional:} Medição do tempo de execução e memória utilizada em cada configuração.
-\end{itemize}
+\section{Fundamentos físicos e formulação matemática da TIE}
+\label{sec:fundamentos_tie}
 
-\subsection{Análise dos Resultados}
-Os resultados serão analisados por meio de gráficos e tabelas comparativas. Serão utilizadas análises descritivas simples, como média e desvio padrão, e gráficos para facilitar a visualização das tendências entre as configurações. Isto permite avaliar quais configurações apresentam melhor equilíbrio entre desempenho e qualidade visual da reconstrução.
+A Tomografia por Impedância Elétrica (TIE) baseia-se na aplicação de correntes elétricas alternadas de pequena amplitude através de eletrodos posicionados na fronteira de um domínio (ou região de interesse) condutivo e na medição das tensões elétricas resultantes nos demais eletrodos. No contexto adotado neste trabalho, considera-se uma seção transversal do domínio, com os eletrodos distribuídos em anel ao longo de sua fronteira. A cada etapa da aquisição, um par de eletrodos é utilizado para a injeção de corrente, enquanto as tensões são medidas nos pares restantes segundo um protocolo previamente definido. Em seguida, o par de injeção é alterado, e o processo é repetido até que todos os padrões de excitação previstos sejam completados. Um ciclo completo dessas excitações corresponde a um \textit{frame} de aquisição.
 
-\section{Implementação dos Métodos de Reconstrução}
-Para a avaliação dos métodos Back-Projection (BP), Jacobiano (Jac) e GREIT, foi desenvolvida a classe \texttt{EITsolver}, que permite aplicar cada método de forma modular, a partir de parâmetros definidos pela interface gráfica desenvolvida em PyQt. O código carrega os dados medidos, configura os parâmetros de entrada, seleciona o método de reconstrução desejado e realiza o processamento das imagens com base nos dados medidos.
+Para esta aplicação, o protocolo foi configurado com oito eletrodos e padrão de excitação adjacente, utilizando a estratégia \texttt{rotate\_meas} disponibilizada no ecossistema do pyEIT \cite{pyEITReadme}. Esse procedimento gera, para cada \textit{frame}, um conjunto finito de medições elétricas de fronteira, em número muito inferior ao de incógnitas associadas ao domínio discretizado. Essa desproporção entre dados medidos e variáveis internas já antecipa uma das principais dificuldades da TIE: a reconstrução da imagem interna a partir das medições de fronteira é um problema matematicamente mal posto.
 
-\section{Avaliação Comparativa entre Métodos de Reconstrução}
-Com os três métodos implementados, será feita uma análise comparativa de acordo com os seguintes critérios:
+Embora o nome da técnica faça referência à impedância, os métodos utilizados neste trabalho reconstruem a distribuição de condutividade elétrica, denotada por \(\sigma\). A terminologia ``impedância'' decorre do uso de corrente alternada no processo de medição, mas a formulação dos algoritmos de reconstrução empregados é expressa em termos de condutividade. Essa distinção é importante para manter consistência com a representação adotada na aplicação, na qual as imagens reconstruídas são interpretadas como mapas de variação de condutividade, \(\Delta \sigma\).
 
-\begin{itemize}
-\item \textbf{Localização Relativa da Anomalia:} Será avaliada a consistência da posição reconstruída entre os diferentes métodos para os diferentes tamanhos de malhas definidos previamente. Espera-se que métodos mais robustos apresentem localizações e áreas com menores variações.
+\subsection{Problema direto}
+\label{subsec:problema_direto}
 
-\item \textbf{Tamanho Relativo da Anomalia:} A área da anomalia reconstruída será estimada com base no limiar de intensidade da imagem. Serão comparadas as dimensões e formatos resultantes entre os métodos.
+O problema direto da TIE consiste em determinar quais tensões seriam medidas nos eletrodos quando a distribuição de condutividade da região de interesse é conhecida. Em regime quase-estático e sob hipóteses usuais de condução elétrica em meios biológicos, o potencial elétrico \(u\) no interior do domínio \(\Omega\) é descrito pela equação
 
-\item \textbf{Desempenho Computacional:} O tempo de execução e o consumo de memória de cada método serão medidos com auxílio das bibliotecas \texttt{time} e \texttt{memory\_profiler}. Os testes serão repetidos diversas vezes para garantir consistência nos resultados.
+\begin{equation}
+\nabla \cdot (\sigma \nabla u) = 0 \quad \text{em } \Omega ,
+\end{equation}
 
-\end{itemize}
+em que \(\sigma\) representa a distribuição espacial de condutividade e \(u\) o potencial elétrico. As condições de contorno associadas a essa equação modelam a injeção de corrente e a medição de tensões nos eletrodos. Em formulações mais realistas, essa interação é frequentemente representada pelo modelo completo de eletrodos (\textit{Complete Electrode Model} -- CEM), que incorpora explicitamente a interface entre os eletrodos e o meio condutivo \cite{Hyvonen2004CEM}.
 
-Os dados coletados serão organizados em tabelas e representados graficamente (gráficos de barras e linhas), permitindo a análise comparativa direta entre os métodos.
+No presente trabalho, o problema direto foi resolvido numericamente por meio do Método dos Elementos Finitos (FEM), utilizando a implementação disponível no framework pyEIT \cite{pyEITReadme}. Para isso, o domínio foi representado por uma malha triangular, que constitui a discretização numérica da região de interesse. Essa malha é a mesma estrutura posteriormente utilizada no problema inverso, o que faz com que sua configuração influencie diretamente a reconstrução final. Em termos operacionais, os parâmetros de malha ajustáveis na interface desenvolvida, como geometria e densidade, afetam não apenas a visualização, mas também a forma como o problema direto é resolvido internamente.
+
+\subsection{Problema inverso e caráter mal posto}
+\label{subsec:problema_inverso}
+
+O problema inverso da TIE consiste em estimar a distribuição de condutividade no interior do domínio a partir das tensões medidas nos eletrodos. Diferentemente do problema direto, essa etapa não é, em geral, bem posta no sentido de Hadamard. Em particular, a solução pode não ser única, pode não existir para dados ruidosos e, sobretudo, pode não depender de forma estável das medições. Em consequência, pequenas perturbações nos dados de entrada podem produzir grandes variações na imagem reconstruída \cite{Lionheart2003EITRA}.
+
+Esse comportamento está diretamente relacionado à natureza limitada das medições de fronteira. O número de medições independentes obtidas em cada \textit{frame} é muito menor do que o número de incógnitas associado à discretização espacial do domínio, o que faz com que a reconstrução dependa de restrições adicionais, aproximações ou estratégias de regularização para produzir soluções estáveis e interpretáveis. Esse é um dos principais motivos pelos quais diferentes algoritmos de reconstrução podem gerar imagens com características bastante distintas a partir do mesmo conjunto de dados experimentais.
+
+\subsection{Reconstrução por diferença temporal}
+\label{subsec:diferenca_temporal}
+
+A interface desenvolvida utilizou reconstrução por diferença temporal (\textit{time-difference EIT}), em vez de reconstrução absoluta. Nessa abordagem, não se busca estimar diretamente a distribuição absoluta de condutividade do domínio, mas sim a variação de condutividade em relação a um estado de referência. Em outras palavras, cada imagem reconstruída representa \(\Delta \sigma\), isto é, a mudança de condutividade entre um \textit{frame} de medição e um \textit{frame} de referência previamente definido \cite{Putensen2019}.
+
+No sistema implementado, o primeiro \textit{frame} do conjunto de dados foi utilizado como referência, sendo armazenado internamente antes do início da reconstrução dos demais quadros. No código desenvolvido, essa etapa é realizada pelo método \texttt{setVref} da classe \texttt{EITsolver}, que armazena as medições de referência antes do início da reconstrução sequencial dos demais \textit{frames}. Essa abordagem é compatível com aplicações práticas da TIE, nas quais a reconstrução por diferença temporal tende a ser mais robusta a imperfeições do modelo, incertezas geométricas e variações no contato eletrodo-superfície \cite{Putensen2019}. Consequentemente, as imagens exibidas pela interface representam mudanças relativas de condutividade ao longo do tempo, e não a condutividade absoluta do meio.
+
+\subsection{Métodos de reconstrução de imagens}
+\label{subsec:metodos_reconstrucao_imagens}
+
+Foram incorporados três métodos de reconstrução presentes no ecossistema do pyEIT: Back-Projection (BP), Jacobiano (JAC) e GREIT. A documentação do framework descreve esses algoritmos como parte do conjunto principal de métodos inversos disponibilizados pela biblioteca, juntamente com o solver direto baseado em elementos finitos \cite{pyEITReadme}. Embora todos operem sobre o mesmo conjunto de medições elétricas de fronteira, cada um aborda o problema inverso de maneira distinta, o que resulta em diferenças de contraste, definição espacial, estabilidade temporal e custo computacional.
+
+\subsubsection{Back-Projection (BP)}
+\label{subsubsec:bp}
+
+O método Back-Projection constitui a abordagem conceitualmente mais simples entre as empregadas neste trabalho. Em termos gerais, cada diferença de tensão medida é retroprojetada sobre o domínio segundo a região de sensibilidade associada ao respectivo par de medição, e a imagem final é obtida pela superposição dessas contribuições. Essas regiões de sensibilidade são definidas pela matriz Jacobiana, que relaciona cada medição de tensão às variações de condutividade em cada elemento da malha, ainda que o BP não realize a inversão explícita dessa matriz. No ecossistema do pyEIT, o solver correspondente é descrito como um método de \textit{back projection} e \textit{filtered back projection} \cite{pyEITReadme}.
+
+Do ponto de vista computacional, trata-se de um método leve, com baixa complexidade e sem a necessidade de resolver iterativamente um sistema inverso regularizado. Essa simplicidade torna o BP atrativo quando se deseja reconstrução rápida ou atualização imediata das imagens. Por outro lado, trabalhos dedicados a esse tipo de abordagem destacam que o algoritmo clássico de retroprojeção em TIE apresenta baixa resolução espacial e sensibilidade não uniforme ao longo do domínio, resultando em imagens com maior borramento e presença de artefatos \cite{BP}.
+
+Nos resultados obtidos neste trabalho, o BP permitiu localizar qualitativamente a posição da haste no interior do meio, mas com baixa definição de contorno e presença de regiões difusas que extrapolavam a área fisicamente perturbada. Também foram observados artefatos de sinal oposto em regiões sem correspondência física aparente, o que é coerente com a maior sensibilidade do método ao ruído e à ausência de mecanismos explícitos de regularização.
+
+Para atenuar oscilações entre \textit{frames} consecutivos, foi implementado especificamente para esse método um parâmetro de suavização temporal \(\alpha\), aplicado segundo a expressão
+
+\begin{equation}
+\hat{\sigma}_k = \alpha \cdot \hat{\sigma}_{k-1} + (1 - \alpha)\cdot \sigma_k ,
+\end{equation}
+
+em que \(\hat{\sigma}_k\) representa a imagem suavizada no quadro \(k\), \(\hat{\sigma}_{k-1}\) a imagem suavizada do quadro anterior e \(\sigma_k\) a reconstrução bruta obtida no quadro corrente. Quando \(\alpha = 0\), não há suavização temporal e a imagem exibida corresponde diretamente à reconstrução bruta; à medida que \(\alpha\) se aproxima de 1, a imagem passa a variar mais lentamente no tempo, reduzindo a cintilação visual, mas também aumentando a inércia da resposta.
+
+\subsubsection{Jacobiano (JAC)}
+\label{subsubsec:jac}
+
+O método Jacobiano aborda o problema inverso a partir da matriz de sensibilidade \(J\), cujos elementos relacionam variações locais de condutividade às variações observadas nas tensões medidas. Nessa formulação, o vetor de diferenças de tensão \(\Delta v\) é aproximado por uma relação linear com a variação de condutividade \(\Delta \sigma\), permitindo escrever a reconstrução como um problema inverso regularizado. No ecossistema do pyEIT, esse solver é descrito como parte da família tradicional de métodos de Gauss--Newton, com suporte a diferentes estratégias internas de regularização, incluindo \texttt{lm} e \texttt{kotre} \cite{pyEITReadme}.
+
+Em sua forma linearizada, a solução pode ser expressa como
+
+\begin{equation}
+\Delta \sigma = (J^T J + \lambda R)^{-1} J^T \Delta v ,
+\end{equation}
+
+em que \(\lambda\) representa o parâmetro de regularização e \(R\) a matriz regularizadora. O parâmetro \(\lambda\) controla o compromisso entre aderência aos dados medidos e estabilidade da solução: valores maiores tendem a produzir imagens mais suaves e menos sensíveis a ruído, enquanto valores menores favorecem maior contraste, mas também maior instabilidade. Na implementação utilizada neste trabalho, a opção \texttt{kotre} aplica uma regularização ponderada pela distribuição de sensibilidade da malha, enquanto a opção \texttt{lm} utiliza uma forma mais uniforme baseada nos termos diagonais de \(J^T J\) \cite{pyEITReadme}.
+
+Em comparação com o BP, o método Jacobiano depende explicitamente de um modelo linearizado do problema inverso e da escolha de parâmetros de regularização. Esse tipo de formulação é característico dos métodos regulares de reconstrução em TIE, nos quais a estabilidade da solução depende diretamente das restrições impostas ao problema mal posto \cite{AdlerHolder2021}. Como consequência, pequenas mudanças nos parâmetros podem alterar de forma perceptível o aspecto final da imagem reconstruída.
+
+Nos dados experimentais utilizados neste trabalho, o JAC produziu imagens com maior definição espacial do que o BP, com contraste mais localizado e regiões de variação de condutividade visualmente mais nítidas. Ainda assim, também apresentou sensibilidade perceptível à escolha da regularização, o que se refletiu em diferenças marcantes entre \textit{frames} subsequentes em algumas sequências analisadas. Em especial, os padrões bipolares mais intensos observados em determinados \textit{frames} e a maior instabilidade entre algumas reconstruções consecutivas são compatíveis com a própria natureza do método, e não com uma limitação da interface desenvolvida.
+
+\subsubsection{GREIT}
+\label{subsubsec:greit}
+
+O método GREIT (\textit{Graz consensus Reconstruction algorithm for Electrical Impedance Tomography}) adota uma estratégia distinta das duas anteriores. Em vez de resolver diretamente o problema inverso a cada novo conjunto de medições, o método constrói previamente uma matriz de reconstrução linear durante a etapa de configuração. A partir dessa matriz, cada nova imagem é obtida por uma operação linear direta sobre o vetor de diferenças de tensão \(\Delta v\), o que torna a reconstrução computacionalmente eficiente após a fase inicial de preparação \cite{GREIT2009}.
+
+A formulação original do GREIT foi proposta como uma abordagem unificada para reconstrução bidimensional em TIE pulmonar, estruturada a partir de modelos por elementos finitos, figuras de mérito padronizadas e um procedimento sistemático para obtenção de uma matriz de reconstrução otimizada. Entre essas figuras de mérito, destacam-se a resposta de amplitude uniforme, o erro de posição reduzido, a limitação de artefatos de \textit{ringing}, a resolução uniforme e a deformação de forma controlada \cite{GREIT2009}. No ecossistema do pyEIT, o GREIT é descrito como um algoritmo baseado em filtragem espacial estatística e em uma matriz de reconstrução de imagens, com saída em grade regular bidimensional \cite{pyEITReadme}.
+
+Uma consequência prática dessa formulação é que, após a etapa de configuração, o processo de reconstrução se torna muito rápido, pois se reduz essencialmente a uma multiplicação matricial. Em contrapartida, o método passa a depender da estrutura previamente definida para essa matriz de reconstrução, tornando-se menos flexível do que abordagens baseadas diretamente na Jacobiana quando se deseja adaptar a formulação a diferentes hipóteses do problema. Além disso, como a saída do GREIT é produzida diretamente em uma grade regular, e não sobre a malha triangular do domínio, a visualização final pode apresentar limites retangulares característicos da grade utilizada \cite{pyEITReadme}.
+
+Nos resultados obtidos na interface, o GREIT apresentou imagens visualmente mais suaves e estáveis entre \textit{frames} consecutivos, com localização consistente da haste em relação aos demais métodos. Embora o contraste visual tenha sido, em alguns casos, menor do que no JAC, a maior uniformidade espacial e temporal facilitou a leitura qualitativa do deslocamento da anomalia. A presença visível de uma borda retangular na saída não foi interpretada como artefato físico do experimento, mas como consequência direta do formato de grade regular adotado internamente pelo método.
+
+De modo geral, os três métodos implementados localizaram a haste na mesma região do domínio ao longo das reconstruções, o que sugere consistência qualitativa na informação espacial extraída das medições, mesmo diante do caráter mal posto do problema inverso. As diferenças entre eles manifestaram-se principalmente na definição dos contornos, no contraste, na estabilidade entre \textit{frames} subsequentes e no custo computacional associado a cada abordagem. Tornar essas diferenças visíveis e exploráveis foi precisamente um dos objetivos centrais da interface desenvolvida neste trabalho. A partir dessas observações, a próxima seção descreve como essa comparação foi incorporada à arquitetura da aplicação e às decisões de implementação adotadas.
+
+\section{Arquitetura da aplicação}
+\label{sec:arquitetura_aplicacao}
+
+A organização seguiu uma estrutura inspirada no padrão MVC (\textit{Model--View--Controller}) \cite{Reenskaug1979}, com separação entre a camada de reconstrução numérica, a camada de apresentação e o ponto de entrada do sistema. O arquivo \texttt{main.py} atua como ponto inicial da aplicação, sendo responsável pelo carregamento dos dados experimentais e pela seleção do backend de visualização a ser utilizado. A camada de reconstrução é centralizada no arquivo \texttt{pyeit\_controller.py}, por meio da classe \texttt{EITsolver}, que reúne toda a lógica relacionada à criação da malha, definição do protocolo de medição, armazenamento do quadro de referência, solução do problema inverso e pós-processamento das imagens. Por fim, as interfaces gráficas são implementadas nos arquivos \texttt{pyqt\_interface.py} e \texttt{pyqtgraph\_interface.py}, que compõem a camada de visualização.
+
+Essa organização foi adotada para desacoplar explicitamente a lógica numérica da interface gráfica. Em particular, nenhuma das interfaces acessa diretamente as rotinas internas do pyEIT; toda a interação com o framework ocorre por meio da classe \texttt{EITsolver}. Essa decisão permite que diferentes backends de visualização compartilhem a mesma base de reconstrução, reduzindo redundância de código e facilitando a comparação entre distintas estratégias de exibição das imagens. Além disso, como as interfaces dependem apenas da camada intermediária de reconstrução, alterações no fluxo numérico podem ser implementadas sem exigir modificações estruturais na apresentação.
+
+Do ponto de vista do fluxo de dados, a execução da aplicação segue uma sequência bem definida. Inicialmente, a matriz de medições é carregada a partir do arquivo experimental, e o primeiro \textit{frame} é armazenado como referência por meio do método \texttt{setVref}. Em seguida, a interface escolhida inicializa um temporizador (\texttt{QTimer}) com intervalo configurável, responsável por acionar periodicamente a atualização da visualização. A cada disparo desse temporizador, o quadro corrente é enviado ao método \texttt{updateImage}, que realiza a conversão das medições, aplica o método de reconstrução selecionado e produz a distribuição de variação de condutividade correspondente. O resultado numérico é então convertido para um formato adequado de exibição e, por fim, o canvas gráfico é redesenhado, completando o ciclo de animação.
+
+Uma decisão de implementação particularmente importante diz respeito ao processo de rasterização das imagens. Nos métodos BP e JAC, os resultados reconstruídos estão naturalmente associados à malha triangular do domínio, e não a uma grade regular de pixels. Para que essas reconstruções possam ser exibidas como imagens bidimensionais contínuas, foi implementado um procedimento de interpolação baseado em coordenadas baricêntricas. Nesse procedimento, a geometria da triangulação é analisada previamente, e são armazenados, para cada pixel da grade de saída, os índices dos vértices do triângulo correspondente e os pesos baricêntricos necessários à interpolação. Essa etapa é realizada pelo método \texttt{\_build\_raster\_cache}. No caso do GREIT, esse procedimento não é necessário, pois o método produz sua saída diretamente em uma grade regular de pixels, que pode ser exibida sem etapa adicional de interpolação.
+
+A principal vantagem dessa estratégia é separar o custo geométrico mais elevado da etapa de renderização quadro a quadro. Em vez de recalcular a posição relativa de cada pixel em relação à malha a cada nova reconstrução, a aplicação reutiliza os pesos já pré-computados e realiza apenas uma interpolação ponderada dos valores nodais ou elementares. Isso reduz significativamente o custo de exibição das imagens e torna viável a atualização contínua da interface durante a navegação pelos \textit{frames} experimentais. Dessa forma, a rasterização baricêntrica não foi apenas uma escolha de visualização, mas uma decisão central para compatibilizar a estrutura irregular da malha com a necessidade de exibição fluida quase em tempo real.
+
 

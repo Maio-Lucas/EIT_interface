@@ -13,15 +13,18 @@
 \contentsline {section}{\numberline {2.2}Objetivos Específicos}{6}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Metodologia}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Preparação dos Dados}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Avaliação do Impacto da Discretização da Malha}{7}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Configurações de Malha}{7}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Critérios de Avaliação}{8}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Análise dos Resultados}{8}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Implementação dos Métodos de Reconstrução}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Avaliação Comparativa entre Métodos de Reconstrução}{8}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Resultados}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Tutorial pyEIT}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Interface}{11}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusão}{13}{chapter.5}%
-\contentsline {chapter}{Referências}{14}{chapter*.8}%
+\contentsline {section}{\numberline {3.2}Fundamentos físicos e formulação matemática da TIE}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Problema direto}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Problema inverso e caráter mal posto}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Reconstrução por diferença temporal}{9}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Métodos de reconstrução de imagens}{10}{subsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.4.1}Back-Projection (BP)}{10}{subsubsection.3.2.4.1}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}Jacobiano (JAC)}{11}{subsubsection.3.2.4.2}%
+\contentsline {subsubsection}{\numberline {3.2.4.3}GREIT}{11}{subsubsection.3.2.4.3}%
+\contentsline {section}{\numberline {3.3}Arquitetura da aplicação}{13}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Resultados}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Tutorial pyEIT}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Interface}{17}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusão}{19}{chapter.5}%
+\contentsline {chapter}{Referências}{20}{chapter*.8}%
 \contentsfinish 
