@@ -1,0 +1,69 @@
+% !TEX root = ../raiz.tex
+
+\chapter{Resultados}
+
+\section{Tutorial pyEIT}
+
+O Tutorial desenvolvido \cite{pyEIT_Tutorial} até o presente momento aborda as possibilidades de geração de malha através da função \textit{mesh.create}. Existem 19 modelos de malha que podem ser criados, que vão desde formas simples, até formas complexas como Thorax e cabeça.
+
+\begin{itemize}
+\item Circle
+\item Ellipse
+\item Unit Circle (unit circle)
+\item Box Circle (box circle)
+\item Ball
+\item Unit Ball
+\item Rectangle0
+\item Rectangle
+\item Fix Points FD
+\item Fix Points Circle
+\item Fix Points Ball
+\item Dist Diff
+\item Dist Intersect
+\item Dist Union
+\item Area Uniform
+\item lshape
+\item FD Polygon
+\item Thorax
+\item Head Symm
+\end{itemize}
+
+A função \textit{mesh.create} pode ter seus parâmetros alterados a depender da quantidade de eletrodos passados e da quantidade de camadas, além de poder definir o tipo de formato dentre os formatos listados acima. A seguir está um exemplo de malha circular:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{pictures/Circle_Mesh.png}
+    \caption{Malha circular gerada através do código tutorial}
+    \label{fig:one}
+\end{figure}
+
+É importante ressaltar que o formato circular é a definição padrão da função \textit{create}.
+
+A seguir está outro exemplo de imagem gerada, desta vez, utilizando o formato de elipse:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{pictures/Ellipse_Mesh.png}
+    \caption{Malha elipsoidal gerada através do código tutorial}
+    \label{fig:one}
+\end{figure}
+
+\section{Interface}
+
+A interface atualmente funciona para o método GREIT, gerando os frames para cada medida feita em laboratório, simulando como seria uma medida em tempo real. Abaixo está representada a interface com os botões gerados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{pictures/Interface_Config.PNG}
+    \caption{Interface representando os botões atuais.}
+    \label{fig:interface_config}
+\end{figure}
+
+Por fim, é possível visualizar os valores das medidas feitas pelos eletrodos, tanto como \textit{single ended} quanto como as medidas diferenciais.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{pictures/PyQt_Interface_3.PNG}
+    \caption{Representação das medidas em suas duas formas.}
+    \label{fig:interface_measure}
+\end{figure}

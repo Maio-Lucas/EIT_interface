@@ -1,0 +1,31 @@
+% !TEX root = raiz.tex
+\documentclass[12pt, openany]{report}
+% \documentclass[12pt,showframe, openleft]{report}
+
+\input{template}
+\input{capa}
+
+\bibliography{reference.bib}
+\nocite{*}
+
+\begin{document}
+
+    \capaComLogo
+    \folhaDeRosto    
+    % \folhaDeAprovacao
+    \input{chapter/resumo}
+
+    \pagestyle{toc}
+    \tableofcontents % Sumário
+    \pagebreak
+    
+    \pagestyle{main}
+    \input{chapter/intro}
+    \input{chapter/objetivos}
+    \input{chapter/metodologia}
+    \input{chapter/resultados}
+    \input{chapter/conclusao}
+    
+    \printbibliography[heading=bibintoc, title={Referências}]
+
+\end{document}

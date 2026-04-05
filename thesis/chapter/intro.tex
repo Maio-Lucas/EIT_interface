@@ -1,0 +1,79 @@
+% !TEX root = ../raiz.tex
+
+\chapter{Introdução}
+
+O desenvolvimento tecnológico na engenharia biomédica ampliou as possibilidades de obtenção de imagens médicas, que ocupam papel central no diagnóstico, no acompanhamento clínico e no planejamento terapêutico. Entre os métodos de imagem mais consolidados, destacam-se a tomografia computadorizada (TC) e a ressonância magnética (RM). Apesar de sua ampla utilização, esses métodos apresentam limitações relevantes em contextos que exigem maior portabilidade ou impossibilidade de deslocamento do paciente, menor custo e monitoramento frequente. No caso da TC, há exposição à radiação ionizante. No caso da RM, além do alto custo, há exigências de infraestrutura e restrições de uso em situações clínicas específicas.
+
+Apesar de seu alto valor diagnóstico, a ressonância magnética permanece associada a custos elevados de aquisição, instalação, operação e manutenção, o que limita sua disseminação em contextos com restrições de infraestrutura e financiamento \cite{Gulani2025}. No contexto brasileiro, análises de incorporação tecnológica em hospitais públicos também indicam impacto econômico relevante na implantação e operação desse tipo de serviço \cite{Silva2013}. Esse cenário contribui para o interesse por alternativas mais acessíveis e com maior potencial de aplicação em contextos de monitoramento contínuo e em regiões com infraestrutura limitada. Em paralelo, a literatura aponta discrepâncias expressivas na disponibilidade de equipamentos de RM entre países de diferentes níveis de renda \cite{MRI_LMICs}.
+
+No contexto brasileiro, também se observam desigualdades relevantes na distribuição de equipamentos de imagem de alta complexidade. Um estudo epidemiológico com dados do DATASUS mostrou aumento no número de aparelhos e na realização de exames de tomografia computadorizada e ressonância magnética em todas as regiões do país entre 2015 e 2021. Ainda assim, o setor público permaneceu abaixo dos parâmetros recomendados pelo Ministério da Saúde, enquanto o setor privado superou essas referências no período analisado \cite{TC_RM_Brasil}. Além disso, a concentração desses recursos em determinadas regiões, especialmente no Sudeste, reforça a necessidade de alternativas mais acessíveis e adaptáveis a contextos com menor disponibilidade de infraestrutura.
+
+
+\section{Tomografia por impedância elétrica}
+\label{sec:introducao_tie}
+
+Uma alternativa promissora para monitoramento funcional em contextos específicos é a Tomografia por Impedância Elétrica (TIE), uma técnica de reconstrução de imagens não invasiva, portátil e livre de radiação ionizante, baseada na estimativa da distribuição espacial das propriedades elétricas dos tecidos em uma região de interesse. Em termos gerais, a técnica utiliza um conjunto de eletrodos que é posicionado ao redor da região de interesse, para que correntes alternadas de baixa amplitude sejam injetadas entre pares de eletrodos e as diferenças de potencial resultantes sejam medidas nos demais eletrodos. A partir destas medidas, um algoritmo de reconstrução estima a distribuição interna de impedância em uma seção transversal do corpo \cite{NICEPulmoVista2019}.
+
+\subsection{Princípios físicos da TIE}
+\label{subsec:principios_fisicos_tie}
+
+O princípio físico da TIE está relacionado ao fato de que tecidos biológicos distintos apresentam propriedades elétricas diferentes. Regiões com maior conteúdo de água e eletrólitos tendem a apresentar menor impedância, enquanto estruturas como gordura, osso e ar apresentam comportamento elétrico distinto, o que permite inferir alterações internas a partir das medidas realizadas externamente \cite{Lian2025}. No tórax, essa característica é particularmente relevante porque a ventilação pulmonar modifica a impedância regional ao longo do ciclo respiratório, tornando a TIE adequada para o acompanhamento dinâmico da distribuição de ar nos pulmões. Em termos práticos, o aumento da fração de ar nos pulmões durante a inspiração está associado ao aumento da impedância elétrica regional.
+
+Do ponto de vista matemático, a técnica envolve um problema inverso não linear e mal posto, pois a distribuição interna de condutividade precisa ser estimada a partir de tensões medidas apenas na superfície. Essa característica limita a resolução espacial das imagens reconstruídas quando comparadas à tomografia computadorizada e à ressonância magnética, embora a TIE apresente vantagens importantes em resolução temporal, custo e possibilidade de monitoramento contínuo \cite{KhanLing2019}.
+
+
+\subsection{Aplicações clínicas e potencial como técnica complementar}
+\label{subsec:aplicacoes_tie}
+
+Na prática clínica, a aplicação mais consolidada da TIE está no monitoramento pulmonar à beira do leito, especialmente em pacientes críticos submetidos à ventilação mecânica. Nesse contexto, a técnica pode ser utilizada para acompanhar a distribuição regional da ventilação e da perfusão, auxiliando na avaliação de colapso alveolar, hiperdistensão, recrutamento pulmonar e resposta a ajustes ventilatórios \cite{Scaramuzzo2024}. Esse perfil torna a TIE especialmente útil em situações nas quais o acompanhamento contínuo da função pulmonar é mais importante do que a obtenção de uma imagem anatômica de alta resolução.
+
+No contexto brasileiro, há relatos de uso clínico da TIE para avaliação da ventilação pulmonar regional em ambiente hospitalar. Um exemplo é o estudo publicado no \textit{Jornal Brasileiro de Pneumologia}, no qual a técnica foi utilizada para avaliar uma paciente com estenose brônquica unilateral pós-tuberculose, produzindo resultados semelhantes aos da cintilografia de ventilação/perfusão, com a vantagem de fornecer avaliação dinâmica sem exposição à radiação \cite{Marinho2013JBP}. Embora não substitua métodos anatômicos de alta resolução, a TIE apresenta utilidade particular no monitoramento funcional contínuo, sobretudo em aplicações torácicas.
+
+Essas características justificam o interesse crescente pela TIE em aplicações médicas e experimentais. Ainda assim, a interpretação das imagens depende fortemente do método de reconstrução, da malha numérica e da forma de visualização adotada. Nesse cenário, o desenvolvimento de ferramentas computacionais que permitam comparar diferentes algoritmos e diferentes estratégias de renderização torna-se relevante tanto para pesquisa quanto para fins educacionais.
+
+Essa dependência em relação ao método de reconstrução e à forma de visualização reforça a importância de ferramentas computacionais que permitam explorar comparativamente diferentes configurações do problema.
+
+\subsection{Relação com a proposta deste trabalho}
+\label{subsec:relacao_tie_trabalho}
+
+É nesse ponto que se insere a proposta deste trabalho. Em vez de desenvolver um sistema de aquisição clínica em tempo real de um equipamento funcional, este estudo concentra-se na implementação de uma interface gráfica para reconstrução e visualização de dados previamente registrados de TIE, com foco educacional e de apoio à pesquisa, permitindo explorar de forma comparativa como diferentes parâmetros e escolhas algorítmicas afetam a imagem final. A aplicação foi desenvolvida em Python, com uso do framework \textit{open-source} pyEIT para modelagem e reconstrução, o qual disponibiliza rotinas para solução do problema direto e algoritmos como Back-Projection, Jacobiano e GREIT \cite{pyEIT}. A interface proposta busca permitir a comparação entre diferentes métodos de reconstrução e diferentes configurações de malha e visualização, de modo a explicitar como essas escolhas afetam a imagem reconstruída e sua interpretação.
+
+\section{PyQt}
+\label{sec:introducao_pyqt}
+
+A interface gráfica desenvolvida neste trabalho foi implementada em PyQt6, um conjunto de \textit{bindings} em Python para o framework Qt, amplamente utilizado no desenvolvimento de aplicações desktop multiplataforma \cite{PyQt6Intro}. Além de disponibilizar uma ampla coleção de componentes gráficos, o framework adota o mecanismo de sinais e \textit{slots}, que favorece a comunicação orientada a eventos entre objetos e se mostra especialmente adequado para aplicações interativas com múltiplos controles e atualizações frequentes da interface \cite{QtSignalsSlots}.
+
+No contexto deste projeto, a escolha do PyQt6 está diretamente associada à necessidade de construir uma aplicação desktop interativa voltada à visualização científica e ao uso educacional, que oferecesse múltiplos controles, suporte a eventos, modularidade e integração com as bibliotecas de visualização adotadas. A interface desenvolvida reúne botões, seletores, \textit{sliders}, temporizadores e layouts compostos, permitindo controlar a seleção do método de reconstrução, a navegação pelos frames gravados, a alteração de parâmetros da malha e da regularização e a atualização contínua das imagens reconstruídas.
+
+A organização geral da aplicação segue uma estrutura inspirada no padrão MVC (Model-View-Controller). O arquivo principal atua como ponto de entrada da aplicação e seleciona o backend de visualização a ser utilizado, enquanto a camada de reconstrução permanece desacoplada das interfaces gráficas. Por sua vez, essa separação favorece a modularidade do sistema e reduz o acoplamento entre a camada de apresentação e a camada responsável pelo processamento numérico.
+
+\subsection{Interface alternativa com PyQtGraph}
+\label{subsec:introducao_pyqtgraph}
+
+Além da interface principal baseada em PyQt6 com Matplotlib, foi desenvolvida uma segunda implementação utilizando PyQtGraph, uma biblioteca voltada à visualização científica com foco em atualização rápida de gráficos e imagens e boa integração com o ecossistema Qt \cite{PyQtGraphIntro}. A inclusão dessa abordagem teve como objetivo explorar comparativamente um backend de renderização alternativo para a exibição das imagens reconstruídas e das curvas de medição.
+
+Do ponto de vista técnico, a interface utiliza o componente \texttt{ImageView} para exibição da imagem reconstruída e \texttt{PlotWidget} para visualização das curvas de medição, aproveitando recursos nativos da biblioteca para navegação, ajuste de níveis e manipulação interativa da imagem \cite{PyQtGraphImageView}. Em relação à interface principal, essa implementação adota uma organização visual distinta e uma estratégia de renderização orientada à maior fluidez de atualização.
+
+Embora o backend gráfico apresente maior rapidez na renderização, a taxa efetiva de atualização continua limitada pelo custo computacional das etapas de reconstrução e pós-processamento. Na prática, isso significa que o ganho de desempenho visual não se traduz automaticamente em aumentos proporcionais na taxa total de quadros por segundo, que permanece dependente do método de reconstrução selecionado. Assim, a presença de duas implementações de interface no sistema permite comparar não apenas os algoritmos de reconstrução, mas também diferentes estratégias de apresentação gráfica dos resultados da TIE.
+
+\section{pyEIT}
+\label{sec:introducao_pyeit}
+
+A camada numérica da aplicação foi construída sobre o framework \textit{open-source} pyEIT, uma biblioteca em Python voltada à Tomografia por Impedância Elétrica com organização modular e suporte à formulação dos problemas direto e inverso \cite{pyEIT}. No sistema desenvolvido, a biblioteca não é acessada diretamente pelas interfaces gráficas; essa interação é mediada por uma classe específica, responsável por centralizar a criação da malha, a definição do protocolo de medição, a configuração dos algoritmos e a reconstrução das imagens frame a frame.
+
+No contexto deste trabalho, o pyEIT foi utilizado como base para estruturar o fluxo principal de reconstrução. Esse fluxo inclui a geração da malha numérica, a configuração do protocolo de eletrodos, a conversão das medições para o formato diferencial esperado pelos algoritmos e a obtenção da imagem reconstruída a partir de um frame de referência e de um frame de medição. Essa escolha permitiu concentrar o desenvolvimento do projeto na interface gráfica e na exploração comparativa dos algoritmos, sem a necessidade de implementar do zero a infraestrutura matemática da TIE.
+
+Outro ponto relevante é que a aplicação não utiliza o pyEIT apenas como um solver isolado. A camada intermediária criada no projeto também realiza parte do pós-processamento necessário para exibição das imagens, incluindo normalização, suavização temporal em certos casos e adaptação dos resultados para diferentes formas de visualização. Dessa forma, o framework fornece a base do sistema, enquanto a aplicação desenvolvida organiza e apresenta seus resultados de maneira interativa ao usuário.
+
+\subsection{Métodos de reconstrução de imagens}
+\label{subsec:metodos_reconstrucao_imagens}
+
+A aplicação implementada neste trabalho disponibiliza três métodos de reconstrução presentes no ecossistema do pyEIT: Back-Projection (BP), Jacobiano (JAC) e GREIT. A documentação do framework descreve esses algoritmos como parte do conjunto principal de métodos inversos suportados pela biblioteca, juntamente com o solver direto baseado em elementos finitos \cite{pyEITReadme}.
+
+O método Back-Projection corresponde à abordagem de reconstrução mais simples entre as empregadas neste trabalho. No contexto do pyEIT, ele é disponibilizado na forma de \textit{back projection} e \textit{filtered back projection}, sendo particularmente útil quando se deseja uma reconstrução rápida e de menor custo computacional, ainda que com maior sensibilidade a ruído e artefatos \cite{pyEITReadme}.
+
+O método Jacobiano corresponde, no framework utilizado, à família tradicional de métodos de Gauss--Newton. A implementação disponibilizada pelo pyEIT permite o uso de diferentes estratégias internas de regularização, incluindo opções como \texttt{lm} e \texttt{kotre}, o que torna esse método mais flexível para ajustar o compromisso entre estabilidade numérica e sensibilidade da reconstrução \cite{pyEITReadme}.
+
+O método GREIT, por sua vez, foi proposto como uma abordagem linear unificada para reconstrução bidimensional em TIE pulmonar. O trabalho original descreve sua formulação a partir de modelos por elementos finitos, figuras de mérito padronizadas e uma estratégia sistemática para obtenção de uma matriz de reconstrução otimizada, com o objetivo de produzir imagens mais uniformes, estáveis e interpretáveis em aplicações clínicas \cite{GREIT2009}.
+
+No contexto da aplicação desenvolvida, a presença simultânea desses três métodos é central para a proposta da interface. Em vez de tratar a reconstrução como uma etapa não transparente ao usuário, o sistema permite ao usuário observar como diferentes escolhas algorítmicas modificam a imagem final, a estabilidade temporal e a sensibilidade a ruído, o que é particularmente relevante em um cenário educacional.

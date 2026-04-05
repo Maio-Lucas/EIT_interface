@@ -1,0 +1,1226 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{WholeBodyMRI_NIH}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{NIH INTRAMURAL RESEARCH PROGRAM. Creating a less expensive and more accessible whole-body MRI scanner. 2023.}
+      \true{nocite}
+      \verb{urlraw}
+      \verb NIH Intramural Research Program. Creating a less expensive and more accessible whole-body MRI scanner. Disponível em: https://irp.nih.gov/accomplishments/creating-a-less-expensive-and-more-accessible-whole-body-mri-scanner
+      \endverb
+      \verb{url}
+      \verb NIH%20Intramural%20Research%20Program.%20Creating%20a%20less%20expensive%20and%20more%20accessible%20whole-body%20MRI%20scanner.%20Dispon%C3%ADvel%20em:%20https://irp.nih.gov/accomplishments/creating-a-less-expensive-and-more-accessible-whole-body-mri-scanner
+      \endverb
+    \endentry
+    \entry{MRI_LMICs}{article}{}{}
+      \name{author}{11}{}{%
+        {{hash=27adb27d12948243de0a60b2ac3f4876}{%
+           family={Murali},
+           familyi={M\bibinitperiod},
+           given={Sanjana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6dc87d0ac3fb80d5b16bf78a6f1e3c2e}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4f7255a19d5c8dece883a6f1b066c99f}{%
+           family={Adedeji},
+           familyi={A\bibinitperiod},
+           given={Fope},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4ce5a75e49b4c4d7d650fba3bc05c2be}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Cathy},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7ce26f01e80a7237e2f0ca4cebddb1b2}{%
+           family={Obungoloch},
+           familyi={O\bibinitperiod},
+           given={Johnes},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ed68fdd1204fb33abefe4d2136f87d37}{%
+           family={Asllani},
+           familyi={A\bibinitperiod},
+           given={Iris},
+           giveni={I\bibinitperiod}}}%
+        {{hash=961a1e0cd85041d563ea47cb8db7e58f}{%
+           family={Anazodo},
+           familyi={A\bibinitperiod},
+           given={Udunna},
+           giveni={U\bibinitperiod}}}%
+        {{hash=c755c699ab5bf6a938e3b87c57345633}{%
+           family={Ntusi},
+           familyi={N\bibinitperiod},
+           given={Ntobeko\bibnamedelimb A.\bibnamedelimi B.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=20b43cbec865aef526fd0e59650b9de0}{%
+           family={Mammen},
+           familyi={M\bibinitperiod},
+           given={Regina},
+           giveni={R\bibinitperiod}}}%
+        {{hash=279f4651542a278a6084346c919b8937}{%
+           family={Niendorf},
+           familyi={N\bibinitperiod},
+           given={Thoralf},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6438b26a9607112ef774006501951ab0}{%
+           family={Adeleke},
+           familyi={A\bibinitperiod},
+           given={Sola},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca60421aa61b1cda563e8f7b98992cd9}
+      \strng{fullhash}{de3d1c58b1b3971521064cb496a188dc}
+      \strng{fullhashraw}{de3d1c58b1b3971521064cb496a188dc}
+      \strng{bibnamehash}{ca60421aa61b1cda563e8f7b98992cd9}
+      \strng{authorbibnamehash}{ca60421aa61b1cda563e8f7b98992cd9}
+      \strng{authornamehash}{ca60421aa61b1cda563e8f7b98992cd9}
+      \strng{authorfullhash}{de3d1c58b1b3971521064cb496a188dc}
+      \strng{authorfullhashraw}{de3d1c58b1b3971521064cb496a188dc}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NMR in Biomedicine}
+      \field{title}{Bringing MRI to low- and middle-income countries: Directions, challenges and potential solutions}
+      \field{volume}{37}
+      \field{year}{2023}
+      \field{pages}{e4992}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/nbm.4992
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/nbm.4992
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/nbm.4992
+      \endverb
+    \endentry
+    \entry{TC_RM_Brasil}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{ALENCAR, C. A. C.; OLIVEIRA, D. C.; TEIXEIRA, A. B. M.; LEMOS, L. M. G.; QUESADO, R. C. S.; SANTOS, I. M. A.; LINS, C. F. Tomografia computadorizada e ressonância magnética no Brasil: estudo epidemiológico sobre distribuição dos equipamentos, frequência de realização dos exames e comparação entre setores público e privado. Radiologia Brasileira. Vol. 57, e20230094, 2024. doi: 10.1590/0100-3984.2023.0094.}
+      \verb{urlraw}
+      \verb Tomografia computadorizada e ressonância magnética no Brasil: estudo epidemiológico sobre distribuição dos equipamentos, frequência de realização dos exames e comparação entre setores público e privado. Disponível em: https://rb.org.br/imageBank/pdf/e20230094.pdf
+      \endverb
+      \verb{url}
+      \verb Tomografia%20computadorizada%20e%20resson%C3%A2ncia%20magn%C3%A9tica%20no%20Brasil:%20estudo%20epidemiol%C3%B3gico%20sobre%20distribui%C3%A7%C3%A3o%20dos%20equipamentos,%20frequ%C3%AAncia%20de%20realiza%C3%A7%C3%A3o%20dos%20exames%20e%20compara%C3%A7%C3%A3o%20entre%20setores%20p%C3%BAblico%20e%20privado.%20Dispon%C3%ADvel%20em:%20https://rb.org.br/imageBank/pdf/e20230094.pdf
+      \endverb
+    \endentry
+    \entry{Gulani2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=048344a4df4252e0bbd03dc199f2a9be}{%
+           family={Gulani},
+           familyi={G\bibinitperiod},
+           given={Vikas},
+           giveni={V\bibinitperiod}}}%
+        {{hash=85bb02fd02a718f6e8417a63b0980bf0}{%
+           family={Kandasamy},
+           familyi={K\bibinitperiod},
+           given={Devasenathipathy},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f1402fc52ab2d773baf3097a882efd18}{%
+           family={Webb},
+           familyi={W\bibinitperiod},
+           given={Andrew\bibnamedelima G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=966909c5018b267a5c300be3ba452ffa}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Derek\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=de04c4ab293bf7e0399bf1d9e3c098d5}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={Raju},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2fc90bdf42f34306768b3417055bd96d}
+      \strng{fullhash}{1bb2b59552a67cfb8c96666e045ef992}
+      \strng{fullhashraw}{1bb2b59552a67cfb8c96666e045ef992}
+      \strng{bibnamehash}{1bb2b59552a67cfb8c96666e045ef992}
+      \strng{authorbibnamehash}{1bb2b59552a67cfb8c96666e045ef992}
+      \strng{authornamehash}{2fc90bdf42f34306768b3417055bd96d}
+      \strng{authorfullhash}{1bb2b59552a67cfb8c96666e045ef992}
+      \strng{authorfullhashraw}{1bb2b59552a67cfb8c96666e045ef992}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Radiology}
+      \field{number}{3}
+      \field{title}{Expanding Access to MRI: The Role of All-Purpose Mid-Field and 1.5-T Scanners}
+      \field{volume}{316}
+      \field{year}{2025}
+      \field{pages}{e251406}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1148/radiol.251406
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.rsna.org/doi/10.1148/radiol.251406
+      \endverb
+      \verb{url}
+      \verb https://pubs.rsna.org/doi/10.1148/radiol.251406
+      \endverb
+    \endentry
+    \entry{Silva2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=2ba952ed765c8f0ee392b7201ead2be9}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Mauricio\bibnamedelima Laerte},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ee91f6255f6ffad3485129a63196ed32}{%
+           family={Polanczyk},
+           familyi={P\bibinitperiod},
+           given={Carisi\bibnamedelima Anne},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0570db7341180594b3df99fa47cee098}{%
+           family={Kuckenbecker},
+           familyi={K\bibinitperiod},
+           given={Ricardo\bibnamedelimb de\bibnamedelima Souza},
+           giveni={R\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=02de03d8ed9f60b279e5e0581a0a9aab}{%
+           family={Bittencourt},
+           familyi={B\bibinitperiod},
+           given={Otávio\bibnamedelimb Neves\bibnamedelimb da\bibnamedelima Silva},
+           giveni={O\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d7bec6a81e97a132e57dd15dde3e046}
+      \strng{fullhash}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \strng{fullhashraw}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \strng{bibnamehash}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \strng{authorbibnamehash}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \strng{authornamehash}{9d7bec6a81e97a132e57dd15dde3e046}
+      \strng{authorfullhash}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \strng{authorfullhashraw}{0f0fdfa11d10d43d81b61ed38d8a8892}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Jornal Brasileiro de Economia da Saúde}
+      \field{title}{Critérios para a tomada de decisão quanto à incorporação de um equipamento de ressonância magnética em um hospital pediátrico público em Santa Catarina}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://jbes.com.br/index.php/jbes/article/download/413/378/745
+      \endverb
+      \verb{url}
+      \verb https://jbes.com.br/index.php/jbes/article/download/413/378/745
+      \endverb
+    \endentry
+    \entry{Putensen2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=fe0e20b9b31aec3ddf4554244d8c27b0}{%
+           family={Putensen},
+           familyi={P\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7a36a026813ccc948f849480001a3e1d}{%
+           family={Hentze},
+           familyi={H\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=b43b0f22df2923c7ab7042178afbd38f}{%
+           family={Muenster},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=39cb8694e27d45e31c4635af061f310d}{%
+           family={Muders},
+           familyi={M\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc5ae01ad756baa498f310f4122258c7}
+      \strng{fullhash}{a9fbd75242485a7b2596cb1422def340}
+      \strng{fullhashraw}{a9fbd75242485a7b2596cb1422def340}
+      \strng{bibnamehash}{a9fbd75242485a7b2596cb1422def340}
+      \strng{authorbibnamehash}{a9fbd75242485a7b2596cb1422def340}
+      \strng{authornamehash}{bc5ae01ad756baa498f310f4122258c7}
+      \strng{authorfullhash}{a9fbd75242485a7b2596cb1422def340}
+      \strng{authorfullhashraw}{a9fbd75242485a7b2596cb1422def340}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Clinical Medicine}
+      \field{number}{8}
+      \field{title}{Electrical Impedance Tomography for Cardio-Pulmonary Monitoring}
+      \field{volume}{8}
+      \field{year}{2019}
+      \true{nocite}
+      \field{pages}{1176}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/jcm8081176
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2077-0383/8/8/1176
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2077-0383/8/8/1176
+      \endverb
+    \endentry
+    \entry{NICEPulmoVista2019}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9dff4a88a2f4228a5211b95f6f96b424}{%
+           family={{National Institute for Health and Care Excellence}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{fullhash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{fullhashraw}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{bibnamehash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{authorbibnamehash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{authornamehash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{authorfullhash}{9dff4a88a2f4228a5211b95f6f96b424}
+      \strng{authorfullhashraw}{9dff4a88a2f4228a5211b95f6f96b424}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Medtech innovation briefing}
+      \field{title}{PulmoVista 500 for monitoring ventilation in critical care}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.nice.org.uk/advice/mib203/resources/pulmovista-500-for-monitoring-ventilation-in-critical-care-pdf-2285965389402565
+      \endverb
+      \verb{url}
+      \verb https://www.nice.org.uk/advice/mib203/resources/pulmovista-500-for-monitoring-ventilation-in-critical-care-pdf-2285965389402565
+      \endverb
+    \endentry
+    \entry{Scaramuzzo2024}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{6}{}{%
+        {{hash=56132e3c199a4c4a268e7f868dd6a78e}{%
+           family={Scaramuzzo},
+           familyi={S\bibinitperiod},
+           given={Gaetano},
+           giveni={G\bibinitperiod}}}%
+        {{hash=06a08736dce2edffa2effa805ca77674}{%
+           family={Pavlovsky},
+           familyi={P\bibinitperiod},
+           given={Bertrand},
+           giveni={B\bibinitperiod}}}%
+        {{hash=b314e83786cf5a9396ad0909c9fb0d38}{%
+           family={Adler},
+           familyi={A\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e0f216e94b1e446ed0fa8456c30bde41}{%
+           family={Baccinelli},
+           familyi={B\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b008862edd6b72265a25d55c4ebbcf7b}{%
+           family={Bodor},
+           familyi={B\bibinitperiod},
+           given={Dani\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=6e4f5a36b80c003267bbcdee4447a85f}{%
+           family={Damiani},
+           familyi={D\bibinitperiod},
+           given={L.\bibnamedelimi Felipe},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d1eb020a512b2942c59f4a83aff5af7}
+      \strng{fullhash}{fc16aa0b0d65ad971117fa16a1463703}
+      \strng{fullhashraw}{fc16aa0b0d65ad971117fa16a1463703}
+      \strng{bibnamehash}{fc16aa0b0d65ad971117fa16a1463703}
+      \strng{authorbibnamehash}{fc16aa0b0d65ad971117fa16a1463703}
+      \strng{authornamehash}{8d1eb020a512b2942c59f4a83aff5af7}
+      \strng{authorfullhash}{fc16aa0b0d65ad971117fa16a1463703}
+      \strng{authorfullhashraw}{fc16aa0b0d65ad971117fa16a1463703}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Critical Care}
+      \field{title}{Electrical impedance tomography monitoring in adult ICU patients: state-of-the-art, recommendations for standardized acquisition, processing, and clinical use, and future directions}
+      \field{volume}{28}
+      \field{year}{2024}
+      \field{pages}{377}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s13054-024-05173-x
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1186/s13054-024-05173-x
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1186/s13054-024-05173-x
+      \endverb
+    \endentry
+    \entry{Heines2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a1b6fe0c0dff0dab379a37d9a56a10b1}{%
+           family={Heines},
+           familyi={H\bibinitperiod},
+           given={Serge\bibnamedelimb J.\bibnamedelimi H.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8cf1e37ae4844fa6d3ef150ff94b8b09}{%
+           family={Becher},
+           familyi={B\bibinitperiod},
+           given={Tobias\bibnamedelima H.},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=bfc38e8fdb6856cb71f99a74d8a77564}{%
+           family={Horst},
+           familyi={H\bibinitperiod},
+           given={Iwan\bibnamedelimb C.\bibnamedelimi C.},
+           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=49c1f0772523f71fdea086ee38beaf8e}{%
+           family={Bergmans},
+           familyi={B\bibinitperiod},
+           given={Dennis\bibnamedelimb C.\bibnamedelimi J.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{690b04edbe8745220dcdd25ef6985902}
+      \strng{fullhash}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \strng{fullhashraw}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \strng{bibnamehash}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \strng{authorbibnamehash}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \strng{authornamehash}{690b04edbe8745220dcdd25ef6985902}
+      \strng{authorfullhash}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \strng{authorfullhashraw}{01aa35dc8ffa5a2d43b9e5a104c6217d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tomography}
+      \field{number}{5}
+      \field{title}{Clinical Applicability of Electrical Impedance Tomography in Patient-Tailored Ventilation: A Narrative Review}
+      \field{volume}{9}
+      \field{year}{2023}
+      \true{nocite}
+      \field{pages}{1903\bibrangedash 1932}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.3390/tomography9050150
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2379-139X/9/5/150
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2379-139X/9/5/150
+      \endverb
+    \endentry
+    \entry{Frerichs2026}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=28079072907c00e9e61a5749ffaec53f}{%
+           family={Frerichs},
+           familyi={F\bibinitperiod},
+           given={Inéz},
+           giveni={I\bibinitperiod}}}%
+        {{hash=56132e3c199a4c4a268e7f868dd6a78e}{%
+           family={Scaramuzzo},
+           familyi={S\bibinitperiod},
+           given={Gaetano},
+           giveni={G\bibinitperiod}}}%
+        {{hash=bbe68883231183fee74b510cb370bdee}{%
+           family={Jonkman},
+           familyi={J\bibinitperiod},
+           given={Annemijn},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{711fd83273baf47245c55d7122f953c8}
+      \strng{fullhash}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \strng{fullhashraw}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \strng{bibnamehash}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \strng{authorbibnamehash}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \strng{authornamehash}{711fd83273baf47245c55d7122f953c8}
+      \strng{authorfullhash}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \strng{authorfullhashraw}{1ea13c8a5dad52bfe6f6c96b4a64112b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Intensive Care Medicine Experimental}
+      \field{title}{Recent advances in experimental and clinical applications of chest electrical impedance tomography: a narrative review}
+      \field{volume}{14}
+      \field{year}{2026}
+      \true{nocite}
+      \field{pages}{1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s40635-025-00848-3
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1186/s40635-025-00848-3
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1186/s40635-025-00848-3
+      \endverb
+    \endentry
+    \entry{Lian2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=e755096c451749d8dc9dd95c16c12c32}{%
+           family={Lian},
+           familyi={L\bibinitperiod},
+           given={Sibo},
+           giveni={S\bibinitperiod}}}%
+        {{hash=115afe6cc7f667cde499464315bf3ce5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=84d61767985e7d2c34513e817746e7f9}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Zihan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=acb1f17287ece94ddaa2b092f8c9c759}{%
+           family={Jiao},
+           familyi={J\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a8d3b7ea8bc10f9ac87218d89149ac74}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Fenghuan},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{8da97b3f8c90d7741fe9a80d84e06119}
+      \strng{fullhash}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \strng{fullhashraw}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \strng{bibnamehash}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \strng{authorbibnamehash}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \strng{authornamehash}{8da97b3f8c90d7741fe9a80d84e06119}
+      \strng{authorfullhash}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \strng{authorfullhashraw}{3c267fd8bb22c7b91e80365fe1d69ba7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{iLABMED}
+      \field{title}{Electrical Impedance Tomography in Medical Applications: Brain and Lung}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1002/ila2.70024
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/ila2.70024
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/ila2.70024
+      \endverb
+    \endentry
+    \entry{Marinho2013JBP}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=950031155ad7deab0b5186542678c09d}{%
+           family={Marinho},
+           familyi={M\bibinitperiod},
+           given={Liégina\bibnamedelima Silveira},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e0f68a834d742a0b0749b6538ea1cba7}{%
+           family={Sousa},
+           familyi={S\bibinitperiod},
+           given={Nathalia\bibnamedelimb Parente\bibnamedelima de},
+           giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=75c3dc093eeba76dc3b2475a25edbf99}{%
+           family={Barros},
+           familyi={B\bibinitperiod},
+           given={Carlos\bibnamedelimb Augusto\bibnamedelimb Barbosa\bibnamedelimb da\bibnamedelima Silveira},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4a6f8da4add79b3abef9eeb150d8434c}{%
+           family={Matias},
+           familyi={M\bibinitperiod},
+           given={Marcelo\bibnamedelima Silveira},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b57c634e28a51e7ef671478b6774cca4}{%
+           family={Monteiro},
+           familyi={M\bibinitperiod},
+           given={Luana\bibnamedelima Torres},
+           giveni={L\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=921e9d57a1b294ca7a350c1f8647ae79}{%
+           family={Beraldo},
+           familyi={B\bibinitperiod},
+           given={Marcelo\bibnamedelimb do\bibnamedelima Amaral},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d062dca8ea59d9fee5ed74045fced857}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Eduardo\bibnamedelimb Leite\bibnamedelima Vieira},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=573357e8617c2e9dbf57ce771d3acb95}{%
+           family={Amato},
+           familyi={A\bibinitperiod},
+           given={Marcelo\bibnamedelimb Britto\bibnamedelima Passos},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=cfdf74c3f61ff90311436fb1144b895f}{%
+           family={Holanda},
+           familyi={H\bibinitperiod},
+           given={Marcelo\bibnamedelima Alcantara},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{79a6c6e0d7ff907fcc82d3eb97934074}
+      \strng{fullhash}{603a9df25b9aa16aa4a2d61a2e9161c2}
+      \strng{fullhashraw}{603a9df25b9aa16aa4a2d61a2e9161c2}
+      \strng{bibnamehash}{79a6c6e0d7ff907fcc82d3eb97934074}
+      \strng{authorbibnamehash}{79a6c6e0d7ff907fcc82d3eb97934074}
+      \strng{authornamehash}{79a6c6e0d7ff907fcc82d3eb97934074}
+      \strng{authorfullhash}{603a9df25b9aa16aa4a2d61a2e9161c2}
+      \strng{authorfullhashraw}{603a9df25b9aa16aa4a2d61a2e9161c2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Jornal Brasileiro de Pneumologia}
+      \field{number}{6}
+      \field{title}{Assessment of regional lung ventilation by electrical impedance tomography in a patient with unilateral bronchial stenosis and a history of tuberculosis}
+      \field{volume}{39}
+      \field{year}{2013}
+      \field{pages}{742\bibrangedash 746}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb https://jbp.org.br/details/2236/pt-BR
+      \endverb
+      \verb{url}
+      \verb https://jbp.org.br/details/2236/pt-BR
+      \endverb
+    \endentry
+    \entry{Morais2017}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=789f7375268f12d25284f3ab252e2838}{%
+           family={Morais},
+           familyi={M\bibinitperiod},
+           given={Caio\bibnamedelimb C.\bibnamedelimi A.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=32924ea631a4819e77e7e583c6851946}{%
+           family={De\bibnamedelima Santis\bibnamedelima Santiago},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Roberta\bibnamedelima R.},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=229b71a17b00ed97e022922dc9c8e08a}{%
+           family={Oliveira\bibnamedelima Filho},
+           familyi={O\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={José\bibnamedelimb R.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=bf4359b31fde23ad4da9d1fe8014e888}{%
+           family={Hirota},
+           familyi={H\bibinitperiod},
+           given={Adriana\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=0fd00015f6edda09c7953d91075d5f50}{%
+           family={Pacce},
+           familyi={P\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi D.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=5523c77cefc1f151ab5960404001d427}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={Juliana\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ec97e1a2b1b34d85092e0f80e133d7d0}{%
+           family={Camargo},
+           familyi={C\bibinitperiod},
+           given={Erick\bibnamedelimb D.\bibnamedelimi L.\bibnamedelimi B.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=6b6c61bcef78b040b2e7cb96a5b59b39}{%
+           family={Amato},
+           familyi={A\bibinitperiod},
+           given={Marcelo\bibnamedelimb B.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=dfa9e7a2709d78e70aae2862e5ae9ce3}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Eduardo\bibnamedelimb L.\bibnamedelimi V.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{99676334119016dcaff038a736df667c}
+      \strng{fullhash}{38805703c44dde83389693e5d9eed000}
+      \strng{fullhashraw}{38805703c44dde83389693e5d9eed000}
+      \strng{bibnamehash}{99676334119016dcaff038a736df667c}
+      \strng{authorbibnamehash}{99676334119016dcaff038a736df667c}
+      \strng{authornamehash}{99676334119016dcaff038a736df667c}
+      \strng{authorfullhash}{38805703c44dde83389693e5d9eed000}
+      \strng{authorfullhashraw}{38805703c44dde83389693e5d9eed000}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Respiratory and Critical Care Medicine}
+      \field{number}{8}
+      \field{title}{Monitoring of Pneumothorax Appearance with Electrical Impedance Tomography during Recruitment Maneuvers}
+      \field{volume}{195}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{1070\bibrangedash 1073}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1164/rccm.201609-1780LE
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/ajrccm/article/195/8/1070/8500170
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/ajrccm/article/195/8/1070/8500170
+      \endverb
+    \endentry
+    \entry{KhanLing2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c63b2415cead1ff21b3971116f837452}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Talha\bibnamedelima Ali},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3d626badfe9182f8023868297e432768}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Sai\bibnamedelima Ho},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{fullhash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{fullhashraw}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{bibnamehash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{authorbibnamehash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{authornamehash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{authorfullhash}{89b99ab3cde57737b74e58c8714f829b}
+      \strng{authorfullhashraw}{89b99ab3cde57737b74e58c8714f829b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algorithms}
+      \field{number}{5}
+      \field{title}{Review on Electrical Impedance Tomography: Artificial Intelligence Methods and its Applications}
+      \field{volume}{12}
+      \field{year}{2019}
+      \field{pages}{88}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/a12050088
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1999-4893/12/5/88
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1999-4893/12/5/88
+      \endverb
+    \endentry
+    \entry{AdlerHolder2021}{book}{}{}
+      \name{editor}{2}{}{%
+        {{hash=b314e83786cf5a9396ad0909c9fb0d38}{%
+           family={Adler},
+           familyi={A\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6606a298a806d67a2406bfba5291bcc3}{%
+           family={Holder},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{fullhash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{fullhashraw}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{bibnamehash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{editorbibnamehash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{editornamehash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{editorfullhash}{cc08342451f73a5eb9f745a8a53d640a}
+      \strng{editorfullhashraw}{cc08342451f73a5eb9f745a8a53d640a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Electrical Impedance Tomography: Methods, History and Applications}
+      \field{year}{2021}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1201/9780429399886
+      \endverb
+      \verb{urlraw}
+      \verb https://www.taylorfrancis.com/books/edit/10.1201/9780429399886/electrical-impedance-tomography-david-holder-andy-adler
+      \endverb
+      \verb{url}
+      \verb https://www.taylorfrancis.com/books/edit/10.1201/9780429399886/electrical-impedance-tomography-david-holder-andy-adler
+      \endverb
+    \endentry
+    \entry{PyQt6Intro}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7dbb0594719debddf4505064f5b8d511}{%
+           family={{Riverbank Computing}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{fullhash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{fullhashraw}{7dbb0594719debddf4505064f5b8d511}
+      \strng{bibnamehash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{authorbibnamehash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{authornamehash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{authorfullhash}{7dbb0594719debddf4505064f5b8d511}
+      \strng{authorfullhashraw}{7dbb0594719debddf4505064f5b8d511}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Official documentation}
+      \field{title}{What is PyQt?}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.riverbankcomputing.com/software/pyqt/intro/
+      \endverb
+      \verb{url}
+      \verb https://www.riverbankcomputing.com/software/pyqt/intro/
+      \endverb
+    \endentry
+    \entry{QtSignalsSlots}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4c3a5f23b1d254eb0912fcf8581ce4be}{%
+           family={{Qt Documentation}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{fullhash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{fullhashraw}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{bibnamehash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{authorbibnamehash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{authornamehash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{authorfullhash}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \strng{authorfullhashraw}{4c3a5f23b1d254eb0912fcf8581ce4be}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Qt for Python documentation}
+      \field{title}{Signals and Slots}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://doc.qt.io/qtforpython-6/tutorials/basictutorial/signals_and_slots.html
+      \endverb
+      \verb{url}
+      \verb https://doc.qt.io/qtforpython-6/tutorials/basictutorial/signals_and_slots.html
+      \endverb
+    \endentry
+    \entry{PyQtGraphIntro}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=fe449be66804f9d76790ebdbb0f36dd3}{%
+           family={{PyQtGraph Developers}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{fullhash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{fullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{bibnamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorbibnamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authornamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorfullhash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorfullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Official project website}
+      \field{title}{PyQtGraph -- Scientific Graphics and GUI Library for Python}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.pyqtgraph.org/
+      \endverb
+      \verb{url}
+      \verb https://www.pyqtgraph.org/
+      \endverb
+    \endentry
+    \entry{PyQtGraphImageView}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=fe449be66804f9d76790ebdbb0f36dd3}{%
+           family={{PyQtGraph Developers}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{fullhash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{fullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{bibnamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorbibnamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authornamehash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorfullhash}{fe449be66804f9d76790ebdbb0f36dd3}
+      \strng{authorfullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{PyQtGraph documentation}
+      \field{title}{ImageView}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://pyqtgraph.readthedocs.io/en/latest/api_reference/widgets/imageview.html
+      \endverb
+      \verb{url}
+      \verb https://pyqtgraph.readthedocs.io/en/latest/api_reference/widgets/imageview.html
+      \endverb
+    \endentry
+    \entry{pyEIT}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7bc805ebbfd9b7a95fd51b28f1a3be49}{%
+           family={{eitcom}},
+           familyi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{fullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{fullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{bibnamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorbibnamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authornamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorfullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorfullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{GitHub repository}
+      \field{title}{pyEIT: Python based toolkit for Electrical Impedance Tomography}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/eitcom/pyEIT
+      \endverb
+      \verb{url}
+      \verb https://github.com/eitcom/pyEIT
+      \endverb
+    \endentry
+    \entry{pyEITReadme}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7bc805ebbfd9b7a95fd51b28f1a3be49}{%
+           family={{eitcom}},
+           familyi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{fullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{fullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{bibnamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorbibnamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authornamehash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorfullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \strng{authorfullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{pyEIT GitHub README}
+      \field{title}{EIT Reconstruction Algorithms}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/eitcom/pyEIT/blob/master/pyeit/eit/Readme.md
+      \endverb
+      \verb{url}
+      \verb https://github.com/eitcom/pyEIT/blob/master/pyeit/eit/Readme.md
+      \endverb
+    \endentry
+    \entry{GREIT2009}{article}{}{}
+      \name{author}{19}{}{%
+        {{hash=b314e83786cf5a9396ad0909c9fb0d38}{%
+           family={Adler},
+           familyi={A\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eae1bf9f0cfc9a26de27925430b3a34f}{%
+           family={Arnold},
+           familyi={A\bibinitperiod},
+           given={John\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=688cda847e833d0eb29630f3619e2555}{%
+           family={Bayford},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6af14e882e7e9053ec303ac92b71941e}{%
+           family={Borsic},
+           familyi={B\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b2ea047fcd25381ecb231c2b3d0d8551}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=faf80314f535572c8405ff9ab22985ad}{%
+           family={Dixon},
+           familyi={D\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=41a8ea07f4a146c4eb6bb0d0e30edb70}{%
+           family={Faes},
+           familyi={F\bibinitperiod},
+           given={Theo\bibnamedelimb J.\bibnamedelimi C.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=28079072907c00e9e61a5749ffaec53f}{%
+           family={Frerichs},
+           familyi={F\bibinitperiod},
+           given={Inéz},
+           giveni={I\bibinitperiod}}}%
+        {{hash=db05ffc297c9395ebb8130f67f401455}{%
+           family={Gagnon},
+           familyi={G\bibinitperiod},
+           given={Hervé},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ddb3b9871d17bffedbcf74f7204cb239}{%
+           family={Gärber},
+           familyi={G\bibinitperiod},
+           given={Yvo},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d2c7a769efbd7edc90e8f76327407e85}{%
+           family={Grychtol},
+           familyi={G\bibinitperiod},
+           given={Bart{ł}omiej},
+           giveni={B\bibinitperiod}}}%
+        {{hash=70368038ac0f61138f777c5fb0e893b0}{%
+           family={Hahn},
+           familyi={H\bibinitperiod},
+           given={Günter},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c6ab6b3d3640cbdfea168fdb708ad9cf}{%
+           family={Lionheart},
+           familyi={L\bibinitperiod},
+           given={William\bibnamedelimb R.\bibnamedelimi B.},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e39b2582e9e39055c5294b676555950d}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Anjum},
+           giveni={A\bibinitperiod}}}%
+        {{hash=78e2ec8f345b9fa88aa1a7c72c0e42e3}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={Robert\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=9f8c68802ded19354df4f37307001e36}{%
+           family={Stocks},
+           familyi={S\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod}}}%
+        {{hash=65a7f0b1ab8f556541c18066e0b14684}{%
+           family={Tizzard},
+           familyi={T\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=88d3c945c9f5d41155756eed1abfb2f8}{%
+           family={Weiler},
+           familyi={W\bibinitperiod},
+           given={Norbert},
+           giveni={N\bibinitperiod}}}%
+        {{hash=716679bcf25284c26a97a0c5958a162a}{%
+           family={Wolf},
+           familyi={W\bibinitperiod},
+           given={Gerhard\bibnamedelima K.},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{295eb2a17b8193d41de9b3f83b51bf4e}
+      \strng{fullhash}{c32a17400101b447ace2d17b371ec438}
+      \strng{fullhashraw}{c32a17400101b447ace2d17b371ec438}
+      \strng{bibnamehash}{295eb2a17b8193d41de9b3f83b51bf4e}
+      \strng{authorbibnamehash}{295eb2a17b8193d41de9b3f83b51bf4e}
+      \strng{authornamehash}{295eb2a17b8193d41de9b3f83b51bf4e}
+      \strng{authorfullhash}{c32a17400101b447ace2d17b371ec438}
+      \strng{authorfullhashraw}{c32a17400101b447ace2d17b371ec438}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physiological Measurement}
+      \field{number}{6}
+      \field{title}{GREIT: a unified approach to 2D linear EIT reconstruction of lung images}
+      \field{volume}{30}
+      \field{year}{2009}
+      \field{pages}{S35\bibrangedash S55}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/0967-3334/30/6/S03
+      \endverb
+      \verb{urlraw}
+      \verb https://europepmc.org/article/MED/19491438
+      \endverb
+      \verb{url}
+      \verb https://europepmc.org/article/MED/19491438
+      \endverb
+    \endentry
+    \entry{PyQt}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{PyQt Tutorials}
+      \true{nocite}
+      \verb{urlraw}
+      \verb PyQt/Tutorials - Python Wiki. Disponível em: <https://wiki.python.org/moin/PyQt/Tutorials>.
+      \endverb
+      \verb{url}
+      \verb PyQt/Tutorials%20-%20Python%20Wiki.%20Dispon%C3%ADvel%20em:%20%3Chttps://wiki.python.org/moin/PyQt/Tutorials%3E.
+      \endverb
+    \endentry
+    \entry{EIT_Methods}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{HOLDER, D. S. Electrical Impedance Tomography. [s.l.] CRC Press, 2004.}
+      \true{nocite}
+      \verb{urlraw}
+      \verb Electrical Impedance Tomography. Disponível em: <https://www.taylorfrancis.com/books/edit/10.1201/9780367801595/electrical-impedance-tomography-david-holder
+      \endverb
+      \verb{url}
+      \verb Electrical%20Impedance%20Tomography.%20Dispon%C3%ADvel%20em:%20%3Chttps://www.taylorfrancis.com/books/edit/10.1201/9780367801595/electrical-impedance-tomography-david-holder
+      \endverb
+    \endentry
+    \entry{GREIT_Method}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{Grychtol B, Müller B, Adler A. 3D EIT image reconstruction with GREIT. Physiol Meas. 2016 Jun;37(6):785-800. doi: 10.1088/0967-3334/37/6/785. Epub 2016 May 20. PMID: 27203184.}
+      \true{nocite}
+      \verb{urlraw}
+      \verb 3D EIT image reconstruction with GREIT. Disponível em: https://pubmed.ncbi.nlm.nih.gov/27203184/
+      \endverb
+      \verb{url}
+      \verb 3D%20EIT%20image%20reconstruction%20with%20GREIT.%20Dispon%C3%ADvel%20em:%20https://pubmed.ncbi.nlm.nih.gov/27203184/
+      \endverb
+    \endentry
+    \entry{Lionheart2003EITRA}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c6ab6b3d3640cbdfea168fdb708ad9cf}{%
+           family={Lionheart},
+           familyi={L\bibinitperiod},
+           given={William\bibnamedelimb R.\bibnamedelimi B.},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{fullhash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{fullhashraw}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{bibnamehash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{authorbibnamehash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{authornamehash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{authorfullhash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \strng{authorfullhashraw}{c6ab6b3d3640cbdfea168fdb708ad9cf}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physiological Measurement}
+      \field{title}{EIT reconstruction algorithms: pitfalls, challenges and recent developments}
+      \field{volume}{25}
+      \field{year}{2003}
+      \true{nocite}
+      \field{pages}{125\bibrangedash 142}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:16332765
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:16332765
+      \endverb
+    \endentry
+    \entry{BP}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{CHI NAN, P.; C. C. AYA, J.; GONZALEZ LIMA, R. AN IMPLEMENTATION OF THE BACK-PROJECTION ALGORITHM ACCORDING TO SANTOSA AND VOGELIUS. ABCM Symposium Series in Bioengineering, Vol. 1. Anais...2006.}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.abcm.org.br/symposium-series/SSB_Vol1/Papers/SSB_I_paper16.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.abcm.org.br/symposium-series/SSB_Vol1/Papers/SSB_I_paper16.pdf
+      \endverb
+    \endentry
+    \entry{GREIT}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{‌Grychtol B, Müller B, Adler A. 3D EIT image reconstruction with GREIT. Physiol Meas. 2016 Jun;37(6):785-800. doi: 10.1088/0967-3334/37/6/785. Epub 2016 May 20. PMID: 27203184.}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pubmed.ncbi.nlm.nih.gov/27203184/
+      \endverb
+      \verb{url}
+      \verb https://pubmed.ncbi.nlm.nih.gov/27203184/
+      \endverb
+    \endentry
+    \entry{PyQt_Example}{misc}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{PyQt-EIT Interface Example}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://github.com/edlbcamargo/EITduino_interface>.
+      \endverb
+      \verb{url}
+      \verb https://github.com/edlbcamargo/EITduino_interface%3E.
+      \endverb
+    \endentry
+    \entry{PyQt_Example_General}{misc}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{PyQt-EIT Examples}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://github.com/pyqt/examples
+      \endverb
+      \verb{url}
+      \verb https://github.com/pyqt/examples
+      \endverb
+    \endentry
+    \entry{pyEIT_Tutorial}{misc}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{pyEIT Tutorial}
+      \verb{urlraw}
+      \verb https://colab.research.google.com/drive/1FE17_sarKNABJoMACgKBfNpsKXdslkpU#scrollTo=vmZovlcBWd6V
+      \endverb
+      \verb{url}
+      \verb https://colab.research.google.com/drive/1FE17_sarKNABJoMACgKBfNpsKXdslkpU#scrollTo=vmZovlcBWd6V
+      \endverb
+    \endentry
+    \entry{Git_Interface}{misc}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{EIT Interface}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://github.com/Maio-Lucas/EIT_interface/settings
+      \endverb
+      \verb{url}
+      \verb https://github.com/Maio-Lucas/EIT_interface/settings
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

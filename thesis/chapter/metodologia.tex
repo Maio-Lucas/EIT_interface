@@ -1,0 +1,49 @@
+% !TEX root = ../raiz.tex
+
+\chapter{Metodologia}
+
+A metodologia deste trabalho divide-se nas seguintes etapas: implementação dos métodos de reconstrução, avaliação comparativa entre métodos, e análise do impacto da discretização da malha na qualidade da imagem e desempenho computacional.
+Como parte do processo de aprendizado da biblioteca pyEIT, foi desenvolvido um tutorial em Google Colab que explora passo a passo a construção de malhas, simulação de anomalias e reconstrução de imagens sintéticas. Esse material, embora não faça parte da análise principal deste trabalho, está disponível no Apêndice A como recurso complementar.
+
+\section{Preparação dos Dados}
+Os dados utilizados neste trabalho foram obtidos pelo professor Erick Leon em um experimento onde uma haste foi imersa em uma bacia com líquido envolta por eletrodos na borda do recipiente, simulando uma anomalia. Os sinais foram então registrados pelos eletrodos e correspondem a amplitudes de resposta do sistema de acordo com a variação de corrente medidas. Esses dados serão utilizados como base para as reconstruções de imagem, empregando os diferentes métodos de reconstrução disponíveis no framework pyEIT.
+
+\section{Avaliação do Impacto da Discretização da Malha}
+Após a identificação do método de reconstrução com melhor desempenho na etapa anterior, será avaliada a influência da forma e do tamanho da malha na qualidade da imagem gerada e no desempenho computacional.
+
+\subsection{Configurações de Malha}
+Serão testadas três geometrias de malha: circular, elíptica e retangular. Para cada uma, serão avaliadas três resoluções distintas, definidas pelo parâmetro de discretização \texttt{h0}:
+
+\begin{itemize}
+\item Malha fina: \( h_0 = 0.05 \);
+\item Malha média: \( h_0 = 0.1 \);
+\item Malha grossa: \( h_0 = 0.2 \).
+\end{itemize}
+
+\subsection{Critérios de Avaliação}
+
+\begin{itemize}
+\item \textbf{Consistência Visual:} Avaliação qualitativa da forma da anomalia reconstruída em diferentes configurações de malha.
+\item \textbf{Desempenho Computacional:} Medição do tempo de execução e memória utilizada em cada configuração.
+\end{itemize}
+
+\subsection{Análise dos Resultados}
+Os resultados serão analisados por meio de gráficos e tabelas comparativas. Serão utilizadas análises descritivas simples, como média e desvio padrão, e gráficos para facilitar a visualização das tendências entre as configurações. Isto permite avaliar quais configurações apresentam melhor equilíbrio entre desempenho e qualidade visual da reconstrução.
+
+\section{Implementação dos Métodos de Reconstrução}
+Para a avaliação dos métodos Back-Projection (BP), Jacobiano (Jac) e GREIT, foi desenvolvida a classe \texttt{EITsolver}, que permite aplicar cada método de forma modular, a partir de parâmetros definidos pela interface gráfica desenvolvida em PyQt. O código carrega os dados medidos, configura os parâmetros de entrada, seleciona o método de reconstrução desejado e realiza o processamento das imagens com base nos dados medidos.
+
+\section{Avaliação Comparativa entre Métodos de Reconstrução}
+Com os três métodos implementados, será feita uma análise comparativa de acordo com os seguintes critérios:
+
+\begin{itemize}
+\item \textbf{Localização Relativa da Anomalia:} Será avaliada a consistência da posição reconstruída entre os diferentes métodos para os diferentes tamanhos de malhas definidos previamente. Espera-se que métodos mais robustos apresentem localizações e áreas com menores variações.
+
+\item \textbf{Tamanho Relativo da Anomalia:} A área da anomalia reconstruída será estimada com base no limiar de intensidade da imagem. Serão comparadas as dimensões e formatos resultantes entre os métodos.
+
+\item \textbf{Desempenho Computacional:} O tempo de execução e o consumo de memória de cada método serão medidos com auxílio das bibliotecas \texttt{time} e \texttt{memory\_profiler}. Os testes serão repetidos diversas vezes para garantir consistência nos resultados.
+
+\end{itemize}
+
+Os dados coletados serão organizados em tabelas e representados graficamente (gráficos de barras e linhas), permitindo a análise comparativa direta entre os métodos.
+

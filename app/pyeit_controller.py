@@ -31,7 +31,7 @@ class EITsolver:
         self.fd = fd
         self.h0 = h0
         self.parser_meas = parser_meas
-        self.hp = {"lamb": lamb, "p": p, "bp_weight": "std"}
+        self.hp = {"lamb": lamb, "p": p, "bp_weight": "std", "jac_method": "kotre", "greit_n": 32}
 
         # Temporal smoothing for BP: image_out = alpha * prev + (1-alpha) * current
         self.bp_temporal_alpha = bp_temporal_alpha
@@ -73,9 +73,11 @@ class EITsolver:
         if self.method == "bp":
             self.eit.setup(weight=self.hp["bp_weight"])
         elif self.method == "greit":
-            self.eit.setup(p=p, lamb=lamb, perm=1, jac_normalized=True)
+            n_grid = self.hp.get("greit_n", 32)
+            self.eit.setup(p=p, lamb=lamb, n=n_grid, perm=1, jac_normalized=True)
         elif self.method == "jac":
-            self.eit.setup(p=p, lamb=lamb, method="kotre", perm=1, jac_normalized=True)
+            self.eit.setup(p=p, lamb=lamb, method=self.hp["jac_method"],
+                        perm=1, jac_normalized=True)
 
         self._is_ready = True
 
@@ -138,11 +140,6 @@ class EITsolver:
         if self.method == "bp":
             self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=False)
 
-            diff = self.Vmeas - self.Vref
-            print(f"[BP] Vref size: {self.Vref.size} | "
-                f"diff norm: {np.linalg.norm(diff):.4f} | "
-                f"Vmeas[:3]: {self.Vmeas[:3].round(2)} | "
-                f"Vref[:3]: {self.Vref[:3].round(2)}")
         else:
             self.ds_med_frame = self.eit.solve(self.Vmeas, self.Vref, normalize=True)
 
@@ -184,10 +181,6 @@ class EITsolver:
                 (1.0 - self.bp_temporal_alpha) * normalized
             )
             self._bp_image_prev = self.image.copy()
-
-            print(f"[BP] raw min/max: {raw.min():.3f}/{raw.max():.3f} | "
-                f"normalized min/max: {normalized.min():.3f}/{normalized.max():.3f} | "
-                f"image min/max: {self.image.min():.3f}/{self.image.max():.3f}")
 
             if plot_ref is not None:
                 plot_ref.set_array(self.image)

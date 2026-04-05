@@ -1,0 +1,21 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'raiz.blg'
+[111] biber-MSWIN64:342> INFO - === 
+[147] Biber.pm:421> INFO - Reading 'raiz.bcf'
+[260] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[274] Biber.pm:4487> INFO - Processing section 0
+[285] Biber.pm:4678> INFO - Looking for bibtex file 'reference.bib' for section 0
+[339] bibtex.pm:1713> INFO - LaTeX decoding ...
+[389] bibtex.pm:1519> INFO - Found BibTeX data source 'reference.bib'
+[567] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[567] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[567] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[567] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[593] bbl.pm:676> INFO - Writing 'raiz.bbl' with encoding 'UTF-8'
+[614] bbl.pm:779> INFO - Output to raiz.bbl
+[614] Biber.pm:132> WARN - Duplicate entry key: 'pyEIT' in file 'reference.bib', skipping ...
+[614] Biber.pm:132> WARN - legacy month field 'nov' in entry 'PyQt_Example' is not an integer - this will probably not sort properly.
+[614] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_PY7e\6f2727616e4c27537406678deaa225f7_8372.utf8, line 248, warning: 3 characters of junk seen at toplevel
+[614] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_PY7e\6f2727616e4c27537406678deaa225f7_8372.utf8, line 252, warning: 3 characters of junk seen at toplevel
+[614] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_PY7e\6f2727616e4c27537406678deaa225f7_8372.utf8, line 263, warning: 6 characters of junk seen at toplevel
+[614] Biber.pm:134> INFO - WARNINGS: 5

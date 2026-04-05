@@ -1,0 +1,680 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TEMPLATE PARA DOCUMENTOS
+% UFABC Rocket Design
+% 
+% Lista de revisões: (data ISO - nome)
+% 
+% 2020-12-17 - Heitor Rodrigues Savegnago
+% 2021-01-17 - Heitor Rodrigues Savegnago
+% 2021-01-23 - Heitor Rodrigues Savegnago
+% 2021-04-21 - Heitor Rodrigues Savegnago
+% 2021-12-23 - Heitor Rodrigues Savegnago
+% 2022-02-02 - Heitor Rodrigues Savegnago
+% 2022-04-19 - Heitor Rodrigues Savegnago
+% 2022-11-02 - Heitor Rodrigues Savegnago
+% 2023-05-24 - Heitor Rodrigues Savegnago
+% 2023-08-06 - Heitor Rodrigues Savegnago
+% 2023-08-18 - Heitor Rodrigues Savegnago
+% 2023-09-06 - Heitor Rodrigues Savegnago
+% 2023-09-27 - Heitor Rodrigues Savegnago
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% Formatação geral do documento
+
+    % Configuração de margens
+    \ifx\standalone\undefined
+        \usepackage[a4paper, twoside, top = 3cm, bottom = 2cm, left = 3cm, right = 2cm]{geometry} % Margens do documento
+    \fi
+
+    % Fonte
+        %\renewcommand{\rmdefault}{phv} % Arial
+        \usepackage[lighttt]{lmodern} % Fonte Latin Modern
+        % \renewcommand{\familydefault}{\sfdefault} % Estilo global Sans Serif
+        
+    % Espaçamento entre linhas
+        \usepackage{setspace} % Espaçamento do texto
+        	\renewcommand{\baselinestretch}{1.15}
+    
+    % Correções de espaçamentos
+        \usepackage{indentfirst} % Parágrafos indentados
+        	\setlength{\parindent}{1cm} % Define espaço de paragrafo como 1cm
+        	
+        \raggedbottom % Corrige espaçamento de paragrafo
+    
+    % Decorações da página
+        \usepackage{fancyhdr} % Cabeçalhos e rodapés em páginas
+    
+    % Formatação de títulos
+    	\newcommand{\titlefont}{\fontsize{18}{20}}
+    	\newcommand{\sectionfont}{\fontsize{16}{20}}
+    	\newcommand{\subsectionfont}{\fontsize{14}{20}}
+    	\newcommand{\subsubsectionfont}{\fontsize{12}{20}}
+    	
+        \usepackage{titlesec} % Configurações para seção
+            \titleformat{\chapter}{\normalfont \titlefont \bfseries}{\thechapter}{1em}{}
+            \titleformat{\section}{\normalfont \sectionfont \bfseries}{\thesection}{1em}{}
+            \titleformat{\subsection}{\normalfont \subsectionfont \bfseries}{\thesubsection}{1em}{}
+            \titleformat{\subsubsection}{\normalfont \subsubsectionfont \bfseries}{\thesubsubsection}{1em}{}
+            \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+        	
+        \usepackage{titletoc} % Configurações para seção no sumário
+            % \contentsmargin{2.55em}
+            \dottedcontents{chapter}[4em]{\vspace{1em}\bfseries}{4em}{0.4em}
+
+% \titlecontents{chapter}
+% [4em] % ie, 1.5em (chapter) + 2.3em
+% {}
+% {\MakeUpper\contentslabel{2.3em}}
+% {\MakeUpper\hspace*{-2.3em}}
+% {\titlerule*[1pc]{.}\contentspage}
+
+% \titlecontents{chapter}[2em]
+%     {\vspace{12pt}}
+%     {\normalfont\normalsize\contentslabel[\thecontentslabel.0]{2em}\uppercase}
+%     {\hspace*{-2em}\uppercase}
+%     {\titlerule*[.75em]{.}\contentspage}
+
+            
+            \dottedcontents{section}[4em]{\bfseries}{4em}{0.4em}
+            \dottedcontents{subsection}[4em]{}{4em}{0.4em}
+            \dottedcontents{subsubsection}[4em]{}{4em}{0.4em}
+        
+    % Alteração de limite de níveis no sumário
+        
+        \setcounter{tocdepth}{4} % Níveis exibidos no sumário
+        \setcounter{secnumdepth}{4} % Nível de números exibidos
+        
+    % Opções para tópicos de enumerate
+    
+        \usepackage[shortlabels]{enumitem} % Selecionar formato em itemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Codificação de carecteres de entrada
+
+    \usepackage{ae} % "Almost European"
+    \usepackage[T1]{fontenc} % Caracteres especiais
+    \usepackage[utf8]{inputenc} % Caracteres especiais
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuração de linguagem padrão do documento
+
+    \usepackage[brazil]{babel} % Detalhes automáticos em Português
+	
+	\AtBeginDocument{\renewcommand{\contentsname}{\centerline{Sumário}}}
+	\AtBeginDocument{\renewcommand{\bibname}{Referências Bibliográficas}}
+% 	\AtBeginDocument{\renewcommand{\figurename}{Figura}}
+% 	\AtBeginDocument{\renewcommand{\tablename}{Tabela}}
+
+    \usepackage{textcomp} % Suporte de caracteres especiais
+
+    \usepackage{csquotes} % Opções de citação
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configurações de core
+
+    \usepackage{transparent}
+
+    \usepackage[svgnames]{xcolor}%Define cores
+
+        \definecolor{0DF}{HTML}{00DDFF}
+        \definecolor{0FD}{HTML}{00FFDD}
+        \definecolor{DF0}{HTML}{DDFF00}
+        \definecolor{FD0}{HTML}{FFDD00}
+        \definecolor{F0D}{HTML}{FF00DD}
+        \definecolor{D0F}{HTML}{DD00FF}
+        
+        \definecolor{0BD}{HTML}{00BBDD}
+        \definecolor{0DB}{HTML}{00DDBB}
+        \definecolor{BD0}{HTML}{BBDD00}
+        \definecolor{DB0}{HTML}{DDBB00}
+        \definecolor{D0B}{HTML}{DD00BB}
+        \definecolor{B0D}{HTML}{BB00DD}
+        
+        \definecolor{09B}{HTML}{0099BB}
+        \definecolor{0B9}{HTML}{00BB99}
+        \definecolor{9B0}{HTML}{99BB00}
+        \definecolor{B90}{HTML}{BB9900}
+        \definecolor{B09}{HTML}{BB0099}
+        \definecolor{90B}{HTML}{9900BB}
+        
+        \definecolor{079}{HTML}{007799}
+        \definecolor{097}{HTML}{009977}
+        \definecolor{790}{HTML}{779900}
+        \definecolor{970}{HTML}{997700}
+        \definecolor{907}{HTML}{990077}
+        \definecolor{709}{HTML}{770099}
+        
+        \definecolor{057}{HTML}{005577}
+        \definecolor{075}{HTML}{007755}
+        \definecolor{570}{HTML}{557700}
+        \definecolor{750}{HTML}{775500}
+        \definecolor{705}{HTML}{770055}
+        \definecolor{507}{HTML}{550077}
+        
+        \definecolor{035}{HTML}{003355}
+        \definecolor{053}{HTML}{005533}
+        \definecolor{350}{HTML}{335500}
+        \definecolor{530}{HTML}{553300}
+        \definecolor{503}{HTML}{550033}
+        \definecolor{305}{HTML}{330055}
+        
+        \definecolor{013}{HTML}{001133}
+        \definecolor{031}{HTML}{003311}
+        \definecolor{130}{HTML}{113300}
+        \definecolor{310}{HTML}{331100}
+        \definecolor{301}{HTML}{330011}
+        \definecolor{103}{HTML}{110033}
+        
+        \definecolor{strs}			{rgb}	{0.9,	0.2,	0	}
+        \definecolor{coments}		{rgb}	{0,		0.5,	0	} 
+        \definecolor{backcode}		{rgb}	{0.3,	0,		0.2	}
+        
+        \newcommand{\MexerDepois}[1]{{\huge\color{F0D}#1}}
+        \newcommand{\mexer}[1]{{\color{F0D}#1}}
+        
+        \newcommand{\showcolors}%Mostra tabela de cores
+        {{\ttfamily
+        		{\color{0DF}$\overset{\text{\tiny 0DF}}{\blacksquare}$}
+        		{\color{0BD}$\overset{\text{\tiny 0BD}}{\blacksquare}$}
+        		{\color{09B}$\overset{\text{\tiny 09B}}{\blacksquare}$}
+        		{\color{079}$\overset{\text{\tiny 079}}{\blacksquare}$}
+        		{\color{057}$\overset{\text{\tiny 057}}{\blacksquare}$}
+        		{\color{035}$\overset{\text{\tiny 035}}{\blacksquare}$}
+        		{\color{013}$\overset{\text{\tiny 013}}{\blacksquare}$}
+        		\\
+        		{\color{0FD}$\overset{\text{\tiny 0FD}}{\blacksquare}$}
+        		{\color{0DB}$\overset{\text{\tiny 0DB}}{\blacksquare}$}
+        		{\color{0B9}$\overset{\text{\tiny 0B9}}{\blacksquare}$}
+        		{\color{097}$\overset{\text{\tiny 097}}{\blacksquare}$}
+        		{\color{075}$\overset{\text{\tiny 075}}{\blacksquare}$}
+        		{\color{053}$\overset{\text{\tiny 053}}{\blacksquare}$}
+        		{\color{031}$\overset{\text{\tiny 031}}{\blacksquare}$}
+        		\\
+        		{\color{DF0}$\overset{\text{\tiny DF0}}{\blacksquare}$}
+        		{\color{BD0}$\overset{\text{\tiny BD0}}{\blacksquare}$}
+        		{\color{9B0}$\overset{\text{\tiny 9B0}}{\blacksquare}$}
+        		{\color{790}$\overset{\text{\tiny 790}}{\blacksquare}$}
+        		{\color{570}$\overset{\text{\tiny 570}}{\blacksquare}$}
+        		{\color{350}$\overset{\text{\tiny 350}}{\blacksquare}$}
+        		{\color{130}$\overset{\text{\tiny 130}}{\blacksquare}$}
+        		\\
+        		{\color{FD0}$\overset{\text{\tiny FD0}}{\blacksquare}$}
+        		{\color{DB0}$\overset{\text{\tiny DB0}}{\blacksquare}$}
+        		{\color{B90}$\overset{\text{\tiny B90}}{\blacksquare}$}
+        		{\color{970}$\overset{\text{\tiny 970}}{\blacksquare}$}
+        		{\color{750}$\overset{\text{\tiny 750}}{\blacksquare}$}
+        		{\color{530}$\overset{\text{\tiny 530}}{\blacksquare}$}
+        		{\color{310}$\overset{\text{\tiny 310}}{\blacksquare}$}
+        		\\
+        		{\color{F0D}$\overset{\text{\tiny F0D}}{\blacksquare}$}
+        		{\color{D0B}$\overset{\text{\tiny D0B}}{\blacksquare}$}
+        		{\color{B09}$\overset{\text{\tiny B09}}{\blacksquare}$}
+        		{\color{907}$\overset{\text{\tiny 907}}{\blacksquare}$}
+        		{\color{705}$\overset{\text{\tiny 705}}{\blacksquare}$}
+        		{\color{503}$\overset{\text{\tiny 503}}{\blacksquare}$}
+        		{\color{301}$\overset{\text{\tiny 301}}{\blacksquare}$}
+        		\\
+        		{\color{D0F}$\overset{\text{\tiny D0F}}{\blacksquare}$}
+        		{\color{B0D}$\overset{\text{\tiny B0D}}{\blacksquare}$}
+        		{\color{90B}$\overset{\text{\tiny 90B}}{\blacksquare}$}
+        		{\color{709}$\overset{\text{\tiny 709}}{\blacksquare}$}
+        		{\color{507}$\overset{\text{\tiny 507}}{\blacksquare}$}
+        		{\color{305}$\overset{\text{\tiny 305}}{\blacksquare}$}
+        		{\color{103}$\overset{\text{\tiny 103}}{\blacksquare}$}
+        }}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configurações do pacote listings para adição de código no documento
+
+    \usepackage{listings}%Configura layout para mostrar codigos a partir de arquivo
+        \AtBeginDocument{\renewcommand{\lstlistingname}{Código}}
+
+        
+        \lstdefinelanguage{JavaScript}{
+            keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+            ndkeywords={class, export, boolean, throw, implements, import, this},
+            % ndkeywordstyle=\color{darkgray}\bfseries,
+            identifierstyle=\color{black},
+            sensitive=false,
+            comment=[l]{//},
+            morecomment=[s]{/*}{*/},
+            morestring=[b]',
+            morestring=[b]"
+        }
+        
+        \lstset{% Configurando layout para mostrar códigos C++
+            language=[11]C++,
+            basicstyle=\ttfamily\small\setstretch{1},
+            backgroundcolor=\color{backcode!5},
+            stringstyle=\color{strs}, 
+            commentstyle=\color{coments},
+            keywordstyle=[1]\itshape\color{079}, 
+            keywordstyle=[2]\color{907},
+            keywordstyle=[3]\color{097},
+            keywordstyle=[4]\bfseries\color{790},
+            keywordstyle=[5]\color{709},
+            keywordstyle=[6]\color{970},
+            morekeywords=[1]{byte},
+            morekeywords=[2]{},
+            morekeywords=[3]{uint8_t, size_t, type},
+            morekeywords=[4]{},
+            numbers=left,
+            numberstyle=\tiny,
+            escapeinside={§}{§},
+            tabsize=2,
+            extendedchars=true, 
+            showspaces=false, 
+            showstringspaces=false, 
+            numberbychapter=false,
+            emptylines=1,
+            frame=L,
+            firstnumber=auto,
+            breaklines=true,
+            breakautoindent=true, 
+            captionpos=t,
+            float=htbp, 
+            xleftmargin=2em,
+            inputencoding=utf8,
+            %texcl=true,
+            upquote=true,
+            literate=%
+                {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ä}{{\"a}}1 {ã}{{\~a}}1
+                {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ä}{{\"A}}1 {Ã}{{\~A}}1
+                {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+                {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
+                {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+                {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+                {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {ö}{{\"o}}1 {õ}{{\~o}}1
+                {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Ö}{{\"0}}1 {Õ}{{\~O}}1
+                {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+                {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+                {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1
+                {°}{{\textdegree}}1
+                {¹}{{\textsuperscript{1}}}1
+                {²}{{\textsuperscript{2}}}1
+                {³}{{\textsuperscript{3}}}1
+        }
+        
+        \newcommand{\coda}[1]{{\color{057}\lstinline|#1|}}
+        \newcommand{\code}[1]{{\color{075}\lstinline|#1|}}
+        \newcommand{\codi}[1]{{\color{570}\lstinline|#1|}}
+        \newcommand{\codo}[1]{{\color{750}\lstinline|#1|}}
+        \newcommand{\codu}[1]{{\color{705}\lstinline|#1|}}
+        \newcommand{\codw}[1]{{\color{507}\lstinline|#1|}}
+        \newcommand{\codGuide}{
+            \begin{center}
+                \large{\coda{A}\\\code{E}\\\codi{I}\\\codo{O}\\\codu{U}\\\codw{W}
+                
+                \showcolors}
+            \end{center}
+        }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Adição de caracteres
+
+    \usepackage[euler]{textgreek} % Caracteres gregos
+
+    \usepackage{pmboxdraw} % Caracteres unicode 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pacotes de opções matemáticas
+
+    \usepackage{amsmath, amssymb, xfrac, cancel} % símbolos matemáticos
+    
+    \usepackage{siunitx} % Comando \SI para unidades de medida
+        \sisetup{locale = FR} % Utilizar virgular para marcação decimal
+        \sisetup{separate-uncertainty = true}
+        \sisetup{exponent-product=\ensuremath{\cdot}}
+        \sisetup{separate-uncertainty=true}
+        \sisetup{multi-part-units=single}
+        \sisetup{group-separator = {}}
+        
+        \DeclareSIUnit{\nothing}{{\relax}}
+        \DeclareSIUnit{\var}{VAR}
+        \DeclareSIUnit{\va}{VA}
+        \DeclareSIUnit{\dBm}{dBm}
+        
+    \usepackage{gensymb} % Símbolos de unidades de medida
+    
+    \usepackage{mathtools}
+
+        \DeclareFontFamily{U}{mathc}{}
+        \DeclareFontShape{U}{mathc}{m}{it}%
+        {<->s*[1.03] mathc10}{}
+        \DeclareMathAlphabet{\mathcal}{U}{mathc}{m}{it}
+        
+        \DeclareMathOperator{\sHom}{\mathcal{H\mkern-3mu om}}
+        \DeclareMathOperator{\sExt}{\mathcal{E\mkern-3mu xt}}
+        \DeclareMathOperator{\sEnd}{\mathcal{E\mkern-3mu nd}}
+
+    \usepackage{steinmetz} % Números complexos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pacotes de opções químicas
+
+    \usepackage{chemformula}
+    \usepackage[version=3]{mhchem}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Opções adicionais para formatação
+
+    \usepackage[normalem]{ulem} % Sublinados diversos
+    
+    \usepackage{framed} % Criar caixas inteligentes
+    
+    \usepackage{footnote} % Notas de rodapé
+
+    \usepackage{lscape} % Página em paisagem
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Formatação de tabelas
+
+    \usepackage{tabularx} % Tabelas do tipo tabularx
+    \usepackage{booktabs} % Formatação de tabelas como em livro
+        %\renewcommand{\arraystretch}{2} % Espaçamento entre linhas interno em tabelas
+        %\renewcommand{\cellgape}{\Gape[4pt]} % Espaçamento de tabelas
+    \usepackage{makecell} % formatação avançada para tabelas
+    \usepackage{multirow} % Merge em tabelas
+    \usepackage{multicol} % Texto em colunas na folha
+    \usepackage{arydshln} % Draw dash-lines in array/tabular
+    \usepackage{colortbl} % Linhas, colunas e celulas coloridas
+    
+    \usepackage{array} % opções especiais para alinhamento de tabelas
+    {
+        \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+        \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+        \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pacotes para trabalhar com figuras
+
+    \usepackage{graphicx} % Adição de imagens
+    
+    \usepackage{svg} % Adição de imagens no formato SVG
+
+    \usepackage[outdir=./]{epstopdf} % Figuras em EPS convertidas em PDF
+    
+    \usepackage{pdfpages} % Adição de PDFs como páginas
+    
+    \usepackage{tikz} % Desenhos
+        \usetikzlibrary{through,shapes}
+        \usetikzlibrary{trees}
+        \usetikzlibrary{fit}
+        \usetikzlibrary{patterns}
+        \usetikzlibrary{calc}
+        \usetikzlibrary{arrows,decorations,decorations.pathmorphing,positioning}
+    
+    \usepackage{pgfplots} % Desenho de gráficos
+        \pgfdeclarelayer{background}    % declare background layer
+        \pgfdeclarelayer{foreground}    % declare foreground layer
+        \pgfsetlayers{background,main,foreground}  % set the order of the layers (main is the standard layer)
+        \pgfplotsset{compat=1.14}
+        \usepgfplotslibrary{fillbetween}
+        
+    \usepackage{pgf-pie} % Gráficos pizza
+    
+    \usepackage[RPvoltages]{circuitikz} % Desenhos de circuitos
+        \ctikzset{bipoles/thickness=1}
+        
+    
+    \usepackage{chemfig} % Desenho de moléculas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Utilitários adicionais para lidar com figuras e tabelas
+
+    \usepackage{float} % posicionamento espacial
+
+        % Criando ambiente float para códigos
+        \newfloat{lstfloat}{htbp}{lop}
+        \floatname{lstfloat}{Código}
+        \def\lstfloatautorefname{Código} % needed for hyperref/auroref
+    
+    \usepackage{caption} % Comando \caption*
+    
+    \usepackage{subcaption} % Opções de subfiguras
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Referência cruzada e links
+    
+    \usepackage[hidelinks]{hyperref} % Links no documento
+    
+    \usepackage{nameref} % Referenciar entidades por nome
+
+    \usepackage{titleref} % Referenciar títulos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuração de contadores do documento
+
+    \ifx\letter\undefined
+    \usepackage{chngcntr} % Muda os contadores de figuras, equações, etc
+        \counterwithout{figure}{chapter} % Número de figura sem contar capítulo
+        \counterwithout{table}{chapter} % Número de tabela sem contar capítulo
+        \counterwithout{equation}{chapter} % Número de equação sem contar capítulo
+    \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% controle de citação e referências bibliográfica
+
+    \usepackage[backend=biber, style=ieee, citestyle=numeric, sorting=none]{biblatex}
+    % \usepackage[style=abnt-numeric, citestyle=numeric, sorting=none]{biblatex} %https://github.com/abntex/biblatex-abnt/issues/90
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Auxiliares gerais
+
+    \usepackage{lipsum} % Lorem ipsum
+
+    \usepackage{ifdraft} % Opções adicionais para o modo draft
+
+    \usepackage{etoolbox} % Toolbox of programming facilities
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Definições de macros especiais para capa e folha de rosto
+
+    % Lista de nomes
+    
+        \newcommand{\name}[1]
+        {
+        	&{#1}\\
+        }
+        \newenvironment{names}[1]
+        {
+            \begin{table}[H]\flushleft
+        		\begin{tabular}{>{\raggedleft}p{.45\linewidth} | >{\bf}p{.45\linewidth}}
+        			\sf{#1}
+        			}
+                    	%args here
+                    {
+        		\end{tabular}
+        	\end{table}
+        }
+
+    % Outras macros
+        \providecommand{\keywords}[1]{\textbf{{Keywords:}} #1}
+        \providecommand{\palavraschave}[1]{\textbf{{Palavras-chave:}} #1}
+
+    \newcommand{\nomes}{}
+    \newcommand{\grupo}{}
+    \newcommand{\centro}{}
+    \newcommand{\centroSigla}{}
+    \newcommand{\disciplina}{}
+    \newcommand{\codigoDisciplina}{}
+    \newcommand{\titulo}{}
+    \newcommand{\professor}{}
+    \newcommand{\local}{}
+    \newcommand{\data}{}
+    \newcommand{\notaDeRosto}{}
+    \newcommand{\cabecalho}
+    {
+        {\large%
+        \textbf{UNIVERSIDADE FEDERAL DO ABC}}\\
+        \expandafter\MakeUppercase\expandafter{\small\centro{}%
+        \ifdefempty{\centro}{}{ - }%
+        \centroSigla\\
+        \codigoDisciplina{}%
+        \ifdefempty{\codigoDisciplina}{}{ - }%
+        \disciplina%
+        }
+    }
+    
+    \newcommand{\capaComLogo}{
+        \begin{titlepage} \center
+            \cabecalho
+            
+            \vspace{6em}
+            
+            \begin{center}
+                \includegraphics[width=0.335\linewidth]{pictures/logo_ufabc}
+            \end{center}
+            
+            \nomes
+            \textbf{\grupo} 
+            
+            \vfill
+            
+            {\large{\MakeUppercase{\textbf{\titulo}}}}
+            
+            \vspace{1.5cm}
+    		\professor
+      
+    		\vfill
+    		\vfill
+            
+    		{\local\\\data}
+        \end{titlepage}
+    }
+    
+    \newcommand{\capa}{
+        \begin{titlepage} \center
+            \cabecalho
+            
+            \vspace{6em}
+            
+            % \capaLogo
+            
+            \nomes
+            
+            \vfill
+            
+            {\large{\MakeUppercase{\textbf{\titulo}}}}
+            
+            % \\\vspace{1.5cm}
+    		% \professor
+      
+    		\vfill
+    		\vfill
+            
+    		{\local\\\data}
+        \end{titlepage}
+    }
+    
+    \newcommand{\folhaDeRosto}{
+        \newpage
+        \begin{titlepage}
+    		\center
+            \nomes
+            % \vspace{5cm}
+            \vfill
+            {\large{\MakeUppercase{\textbf{\titulo}}}}
+            \vfill
+            \hfill\begin{minipage}{0.5\linewidth}\onehalfspacing
+            \notaDeRosto
+            \end{minipage}
+            \vfill
+    		{\local\\\data}
+        \end{titlepage}
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configurações de estilos de páginas
+
+\AtBeginDocument{%
+    %
+    \ifx\standalone\undefined
+        \setlength{\headheight}{1.5em}
+    \else
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{0pt}
+	    \pagestyle{plain}
+    \fi
+    %
+	\titleformat{\chapter}{\normalfont \titlefont \bfseries}{\chaptername\ \thechapter}{1em}{}
+	% \titleformat{\chapter}{\normalfont \titlefont \bfseries}{\thechapter}{1em}{}
+	%
+    \renewcommand{\chaptermark}[1]{\markboth{#1}{}} %mostrar somente o nome do capítulo com \leftmark
+    %
+    \pagestyle{fancy}
+    \fancypagestyle{plain}{% Página padrão
+        \renewcommand{\headrulewidth}{0pt}
+	    % \pagenumbering{arabic}
+    }
+    \fancypagestyle{main}{% Página padrão
+        \fancyhf{}
+        \lhead{}
+        \chead{}
+        \rhead{}
+        \lfoot{}
+        \cfoot{\thepage}
+        \rfoot{}
+	    \pagenumbering{arabic}
+    }
+    %
+    \fancypagestyle{toc}{% Página  do sumário
+        \renewcommand{\headrulewidth}{0pt}
+        \fancyhf{}
+        \lhead{}
+        \chead{}
+        \rhead{}
+        \lfoot{}
+        \cfoot{\thepage}
+        \rfoot{}
+	    \pagenumbering{Roman}
+    }
+    %
+    \fancypagestyle{clear}{% Página do sumário
+        \fancyhf{}
+        \lhead{}
+        \chead{}
+        \rhead{}
+        \lfoot{}
+        \cfoot{}
+        \rfoot{}
+	   % \pagenumbering{None}
+    }
+    %
+    \fancypagestyle{letterCapitania}{% Página do modelo de carta
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{0pt}
+	    \setlength\headheight{70pt}
+        \lhead{
+            \textbf{Carta de Intenções}\\
+            \textbf{\today}\\\vspace{1em}
+            Chapa: \chapa
+            \vfill}
+        \chead{}
+        \rhead{\includegraphics[height=0.925\headheight]{Templates/logo_rocket.eps}}
+        \lfoot{}
+        \cfoot{\thepage}
+        \rfoot{}
+	    \pagenumbering{arabic}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

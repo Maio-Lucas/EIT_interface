@@ -1,0 +1,2373 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  4 APR 2026 19:46
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/raiz.tex
+(c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/raiz.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (template.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count284
+\Gm@cntv=\count285
+\c@Gm@tempcnt=\count286
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip51
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks19
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip65
+\aftertitleunit=\skip66
+\ttl@plus=\dimen157
+\ttl@minus=\dimen158
+\ttl@toksa=\toks20
+\titlewidth=\dimen159
+\titlewidthlast=\dimen160
+\titlewidthfirst=\dimen161
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.sty
+Package: titletoc 2025/01/04 v2.17 TOC entries
+\ttl@leftsep=\dimen162
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip67
+\enit@outerparindent=\dimen163
+\enit@toks=\toks21
+\enit@inbox=\box54
+\enit@count@id=\count287
+\enitdp@description=\count288
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 116.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2026/03/24 v26.5 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+\babel@savecnt=\count289
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+\U@D=\dimen164
+\l@unhyphenated=\language79
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count290
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4206.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/invalid\babel-brazil.tex)
+
+Package babel Warning: Name 'brazil' is deprecated.
+(babel)                Use 'brazilian' instead.
+(babel)                Reported on input line 4330.
+
+Package babel Info: Importing font and identification data for brazil
+(babel)             from babel-pt-BR.ini. Reported on input line 4330.
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilian.ldf
+Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
+Package babel Info: Hyphen rules for 'brazil' set to \l@portuguese
+(babel)             (\language56). Reported on input line 100.
+Package babel Info: Making " an active character on input line 132.
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count291
+)
+\csq@reset=\count292
+\csq@gtype=\count293
+\csq@glevel=\count294
+\csq@qlevel=\count295
+\csq@maxlvl=\count296
+\csq@tshold=\count297
+\csq@ltx@everypar=\toks24
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent.sty
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent-nometadata.sty
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color stack (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\svgnam.def
+File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count298
+\lst@gtempboxa=\box55
+\lst@token=\toks25
+\lst@length=\count299
+\lst@currlwidth=\dimen165
+\lst@column=\count300
+\lst@pos=\count301
+\lst@lostspace=\dimen166
+\lst@width=\dimen167
+\lst@newlines=\count302
+\lst@lineno=\count303
+\lst@maxwidth=\dimen168
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count304
+\lst@skipnumbers=\count305
+\lst@framebox=\box56
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/textgreek\textgreek.sty
+Package: textgreek 2011/10/09 v0.7 Greek symbols in text
+Package textgreek Info: Loading the definitions for the Greek fontencoding. on input line 39.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\lgrenc.def
+File: lgrenc.def 2023-09-12 2.5 LGR Greek font encoding definitions
+Now handling font encoding LGR ...
+... processing UTF-8 mapping file for font encoding LGR
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-inputenc\lgrenc.dfu
+File: lgrenc.dfu 2023-03-21 1.9 UTF-8 support for Greek
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0259 (decimal 601)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+0374 (decimal 884)
+   defining Unicode char U+0375 (decimal 885)
+   defining Unicode char U+037A (decimal 890)
+   defining Unicode char U+037E (decimal 894)
+   defining Unicode char U+0384 (decimal 900)
+   defining Unicode char U+0385 (decimal 901)
+   defining Unicode char U+0386 (decimal 902)
+   defining Unicode char U+0387 (decimal 903)
+   defining Unicode char U+0388 (decimal 904)
+   defining Unicode char U+0389 (decimal 905)
+   defining Unicode char U+038A (decimal 906)
+   defining Unicode char U+038C (decimal 908)
+   defining Unicode char U+038E (decimal 910)
+   defining Unicode char U+038F (decimal 911)
+   defining Unicode char U+0390 (decimal 912)
+   defining Unicode char U+0391 (decimal 913)
+   defining Unicode char U+0392 (decimal 914)
+   defining Unicode char U+0393 (decimal 915)
+   defining Unicode char U+0394 (decimal 916)
+   defining Unicode char U+0395 (decimal 917)
+   defining Unicode char U+0396 (decimal 918)
+   defining Unicode char U+0397 (decimal 919)
+   defining Unicode char U+0398 (decimal 920)
+   defining Unicode char U+0399 (decimal 921)
+   defining Unicode char U+039A (decimal 922)
+   defining Unicode char U+039B (decimal 923)
+   defining Unicode char U+039C (decimal 924)
+   defining Unicode char U+039D (decimal 925)
+   defining Unicode char U+039E (decimal 926)
+   defining Unicode char U+039F (decimal 927)
+   defining Unicode char U+03A0 (decimal 928)
+   defining Unicode char U+03A1 (decimal 929)
+   defining Unicode char U+03A3 (decimal 931)
+   defining Unicode char U+03A4 (decimal 932)
+   defining Unicode char U+03A5 (decimal 933)
+   defining Unicode char U+03A6 (decimal 934)
+   defining Unicode char U+03A7 (decimal 935)
+   defining Unicode char U+03A8 (decimal 936)
+   defining Unicode char U+03A9 (decimal 937)
+   defining Unicode char U+03AA (decimal 938)
+   defining Unicode char U+03AB (decimal 939)
+   defining Unicode char U+03AC (decimal 940)
+   defining Unicode char U+03AD (decimal 941)
+   defining Unicode char U+03AE (decimal 942)
+   defining Unicode char U+03AF (decimal 943)
+   defining Unicode char U+03B0 (decimal 944)
+   defining Unicode char U+03B1 (decimal 945)
+   defining Unicode char U+03B2 (decimal 946)
+   defining Unicode char U+03B3 (decimal 947)
+   defining Unicode char U+03B4 (decimal 948)
+   defining Unicode char U+03B5 (decimal 949)
+   defining Unicode char U+03B6 (decimal 950)
+   defining Unicode char U+03B7 (decimal 951)
+   defining Unicode char U+03B8 (decimal 952)
+   defining Unicode char U+03B9 (decimal 953)
+   defining Unicode char U+03BA (decimal 954)
+   defining Unicode char U+03BB (decimal 955)
+   defining Unicode char U+03BC (decimal 956)
+   defining Unicode char U+03BD (decimal 957)
+   defining Unicode char U+03BE (decimal 958)
+   defining Unicode char U+03BF (decimal 959)
+   defining Unicode char U+03C0 (decimal 960)
+   defining Unicode char U+03C1 (decimal 961)
+   defining Unicode char U+03C2 (decimal 962)
+   defining Unicode char U+03C3 (decimal 963)
+   defining Unicode char U+03C4 (decimal 964)
+   defining Unicode char U+03C5 (decimal 965)
+   defining Unicode char U+03C6 (decimal 966)
+   defining Unicode char U+03C7 (decimal 967)
+   defining Unicode char U+03C8 (decimal 968)
+   defining Unicode char U+03C9 (decimal 969)
+   defining Unicode char U+03CA (decimal 970)
+   defining Unicode char U+03CB (decimal 971)
+   defining Unicode char U+03CC (decimal 972)
+   defining Unicode char U+03CD (decimal 973)
+   defining Unicode char U+03CE (decimal 974)
+   defining Unicode char U+03D0 (decimal 976)
+   defining Unicode char U+03D1 (decimal 977)
+   defining Unicode char U+03D5 (decimal 981)
+   defining Unicode char U+03D6 (decimal 982)
+   defining Unicode char U+03D8 (decimal 984)
+   defining Unicode char U+03D9 (decimal 985)
+   defining Unicode char U+03DA (decimal 986)
+   defining Unicode char U+03DB (decimal 987)
+   defining Unicode char U+03DC (decimal 988)
+   defining Unicode char U+03DD (decimal 989)
+   defining Unicode char U+03DE (decimal 990)
+   defining Unicode char U+03DF (decimal 991)
+   defining Unicode char U+03E0 (decimal 992)
+   defining Unicode char U+03E1 (decimal 993)
+   defining Unicode char U+03F0 (decimal 1008)
+   defining Unicode char U+03F1 (decimal 1009)
+   defining Unicode char U+03F4 (decimal 1012)
+   defining Unicode char U+03F5 (decimal 1013)
+   defining Unicode char U+1F00 (decimal 7936)
+   defining Unicode char U+1F01 (decimal 7937)
+   defining Unicode char U+1F02 (decimal 7938)
+   defining Unicode char U+1F03 (decimal 7939)
+   defining Unicode char U+1F04 (decimal 7940)
+   defining Unicode char U+1F05 (decimal 7941)
+   defining Unicode char U+1F06 (decimal 7942)
+   defining Unicode char U+1F07 (decimal 7943)
+   defining Unicode char U+1F08 (decimal 7944)
+   defining Unicode char U+1F09 (decimal 7945)
+   defining Unicode char U+1F0A (decimal 7946)
+   defining Unicode char U+1F0B (decimal 7947)
+   defining Unicode char U+1F0C (decimal 7948)
+   defining Unicode char U+1F0D (decimal 7949)
+   defining Unicode char U+1F0E (decimal 7950)
+   defining Unicode char U+1F0F (decimal 7951)
+   defining Unicode char U+1F10 (decimal 7952)
+   defining Unicode char U+1F11 (decimal 7953)
+   defining Unicode char U+1F12 (decimal 7954)
+   defining Unicode char U+1F13 (decimal 7955)
+   defining Unicode char U+1F14 (decimal 7956)
+   defining Unicode char U+1F15 (decimal 7957)
+   defining Unicode char U+1F18 (decimal 7960)
+   defining Unicode char U+1F19 (decimal 7961)
+   defining Unicode char U+1F1A (decimal 7962)
+   defining Unicode char U+1F1B (decimal 7963)
+   defining Unicode char U+1F1C (decimal 7964)
+   defining Unicode char U+1F1D (decimal 7965)
+   defining Unicode char U+1F20 (decimal 7968)
+   defining Unicode char U+1F21 (decimal 7969)
+   defining Unicode char U+1F22 (decimal 7970)
+   defining Unicode char U+1F23 (decimal 7971)
+   defining Unicode char U+1F24 (decimal 7972)
+   defining Unicode char U+1F25 (decimal 7973)
+   defining Unicode char U+1F26 (decimal 7974)
+   defining Unicode char U+1F27 (decimal 7975)
+   defining Unicode char U+1F28 (decimal 7976)
+   defining Unicode char U+1F29 (decimal 7977)
+   defining Unicode char U+1F2A (decimal 7978)
+   defining Unicode char U+1F2B (decimal 7979)
+   defining Unicode char U+1F2C (decimal 7980)
+   defining Unicode char U+1F2D (decimal 7981)
+   defining Unicode char U+1F2E (decimal 7982)
+   defining Unicode char U+1F2F (decimal 7983)
+   defining Unicode char U+1F30 (decimal 7984)
+   defining Unicode char U+1F31 (decimal 7985)
+   defining Unicode char U+1F32 (decimal 7986)
+   defining Unicode char U+1F33 (decimal 7987)
+   defining Unicode char U+1F34 (decimal 7988)
+   defining Unicode char U+1F35 (decimal 7989)
+   defining Unicode char U+1F36 (decimal 7990)
+   defining Unicode char U+1F37 (decimal 7991)
+   defining Unicode char U+1F38 (decimal 7992)
+   defining Unicode char U+1F39 (decimal 7993)
+   defining Unicode char U+1F3A (decimal 7994)
+   defining Unicode char U+1F3B (decimal 7995)
+   defining Unicode char U+1F3C (decimal 7996)
+   defining Unicode char U+1F3D (decimal 7997)
+   defining Unicode char U+1F3E (decimal 7998)
+   defining Unicode char U+1F3F (decimal 7999)
+   defining Unicode char U+1F40 (decimal 8000)
+   defining Unicode char U+1F41 (decimal 8001)
+   defining Unicode char U+1F42 (decimal 8002)
+   defining Unicode char U+1F43 (decimal 8003)
+   defining Unicode char U+1F44 (decimal 8004)
+   defining Unicode char U+1F45 (decimal 8005)
+   defining Unicode char U+1F48 (decimal 8008)
+   defining Unicode char U+1F49 (decimal 8009)
+   defining Unicode char U+1F4A (decimal 8010)
+   defining Unicode char U+1F4B (decimal 8011)
+   defining Unicode char U+1F4C (decimal 8012)
+   defining Unicode char U+1F4D (decimal 8013)
+   defining Unicode char U+1F50 (decimal 8016)
+   defining Unicode char U+1F51 (decimal 8017)
+   defining Unicode char U+1F52 (decimal 8018)
+   defining Unicode char U+1F53 (decimal 8019)
+   defining Unicode char U+1F54 (decimal 8020)
+   defining Unicode char U+1F55 (decimal 8021)
+   defining Unicode char U+1F56 (decimal 8022)
+   defining Unicode char U+1F57 (decimal 8023)
+   defining Unicode char U+1F59 (decimal 8025)
+   defining Unicode char U+1F5B (decimal 8027)
+   defining Unicode char U+1F5D (decimal 8029)
+   defining Unicode char U+1F5F (decimal 8031)
+   defining Unicode char U+1F60 (decimal 8032)
+   defining Unicode char U+1F61 (decimal 8033)
+   defining Unicode char U+1F62 (decimal 8034)
+   defining Unicode char U+1F63 (decimal 8035)
+   defining Unicode char U+1F64 (decimal 8036)
+   defining Unicode char U+1F65 (decimal 8037)
+   defining Unicode char U+1F66 (decimal 8038)
+   defining Unicode char U+1F67 (decimal 8039)
+   defining Unicode char U+1F68 (decimal 8040)
+   defining Unicode char U+1F69 (decimal 8041)
+   defining Unicode char U+1F6A (decimal 8042)
+   defining Unicode char U+1F6B (decimal 8043)
+   defining Unicode char U+1F6C (decimal 8044)
+   defining Unicode char U+1F6D (decimal 8045)
+   defining Unicode char U+1F6E (decimal 8046)
+   defining Unicode char U+1F6F (decimal 8047)
+   defining Unicode char U+1F70 (decimal 8048)
+   defining Unicode char U+1F71 (decimal 8049)
+   defining Unicode char U+1F72 (decimal 8050)
+   defining Unicode char U+1F73 (decimal 8051)
+   defining Unicode char U+1F74 (decimal 8052)
+   defining Unicode char U+1F75 (decimal 8053)
+   defining Unicode char U+1F76 (decimal 8054)
+   defining Unicode char U+1F77 (decimal 8055)
+   defining Unicode char U+1F78 (decimal 8056)
+   defining Unicode char U+1F79 (decimal 8057)
+   defining Unicode char U+1F7A (decimal 8058)
+   defining Unicode char U+1F7B (decimal 8059)
+   defining Unicode char U+1F7C (decimal 8060)
+   defining Unicode char U+1F7D (decimal 8061)
+   defining Unicode char U+1F80 (decimal 8064)
+   defining Unicode char U+1F81 (decimal 8065)
+   defining Unicode char U+1F82 (decimal 8066)
+   defining Unicode char U+1F83 (decimal 8067)
+   defining Unicode char U+1F84 (decimal 8068)
+   defining Unicode char U+1F85 (decimal 8069)
+   defining Unicode char U+1F86 (decimal 8070)
+   defining Unicode char U+1F87 (decimal 8071)
+   defining Unicode char U+1F88 (decimal 8072)
+   defining Unicode char U+1F89 (decimal 8073)
+   defining Unicode char U+1F8A (decimal 8074)
+   defining Unicode char U+1F8B (decimal 8075)
+   defining Unicode char U+1F8C (decimal 8076)
+   defining Unicode char U+1F8D (decimal 8077)
+   defining Unicode char U+1F8E (decimal 8078)
+   defining Unicode char U+1F8F (decimal 8079)
+   defining Unicode char U+1F90 (decimal 8080)
+   defining Unicode char U+1F91 (decimal 8081)
+   defining Unicode char U+1F92 (decimal 8082)
+   defining Unicode char U+1F93 (decimal 8083)
+   defining Unicode char U+1F94 (decimal 8084)
+   defining Unicode char U+1F95 (decimal 8085)
+   defining Unicode char U+1F96 (decimal 8086)
+   defining Unicode char U+1F97 (decimal 8087)
+   defining Unicode char U+1F98 (decimal 8088)
+   defining Unicode char U+1F99 (decimal 8089)
+   defining Unicode char U+1F9A (decimal 8090)
+   defining Unicode char U+1F9B (decimal 8091)
+   defining Unicode char U+1F9C (decimal 8092)
+   defining Unicode char U+1F9D (decimal 8093)
+   defining Unicode char U+1F9E (decimal 8094)
+   defining Unicode char U+1F9F (decimal 8095)
+   defining Unicode char U+1FA0 (decimal 8096)
+   defining Unicode char U+1FA1 (decimal 8097)
+   defining Unicode char U+1FA2 (decimal 8098)
+   defining Unicode char U+1FA3 (decimal 8099)
+   defining Unicode char U+1FA4 (decimal 8100)
+   defining Unicode char U+1FA5 (decimal 8101)
+   defining Unicode char U+1FA6 (decimal 8102)
+   defining Unicode char U+1FA7 (decimal 8103)
+   defining Unicode char U+1FA8 (decimal 8104)
+   defining Unicode char U+1FA9 (decimal 8105)
+   defining Unicode char U+1FAA (decimal 8106)
+   defining Unicode char U+1FAB (decimal 8107)
+   defining Unicode char U+1FAC (decimal 8108)
+   defining Unicode char U+1FAD (decimal 8109)
+   defining Unicode char U+1FAE (decimal 8110)
+   defining Unicode char U+1FAF (decimal 8111)
+   defining Unicode char U+1FB0 (decimal 8112)
+   defining Unicode char U+1FB1 (decimal 8113)
+   defining Unicode char U+1FB2 (decimal 8114)
+   defining Unicode char U+1FB3 (decimal 8115)
+   defining Unicode char U+1FB4 (decimal 8116)
+   defining Unicode char U+1FB6 (decimal 8118)
+   defining Unicode char U+1FB7 (decimal 8119)
+   defining Unicode char U+1FB8 (decimal 8120)
+   defining Unicode char U+1FB9 (decimal 8121)
+   defining Unicode char U+1FBA (decimal 8122)
+   defining Unicode char U+1FBB (decimal 8123)
+   defining Unicode char U+1FBC (decimal 8124)
+   defining Unicode char U+1FBD (decimal 8125)
+   defining Unicode char U+1FBE (decimal 8126)
+   defining Unicode char U+1FBF (decimal 8127)
+   defining Unicode char U+1FC0 (decimal 8128)
+   defining Unicode char U+1FC1 (decimal 8129)
+   defining Unicode char U+1FC2 (decimal 8130)
+   defining Unicode char U+1FC3 (decimal 8131)
+   defining Unicode char U+1FC4 (decimal 8132)
+   defining Unicode char U+1FC6 (decimal 8134)
+   defining Unicode char U+1FC7 (decimal 8135)
+   defining Unicode char U+1FC8 (decimal 8136)
+   defining Unicode char U+1FC9 (decimal 8137)
+   defining Unicode char U+1FCA (decimal 8138)
+   defining Unicode char U+1FCB (decimal 8139)
+   defining Unicode char U+1FCC (decimal 8140)
+   defining Unicode char U+1FCD (decimal 8141)
+   defining Unicode char U+1FCE (decimal 8142)
+   defining Unicode char U+1FCF (decimal 8143)
+   defining Unicode char U+1FD0 (decimal 8144)
+   defining Unicode char U+1FD1 (decimal 8145)
+   defining Unicode char U+1FD2 (decimal 8146)
+   defining Unicode char U+1FD3 (decimal 8147)
+   defining Unicode char U+1FD6 (decimal 8150)
+   defining Unicode char U+1FD7 (decimal 8151)
+   defining Unicode char U+1FD8 (decimal 8152)
+   defining Unicode char U+1FD9 (decimal 8153)
+   defining Unicode char U+1FDA (decimal 8154)
+   defining Unicode char U+1FDB (decimal 8155)
+   defining Unicode char U+1FDD (decimal 8157)
+   defining Unicode char U+1FDE (decimal 8158)
+   defining Unicode char U+1FDF (decimal 8159)
+   defining Unicode char U+1FE0 (decimal 8160)
+   defining Unicode char U+1FE1 (decimal 8161)
+   defining Unicode char U+1FE2 (decimal 8162)
+   defining Unicode char U+1FE3 (decimal 8163)
+   defining Unicode char U+1FE4 (decimal 8164)
+   defining Unicode char U+1FE5 (decimal 8165)
+   defining Unicode char U+1FE6 (decimal 8166)
+   defining Unicode char U+1FE7 (decimal 8167)
+   defining Unicode char U+1FE8 (decimal 8168)
+   defining Unicode char U+1FE9 (decimal 8169)
+   defining Unicode char U+1FEA (decimal 8170)
+   defining Unicode char U+1FEB (decimal 8171)
+   defining Unicode char U+1FEC (decimal 8172)
+   defining Unicode char U+1FED (decimal 8173)
+   defining Unicode char U+1FEE (decimal 8174)
+   defining Unicode char U+1FEF (decimal 8175)
+   defining Unicode char U+1FF2 (decimal 8178)
+   defining Unicode char U+1FF3 (decimal 8179)
+   defining Unicode char U+1FF4 (decimal 8180)
+   defining Unicode char U+1FF6 (decimal 8182)
+   defining Unicode char U+1FF7 (decimal 8183)
+   defining Unicode char U+1FF8 (decimal 8184)
+   defining Unicode char U+1FF9 (decimal 8185)
+   defining Unicode char U+1FFA (decimal 8186)
+   defining Unicode char U+1FFB (decimal 8187)
+   defining Unicode char U+1FFC (decimal 8188)
+   defining Unicode char U+1FFD (decimal 8189)
+   defining Unicode char U+1FFE (decimal 8190)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+10144 (decimal 65860)
+   defining Unicode char U+10145 (decimal 65861)
+   defining Unicode char U+10146 (decimal 65862)
+   defining Unicode char U+10147 (decimal 65863)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-fontenc.def
+File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
+LaTeX Encoding Info:    Ignoring declaration for text command \accACUTE (encoding LGR) on input line 251.
+LaTeX Encoding Info:    Ignoring declaration for text command \accGRAVE (encoding LGR) on input line 259.
+LaTeX Encoding Info:    Ignoring declaration for text command \accTILDE (encoding LGR) on input line 267.
+))
+Package textgreek Info: Loaded fontmap: {phv/*/*}{U/psy/*/*} {*/bx/n}{U/eur/b/n} {*/b/n}{U/eur/b/n} {*/*/n}{U/eur/m/n} {*/*/it}{OML/*/*/*}. on input line 69.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdraw.sty
+Package: pmboxdraw 2019/12/05 v1.4 Poor man's box drawing characters (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Now handling font encoding pmboxdraw ...
+... processing UTF-8 mapping file for font encoding pmboxdraw
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdrawenc.dfu
+File: pmboxdrawenc.dfu 2019/12/05 v1.4 UTF-8 support for box drawing characters
+   defining Unicode char U+2500 (decimal 9472)
+   defining Unicode char U+2501 (decimal 9473)
+   defining Unicode char U+2502 (decimal 9474)
+   defining Unicode char U+2503 (decimal 9475)
+   defining Unicode char U+250C (decimal 9484)
+   defining Unicode char U+250D (decimal 9485)
+   defining Unicode char U+250E (decimal 9486)
+   defining Unicode char U+250F (decimal 9487)
+   defining Unicode char U+2510 (decimal 9488)
+   defining Unicode char U+2511 (decimal 9489)
+   defining Unicode char U+2512 (decimal 9490)
+   defining Unicode char U+2513 (decimal 9491)
+   defining Unicode char U+2514 (decimal 9492)
+   defining Unicode char U+2515 (decimal 9493)
+   defining Unicode char U+2516 (decimal 9494)
+   defining Unicode char U+2517 (decimal 9495)
+   defining Unicode char U+2518 (decimal 9496)
+   defining Unicode char U+2519 (decimal 9497)
+   defining Unicode char U+251A (decimal 9498)
+   defining Unicode char U+251B (decimal 9499)
+   defining Unicode char U+251C (decimal 9500)
+   defining Unicode char U+251D (decimal 9501)
+   defining Unicode char U+251E (decimal 9502)
+   defining Unicode char U+251F (decimal 9503)
+   defining Unicode char U+2520 (decimal 9504)
+   defining Unicode char U+2521 (decimal 9505)
+   defining Unicode char U+2522 (decimal 9506)
+   defining Unicode char U+2523 (decimal 9507)
+   defining Unicode char U+2524 (decimal 9508)
+   defining Unicode char U+252C (decimal 9516)
+   defining Unicode char U+252D (decimal 9517)
+   defining Unicode char U+252E (decimal 9518)
+   defining Unicode char U+252F (decimal 9519)
+   defining Unicode char U+2530 (decimal 9520)
+   defining Unicode char U+2531 (decimal 9521)
+   defining Unicode char U+2532 (decimal 9522)
+   defining Unicode char U+2533 (decimal 9523)
+   defining Unicode char U+2534 (decimal 9524)
+   defining Unicode char U+2535 (decimal 9525)
+   defining Unicode char U+2536 (decimal 9526)
+   defining Unicode char U+2537 (decimal 9527)
+   defining Unicode char U+2538 (decimal 9528)
+   defining Unicode char U+2539 (decimal 9529)
+   defining Unicode char U+253A (decimal 9530)
+   defining Unicode char U+253B (decimal 9531)
+   defining Unicode char U+253C (decimal 9532)
+   defining Unicode char U+253D (decimal 9533)
+   defining Unicode char U+253E (decimal 9534)
+   defining Unicode char U+253F (decimal 9535)
+   defining Unicode char U+2540 (decimal 9536)
+   defining Unicode char U+2541 (decimal 9537)
+   defining Unicode char U+2542 (decimal 9538)
+   defining Unicode char U+2543 (decimal 9539)
+   defining Unicode char U+2544 (decimal 9540)
+   defining Unicode char U+2545 (decimal 9541)
+   defining Unicode char U+2546 (decimal 9542)
+   defining Unicode char U+2547 (decimal 9543)
+   defining Unicode char U+2548 (decimal 9544)
+   defining Unicode char U+2549 (decimal 9545)
+   defining Unicode char U+254A (decimal 9546)
+   defining Unicode char U+254B (decimal 9547)
+   defining Unicode char U+2550 (decimal 9552)
+   defining Unicode char U+2551 (decimal 9553)
+   defining Unicode char U+2552 (decimal 9554)
+   defining Unicode char U+2553 (decimal 9555)
+   defining Unicode char U+2554 (decimal 9556)
+   defining Unicode char U+2555 (decimal 9557)
+   defining Unicode char U+2556 (decimal 9558)
+   defining Unicode char U+2557 (decimal 9559)
+   defining Unicode char U+2558 (decimal 9560)
+   defining Unicode char U+2559 (decimal 9561)
+   defining Unicode char U+255A (decimal 9562)
+   defining Unicode char U+255B (decimal 9563)
+   defining Unicode char U+255C (decimal 9564)
+   defining Unicode char U+255D (decimal 9565)
+   defining Unicode char U+255E (decimal 9566)
+   defining Unicode char U+255F (decimal 9567)
+   defining Unicode char U+2560 (decimal 9568)
+   defining Unicode char U+2561 (decimal 9569)
+   defining Unicode char U+2562 (decimal 9570)
+   defining Unicode char U+2563 (decimal 9571)
+   defining Unicode char U+2564 (decimal 9572)
+   defining Unicode char U+2565 (decimal 9573)
+   defining Unicode char U+2566 (decimal 9574)
+   defining Unicode char U+2567 (decimal 9575)
+   defining Unicode char U+2568 (decimal 9576)
+   defining Unicode char U+2569 (decimal 9577)
+   defining Unicode char U+256A (decimal 9578)
+   defining Unicode char U+256B (decimal 9579)
+   defining Unicode char U+256C (decimal 9580)
+   defining Unicode char U+2574 (decimal 9588)
+   defining Unicode char U+2575 (decimal 9589)
+   defining Unicode char U+2576 (decimal 9590)
+   defining Unicode char U+2577 (decimal 9591)
+   defining Unicode char U+2578 (decimal 9592)
+   defining Unicode char U+2579 (decimal 9593)
+   defining Unicode char U+257A (decimal 9594)
+   defining Unicode char U+257B (decimal 9595)
+   defining Unicode char U+257C (decimal 9596)
+   defining Unicode char U+257D (decimal 9597)
+   defining Unicode char U+257E (decimal 9598)
+   defining Unicode char U+257F (decimal 9599)
+   defining Unicode char U+2580 (decimal 9600)
+   defining Unicode char U+2581 (decimal 9601)
+   defining Unicode char U+2582 (decimal 9602)
+   defining Unicode char U+2583 (decimal 9603)
+   defining Unicode char U+2584 (decimal 9604)
+   defining Unicode char U+2585 (decimal 9605)
+   defining Unicode char U+2586 (decimal 9606)
+   defining Unicode char U+2587 (decimal 9607)
+   defining Unicode char U+2588 (decimal 9608)
+   defining Unicode char U+2589 (decimal 9609)
+   defining Unicode char U+258A (decimal 9610)
+   defining Unicode char U+258B (decimal 9611)
+   defining Unicode char U+258C (decimal 9612)
+   defining Unicode char U+258D (decimal 9613)
+   defining Unicode char U+258E (decimal 9614)
+   defining Unicode char U+258F (decimal 9615)
+   defining Unicode char U+2590 (decimal 9616)
+   defining Unicode char U+2591 (decimal 9617)
+   defining Unicode char U+2592 (decimal 9618)
+   defining Unicode char U+2593 (decimal 9619)
+   defining Unicode char U+2594 (decimal 9620)
+   defining Unicode char U+2595 (decimal 9621)
+   defining Unicode char U+2596 (decimal 9622)
+   defining Unicode char U+2597 (decimal 9623)
+   defining Unicode char U+2598 (decimal 9624)
+   defining Unicode char U+2599 (decimal 9625)
+   defining Unicode char U+259A (decimal 9626)
+   defining Unicode char U+259B (decimal 9627)
+   defining Unicode char U+259C (decimal 9628)
+   defining Unicode char U+259D (decimal 9629)
+   defining Unicode char U+259E (decimal 9630)
+   defining Unicode char U+259F (decimal 9631)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+)
+\pmbd@W=\dimen169
+\pmbd@H=\dimen170
+\pmbd@L=\dimen171
+\pmbd@Thin=\dimen172
+\pmbd@Thick=\dimen173
+\pmbd@Sep=\dimen174
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip68
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks26
+\ex@=\dimen175
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen176
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count306
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count307
+\leftroot@=\count308
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count309
+\DOTSCASE@=\count310
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen177
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count311
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count312
+\dotsspace@=\muskip17
+\c@parentequation=\count313
+\dspbrk@lvl=\count314
+\tag@help=\toks27
+\row@=\count315
+\column@=\count316
+\maxfields@=\count317
+\andhelp@=\toks28
+\eqnshift@=\dimen178
+\alignsep@=\dimen179
+\tagshift@=\dimen180
+\tagwidth@=\dimen181
+\totwidth@=\dimen182
+\lineht@=\dimen183
+\@envbody=\toks29
+\multlinegap=\skip69
+\multlinetaggap=\skip70
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xfrac\xfrac.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen184
+\Gin@req@width=\dimen185
+)
+Package: xfrac 2024-06-04 Split-level fractions
+\l__xfrac_slash_box=\box59
+\l__xfrac_tmp_box=\box60
+\l__xfrac_denominator_bot_sep_dim=\dimen186
+\l__xfrac_numerator_bot_sep_dim=\dimen187
+\l__xfrac_numerator_top_sep_dim=\dimen188
+\l__xfrac_slash_left_sep_dim=\dimen189
+\l__xfrac_slash_right_sep_dim=\dimen190
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+LaTeX template Info: Declaring template type 'xfrac' taking 3 argument(s) on
+(template)           line 100.
+
+
+LaTeX template Info: Declaring instance 'cmr' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
+
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2026-03-26 v3.5.1 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count318
+\l__siunitx_number_exponent_fixed_int=\count319
+\l__siunitx_number_min_decimal_int=\count320
+\l__siunitx_number_min_integer_int=\count321
+\l__siunitx_number_round_precision_int=\count322
+\l__siunitx_number_lower_threshold_int=\count323
+\l__siunitx_number_upper_threshold_int=\count324
+\l__siunitx_number_group_first_int=\count325
+\l__siunitx_number_group_size_int=\count326
+\l__siunitx_number_group_min_int=\count327
+\l__siunitx_number_group_minimum_int=\count328
+\l__siunitx_compound_count_int=\count329
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_table_tmp_box=\box61
+\l__siunitx_table_tmp_dim=\dimen191
+\l__siunitx_table_column_width_dim=\dimen192
+\l__siunitx_table_integer_box=\box62
+\l__siunitx_table_decimal_box=\box63
+\l__siunitx_table_uncert_box=\box64
+\l__siunitx_table_before_box=\box65
+\l__siunitx_table_after_box=\box66
+\l__siunitx_table_before_dim=\dimen193
+\l__siunitx_table_carry_dim=\dimen194
+\l__siunitx_unit_tmp_int=\count330
+\l__siunitx_unit_position_int=\count331
+\l__siunitx_unit_total_int=\count332
+\l__siunitx_sexagesimal_tmp_dim=\dimen195
+\l__siunitx_sexagesimal_marker_box=\box67
+\l__siunitx_sexagesimal_unit_box=\box68
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen196
+\ar@mcellbox=\box69
+\extrarowheight=\dimen197
+\NC@list=\toks31
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box70
+))
+
+Package siunitx Info: Option "separate-uncertainty" has been deprecated in
+(siunitx)             this release.
+(siunitx)             
+(siunitx)             Use "uncertainty-mode = separate" as a replacement.
+
+
+Package siunitx Info: Option "multi-part-units = single" has been deprecated
+(siunitx)             in this release.
+(siunitx)             
+(siunitx)             Use "separate-uncertainty-units = single" as a
+(siunitx)             replacement.
+
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.sty
+Package: gensymb 2022/10/17 v1.0.2 (KJH)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count333
+\calc@Bcount=\count334
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count335
+\calc@Cskip=\skip75
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count336
+\l_MT_multwidth_dim=\dimen256
+\origjot=\skip76
+\l_MT_shortvdotswithinadjustabove_dim=\dimen257
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen258
+\l_MT_above_intertext_sep=\dimen259
+\l_MT_below_intertext_sep=\dimen260
+\l_MT_above_shortintertext_sep=\dimen261
+\l_MT_below_shortintertext_sep=\dimen262
+\xmathstrut@box=\box71
+\xmathstrut@dim=\dimen263
+)
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 351.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/steinmetz\steinmetz.sty
+Package: steinmetz 2009/06/14 v1.0 Steinmetz symbol for electrotechnics
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks32
+\@arclen=\dimen264
+\@arcrad=\dimen265
+\pIIe@tempdima=\dimen266
+\pIIe@tempdimb=\dimen267
+\pIIe@tempdimc=\dimen268
+\pIIe@tempdimd=\dimen269
+\pIIe@tempdime=\dimen270
+\pIIe@tempdimf=\dimen271
+)
+\stm@phasebox=\box72
+\stm@phasedp=\skip77
+\stm@phaseht=\skip78
+\stm@phasetot=\skip79
+\stm@phasewd=\skip80
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count337
+))
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemformula\chemformula.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen272
+\pgfutil@tempdimb=\dimen273
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box73
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks36
+))
+\pgf@x=\dimen274
+\pgf@y=\dimen275
+\pgf@xa=\dimen276
+\pgf@ya=\dimen277
+\pgf@xb=\dimen278
+\pgf@yb=\dimen279
+\pgf@xc=\dimen280
+\pgf@yc=\dimen281
+\pgf@xd=\dimen282
+\pgf@yd=\dimen283
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count338
+\c@pgf@countb=\count339
+\c@pgf@countc=\count340
+\c@pgf@countd=\count341
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count342
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count343
+\pgfsyssoftpath@bigbuffer@items=\count344
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen284
+\pgfmath@count=\count345
+\pgfmath@box=\box74
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count346
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen285
+\pgf@picmaxx=\dimen286
+\pgf@picminy=\dimen287
+\pgf@picmaxy=\dimen288
+\pgf@pathminx=\dimen289
+\pgf@pathmaxx=\dimen290
+\pgf@pathminy=\dimen291
+\pgf@pathmaxy=\dimen292
+\pgf@xx=\dimen293
+\pgf@xy=\dimen294
+\pgf@yx=\dimen295
+\pgf@yy=\dimen296
+\pgf@zx=\dimen297
+\pgf@zy=\dimen298
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen299
+\pgf@path@lasty=\dimen300
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen301
+\pgf@shorten@start@additional=\dimen302
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box75
+\pgf@hbox=\box76
+\pgf@layerbox@main=\box77
+\pgf@picture@serial@count=\count347
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen303
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen304
+\pgf@pt@y=\dimen305
+\pgf@pt@temp=\dimen306
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen307
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen308
+\pgf@sys@shading@range@num=\count348
+\pgf@shadingcount=\count349
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box78
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box79
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen309
+\pgf@nodesepend=\dimen310
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen311
+\pgffor@skip=\dimen312
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count350
+\pgfplotmarksize=\dimen313
+)
+\tikz@lastx=\dimen314
+\tikz@lasty=\dimen315
+\tikz@lastxsaved=\dimen316
+\tikz@lastysaved=\dimen317
+\tikz@lastmovetox=\dimen318
+\tikz@lastmovetoy=\dimen319
+\tikzleveldistance=\dimen320
+\tikzsiblingdistance=\dimen321
+\tikz@figbox=\box80
+\tikz@figbox@bg=\box81
+\tikz@tempbox=\box82
+\tikz@tempbox@bg=\box83
+\tikztreelevel=\count351
+\tikznumberofchildren=\count352
+\tikznumberofcurrentchild=\count353
+\tikz@fig@count=\count354
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count355
+\pgfmatrixcurrentcolumn=\count356
+\pgf@matrix@numberofcolumns=\count357
+)
+\tikz@expandcount=\count358
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip81
+\L@UnitsRaiseTextstyle=\skip82
+\L@UnitsRaiseScriptstyle=\skip83
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen322
+\pgfarrowlength=\dimen323
+\pgfarrowwidth=\dimen324
+\pgfarrowlinewidth=\dimen325
+)
+Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions (CN)
+\l__chemformula_tmpa_dim=\dimen326
+\l__chemformula_tmpb_dim=\dimen327
+\l__chemformula_tmpc_dim=\dimen328
+\l__chemformula_tmpa_int=\count359
+\l__chemformula_tmpb_int=\count360
+\l__chemformula_tmpc_int=\count361
+\l__chemformula_tmpa_box=\box84
+\l__chemformula_tmpb_box=\box85
+\l__chemformula_arrow_length_dim=\dimen329
+\l__chemformula_arrow_label_height_dim=\dimen330
+\l__chemformula_arrow_label_offset_dim=\dimen331
+\l__chemformula_arrow_minimum_length_dim=\dimen332
+\l__chemformula_arrow_shortage_dim=\dimen333
+\l__chemformula_arrow_offset_dim=\dimen334
+\l__chemformula_arrow_yshift_dim=\dimen335
+\l__chemformula_radical_radius_dim=\dimen336
+\l__chemformula_radical_hshift_dim=\dimen337
+\l__chemformula_radical_vshift_dim=\dimen338
+\l__chemformula_radical_space_dim=\dimen339
+\l__chemformula_arrow_head_dim=\dimen340
+\l__chemformula_name_dim=\dimen341
+\l__chemformula_adduct_space_dim=\dimen342
+\l__chemformula_charge_shift_dim=\dimen343
+\l__chemformula_subscript_shift_dim=\dimen344
+\l__chemformula_superscript_shift_dim=\dimen345
+\l__chemformula_subscript_dim=\dimen346
+\l__chemformula_superscript_dim=\dimen347
+\l__chemformula_bond_dim=\dimen348
+\l__chemformula_bond_space_dim=\dimen349
+\l__chemformula_elspec_pair_distance_dim=\dimen350
+\l__chemformula_elspec_pair_line_length_dim=\dimen351
+\l__chemformula_elspec_pair_width_dim=\dimen352
+\l__chemformula_kroegervink_positive_radius_dim=\dimen353
+\l__chemformula_kroegervink_positive_hshift_dim=\dimen354
+\l__chemformula_kroegervink_positive_vshift_dim=\dimen355
+\l__chemformula_kroegervink_positive_space_dim=\dimen356
+\l__chemformula_stoich_space_skip=\skip84
+\l__chemformula_math_space_skip=\skip85
+\l__chemformula_additions_symbol_space_skip=\skip86
+\l__chemformula_count_tokens_int=\count362
+\g__chemformula_lewis_int=\count363
+\l__chemformula_arrow_arg_i_box=\box86
+\l__chemformula_arrow_arg_ii_box=\box87
+\l__chemformula_superscript_box=\box88
+\l__chemformula_subscript_box=\box89
+\l__chemformula_plus_space_skip=\skip87
+\l__chemformula_minus_space_skip=\skip88
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
+Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgreek.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count364
+\g__chemgreek_tmpa_int=\count365
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count366
+\__mhchem_arrow_extPgfLength_skip=\skip89
+\mhchem@minispace@tmp=\skip90
+\mhchem@minibackspace@tmp=\skip91
+\mhchem@bondwidth=\skip92
+\mhchem@bondheight=\skip93
+\mhchem@smallbondwidth@tmpA=\skip94
+\mhchem@smallbondwidth@tmpB=\skip95
+\mhchem@smallbondwidth=\skip96
+\mhchem@bondtmp@minussidebearingleft=\skip97
+\mhchem@bondtmp@minussidebearingright=\skip98
+\l__mhchem_option_version_int=\count367
+\mhchem@option@minusmathsidebearingleft=\dimen357
+\mhchem@option@minusmathsidebearingright=\dimen358
+\mhchem@option@minustextsidebearingleft=\dimen359
+\mhchem@option@minustextsidebearingright=\dimen360
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+\UL@box=\box90
+\UL@hyphenbox=\box91
+\UL@skip=\skip99
+\UL@hook=\toks45
+\UL@height=\dimen361
+\UL@pe=\count368
+\UL@pixel=\dimen362
+\ULC@box=\box92
+Package: ulem 2019/11/18
+\ULdepth=\dimen363
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip100
+\fb@frw=\dimen364
+\fb@frh=\dimen365
+\FrameRule=\dimen366
+\FrameSep=\dimen367
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mdwtools\footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box93
+\fn@width=\dimen368
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen369
+\TX@old@table=\dimen370
+\TX@old@col=\dimen371
+\TX@target=\dimen372
+\TX@delta=\dimen373
+\TX@cols=\count369
+\TX@ftn=\toks46
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen374
+\lightrulewidth=\dimen375
+\cmidrulewidth=\dimen376
+\belowrulesep=\dimen377
+\belowbottomsep=\dimen378
+\aboverulesep=\dimen379
+\abovetopsep=\dimen380
+\cmidrulesep=\dimen381
+\cmidrulekern=\dimen382
+\defaultaddspace=\dimen383
+\@cmidla=\count370
+\@cmidlb=\count371
+\@aboverulesep=\dimen384
+\@belowrulesep=\dimen385
+\@thisruleclass=\count372
+\@lastruleclass=\count373
+\@thisrulewidth=\dimen386
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen387
+\c@nlinenum=\count374
+\TeXr@lab=\toks47
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip101
+\multirow@cntb=\count375
+\multirow@dima=\skip102
+\bigstrutjot=\dimen388
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count376
+\mult@box=\box94
+\multicol@leftmargin=\dimen389
+\c@unbalance=\count377
+\c@collectmore=\count378
+\doublecol@number=\count379
+\multicoltolerance=\count380
+\multicolpretolerance=\count381
+\full@width=\dimen390
+\page@free=\dimen391
+\premulticols=\dimen392
+\postmulticols=\dimen393
+\multicolsep=\skip103
+\multicolbaselineskip=\skip104
+\partial@page=\box95
+\last@line=\box96
+\mc@boxedresult=\box97
+\maxbalancingoverflow=\dimen394
+\mult@rightbox=\box98
+\mult@grightbox=\box99
+\mult@firstbox=\box100
+\mult@gfirstbox=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\c@minrows=\count382
+\c@columnbadness=\count383
+\c@finalcolumnbadness=\count384
+\last@try=\dimen395
+\multicolovershoot=\dimen396
+\multicolundershoot=\dimen397
+\mult@nat@firstbox=\box138
+\colbreak@box=\box139
+\mc@col@check@num=\count385
+\g__mc_curr_col_int=\count386
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/arydshln\arydshln.sty
+Package: arydshln 2019/02/21 v1.76 
+\dashlinedash=\dimen398
+\dashlinegap=\dimen399
+\adl@box=\box140
+\adl@height=\dimen400
+\adl@heightsave=\dimen401
+\adl@depth=\dimen402
+\adl@depthsave=\dimen403
+\adl@finaldepth=\dimen404
+\adl@columns=\count387
+\adl@ncol=\count388
+\adl@currentcolumn=\count389
+\adl@currentcolumnsave=\count390
+\adl@totalheight=\count391
+\adl@totalheightsave=\count392
+\adl@dash=\count393
+\adl@gap=\count394
+\adl@cla=\count395
+\adl@clb=\count396
+\adl@everyvbox=\toks48
+\adl@LTpagetotal=\dimen405
+)
+==> First Aid for arydshln.sty applied!
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks49
+\minrowclearance=\skip105
+\rownum=\count397
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count398
+\svg@box=\box141
+\c@svg@param@currpage=\count399
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
+\ESO@tempdima=\dimen406
+\ESO@tempdimb=\dimen407
+)
+\AM@pagewidth=\dimen408
+\AM@pageheight=\dimen409
+\AM@fboxrule=\dimen410
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count400
+\AM@pagebox=\box142
+\AM@global@opts=\toks50
+\AM@pagecnt=\count401
+\AM@toc@title=\toks51
+\AM@lof@heading=\toks52
+\c@AM@survey=\count402
+\AM@templatesizebox=\box143
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarythrough.code.tex
+File: tikzlibrarythrough.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.callouts.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box144
+\pgfnodeparttwobox=\box145
+\pgfnodepartthreebox=\box146
+\pgfnodepartfourbox=\box147
+\pgfnodeparttwentybox=\box148
+\pgfnodepartnineteenbox=\box149
+\pgfnodeparteighteenbox=\box150
+\pgfnodepartseventeenbox=\box151
+\pgfnodepartsixteenbox=\box152
+\pgfnodepartfifteenbox=\box153
+\pgfnodepartfourteenbox=\box154
+\pgfnodepartthirteenbox=\box155
+\pgfnodeparttwelvebox=\box156
+\pgfnodepartelevenbox=\box157
+\pgfnodeparttenbox=\box158
+\pgfnodepartninebox=\box159
+\pgfnodeparteightbox=\box160
+\pgfnodepartsevenbox=\box161
+\pgfnodepartsixbox=\box162
+\pgfnodepartfivebox=\box163
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen411
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen412
+\pgfdecoratedremainingdistance=\dimen413
+\pgfdecoratedinputsegmentcompleteddistance=\dimen414
+\pgfdecoratedinputsegmentremainingdistance=\dimen415
+\pgf@decorate@distancetomove=\dimen416
+\pgf@decorate@repeatstate=\count403
+\pgfdecorationsegmentamplitude=\dimen417
+\pgfdecorationsegmentlength=\dimen418
+)
+\tikz@lib@dec@box=\box164
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
+\t@pgfplots@toka=\toks53
+\t@pgfplots@tokb=\toks54
+\t@pgfplots@tokc=\toks55
+\pgfplots@tmpa=\dimen419
+\c@pgfplots@coordindex=\count404
+\c@pgfplots@scanlineindex=\count405
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks56
+\t@pgf@tokb=\toks57
+\t@pgf@tokc=\toks58
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count406
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count407
+\t@pgfplotstable@a=\toks59
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count408
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count409
+\pgfplots@xmin@reg=\dimen420
+\pgfplots@xmax@reg=\dimen421
+\pgfplots@ymin@reg=\dimen422
+\pgfplots@ymax@reg=\dimen423
+\pgfplots@zmin@reg=\dimen424
+\pgfplots@zmax@reg=\dimen425
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+\pgf@layerbox@background=\box165
+\pgf@layerboxsaved@background=\box166
+\pgf@layerbox@foreground=\box167
+\pgf@layerboxsaved@foreground=\box168
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.fillbetween.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibraryfillbetween.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryintersections.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count410
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibrarydecorations.softclip.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\pgflibraryfillbetween.code.tex))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.decorations.softclip.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\pgf-pie.sty
+Package: pgf-pie 2022/06/14 v0.7 Some LaTeX macros for pie chart by using PGF/Tikz package.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\tikzlibrarypie.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
+\pgfpie@angleEnd=\dimen426
+\pgfpie@explodeLength=\count411
+\pgfpie@colorLength=\count412
+\pgfpie@sliceLength=\count413
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuitikz.sty
+Package: circuitikz 2026/02/04{} The CircuiTikz circuit drawing package version 1.8.5
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgftransformnonlinearflatness=\dimen427
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@curvilinear@time@a=\dimen428
+\pgf@curvilinear@length@a=\dimen429
+\pgf@curvilinear@length@b=\dimen430
+\pgf@curvilinear@length@c=\dimen431
+\pgf@curvilinear@length@d=\dimen432
+)
+\pgf@arrows@the@rigidity=\dimen433
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfpu.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirc.defines.tex
+\pgf@circ@count@a=\count414
+\pgf@circ@count@b=\count415
+\pgf@circ@count@c=\count416
+\pgf@circ@res@up=\dimen434
+\pgf@circ@res@down=\dimen435
+\pgf@circ@res@zero=\dimen436
+\pgf@circ@res@left=\dimen437
+\pgf@circ@res@right=\dimen438
+\pgf@circ@res@other=\dimen439
+\pgf@circ@res@step=\dimen440
+\pgf@circ@res@temp=\dimen441
+\pgf@circ@Rlen=\dimen442
+\pgf@circ@scaled@Rlen=\dimen443
+\pgfstartlinewidth=\dimen444
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircutils.tex
+\ctikz@scratchbox=\box169
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircpath.tex
+\ctikz@vif@count=\count417
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircshapes.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmonopoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircbipoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirctripoles.tex
+\pgf@circ@res@count=\count418
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircquadpoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmultipoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirclabel.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircvoltage.tex
+\pgfcirc@labelshift=\dimen445
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirccurrent.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircflow.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemfig\chemfig.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/chemfig\chemfig.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/simplekv\simplekv.tex
+Package: simplekv 2025/06/15 v0.32 Simple keyval package (CT)
+)
+\CF_cnt_atomgroup=\count419
+\CF_cnt_group=\count420
+\CF_cnt_atom=\count421
+\CF_cnt_cycle=\count422
+\CF_cnt_cyclebonds=\count423
+\CF_cnt_compound=\count424
+\CF_dim=\dimen446
+\CF_turnangle=\dimen447
+\CF_arrowsize=\dimen448
+\CF_zero=\dimen449
+\CF_box=\box170
+\CF_boxstuff=\box171
+\CF_testbox=\box172
+\CF_chargebox=\box173
+\CF_substtoks=\toks60
+\CF_harrow_boxup=\box174
+\CF_harrow_boxdown=\box175
+\CF_hreact_cnt=\count425
+)
+Package: chemfig 2025/10/30 v1.71 Draw molecule with an easy syntax (CT)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count426
+\float@exts=\toks61
+\float@box=\box176
+\@float@everytoks=\toks62
+\@floatcapt=\box177
+)
+\@float@every@lstfloat=\toks63
+\c@lstfloat=\count427
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen450
+\captionmargin=\dimen451
+\caption@leftmargin=\dimen452
+\caption@rightmargin=\dimen453
+\caption@width=\dimen454
+\caption@indent=\dimen455
+\caption@parindent=\dimen456
+\caption@hangindent=\dimen457
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count428
+\c@continuedfloat=\count429
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count430
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count431
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count432
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen458
+\Hy@linkcounter=\count433
+\Hy@pagecounter=\count434
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count435
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\puenc-greek.def
+File: puenc-greek.def 2023-09-12 2.5 Greek LICRs for PDF strings
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-fontenc.def
+File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
+)
+LaTeX Encoding Info:    Redeclaring text command \textmu (encoding PU) on input line 179.
+)
+LaTeX Encoding Info:    Redeclaring text command \textohm (encoding PU) on input line 1176.
+)
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count436
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen459
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count437
+\Field@Width=\dimen460
+\Fld@charsize=\dimen461
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count438
+\c@Item=\count439
+\c@Hfootnote=\count440
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count441
+\c@bookmark@seq@number=\count442
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip106
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titleref\titleref.sty
+Package: titleref 2001/04/05 v3.1  Cross-references with titles.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chngcntr\chngcntr.sty
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count443
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count444
+\c@listtotal=\count445
+\c@listcount=\count446
+\c@liststart=\count447
+\c@liststop=\count448
+\c@citecount=\count449
+\c@citetotal=\count450
+\c@multicitecount=\count451
+\c@multicitetotal=\count452
+\c@instcount=\count453
+\c@maxnames=\count454
+\c@minnames=\count455
+\c@maxitems=\count456
+\c@minitems=\count457
+\c@citecounter=\count458
+\c@maxcitecounter=\count459
+\c@savedcitecounter=\count460
+\c@uniquelist=\count461
+\c@uniquename=\count462
+\c@refsection=\count463
+\c@refsegment=\count464
+\c@maxextratitle=\count465
+\c@maxextratitleyear=\count466
+\c@maxextraname=\count467
+\c@maxextradate=\count468
+\c@maxextraalpha=\count469
+\c@abbrvpenalty=\count470
+\c@highnamepenalty=\count471
+\c@lownamepenalty=\count472
+\c@maxparens=\count473
+\c@parenlevel=\count474
+\blx@tempcnta=\count475
+\blx@tempcntb=\count476
+\blx@tempcntc=\count477
+\c@blx@maxsection=\count478
+\blx@maxsegment@0=\count479
+\blx@notetype=\count480
+\blx@parenlevel@text=\count481
+\blx@parenlevel@foot=\count482
+\blx@sectionciteorder@0=\count483
+\blx@sectionciteorderinternal@0=\count484
+\blx@entrysetcounter=\count485
+\blx@biblioinstance=\count486
+\labelnumberwidth=\skip107
+\labelalphawidth=\skip108
+\biblabelsep=\skip109
+\bibitemsep=\skip110
+\bibnamesep=\skip111
+\bibinitsep=\skip112
+\bibparsep=\skip113
+\bibhang=\skip114
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language80
+\c@mincomprange=\count487
+\c@maxcomprange=\count488
+\c@mincompwidth=\count489
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count490
+\c@savedafterword=\count491
+\c@annotator=\count492
+\c@savedannotator=\count493
+\c@author=\count494
+\c@savedauthor=\count495
+\c@bookauthor=\count496
+\c@savedbookauthor=\count497
+\c@commentator=\count498
+\c@savedcommentator=\count499
+\c@editor=\count500
+\c@savededitor=\count501
+\c@editora=\count502
+\c@savededitora=\count503
+\c@editorb=\count504
+\c@savededitorb=\count505
+\c@editorc=\count506
+\c@savededitorc=\count507
+\c@foreword=\count508
+\c@savedforeword=\count509
+\c@holder=\count510
+\c@savedholder=\count511
+\c@introduction=\count512
+\c@savedintroduction=\count513
+\c@namea=\count514
+\c@savednamea=\count515
+\c@nameb=\count516
+\c@savednameb=\count517
+\c@namec=\count518
+\c@savednamec=\count519
+\c@translator=\count520
+\c@savedtranslator=\count521
+\c@shortauthor=\count522
+\c@savedshortauthor=\count523
+\c@shorteditor=\count524
+\c@savedshorteditor=\count525
+\c@labelname=\count526
+\c@savedlabelname=\count527
+\c@institution=\count528
+\c@savedinstitution=\count529
+\c@lista=\count530
+\c@savedlista=\count531
+\c@listb=\count532
+\c@savedlistb=\count533
+\c@listc=\count534
+\c@savedlistc=\count535
+\c@listd=\count536
+\c@savedlistd=\count537
+\c@liste=\count538
+\c@savedliste=\count539
+\c@listf=\count540
+\c@savedlistf=\count541
+\c@location=\count542
+\c@savedlocation=\count543
+\c@organization=\count544
+\c@savedorganization=\count545
+\c@origlocation=\count546
+\c@savedoriglocation=\count547
+\c@origpublisher=\count548
+\c@savedorigpublisher=\count549
+\c@publisher=\count550
+\c@savedpublisher=\count551
+\c@language=\count552
+\c@savedlanguage=\count553
+\c@origlanguage=\count554
+\c@savedoriglanguage=\count555
+\c@pageref=\count556
+\c@savedpageref=\count557
+\shorthandwidth=\skip115
+\shortjournalwidth=\skip116
+\shortserieswidth=\skip117
+\shorttitlewidth=\skip118
+\shortauthorwidth=\skip119
+\shorteditorwidth=\skip120
+\locallabelnumberwidth=\skip121
+\locallabelalphawidth=\skip122
+\localshorthandwidth=\skip123
+\localshortjournalwidth=\skip124
+\localshortserieswidth=\skip125
+\localshorttitlewidth=\skip126
+\localshortauthorwidth=\skip127
+\localshorteditorwidth=\skip128
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count558
+\c@textcitetotal=\count559
+\c@textcitemaxnames=\count560
+\c@biburlbigbreakpenalty=\count561
+\c@biburlbreakpenalty=\count562
+\c@biburlnumpenalty=\count563
+\c@biburlucpenalty=\count564
+\c@biburllcpenalty=\count565
+\biburlbigskip=\muskip21
+\biburlnumskip=\muskip22
+\biburlucskip=\muskip23
+\biburllcskip=\muskip24
+\c@smartand=\count566
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count567
+\c@bbx:relatedtotal=\count568
+))))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count569
+\l__lipsum_a_int=\count570
+\l__lipsum_b_int=\count571
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\ifdraft.sty
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+)) (capa.tex)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'brazil'.
+ (raiz.aux
+Package babel Info: 'brazil' activates 'portuges' shorthands.
+(babel)             Reported on input line 12.
+
+
+LaTeX Warning: Label `fig:one' multiply defined.
+
+)
+\openout1 = `raiz.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 11.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 11.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/cbfonts-fd\lgrcmr.fd
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+)
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(85.35826pt, 702.78308pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count572
+\scratchdimen=\dimen462
+\scratchbox=\box178
+\nofMPsegments=\count573
+\nofMParguments=\count574
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count575
+\MPscratchDim=\dimen463
+\MPnumerator=\count576
+\makeMPintoPDFobject=\count577
+\everyMPtoPDFconversion=\toks65
+)
+\c@lstlisting=\count578
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-brazil.trsl
+File: translations-basic-dictionary-brazil.trsl (brazil translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `brazil'. on input line 11.
+\symgns@font=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/aer/m/n --> TS1/aer/b/n on input line 11.
+Package gensymb Info: Math companion symbols declared on input line 11.
+LaTeX Info: Redefining \degree on input line 11.
+LaTeX Info: Redefining \celsius on input line 11.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 11.
+LaTeX Info: Redefining \ohm on input line 11.
+Package gensymb Info: Using \textohm for \ohm on input line 11.
+LaTeX Info: Redefining \micro on input line 11.
+Package gensymb Info: Using \textmu for \micro on input line 11.
+
+Package chemgreek Info: Activating mapping `textgreek' on line 11.
+
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 11.
+(raiz.out) (raiz.out)
+\@outlinefile=\write5
+\openout5 = `raiz.out'.
+
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `raiz.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'raiz.bbl' found.
+ (raiz.bbl)
+Package biblatex Info: Reference section=0 on input line 11.
+Package biblatex Info: Reference segment=0 on input line 11.
+<pictures/logo_ufabc.png, id=106, 1583.9175pt x 1029.8475pt>
+File: pictures/logo_ufabc.png Graphic file (type png)
+<use pictures/logo_ufabc.png>
+Package pdftex.def Info: pictures/logo_ufabc.png  used on input line 13.
+(pdftex.def)             Requested size: 152.50983pt x 99.15651pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 13.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 13.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 13.
+LaTeX Font Info:    No file TS1aer.fd. on input line 13.
+
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead on input line 13.
+
+[1
+
+{C:/Users/4GAMERS/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./pictures/logo_ufabc.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14     \folhaDeRosto
+                       [1] (chapter/resumo.tex) (raiz.toc)
+\tf@toc=\write6
+\openout6 = `raiz.toc'.
+
+ [1
+
+] (chapter/intro.tex
+Cap\'{\i }tulo 1.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.17 \subsection{PrincÃ­pios fÃ­sicos da TIE}
+                                              [1
+
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for T1+aett on input line 55.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [4]) (chapter/objetivos.tex [5]
+Cap\'{\i }tulo 2.
+) (chapter/metodologia.tex [6
+
+]
+Cap\'{\i }tulo 3.
+[7
+
+{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) (chapter/resultados.tex [8]
+Cap\'{\i }tulo 4.
+<pictures/Circle_Mesh.png, id=256, 440.847pt x 658.3797pt>
+File: pictures/Circle_Mesh.png Graphic file (type png)
+<use pictures/Circle_Mesh.png>
+Package pdftex.def Info: pictures/Circle_Mesh.png  used on input line 35.
+(pdftex.def)             Requested size: 330.63443pt x 493.78355pt.
+[9
+
+]
+<pictures/Ellipse_Mesh.png, id=262, 440.847pt x 658.3797pt>
+File: pictures/Ellipse_Mesh.png Graphic file (type png)
+<use pictures/Ellipse_Mesh.png>
+Package pdftex.def Info: pictures/Ellipse_Mesh.png  used on input line 46.
+(pdftex.def)             Requested size: 330.63443pt x 493.78355pt.
+ [10 <./pictures/Circle_Mesh.png>]
+<pictures/Interface_Config.PNG, id=270, 767.2665pt x 473.3685pt>
+File: pictures/Interface_Config.PNG Graphic file (type png)
+<use pictures/Interface_Config.PNG>
+Package pdftex.def Info: pictures/Interface_Config.PNG  used on input line 57.
+(pdftex.def)             Requested size: 306.90115pt x 189.34404pt.
+ [11 <./pictures/Ellipse_Mesh.png>]
+<pictures/PyQt_Interface_3.PNG, id=277, 768.471pt x 471.56175pt>
+File: pictures/PyQt_Interface_3.PNG Graphic file (type png)
+<use pictures/PyQt_Interface_3.PNG>
+Package pdftex.def Info: pictures/PyQt_Interface_3.PNG  used on input line 66.
+(pdftex.def)             Requested size: 307.38295pt x 188.62135pt.
+) (chapter/conclusao.tex [12 <./pictures/Interface_Config.PNG> <./pictures/PyQt_Interface_3.PNG>]
+Cap\'{\i }tulo 5.
+) [13
+
+]
+Overfull \hbox (8.51068pt too wide) in paragraph at lines 29--29
+\T1/aer/m/it/12 ac-ces-si-ble whole-body MRI scan-ner. 2023. \T1/aer/m/n/12 en-de-reço: []$\T1/aett/m/n/12 NIH % 20Intramural % 20Research %
+ []
+
+
+Overfull \hbox (12.67021pt too wide) in paragraph at lines 29--29
+\T1/aett/m/n/12 20Program . %20Creating % 20a % 20less % 20expensive % 20and % 20more % 20accessible %
+ []
+
+
+Overfull \hbox (7.00226pt too wide) in paragraph at lines 29--29
+\T1/aett/m/n/12 B3gico % 20sobre % 20distribui % C3 % A7 % C3 % A3o % 20dos % 20equipamentos ,[] %20frequ %
+ []
+
+
+Overfull \hbox (6.50226pt too wide) in paragraph at lines 29--29
+\T1/aett/m/n/12 C3 % A7 % C3 % A3o % 20entre % 20setores % 20p % C3 % BAblico % 20e % 20privado . %20Dispon %
+ []
+
+[14
+
+]
+Overfull \hbox (9.7096pt too wide) in paragraph at lines 29--29
+[]\T1/aer/m/n/12 Riverbank Com-pu-ting, \T1/aer/m/it/12 What is PyQt? \T1/aer/m/n/12 Of-fi-cial do-cu-men-ta-tion, 2026. en-de-reço: []$\T1/aett/m/n/12 https :
+ []
+
+[15]
+Overfull \hbox (3.26218pt too wide) in paragraph at lines 29--29
+\T1/aer/m/it/12 OF THE BACK-PROJECTION AL-GO-RITHM AC-COR-DING TO SAN-TOSA AND
+ []
+
+[16] [17] (raiz.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `raiz.out' has not changed.
+(rerunfilecheck)             Checksum: 28B04BDA2D4CA472BA54025B30C955C9;4492.
+Package logreq Info: Writing requests to 'raiz.run.xml'.
+\openout1 = `raiz.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 79547 strings out of 467867
+ 1963142 string characters out of 5417367
+ 3285181 words of memory out of 5000000
+ 107229 multiletter control sequences out of 15000+600000
+ 671321 words of font info for 108 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 104i,11n,111p,1252b,2214s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\4GAMERS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb>
+Output written on raiz.pdf (20 pages, 495115 bytes).
+PDF statistics:
+ 468 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+

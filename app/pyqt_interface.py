@@ -14,11 +14,13 @@ from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.tri as mtri
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 import warnings
 import time
 import math
+import pyeit.mesh.shape as shape
 
 
 # ---------------------------------------------------------------------------
@@ -152,13 +154,9 @@ class AlgoCard(QWidget):
         self.desc_lbl.setStyleSheet("font-size: 11px; color: #666; line-height: 1.6; border: none; background: transparent;")
         self.desc_lbl.setWordWrap(True)
 
-        self.chips_row = QGridLayout()
-        self.chips_row.setSpacing(5)
-        self.chips_row.setContentsMargins(0, 4, 0, 0)
-
         layout.addWidget(self.title_lbl)
         layout.addWidget(self.desc_lbl)
-        layout.addLayout(self.chips_row)
+        
         layout.addStretch(1) #Pushes everything upwards inside "Como Funciona" section
 
         self.update_method('bp')
@@ -167,32 +165,6 @@ class AlgoCard(QWidget):
         data = self.ALGO_DATA.get(method, self.ALGO_DATA['bp'])
         self.title_lbl.setText(data['title'])
         self.desc_lbl.setText(data['desc'])
-
-        # Clear chips
-        while self.chips_row.count():
-            item = self.chips_row.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
-
-        col = 0
-        for text, kind in data['chips']:
-            chip = QLabel(text)
-            chip.setWordWrap(True)
-            chip.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            chip.setMinimumWidth(70)
-            chip.setMinimumHeight(36)
-            if kind == 'ok':
-                chip.setStyleSheet(
-                    "font-size: 10px; padding: 4px 8px; border-radius: 10px; "
-                    "background: #e1f5ee; color: #0f6e56; border: 1px solid #9fe1cb;"
-                )
-            else:
-                chip.setStyleSheet(
-                    "font-size: 10px; padding: 4px 8px; border-radius: 10px; "
-                    "background: #faeeda; color: #854f0b; border: 1px solid #fac775;"
-                )
-            self.chips_row.addWidget(chip, 0, col)
-            col += 1
 
 
 class ParamRow(QWidget):
@@ -267,6 +239,7 @@ class MainWindow(QMainWindow):
         self.nframes = nframes
         self.method = method
         self._colorbar_ref = None
+        self._greit_extent = None
 
         super().__init__()
 
@@ -349,25 +322,11 @@ class MainWindow(QMainWindow):
             QSizePolicy.Policy.Expanding,
             QSizePolicy.Policy.Expanding
         )
+
         left_layout.addWidget(card_wrapper, stretch=1)
         left_layout.addWidget(Divider())
 
-        # Compare button
-        compare_btn = QPushButton("⧉  Comparar métodos")
-        compare_btn.setStyleSheet("""
-            QPushButton {
-                margin: 10px 12px;
-                padding: 8px;
-                border-radius: 6px;
-                border: 1px solid #ccc;
-                background: white;
-                font-size: 11px;
-                color: #666;
-            }
-            QPushButton:hover { background: #f5f5f5; }
-        """)
-        compare_btn.clicked.connect(self._open_comparison)
-        left_layout.addWidget(compare_btn)
+        left_layout.addWidget(Divider())
 
         # ---- CENTER PANEL ------------------------------------------------
         center = QWidget()
@@ -436,6 +395,7 @@ class MainWindow(QMainWindow):
         right_layout = QVBoxLayout(right)
         right_layout.setContentsMargins(0, 0, 0, 12)
         right_layout.setSpacing(0)
+        right_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         right_scroll.setWidget(right)
 
         # -- Colormap
@@ -499,13 +459,124 @@ class MainWindow(QMainWindow):
         self.sldRes.setRange(32, 256); self.sldRes.setSingleStep(16); self.sldRes.setValue(128)
         self.lblRes = QLabel("128 px")
         self.lblRes.setStyleSheet("font-size: 10px; color: #888; min-width: 40px;")
-        self.sldRes.valueChanged.connect(lambda v: self.lblRes.setText(f"{v} px"))
+        
         res_layout.addWidget(self.sldRes)
         res_layout.addWidget(self.lblRes)
         right_layout.addWidget(_ctrl_block("Resolução da grade",
             "Número de pixels por eixo na imagem interpolada. Valores maiores produzem imagens mais suaves, mas reduzem o FPS.",
             res_widget))
+        
+        # -- Frame selector
+        frame_widget = QWidget()
+        frame_layout = QVBoxLayout(frame_widget)
+        frame_layout.setContentsMargins(0, 0, 0, 0)
+        frame_layout.setSpacing(4)
 
+        # Play/pause button + frame label on same row
+        playrow = QHBoxLayout()
+        self.btnPlayPause = QPushButton("⏸ Pausar")
+        self.btnPlayPause.setStyleSheet("""
+            QPushButton {
+                padding: 5px 10px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                background: #f5f5f5;
+                font-size: 11px;
+                color: #555;
+            }
+            QPushButton:hover { background: #ebebeb; }
+        """)
+        self.btnPlayPause.clicked.connect(self._toggle_play_pause)
+        self._is_playing = True
+
+        self.lblFramePos = QLabel("0 / 0")
+        self.lblFramePos.setStyleSheet("font-size: 10px; color: #888;")
+
+        playrow.addWidget(self.btnPlayPause)
+        playrow.addStretch()
+        playrow.addWidget(self.lblFramePos)
+
+        self.sldFrame = QSlider(Qt.Orientation.Horizontal)
+        self.sldFrame.setRange(0, self.nframes - 1)
+        self.sldFrame.setValue(0)
+        self.sldFrame.valueChanged.connect(self._on_frame_scrub)
+
+        frame_layout.addLayout(playrow)
+        frame_layout.addWidget(self.sldFrame)
+
+        right_layout.addWidget(_ctrl_block(
+            "Navegação de frames",
+            "Pause a animação e arraste para inspecionar frames específicos. Útil para comparar a reconstrução em momentos distintos.",
+            frame_widget))
+        
+        # -- Animation speed
+        speed_widget = QWidget()
+        speed_layout = QHBoxLayout(speed_widget)
+        speed_layout.setContentsMargins(0, 0, 0, 0)
+        speed_layout.setSpacing(8)
+        self.sldSpeed = QSlider(Qt.Orientation.Horizontal)
+        self.sldSpeed.setRange(1, 20)    # FPS: 1 to 20
+        self.sldSpeed.setSingleStep(1)
+        self.sldSpeed.setValue(10)       # default 10 FPS
+        self.lblSpeed = QLabel("10 FPS")
+        self.lblSpeed.setStyleSheet("font-size: 10px; color: #888; min-width: 44px;")
+        self.sldSpeed.valueChanged.connect(self._on_speed_changed)
+        speed_layout.addWidget(self.sldSpeed)
+        speed_layout.addWidget(self.lblSpeed)
+        right_layout.addWidget(_ctrl_block("Velocidade (frames/s)",
+            "Controla a velocidade de reprodução dos dados gravados.",
+            speed_widget))
+
+        # Parameters section
+        right_layout.addWidget(SectionLabel("Parâmetros da malha"))
+
+        params_container = QWidget()
+        params_layout = QVBoxLayout(params_container)
+        params_layout.setContentsMargins(12, 0, 12, 8)
+        params_layout.setSpacing(8)
+
+        params_layout.addWidget(ParamRow("Tipo de regularização (JAC)",
+            "Método de regularização usado pelo Jacobiano. Kotre é o padrão. Só se aplica ao JAC."))
+        self.cmbRegType = QComboBox()
+        self.cmbRegType.addItems(["kotre", "lm"])
+        self.cmbRegType.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        self.cmbRegType.currentTextChanged.connect(self._on_reg_type_changed)
+        params_layout.addWidget(self.cmbRegType)
+
+        # Shape selector
+        params_layout.addWidget(ParamRow("Formato da malha",
+            "Define a geometria do domínio. Círculo é o padrão para a maioria dos experimentos. Elipse pode modelar geometrias não simétricas."))
+        self.cmbShape = QComboBox()
+        self.cmbShape.addItems(["Círculo", "Elipse"])
+        self.cmbShape.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        params_layout.addWidget(self.cmbShape)
+
+        # h0
+        params_layout.addWidget(ParamRow("Densidade da malha (h0)",
+            "Tamanho dos triângulos. Menor = mais triângulos, mais preciso, mais lento. Seguro: 0.04 a 0.20."))
+        h0_row = QHBoxLayout()
+        self.spnH0 = QDoubleSpinBox()
+        self.spnH0.setDecimals(3); self.spnH0.setRange(0.04, 0.20)
+        self.spnH0.setSingleStep(0.01); self.spnH0.setValue(0.1)
+        self.spnH0.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        self.lblTriEstimate = QLabel()
+        self.lblTriEstimate.setStyleSheet("font-size: 10px; color: #888;")
+        self.spnH0.valueChanged.connect(self._update_tri_estimate)
+        h0_row.addWidget(self.spnH0)
+        h0_row.addWidget(self.lblTriEstimate)
+        params_layout.addLayout(h0_row)
+
+        # Lamb
+        params_layout.addWidget(ParamRow("Regularização (λ)",
+            "Força da regularização para JAC e GREIT. Maior = mais suave, menos sensível. Não se aplica ao BP."))
+        self.spnLamb = QDoubleSpinBox()
+        self.spnLamb.setDecimals(4); self.spnLamb.setRange(0.0001, 1.0)
+        self.spnLamb.setSingleStep(0.001); self.spnLamb.setValue(0.01)
+        self.spnLamb.setStyleSheet("font-size: 11px; background: white; color: #333;")
+        self.spnLamb.valueChanged.connect(self._on_lamb_changed)
+        params_layout.addWidget(self.spnLamb)
+
+        right_layout.addWidget(params_container)
         right_layout.addWidget(Divider())
 
         # -- Action buttons
@@ -543,25 +614,6 @@ class MainWindow(QMainWindow):
 
         right_layout.addWidget(Divider())
 
-        # -- Mesh stats
-        right_layout.addWidget(SectionLabel("Informações da malha"))
-        stats_grid = QWidget()
-        sg_layout = QGridLayout(stats_grid)
-        sg_layout.setContentsMargins(12, 0, 12, 8)
-        sg_layout.setSpacing(6)
-
-        self.stat_el   = StatCard("Eletrodos", "8")
-        self.stat_tri  = StatCard("Triângulos", "—")
-        self.stat_meas = StatCard("Medições", "—")
-        self.stat_frame= StatCard("Frame atual", "0")
-
-        sg_layout.addWidget(self.stat_el,   0, 0)
-        sg_layout.addWidget(self.stat_tri,  0, 1)
-        sg_layout.addWidget(self.stat_meas, 1, 0)
-        sg_layout.addWidget(self.stat_frame,1, 1)
-        right_layout.addWidget(stats_grid)
-        right_layout.addStretch()
-
         # -- Assemble root
         root_layout.addWidget(left)
         root_layout.addWidget(center, stretch=1)
@@ -570,7 +622,7 @@ class MainWindow(QMainWindow):
         # ------------------------------------------------------------------
         # Solver init
         # ------------------------------------------------------------------
-        self.mySolver = EITsolver(method=method, h0=0.1)
+        self.mySolver = EITsolver(method=method, h0=0.1, fd = shape.circle)
         self._plotImage_ref = None
         self._plotSE_ref    = None
         self._plotDiff_ref  = None
@@ -582,7 +634,6 @@ class MainWindow(QMainWindow):
 
         self.mySolver.setVref(self.data[0])
         self._update_method_ui(method)
-        self._update_stats()
 
         self.init_plots(data=data, method=method)
         self.update_plot(data, nframes, method=method)
@@ -652,6 +703,30 @@ class MainWindow(QMainWindow):
             self.mySolver.image if method=='bp' else self.mySolver.ds_med_frame
         )
         return self._rasterize(nodal)
+    
+    def _on_lamb_changed(self, value: float):
+        """Updates regularization and reruns setup — no mesh rebuild needed."""
+        self.mySolver.hp['lamb'] = value
+        if self.method in ('greit', 'jac'):
+            self.mySolver.setup()
+
+    def _toggle_play_pause(self):
+        """Toggles animation on/off."""
+        if self._is_playing:
+            self.timer.stop()
+            self._is_playing = False
+            self.btnPlayPause.setText("▶ Retomar")
+        else:
+            self.timer.start()
+            self._is_playing = True
+            self.btnPlayPause.setText("⏸ Pausar")
+
+    def _on_frame_scrub(self, value: int):
+        """When slider is moved manually, jump to that frame."""
+        # Only act if the user is scrubbing (not just the slider following playback)
+        if not self._is_playing:
+            self.frameCounter = value
+            self.update_plot(self.data, self.nframes, method=self.method)
 
     # ------------------------------------------------------------------
     # Electrode overlay
@@ -720,14 +795,41 @@ class MainWindow(QMainWindow):
         self.btn_jac.setActive(method == 'jac')
         self.algo_card.update_method(method)
 
-    def _update_stats(self):
-        mesh = self.mySolver.mesh_obj
-        n_el  = self.mySolver.n_el
-        n_tri = mesh.element.shape[0] if hasattr(mesh,'element') else 0
-        n_meas= self.mySolver.Vref.size if self.mySolver.Vref.size > 0 else '—'
-        self.stat_el.setValue(str(n_el))
-        self.stat_tri.setValue(str(n_tri))
-        self.stat_meas.setValue(str(n_meas))
+        self.spnLamb.setEnabled(method in ('greit', 'jac'))
+        self.spnLamb.setStyleSheet(
+            "font-size: 11px; background: white; color: #333;"
+            if method in ('greit', 'jac') else
+            "font-size: 11px; background: #f0f0f0; color: #aaa;"
+        )
+        # Reg type only applies to JAC
+        self.cmbRegType.setEnabled(method == 'jac')
+        self.cmbRegType.setStyleSheet(
+            "font-size: 11px; background: white; color: #333;"
+            if method == 'jac' else
+            "font-size: 11px; background: #f0f0f0; color: #aaa;"
+    )
+
+    def _on_reg_type_changed(self, value: str):
+        self.mySolver.hp['jac_method'] = value
+        if self.method == 'jac':
+            self.mySolver.setup()
+
+
+    def _update_tri_estimate(self):
+        """Shows actual count if h0 matches current mesh, otherwise prompts rebuild."""
+        h0 = self.spnH0.value()
+        
+        # Guard: solver may not exist yet during UI construction
+        if not hasattr(self, 'mySolver'):
+            self.lblTriEstimate.setText("→ reconstruir para atualizar")
+            return
+        
+        current_h0 = self.mySolver.h0
+        if abs(h0 - current_h0) < 1e-6:
+            actual = self.mySolver.mesh_obj.element.shape[0]
+            self.lblTriEstimate.setText(f"= {actual} triângulos (atual)")
+        else:
+            self.lblTriEstimate.setText("→ reconstruir para atualizar")
 
     def _on_alpha_changed(self, value):
         alpha = value / 100.0
@@ -757,7 +859,9 @@ class MainWindow(QMainWindow):
             self._colorbar_ref = None
             self._cbar_ax = None
 
-        self.mySolver.recreate_mesh(method=self.method, h0=0.1)
+        fd_map = {"Círculo": shape.circle, "Elipse": shape.ellipse}
+        selected_fd = fd_map.get(self.cmbShape.currentText(), shape.circle)
+        self.mySolver.recreate_mesh(method=self.method, h0=self.spnH0.value(), fd=selected_fd)
         self.mySolver.setVref(self.data[0])
 
         self._plotImage_ref = None
@@ -768,7 +872,6 @@ class MainWindow(QMainWindow):
         self._nx = self._ny = self.sldRes.value()
         self._raster_cache = None
         self._build_raster_cache()
-        self._update_stats()
 
         self.init_plots(data=self.data, method=self.method)
         self.update_plot(self.data, self.nframes, method=self.method)
@@ -812,13 +915,28 @@ class MainWindow(QMainWindow):
         vmin,vmax=float(self.spnVmin.value()),float(self.spnVmax.value())
         cmap=self.cmbCmap.currentText()
 
-        if method=='greit':
-            img0=np.real(self.mySolver.image)
-            self._plotImage_ref=self.eitImage.axes.imshow(
-                img0,origin='lower',vmin=vmin,vmax=vmax,cmap=cmap,
-                extent=[self._ax_xlim[0],self._ax_xlim[1],
-                        self._ax_ylim[0],self._ax_ylim[1]],
-                interpolation='bilinear')
+        if method == 'greit':
+            self.mySolver.updateImage(data[self.frameCounter], method, plot_ref=None)
+            img0 = np.real(self.mySolver.image)
+
+            # Get actual GREIT grid extent from mask_value
+            x_greit, y_greit, _ = self.mySolver.eit.mask_value(
+                self.mySolver.ds_med_frame, mask_value=np.nan
+            )
+            self._greit_extent = [
+                float(x_greit.min()), float(x_greit.max()),
+                float(y_greit.min()), float(y_greit.max())
+            ]
+
+            _cmap = plt.get_cmap(cmap).copy()
+            _cmap.set_bad(alpha=0)  # NaN pixels transparent
+
+            self._plotImage_ref = self.eitImage.axes.imshow(
+                img0, origin='lower', vmin=vmin, vmax=vmax, cmap=_cmap,
+                extent=self._greit_extent,
+                interpolation='bilinear'
+            )
+
         elif method in ('bp','jac'):
             img0=self._rasterize_method(method)
             self._plotImage_ref=self.eitImage.axes.imshow(
@@ -863,11 +981,15 @@ class MainWindow(QMainWindow):
         self.eitImage.axes.set_xlim(*self._ax_xlim)
         self.eitImage.axes.set_ylim(*self._ax_ylim)
 
-        self.stat_frame.setValue(str(self.frameCounter))
-
         self.eitImage.draw()
         self.eitMeasurementsSE.draw()
         self.eitMeasurementsDiff.draw()
+
+        # Update frame slider and label to follow playback
+        self.sldFrame.blockSignals(True)   # prevent _on_frame_scrub from firing
+        self.sldFrame.setValue(self.frameCounter)
+        self.sldFrame.blockSignals(False)
+        self.lblFramePos.setText(f"{self.frameCounter} / {self.nframes - 1}")
 
         self.frameCounter = (self.frameCounter + 1) % nframes
 
@@ -884,6 +1006,17 @@ class MainWindow(QMainWindow):
                 except Exception:
                     pass
         self._last_t = t
+    
+    def _on_speed_changed(self, fps: int):
+        self.lblSpeed.setText(f"{fps} FPS")
+        self.timer.setInterval(1000 // fps)
+    
+    def _on_res_changed(self, value: int):
+        self.lblRes.setText(f"{value} px")
+        if self.method == 'greit':
+            # For GREIT, resolution controls the reconstruction grid
+            self.mySolver.hp['greit_n'] = value // 4  # map px to grid size
+            self.mySolver.setup()
 
     # ------------------------------------------------------------------
     # Controls
@@ -902,24 +1035,37 @@ class MainWindow(QMainWindow):
 
     def _rebuild_mesh_from_controls(self):
         res = self.sldRes.value()
-        h0_trials=[0.1*(0.8**k) for k in range(6)]
-        success=False; last_err=None
+        h0 = self.spnH0.value()   # ← use user-specified h0
+
+        # Still try a small fallback in case the chosen h0 causes instability
+        h0_trials = [h0, h0 * 0.9, h0 * 0.8]
+        success = False
+        last_err = None
+
+        fd_map = {"Círculo": shape.circle, "Elipse": shape.ellipse}
+        selected_fd = fd_map.get(self.cmbShape.currentText(), shape.circle)
+
         for h0_try in h0_trials:
             try:
                 self.mySolver.recreate_mesh(
-                    n_el=self.mySolver.n_el,fd=self.mySolver.fd,
-                    method=self.method,h0=h0_try)
+                    n_el=self.mySolver.n_el, fd=selected_fd,
+                    method=self.method, h0=h0_try)
+                
+                self._on_res_changed(res)
                 self.mySolver.setVref(self.data[0])
+                
                 with warnings.catch_warnings():
                     warnings.simplefilter('error')
-                    self.mySolver.setframes(self.data[0],self.method)
-                success=True; break
+                    self.mySolver.setframes(self.data[0], self.method)
+                success = True
+                break
             except Exception as e:
-                last_err=e; continue
+                last_err = e
+                continue
 
         if success:
-            self._nx=self._ny=res
-            self._raster_cache=None
+            self._nx = self._ny = res
+            self._raster_cache = None
             self._build_raster_cache()
             self.eitImage.axes.clear()
             self.eitMeasurementsSE.axes.clear()
@@ -927,17 +1073,19 @@ class MainWindow(QMainWindow):
             if self._colorbar_ref is not None:
                 try: self._colorbar_ref.remove()
                 except Exception: pass
-                self._colorbar_ref=None; self._cbar_ax=None
-            self._plotImage_ref=None
-            self._plotSE_ref=None
-            self._plotDiff_ref=None
-            self.frameCounter=0
-            self._update_stats()
-            self.init_plots(data=self.data,method=self.method)
-            self.update_plot(self.data,self.nframes,method=self.method)
+                self._colorbar_ref = None
+                self._cbar_ax = None
+            self._plotImage_ref = None
+            self._plotSE_ref    = None
+            self._plotDiff_ref  = None
+            self.frameCounter   = 0
+            self._update_tri_estimate()
+            self.init_plots(data=self.data, method=self.method)
+            self.update_plot(self.data, self.nframes, method=self.method)
         else:
-            QMessageBox.warning(self,"Reconstruir malha",
-                                f"Falha ao reconstruir.\nDetalhe: {last_err}")
+            QMessageBox.warning(self, "Reconstruir malha",
+                                f"Falha ao reconstruir com h0={h0:.3f}.\n"
+                                f"Tente um valor maior.\nDetalhe: {last_err}")
 
     # ------------------------------------------------------------------
     # Comparison window (stub for Phase 2)
