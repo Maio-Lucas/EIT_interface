@@ -709,6 +709,7 @@ class MainWindow(QMainWindow):
         self.mySolver.hp['lamb'] = value
         if self.method in ('greit', 'jac'):
             self.mySolver.setup()
+            self.mySolver.setVref(self.data[0])
 
     def _toggle_play_pause(self):
         """Toggles animation on/off."""
@@ -976,7 +977,7 @@ class MainWindow(QMainWindow):
         elif method in ('bp','jac'):
             img=self._rasterize_method(method)
             self._plotImage_ref.set_data(img)
-            self._plotImage_ref.set_clim(-1.0,1.0)
+            
 
         self.eitImage.axes.set_xlim(*self._ax_xlim)
         self.eitImage.axes.set_ylim(*self._ax_ylim)
@@ -1049,7 +1050,7 @@ class MainWindow(QMainWindow):
             try:
                 self.mySolver.recreate_mesh(
                     n_el=self.mySolver.n_el, fd=selected_fd,
-                    method=self.method, h0=h0_try)
+                    method=self.method, h0=h0_try, lamb=self.spnLamb.value())
                 
                 self._on_res_changed(res)
                 self.mySolver.setVref(self.data[0])

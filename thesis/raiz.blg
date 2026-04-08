@@ -1,23 +1,23 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'raiz.blg'
-[150] biber-MSWIN64:342> INFO - === 
-[200] Biber.pm:421> INFO - Reading 'raiz.bcf'
-[325] Biber.pm:999> INFO - Using all citekeys in bib section 0
-[340] Biber.pm:4487> INFO - Processing section 0
-[351] Biber.pm:4678> INFO - Looking for bibtex file 'reference.bib' for section 0
-[432] bibtex.pm:1713> INFO - LaTeX decoding ...
-[478] bibtex.pm:1519> INFO - Found BibTeX data source 'reference.bib'
-[669] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[669] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[669] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
-[669] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[706] bbl.pm:676> INFO - Writing 'raiz.bbl' with encoding 'UTF-8'
-[730] bbl.pm:779> INFO - Output to raiz.bbl
-[730] Biber.pm:132> WARN - Duplicate entry key: 'Putensen2019' in file 'reference.bib', skipping ...
-[730] Biber.pm:132> WARN - Duplicate entry key: 'Lionheart2003EITRA' in file 'reference.bib', skipping ...
-[730] Biber.pm:132> WARN - Duplicate entry key: 'pyEIT' in file 'reference.bib', skipping ...
-[730] Biber.pm:132> WARN - legacy month field 'nov' in entry 'PyQt_Example' is not an integer - this will probably not sort properly.
-[730] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_xUXv\6f2727616e4c27537406678deaa225f7_20060.utf8, line 294, warning: 3 characters of junk seen at toplevel
-[730] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_xUXv\6f2727616e4c27537406678deaa225f7_20060.utf8, line 298, warning: 3 characters of junk seen at toplevel
-[731] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_xUXv\6f2727616e4c27537406678deaa225f7_20060.utf8, line 309, warning: 6 characters of junk seen at toplevel
-[731] Biber.pm:134> INFO - WARNINGS: 7
+[124] biber-MSWIN64:342> INFO - === 
+[172] Biber.pm:421> INFO - Reading 'raiz.bcf'
+[300] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[315] Biber.pm:4487> INFO - Processing section 0
+[327] Biber.pm:4678> INFO - Looking for bibtex file 'reference.bib' for section 0
+[397] bibtex.pm:1713> INFO - LaTeX decoding ...
+[445] bibtex.pm:1519> INFO - Found BibTeX data source 'reference.bib'
+[632] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[632] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[632] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[632] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[658] bbl.pm:676> INFO - Writing 'raiz.bbl' with encoding 'UTF-8'
+[679] bbl.pm:779> INFO - Output to raiz.bbl
+[679] Biber.pm:132> WARN - Duplicate entry key: 'Putensen2019' in file 'reference.bib', skipping ...
+[679] Biber.pm:132> WARN - Duplicate entry key: 'Lionheart2003EITRA' in file 'reference.bib', skipping ...
+[680] Biber.pm:132> WARN - Duplicate entry key: 'pyEIT' in file 'reference.bib', skipping ...
+[680] Biber.pm:132> WARN - legacy month field 'nov' in entry 'PyQt_Example' is not an integer - this will probably not sort properly.
+[680] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_p0ek\6f2727616e4c27537406678deaa225f7_30840.utf8, line 294, warning: 3 characters of junk seen at toplevel
+[680] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_p0ek\6f2727616e4c27537406678deaa225f7_30840.utf8, line 298, warning: 3 characters of junk seen at toplevel
+[680] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\4GAMERS\AppData\Local\Temp\biber_tmp_p0ek\6f2727616e4c27537406678deaa225f7_30840.utf8, line 309, warning: 6 characters of junk seen at toplevel
+[680] Biber.pm:134> INFO - WARNINGS: 7

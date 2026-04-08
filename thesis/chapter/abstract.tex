@@ -1,0 +1,11 @@
+% !TEX root = ../raiz.tex
+
+\chapter*{Abstract}
+
+Electrical Impedance Tomography (EIT) is a non-invasive, portable, radiation-free functional imaging technique whose reconstruction depends on numerical methods and visualization choices that directly influence image interpretation. In this work, an interactive graphical interface in Python was developed for the reconstruction and visualization of previously recorded EIT data, with an educational and research-support focus. The application integrated the \textit{open-source} pyEIT framework into a modular architecture inspired by the MVC pattern and incorporated three reconstruction methods --- Back-Projection (BP), Jacobian (JAC), and GREIT --- as well as two interface implementations based on Matplotlib and PyQtGraph.
+
+The results were obtained from an experimental dataset composed of 119 \textit{frames}, recorded in a simplified arrangement with an aqueous solution and eight electrodes. The qualitative comparison among the methods showed that all three were able to localize the rod in the same region of the domain, although with marked differences in contrast, spatial definition, and frame-to-frame stability. Configurable interface parameters, such as mesh density and temporal smoothing, were also explored, showing their impact on reconstruction appearance and on the visual behavior of the application. The alternative PyQtGraph interface demonstrated the feasibility of a second visualization backend, although with lower completeness than the main interface.
+
+It is concluded that this work contributed a modular computational tool for the interactive exploration of EIT reconstructions, allowing algorithms and parameters to be compared in an integrated visual environment. Relevant directions for future work include integration with real data acquisition systems, the adoption of quantitative evaluation metrics, and the further development of the alternative PyQtGraph-based interface.
+
+\textbf{Keywords}: Electrical Impedance Tomography; pyEIT; PyQt; image reconstruction; scientific visualization.

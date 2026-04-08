@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  5 APR 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  7 APR 2026 00:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/raiz.tex
-(c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/raiz.tex
+**c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/Tese_LucasMaio.tex
+(c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/Tese_LucasMaio.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -2055,15 +2055,11 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
- (raiz.aux
+ (Tese_LucasMaio.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 12.
-
-
-LaTeX Warning: Label `subsec:metodos_reconstrucao_imagens' multiply defined.
-
 )
-\openout1 = `raiz.aux'.
+\openout1 = `Tese_LucasMaio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -2171,9 +2167,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 11.
-(raiz.out) (raiz.out)
+(Tese_LucasMaio.out) (Tese_LucasMaio.out)
 \@outlinefile=\write5
-\openout5 = `raiz.out'.
+\openout5 = `Tese_LucasMaio.out'.
 
 Package biblatex Info: Trying to load language 'brazil'...
 Package biblatex Info: ... file 'brazil.lbx' found.
@@ -2192,14 +2188,14 @@ File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `raiz.bcf'.
+\openout4 = `Tese_LucasMaio.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'raiz.bbl' found.
- (raiz.bbl)
+Package biblatex Info: ... file 'Tese_LucasMaio.bbl' found.
+ (Tese_LucasMaio.bbl)
 Package biblatex Info: Reference section=0 on input line 11.
 Package biblatex Info: Reference segment=0 on input line 11.
-<pictures/logo_ufabc.png, id=134, 1583.9175pt x 1029.8475pt>
+<pictures/logo_ufabc.png, id=126, 1583.9175pt x 1029.8475pt>
 File: pictures/logo_ufabc.png Graphic file (type png)
 <use pictures/logo_ufabc.png>
 Package pdftex.def Info: pictures/logo_ufabc.png  used on input line 13.
@@ -2248,11 +2244,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.14     \folhaDeRosto
-                       [1] (chapter/resumo.tex) (raiz.toc)
-\tf@toc=\write6
-\openout6 = `raiz.toc'.
+                       [1] (chapter/resumo.tex) (chapter/abstract.tex [2
 
- [1
+]) [1
+
+] (Tese_LucasMaio.toc)
+\tf@toc=\write6
+\openout6 = `Tese_LucasMaio.toc'.
+
+ [2
 
 {C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (chapter/intro.tex
 Cap\'{\i }tulo 1.
@@ -2260,39 +2260,51 @@ Cap\'{\i }tulo 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17 \subsection{PrincÃ­pios fÃ­sicos da TIE}
-                                              [1
+l.17 ...n{RelaÃ§Ã£o com a proposta deste trabalho}
+                                                   [1
 
-] [2] [3]
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 55.
- (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [4]) (chapter/objetivos.tex [5]
+]) (chapter/objetivos.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 \chapter
+            {Objetivos} [2]
 Cap\'{\i }tulo 2.
-) (chapter/metodologia.tex [6
+) (chapter/revisao_teorica.tex [3
 
 ]
 Cap\'{\i }tulo 3.
-[7
+[4
 
-] [8{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+] [5{C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Overfull \hbox (3.44012pt too wide) in paragraph at lines 50--51
 []\T1/aer/m/n/12 A in-ter-face de-sen-vol-vida uti-li-zou re-cons-tru-ção por di-fe-rença tem-po-ral (\T1/aer/m/it/12 time-difference
  []
 
-
+LaTeX Font Info:    Trying to load font information for T1+aett on input line 52.
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
 Overfull \hbox (2.52982pt too wide) in paragraph at lines 57--58
 []\T1/aer/m/n/12 Foram in-cor-po-ra-dos três mé-to-dos de re-cons-tru-ção pre-sen-tes no ecos-sis-tema do pyEIT:
  []
 
-[9] [10] [11]
-Overfull \hbox (19.39929pt too wide) in paragraph at lines 109--110
+[6]
+
+LaTeX Warning: Citation 'BP' on page 7 undefined on input line 64.
+
+[7] [8]) (chapter/metodologia.tex [9]
+Cap\'{\i }tulo 4.
+
+Overfull \hbox (19.39929pt too wide) in paragraph at lines 22--23
 []\T1/aer/m/n/12 A or-ga-ni-za-ção se-guiu uma es-tru-tura ins-pi-rada no pa-drão MVC (\T1/aer/m/it/12 Model--View--Controller\T1/aer/m/n/12 )
  []
 
-[12] [13]) (chapter/resultados.tex [14]
-Cap\'{\i }tulo 4.
-<pictures/BP_Interface_Frame43.png, id=353, 1444.64719pt x 775.39688pt>
+[10
+
+] [11]) (chapter/resultados.tex [12]
+Cap\'{\i }tulo 5.
+<pictures/BP_Interface_Frame43.png, id=327, 1444.64719pt x 775.39688pt>
 File: pictures/BP_Interface_Frame43.png Graphic file (type png)
 <use pictures/BP_Interface_Frame43.png>
 Package pdftex.def Info: pictures/BP_Interface_Frame43.png  used on input line 12.
@@ -2300,34 +2312,34 @@ Package pdftex.def Info: pictures/BP_Interface_Frame43.png  used on input line 1
 LaTeX Font Info:    Trying to load font information for U+eur on input line 13.
 (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueur.fd
 File: ueur.fd 2013/01/14 v3.01 Euler Roman
-) [15
+) [13
 
  <./pictures/BP_Interface_Frame43.png>]
 File: pictures/BP_Interface_Frame43.png Graphic file (type png)
 <use pictures/BP_Interface_Frame43.png>
 Package pdftex.def Info: pictures/BP_Interface_Frame43.png  used on input line 30.
 (pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/BP_Interface_Frame44.png, id=369, 1441.63594pt x 774.64406pt>
+<pictures/BP_Interface_Frame44.png, id=343, 1441.63594pt x 774.64406pt>
 File: pictures/BP_Interface_Frame44.png Graphic file (type png)
 <use pictures/BP_Interface_Frame44.png>
 Package pdftex.def Info: pictures/BP_Interface_Frame44.png  used on input line 37.
 (pdftex.def)             Requested size: 386.96027pt x 207.9274pt.
-<pictures/JAC_Interface_Frame43.png, id=370, 1444.64719pt x 776.14969pt>
+<pictures/JAC_Interface_Frame43.png, id=344, 1444.64719pt x 776.14969pt>
 File: pictures/JAC_Interface_Frame43.png Graphic file (type png)
 <use pictures/JAC_Interface_Frame43.png>
 Package pdftex.def Info: pictures/JAC_Interface_Frame43.png  used on input line 44.
 (pdftex.def)             Requested size: 386.96027pt x 207.89334pt.
-<pictures/JAC_Interface_Frame44.png, id=371, 1444.64719pt x 774.64406pt>
+<pictures/JAC_Interface_Frame44.png, id=345, 1444.64719pt x 774.64406pt>
 File: pictures/JAC_Interface_Frame44.png Graphic file (type png)
 <use pictures/JAC_Interface_Frame44.png>
 Package pdftex.def Info: pictures/JAC_Interface_Frame44.png  used on input line 51.
 (pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/GREIT_Interface_Frame43.png, id=372, 1444.64719pt x 775.39688pt>
+<pictures/GREIT_Interface_Frame43.png, id=346, 1444.64719pt x 775.39688pt>
 File: pictures/GREIT_Interface_Frame43.png Graphic file (type png)
 <use pictures/GREIT_Interface_Frame43.png>
 Package pdftex.def Info: pictures/GREIT_Interface_Frame43.png  used on input line 58.
 (pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/GREIT_Interface_Frame44.png, id=373, 1444.64719pt x 774.64406pt>
+<pictures/GREIT_Interface_Frame44.png, id=347, 1444.64719pt x 774.64406pt>
 File: pictures/GREIT_Interface_Frame44.png Graphic file (type png)
 <use pictures/GREIT_Interface_Frame44.png>
 Package pdftex.def Info: pictures/GREIT_Interface_Frame44.png  used on input line 65.
@@ -2348,13 +2360,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 73.
 
-[16] [17 <./pictures/BP_Interface_Frame44.png> <./pictures/JAC_Interface_Frame43.png>] [18 <./pictures/JAC_Interface_Frame44.png> <./pictures/GREIT_Interface_Frame43.png>]
-<pictures/JAC_Interface_Frame44_H0_05.png, id=397, 1444.64719pt x 773.89125pt>
+[14] [15 <./pictures/BP_Interface_Frame44.png> <./pictures/JAC_Interface_Frame43.png>] [16 <./pictures/JAC_Interface_Frame44.png> <./pictures/GREIT_Interface_Frame43.png>]
+<pictures/JAC_Interface_Frame44_H0_05.png, id=371, 1444.64719pt x 773.89125pt>
 File: pictures/JAC_Interface_Frame44_H0_05.png Graphic file (type png)
 <use pictures/JAC_Interface_Frame44_H0_05.png>
 Package pdftex.def Info: pictures/JAC_Interface_Frame44_H0_05.png  used on input line 80.
 (pdftex.def)             Requested size: 386.96027pt x 207.2884pt.
-<pictures/JAC_Interface_Frame44_H0_2.png, id=398, 1444.64719pt x 776.9025pt>
+<pictures/JAC_Interface_Frame44_H0_2.png, id=372, 1444.64719pt x 776.9025pt>
 File: pictures/JAC_Interface_Frame44_H0_2.png Graphic file (type png)
 <use pictures/JAC_Interface_Frame44_H0_2.png>
 Package pdftex.def Info: pictures/JAC_Interface_Frame44_H0_2.png  used on input line 87.
@@ -2368,69 +2380,115 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\alpha' on input line 92.
 
-<pictures/BP_Interface_Frame43_alpha0_1.png, id=401, 1444.64719pt x 774.64406pt>
+<pictures/BP_Interface_Frame43_alpha0_1.png, id=375, 1444.64719pt x 774.64406pt>
 File: pictures/BP_Interface_Frame43_alpha0_1.png Graphic file (type png)
 <use pictures/BP_Interface_Frame43_alpha0_1.png>
 Package pdftex.def Info: pictures/BP_Interface_Frame43_alpha0_1.png  used on input line 99.
 (pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/BP_Interface_Frame43_alpha0_9.png, id=402, 1444.64719pt x 775.39688pt>
+<pictures/BP_Interface_Frame43_alpha0_9.png, id=376, 1444.64719pt x 775.39688pt>
 File: pictures/BP_Interface_Frame43_alpha0_9.png Graphic file (type png)
 <use pictures/BP_Interface_Frame43_alpha0_9.png>
 Package pdftex.def Info: pictures/BP_Interface_Frame43_alpha0_9.png  used on input line 106.
 (pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-[19 <./pictures/GREIT_Interface_Frame44.png>] [20 <./pictures/JAC_Interface_Frame44_H0_05.png> <./pictures/JAC_Interface_Frame44_H0_2.png>] [21 <./pictures/BP_Interface_Frame43_alpha0_1.png> <./pictures/BP_Interface_Frame43_alpha0_9.png>]
-<pictures/BP_PyQtGraph_SolverTab.png, id=425, 1443.89438pt x 775.39688pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 111.
+
+[17 <./pictures/GREIT_Interface_Frame44.png>] [18 <./pictures/JAC_Interface_Frame44_H0_05.png> <./pictures/JAC_Interface_Frame44_H0_2.png>] [19 <./pictures/BP_Interface_Frame43_alpha0_1.png> <./pictures/BP_Interface_Frame43_alpha0_9.png>]
+<pictures/JAC_pyQT_Reg0_0001.png, id=409, 1444.64719pt x 775.39688pt>
+File: pictures/JAC_pyQT_Reg0_0001.png Graphic file (type png)
+<use pictures/JAC_pyQT_Reg0_0001.png>
+Package pdftex.def Info: pictures/JAC_pyQT_Reg0_0001.png  used on input line 124.
+(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
+<pictures/JAC_pyQT_Reg0_01.png, id=410, 1444.64719pt x 775.39688pt>
+File: pictures/JAC_pyQT_Reg0_01.png Graphic file (type png)
+<use pictures/JAC_pyQT_Reg0_01.png>
+Package pdftex.def Info: pictures/JAC_pyQT_Reg0_01.png  used on input line 131.
+(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
+<pictures/JAC_pyQT_Reg0_1.png, id=411, 1444.64719pt x 775.39688pt>
+File: pictures/JAC_pyQT_Reg0_1.png Graphic file (type png)
+<use pictures/JAC_pyQT_Reg0_1.png>
+Package pdftex.def Info: pictures/JAC_pyQT_Reg0_1.png  used on input line 138.
+(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
+<pictures/JAC_pyQT_Reg1.png, id=412, 1444.64719pt x 774.64406pt>
+File: pictures/JAC_pyQT_Reg1.png Graphic file (type png)
+<use pictures/JAC_pyQT_Reg1.png>
+Package pdftex.def Info: pictures/JAC_pyQT_Reg1.png  used on input line 145.
+(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
+<pictures/GREIT_pyQT_Reg0_0001.png, id=413, 1444.64719pt x 776.9025pt>
+File: pictures/GREIT_pyQT_Reg0_0001.png Graphic file (type png)
+<use pictures/GREIT_pyQT_Reg0_0001.png>
+Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_0001.png  used on input line 152.
+(pdftex.def)             Requested size: 386.96027pt x 208.09497pt.
+<pictures/GREIT_pyQT_Reg0_01.png, id=414, 1444.64719pt x 773.89125pt>
+File: pictures/GREIT_pyQT_Reg0_01.png Graphic file (type png)
+<use pictures/GREIT_pyQT_Reg0_01.png>
+Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_01.png  used on input line 159.
+(pdftex.def)             Requested size: 386.96027pt x 207.2884pt.
+<pictures/GREIT_pyQT_Reg0_1.png, id=415, 1444.64719pt x 774.64406pt>
+File: pictures/GREIT_pyQT_Reg0_1.png Graphic file (type png)
+<use pictures/GREIT_pyQT_Reg0_1.png>
+Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_1.png  used on input line 166.
+(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
+<pictures/GREIT_pyQT_Reg1.png, id=416, 1444.64719pt x 774.64406pt>
+File: pictures/GREIT_pyQT_Reg1.png Graphic file (type png)
+<use pictures/GREIT_pyQT_Reg1.png>
+Package pdftex.def Info: pictures/GREIT_pyQT_Reg1.png  used on input line 173.
+(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
+ [20] [21 <./pictures/JAC_pyQT_Reg0_0001.png> <./pictures/JAC_pyQT_Reg0_01.png>] [22 <./pictures/JAC_pyQT_Reg0_1.png> <./pictures/JAC_pyQT_Reg1.png>] [23 <./pictures/GREIT_pyQT_Reg0_0001.png> <./pictures/GREIT_pyQT_Reg0_01.png>] [24 <./pictures/GREIT_pyQT_Reg0_1.png> <./pictures/GREIT_pyQT_Reg1.png>]
+<pictures/BP_PyQtGraph_SolverTab.png, id=454, 1443.89438pt x 775.39688pt>
 File: pictures/BP_PyQtGraph_SolverTab.png Graphic file (type png)
 <use pictures/BP_PyQtGraph_SolverTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_SolverTab.png  used on input line 118.
+Package pdftex.def Info: pictures/BP_PyQtGraph_SolverTab.png  used on input line 187.
 (pdftex.def)             Requested size: 386.96027pt x 207.79819pt.
-<pictures/BP_PyQtGraph_ControlTab.png, id=426, 396.7322pt x 774.64406pt>
+<pictures/BP_PyQtGraph_ControlTab.png, id=455, 396.7322pt x 774.64406pt>
 File: pictures/BP_PyQtGraph_ControlTab.png Graphic file (type png)
 <use pictures/BP_PyQtGraph_ControlTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_ControlTab.png  used on input line 127.
+Package pdftex.def Info: pictures/BP_PyQtGraph_ControlTab.png  used on input line 196.
 (pdftex.def)             Requested size: 218.51521pt x 426.6702pt.
-<pictures/BP_PyQtGraph_MeasurementsTab.png, id=427, 365.86688pt x 773.13844pt>
+<pictures/BP_PyQtGraph_MeasurementsTab.png, id=456, 365.86688pt x 773.13844pt>
 File: pictures/BP_PyQtGraph_MeasurementsTab.png Graphic file (type png)
 <use pictures/BP_PyQtGraph_MeasurementsTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_MeasurementsTab.png  used on input line 133.
+Package pdftex.def Info: pictures/BP_PyQtGraph_MeasurementsTab.png  used on input line 202.
 (pdftex.def)             Requested size: 218.51521pt x 461.76317pt.
-) (chapter/conclusao.tex [22 <./pictures/BP_PyQtGraph_SolverTab.png>] [23 <./pictures/BP_PyQtGraph_ControlTab.png> <./pictures/BP_PyQtGraph_MeasurementsTab.png>]
-Cap\'{\i }tulo 5.
-) [24
+) (chapter/conclusao.tex [25
+
+ <./pictures/BP_PyQtGraph_SolverTab.png>] [26 <./pictures/BP_PyQtGraph_ControlTab.png> <./pictures/BP_PyQtGraph_MeasurementsTab.png>]
+Cap\'{\i }tulo 6.
+) [27
 
 ]
-Overfull \hbox (8.51068pt too wide) in paragraph at lines 29--29
+Overfull \hbox (8.51068pt too wide) in paragraph at lines 31--31
 \T1/aer/m/it/12 ac-ces-si-ble whole-body MRI scan-ner. 2023. \T1/aer/m/n/12 en-de-reço: []$\T1/aett/m/n/12 NIH % 20Intramural % 20Research %
  []
 
 
-Overfull \hbox (12.67021pt too wide) in paragraph at lines 29--29
+Overfull \hbox (12.67021pt too wide) in paragraph at lines 31--31
 \T1/aett/m/n/12 20Program . %20Creating % 20a % 20less % 20expensive % 20and % 20more % 20accessible %
  []
 
 
-Overfull \hbox (7.00226pt too wide) in paragraph at lines 29--29
+Overfull \hbox (7.00226pt too wide) in paragraph at lines 31--31
 \T1/aett/m/n/12 B3gico % 20sobre % 20distribui % C3 % A7 % C3 % A3o % 20dos % 20equipamentos ,[] %20frequ %
  []
 
 
-Overfull \hbox (6.50226pt too wide) in paragraph at lines 29--29
+Overfull \hbox (6.50226pt too wide) in paragraph at lines 31--31
 \T1/aett/m/n/12 C3 % A7 % C3 % A3o % 20entre % 20setores % 20p % C3 % BAblico % 20e % 20privado . %20Dispon %
  []
 
-[25
+[28
 
 ]
-Overfull \hbox (9.7096pt too wide) in paragraph at lines 29--29
+Overfull \hbox (9.7096pt too wide) in paragraph at lines 31--31
 []\T1/aer/m/n/12 Riverbank Com-pu-ting, \T1/aer/m/it/12 What is PyQt? \T1/aer/m/n/12 Of-fi-cial do-cu-men-ta-tion, 2026. en-de-reço: []$\T1/aett/m/n/12 https :
  []
 
-[26]
-Overfull \hbox (3.26218pt too wide) in paragraph at lines 29--29
-\T1/aer/m/it/12 OF THE BACK-PROJECTION AL-GO-RITHM AC-COR-DING TO SAN-TOSA AND
- []
-
-[27] [28] (raiz.aux)
+[29] [30] (Tese_LucasMaio.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2440,26 +2498,31 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `raiz.out' has not changed.
-(rerunfilecheck)             Checksum: B49D02D2DD51937FDE3F6AEE0D509BC7;5884.
-Package logreq Info: Writing requests to 'raiz.run.xml'.
-\openout1 = `raiz.run.xml'.
+Package rerunfilecheck Info: File `Tese_LucasMaio.out' has not changed.
+(rerunfilecheck)             Checksum: 94471A6EEC62E056678A68576C470421;5387.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Tese_LucasMaio
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Tese_LucasMaio.run.xml'.
+\openout1 = `Tese_LucasMaio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 79735 strings out of 467867
- 1968404 string characters out of 5417367
- 3290854 words of memory out of 5000000
- 107370 multiletter control sequences out of 15000+600000
- 687669 words of font info for 129 fonts, out of 8000000 for 9000
+ 79789 strings out of 467867
+ 1970121 string characters out of 5417367
+ 3290026 words of memory out of 5000000
+ 107415 multiletter control sequences out of 15000+600000
+ 689206 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,11n,111p,1430b,2214s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,11n,111p,1440b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\4GAMERS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/4GAMERS/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on raiz.pdf (31 pages, 2191297 bytes).
+Output written on Tese_LucasMaio.pdf (35 pages, 3412403 bytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 339 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 123 named destinations out of 1000 (max. 500000)
+ 363 words of extra memory for PDF output out of 10000 (max. 10000000)
 

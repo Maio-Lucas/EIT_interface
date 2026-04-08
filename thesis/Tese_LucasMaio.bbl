@@ -20,8 +20,8 @@
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
     \entry{WholeBodyMRI_NIH}{misc}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{title}{NIH INTRAMURAL RESEARCH PROGRAM. Creating a less expensive and more accessible whole-body MRI scanner. 2023.}
       \true{nocite}
@@ -98,8 +98,8 @@
       \strng{authornamehash}{ca60421aa61b1cda563e8f7b98992cd9}
       \strng{authorfullhash}{de3d1c58b1b3971521064cb496a188dc}
       \strng{authorfullhashraw}{de3d1c58b1b3971521064cb496a188dc}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{NMR in Biomedicine}
@@ -119,8 +119,8 @@
       \endverb
     \endentry
     \entry{TC_RM_Brasil}{misc}{}{}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{title}{ALENCAR, C. A. C.; OLIVEIRA, D. C.; TEIXEIRA, A. B. M.; LEMOS, L. M. G.; QUESADO, R. C. S.; SANTOS, I. M. A.; LINS, C. F. Tomografia computadorizada e ressonância magnética no Brasil: estudo epidemiológico sobre distribuição dos equipamentos, frequência de realização dos exames e comparação entre setores público e privado. Radiologia Brasileira. Vol. 57, e20230094, 2024. doi: 10.1590/0100-3984.2023.0094.}
       \verb{urlraw}
@@ -166,8 +166,8 @@
       \strng{authornamehash}{2fc90bdf42f34306768b3417055bd96d}
       \strng{authorfullhash}{1bb2b59552a67cfb8c96666e045ef992}
       \strng{authorfullhashraw}{1bb2b59552a67cfb8c96666e045ef992}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Radiology}
@@ -218,8 +218,8 @@
       \strng{authornamehash}{9d7bec6a81e97a132e57dd15dde3e046}
       \strng{authorfullhash}{0f0fdfa11d10d43d81b61ed38d8a8892}
       \strng{authorfullhashraw}{0f0fdfa11d10d43d81b61ed38d8a8892}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Jornal Brasileiro de Economia da Saúde}
@@ -263,8 +263,8 @@
       \strng{authornamehash}{bc5ae01ad756baa498f310f4122258c7}
       \strng{authorfullhash}{a9fbd75242485a7b2596cb1422def340}
       \strng{authorfullhashraw}{a9fbd75242485a7b2596cb1422def340}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Clinical Medicine}
@@ -298,8 +298,8 @@
       \strng{authornamehash}{9dff4a88a2f4228a5211b95f6f96b424}
       \strng{authorfullhash}{9dff4a88a2f4228a5211b95f6f96b424}
       \strng{authorfullhashraw}{9dff4a88a2f4228a5211b95f6f96b424}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Medtech innovation briefing}
@@ -355,8 +355,8 @@
       \strng{authornamehash}{8d1eb020a512b2942c59f4a83aff5af7}
       \strng{authorfullhash}{fc16aa0b0d65ad971117fa16a1463703}
       \strng{authorfullhashraw}{fc16aa0b0d65ad971117fa16a1463703}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Critical Care}
@@ -408,8 +408,8 @@
       \strng{authornamehash}{690b04edbe8745220dcdd25ef6985902}
       \strng{authorfullhash}{01aa35dc8ffa5a2d43b9e5a104c6217d}
       \strng{authorfullhashraw}{01aa35dc8ffa5a2d43b9e5a104c6217d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Tomography}
@@ -456,8 +456,8 @@
       \strng{authornamehash}{711fd83273baf47245c55d7122f953c8}
       \strng{authorfullhash}{1ea13c8a5dad52bfe6f6c96b4a64112b}
       \strng{authorfullhashraw}{1ea13c8a5dad52bfe6f6c96b4a64112b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Intensive Care Medicine Experimental}
@@ -513,8 +513,8 @@
       \strng{authornamehash}{8da97b3f8c90d7741fe9a80d84e06119}
       \strng{authorfullhash}{3c267fd8bb22c7b91e80365fe1d69ba7}
       \strng{authorfullhashraw}{3c267fd8bb22c7b91e80365fe1d69ba7}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{iLABMED}
@@ -586,8 +586,8 @@
       \strng{authornamehash}{79a6c6e0d7ff907fcc82d3eb97934074}
       \strng{authorfullhash}{603a9df25b9aa16aa4a2d61a2e9161c2}
       \strng{authorfullhashraw}{603a9df25b9aa16aa4a2d61a2e9161c2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Jornal Brasileiro de Pneumologia}
@@ -662,8 +662,8 @@
       \strng{authornamehash}{99676334119016dcaff038a736df667c}
       \strng{authorfullhash}{38805703c44dde83389693e5d9eed000}
       \strng{authorfullhashraw}{38805703c44dde83389693e5d9eed000}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{American Journal of Respiratory and Critical Care Medicine}
@@ -705,8 +705,8 @@
       \strng{authornamehash}{89b99ab3cde57737b74e58c8714f829b}
       \strng{authorfullhash}{89b99ab3cde57737b74e58c8714f829b}
       \strng{authorfullhashraw}{89b99ab3cde57737b74e58c8714f829b}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Algorithms}
@@ -750,8 +750,8 @@
       \strng{editornamehash}{cc08342451f73a5eb9f745a8a53d640a}
       \strng{editorfullhash}{cc08342451f73a5eb9f745a8a53d640a}
       \strng{editorfullhashraw}{cc08342451f73a5eb9f745a8a53d640a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -781,13 +781,14 @@
       \strng{authornamehash}{7dbb0594719debddf4505064f5b8d511}
       \strng{authorfullhash}{7dbb0594719debddf4505064f5b8d511}
       \strng{authorfullhashraw}{7dbb0594719debddf4505064f5b8d511}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Official documentation}
       \field{title}{What is PyQt?}
       \field{year}{2026}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.riverbankcomputing.com/software/pyqt/intro/
       \endverb
@@ -809,13 +810,14 @@
       \strng{authornamehash}{4c3a5f23b1d254eb0912fcf8581ce4be}
       \strng{authorfullhash}{4c3a5f23b1d254eb0912fcf8581ce4be}
       \strng{authorfullhashraw}{4c3a5f23b1d254eb0912fcf8581ce4be}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Qt for Python documentation}
       \field{title}{Signals and Slots}
       \field{year}{2026}
+      \true{nocite}
       \verb{urlraw}
       \verb https://doc.qt.io/qtforpython-6/tutorials/basictutorial/signals_and_slots.html
       \endverb
@@ -838,13 +840,14 @@
       \strng{authorfullhash}{fe449be66804f9d76790ebdbb0f36dd3}
       \strng{authorfullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Official project website}
       \field{title}{PyQtGraph -- Scientific Graphics and GUI Library for Python}
       \field{year}{2026}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.pyqtgraph.org/
       \endverb
@@ -867,13 +870,14 @@
       \strng{authorfullhash}{fe449be66804f9d76790ebdbb0f36dd3}
       \strng{authorfullhashraw}{fe449be66804f9d76790ebdbb0f36dd3}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{PyQtGraph documentation}
       \field{title}{ImageView}
       \field{year}{2026}
+      \true{nocite}
       \verb{urlraw}
       \verb https://pyqtgraph.readthedocs.io/en/latest/api_reference/widgets/imageview.html
       \endverb
@@ -896,8 +900,8 @@
       \strng{authorfullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
       \strng{authorfullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{GitHub repository}
@@ -925,8 +929,8 @@
       \strng{authorfullhash}{7bc805ebbfd9b7a95fd51b28f1a3be49}
       \strng{authorfullhashraw}{7bc805ebbfd9b7a95fd51b28f1a3be49}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{pyEIT GitHub README}
@@ -1045,8 +1049,8 @@
       \strng{authornamehash}{295eb2a17b8193d41de9b3f83b51bf4e}
       \strng{authorfullhash}{c32a17400101b447ace2d17b371ec438}
       \strng{authorfullhashraw}{c32a17400101b447ace2d17b371ec438}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physiological Measurement}
@@ -1082,8 +1086,8 @@
       \strng{authornamehash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
       \strng{authorfullhash}{c6ab6b3d3640cbdfea168fdb708ad9cf}
       \strng{authorfullhashraw}{c6ab6b3d3640cbdfea168fdb708ad9cf}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physiological Measurement}
@@ -1119,8 +1123,8 @@
       \strng{authornamehash}{3add168c971c1fa631cd5dffa8817cd7}
       \strng{authorfullhash}{3add168c971c1fa631cd5dffa8817cd7}
       \strng{authorfullhashraw}{3add168c971c1fa631cd5dffa8817cd7}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{SIAM Journal on Applied Mathematics}
@@ -1159,8 +1163,8 @@
       \strng{authornamehash}{33ca417841a637736d0590046389b9b3}
       \strng{authorfullhash}{33ca417841a637736d0590046389b9b3}
       \strng{authorfullhashraw}{33ca417841a637736d0590046389b9b3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
@@ -1172,124 +1176,6 @@
       \endverb
       \verb{url}
       \verb https://mvc.givan.se/papers/Models-Views-Controllers.pdf
-      \endverb
-    \endentry
-    \entry{PyQt}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{title}{PyQt Tutorials}
-      \true{nocite}
-      \verb{urlraw}
-      \verb PyQt/Tutorials - Python Wiki. Disponível em: <https://wiki.python.org/moin/PyQt/Tutorials>.
-      \endverb
-      \verb{url}
-      \verb PyQt/Tutorials%20-%20Python%20Wiki.%20Dispon%C3%ADvel%20em:%20%3Chttps://wiki.python.org/moin/PyQt/Tutorials%3E.
-      \endverb
-    \endentry
-    \entry{EIT_Methods}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{title}{HOLDER, D. S. Electrical Impedance Tomography. [s.l.] CRC Press, 2004.}
-      \true{nocite}
-      \verb{urlraw}
-      \verb Electrical Impedance Tomography. Disponível em: <https://www.taylorfrancis.com/books/edit/10.1201/9780367801595/electrical-impedance-tomography-david-holder
-      \endverb
-      \verb{url}
-      \verb Electrical%20Impedance%20Tomography.%20Dispon%C3%ADvel%20em:%20%3Chttps://www.taylorfrancis.com/books/edit/10.1201/9780367801595/electrical-impedance-tomography-david-holder
-      \endverb
-    \endentry
-    \entry{GREIT_Method}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{title}{Grychtol B, Müller B, Adler A. 3D EIT image reconstruction with GREIT. Physiol Meas. 2016 Jun;37(6):785-800. doi: 10.1088/0967-3334/37/6/785. Epub 2016 May 20. PMID: 27203184.}
-      \true{nocite}
-      \verb{urlraw}
-      \verb 3D EIT image reconstruction with GREIT. Disponível em: https://pubmed.ncbi.nlm.nih.gov/27203184/
-      \endverb
-      \verb{url}
-      \verb 3D%20EIT%20image%20reconstruction%20with%20GREIT.%20Dispon%C3%ADvel%20em:%20https://pubmed.ncbi.nlm.nih.gov/27203184/
-      \endverb
-    \endentry
-    \entry{BP}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{title}{CHI NAN, P.; C. C. AYA, J.; GONZALEZ LIMA, R. AN IMPLEMENTATION OF THE BACK-PROJECTION ALGORITHM ACCORDING TO SANTOSA AND VOGELIUS. ABCM Symposium Series in Bioengineering, Vol. 1. Anais...2006.}
-      \verb{urlraw}
-      \verb https://www.abcm.org.br/symposium-series/SSB_Vol1/Papers/SSB_I_paper16.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.abcm.org.br/symposium-series/SSB_Vol1/Papers/SSB_I_paper16.pdf
-      \endverb
-    \endentry
-    \entry{GREIT}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{title}{‌Grychtol B, Müller B, Adler A. 3D EIT image reconstruction with GREIT. Physiol Meas. 2016 Jun;37(6):785-800. doi: 10.1088/0967-3334/37/6/785. Epub 2016 May 20. PMID: 27203184.}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://pubmed.ncbi.nlm.nih.gov/27203184/
-      \endverb
-      \verb{url}
-      \verb https://pubmed.ncbi.nlm.nih.gov/27203184/
-      \endverb
-    \endentry
-    \entry{PyQt_Example}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{title}{PyQt-EIT Interface Example}
-      \field{year}{2023}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://github.com/edlbcamargo/EITduino_interface>.
-      \endverb
-      \verb{url}
-      \verb https://github.com/edlbcamargo/EITduino_interface%3E.
-      \endverb
-    \endentry
-    \entry{PyQt_Example_General}{misc}{}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labeltitlesource}{title}
-      \field{title}{PyQt-EIT Examples}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://github.com/pyqt/examples
-      \endverb
-      \verb{url}
-      \verb https://github.com/pyqt/examples
-      \endverb
-    \endentry
-    \entry{pyEIT_Tutorial}{misc}{}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labeltitlesource}{title}
-      \field{title}{pyEIT Tutorial}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://colab.research.google.com/drive/1FE17_sarKNABJoMACgKBfNpsKXdslkpU#scrollTo=vmZovlcBWd6V
-      \endverb
-      \verb{url}
-      \verb https://colab.research.google.com/drive/1FE17_sarKNABJoMACgKBfNpsKXdslkpU#scrollTo=vmZovlcBWd6V
-      \endverb
-    \endentry
-    \entry{Git_Interface}{misc}{}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labeltitlesource}{title}
-      \field{title}{EIT Interface}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://github.com/Maio-Lucas/EIT_interface/settings
-      \endverb
-      \verb{url}
-      \verb https://github.com/Maio-Lucas/EIT_interface/settings
       \endverb
     \endentry
   \enddatalist
