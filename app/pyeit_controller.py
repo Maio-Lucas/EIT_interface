@@ -100,7 +100,7 @@ class EITsolver:
         return v_se[self.vec_b_all] - v_se[self.vec_a_all]
 
     def setVref(self, VrefSe):
-        """Sets Vref from single-ended data. Always call this before setframes."""
+        """Sets Vref from single-ended data. Comes before setframes."""
         self.Vref = self.se_to_diff(VrefSe)
         # Reset BP smoothing buffer when reference changes
         self._bp_image_prev = None

@@ -1,0 +1,7 @@
+\frametitle{Backup --- Conversão \textit {single-ended} $\rightarrow $ diferencial}
+\begin{tcolorbox}[ufabcbox,title=Ideia do slide]
+Explicação curta da conversão utilizada antes da etapa de reconstrução.
+\end{tcolorbox}
+\begin{lstlisting}[language=Python]
+# TODO: inserir o trecho real de conversao single-ended -&amp;gt; diferencial
+\end{lstlisting}

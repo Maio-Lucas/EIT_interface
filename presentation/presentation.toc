@@ -1,0 +1,6 @@
+\babel@toc {brazilian}{}\relax 
+\beamer@sectionintoc {1}{Contexto e motivação}{3}{0}{1}
+\beamer@sectionintoc {2}{Fundamentação teórica}{5}{0}{2}
+\beamer@sectionintoc {3}{Metodologia}{11}{0}{3}
+\beamer@sectionintoc {4}{Resultados}{14}{0}{4}
+\beamer@sectionintoc {5}{Demo e conclusão}{20}{0}{5}

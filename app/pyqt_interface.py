@@ -243,7 +243,7 @@ class MainWindow(QMainWindow):
 
         super().__init__()
 
-        self.setWindowTitle("EITduino")
+        self.setWindowTitle("EIT Interface")
         self.setMinimumSize(QSize(1100, 680))
 
         # ------------------------------------------------------------------
@@ -276,7 +276,7 @@ class MainWindow(QMainWindow):
             logo_lbl.setPixmap(pix.scaled(32, 32, Qt.AspectRatioMode.KeepAspectRatio,
                                            Qt.TransformationMode.SmoothTransformation))
 
-        title_lbl = QLabel("EITduino")
+        title_lbl = QLabel("EIT Interface")
         title_lbl.setStyleSheet("color: white; font-size: 18px; font-weight: 500;")
 
         header_layout.addWidget(logo_lbl)
@@ -1002,7 +1002,7 @@ class MainWindow(QMainWindow):
                 self._fps_est = self._fps_alpha*self._fps_est + (1-self._fps_alpha)*inst
                 try:
                     self.setWindowTitle(
-                        f"EITduino  —  {self.method.upper()}  |  FPS: {self._fps_est:.1f}  |  Frame {self.frameCounter}"
+                        f"EIT Interface  —  {self.method.upper()}  |  FPS: {self._fps_est:.1f}  |  Frame {self.frameCounter}"
                     )
                 except Exception:
                     pass
