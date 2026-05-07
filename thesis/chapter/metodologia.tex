@@ -1,29 +1,237 @@
-% !TEX root = ../raiz.tex
+% !TEX root = ../Tese_LucasMaio.tex
 
 \chapter{Metodologia}
 
-Este capítulo descreve os procedimentos adotados no desenvolvimento da aplicação proposta. Inicialmente, são apresentados o conjunto de dados experimentais utilizado e suas características de aquisição. Em seguida, é descrita a arquitetura da aplicação, com ênfase na organização do software, no fluxo de dados e nas decisões de implementação que estruturam a interface. Por fim, são detalhados os parâmetros configuráveis disponibilizados ao usuário e sua relação com a reconstrução e a visualização das imagens.
+Este capítulo descreve os procedimentos adotados no desenvolvimento da aplicação proposta. Inicialmente, são apresentados o conjunto de dados experimentais utilizado e suas características de aquisição. Em seguida, é descrita a arquitetura da aplicação, com ênfase na organização do software, no fluxo de dados e nas decisões de implementação que estruturam a interface. Por fim, são descritas as decisões de implementação que estruturam a interface e o fluxo de visualização.
 
 \section{Preparação dos Dados}
 \label{sec:preparacao_dados}
 
 Os dados utilizados neste trabalho foram obtidos pelo professor Erick Leon em um experimento de Tomografia por Impedância Elétrica conduzido em ambiente controlado. O arranjo experimental consistiu em uma bacia preenchida com água, representando um meio condutivo homogêneo, com oito eletrodos igualmente espaçados ao longo da borda do recipiente. Esses eletrodos foram utilizados tanto para a injeção de corrente elétrica quanto para a medição das tensões resultantes na superfície do domínio.
 
-Para simular a presença de uma anomalia interna, uma haste sólida foi inserida no interior da bacia, perturbando localmente a distribuição de condutividade do meio. A posição da haste variou ao longo do experimento, produzindo alterações sucessivas no padrão de tensões medido pelos eletrodos. As aquisições foram realizadas de forma sequencial, resultando em um conjunto de 119 quadros (\textit{frames}) registrados ao longo do tempo.
+Para simular a presença de um objeto interno, uma haste sólida foi inserida no interior da bacia, perturbando localmente a distribuição de condutividade do meio. A posição da haste variou ao longo do experimento, produzindo alterações sucessivas no padrão de tensões medido pelos eletrodos. As aquisições foram realizadas de forma sequencial, resultando em um conjunto de 119 quadros (\textit{frames}) registrados ao longo do tempo.
 
 Os sinais adquiridos correspondem a medições de tensão no formato \textit{single-ended}, ou seja, cada valor registrado representa a diferença de potencial entre um eletrodo de medição e um eletrodo de referência comum \cite{AdlerHolder2021}. Esses valores foram armazenados como tensões medidas para cada padrão de injeção de corrente aplicado, constituindo a base de dados utilizada nas reconstruções de imagem apresentadas neste trabalho.
 
 Esse conjunto de dados foi empregado diretamente como entrada para os métodos de reconstrução implementados no framework pyEIT, sem a realização de simulações numéricas adicionais. Dessa forma, todas as imagens reconstruídas e visualizadas na interface desenvolvida neste projeto foram obtidas a partir de medições experimentais reais, permitindo explorar o comportamento qualitativo dos diferentes métodos de reconstrução frente a perturbações físicas do meio condutivo. Os dados seguem o protocolo de medição descrito na Seção~\ref{sec:fundamentos_tie}.
 
+O conjunto de dados empregado neste trabalho é composto por 119 \textit{frames} sequenciais de medições experimentais. O primeiro \textit{frame} foi utilizado como referência para a reconstrução por diferença temporal, sendo armazenado pelo método \texttt{setVref} da classe \texttt{EITsolver} antes do início da reconstrução dos demais quadros. Ao longo da sequência, a haste foi reposicionada manualmente em diferentes regiões do interior da bacia, produzindo variações sucessivas no padrão de tensões medido pelos eletrodos. Não foi realizado registro fotográfico das posições da haste durante o experimento, o que impede a verificação independente da localização exata do objeto em cada \textit{frame} e constitui uma limitação do conjunto de dados utilizado.
+
+A descrição da sequência experimental apresentada a seguir corresponde a uma inferência baseada na análise visual das imagens reconstruídas, e não a um registro experimental documentado das posições da haste. Nos \textit{frames} 1 a 3, não foi possível identificar visualmente uma perturbação relevante, sendo o \textit{frame} 1 correspondente ao quadro de referência. Entre os \textit{frames} 4 e 10, a imagem reconstruída sugere a presença do objeto na vizinhança do eletrodo 5, enquanto nos \textit{frames} 11 a 14 observa-se perda de intensidade, indicando que o objeto aparentemente foi retirado. Nos \textit{frames} 15 a 29, a perturbação visualmente identificável sugere a presença do objeto próximo ao eletrodo 1; já entre os \textit{frames} 30 e 44, não se observa uma perturbação claramente definida, apenas uma distribuição mais difusa entre os eletrodos 1 e 3. Nos \textit{frames} 45 a 59, a análise visual sugere a presença do objeto na vizinhança do eletrodo 3; nos \textit{frames} 60 a 65, o objeto é inferido próximo ao eletrodo 5, com aparente deslocamento em direção ao centro do domínio; e, nos \textit{frames} 66 a 69, a perturbação sugere sua presença na vizinhança do eletrodo 6. Entre os \textit{frames} 70 e 83, não foi possível identificar visualmente uma perturbação relevante. Nos \textit{frames} 84 a 89, a sequência sugere a presença do objeto próximo ao eletrodo 7, enquanto nos \textit{frames} 90 a 100 a perturbação aparenta estar próxima ao eletrodo 1, porém em posição mais deslocada em direção ao centro do recipiente. Por fim, nos \textit{frames} 101 a 114, não se observa perturbação identificável, e nos \textit{frames} 115 a 119 há apenas indício de possível presença do objeto na região central do domínio voltada para o eletrodo 5, com intensidade bastante reduzida.
 
 \section{Arquitetura da aplicação}
 \label{sec:arquitetura_aplicacao}
 
-A organização seguiu uma estrutura inspirada no padrão MVC (\textit{Model--View--Controller}) \cite{Reenskaug1979}, com separação entre a camada de reconstrução numérica, a camada de apresentação e o ponto de entrada do sistema. O arquivo \texttt{main.py} atua como ponto inicial da aplicação, sendo responsável pelo carregamento dos dados experimentais e pela seleção da interface de visualização a ser utilizada. A camada de reconstrução é centralizada no arquivo \texttt{pyeit\_controller.py}, por meio da classe \texttt{EITsolver}, que reúne toda a lógica relacionada à criação da malha, definição do protocolo de medição, armazenamento do quadro de referência, solução do problema inverso e pós-processamento das imagens. Por fim, as interfaces gráficas são implementadas nos arquivos \texttt{pyqt\_interface.py} e \texttt{pyqtgraph\_interface.py}, que compõem a camada de visualização.
+A aplicação foi desenvolvida em Python 3.11.2. A Tabela~\ref{tab:dependencias} lista as principais bibliotecas utilizadas e suas respectivas versões. A lista completa de dependências encontra-se no arquivo \texttt{requirements.txt} do repositório, disponível publicamente em \url{https://github.com/Maio-Lucas/EIT_interface} \cite{EITduinoGitHub}.
 
-Essa organização foi adotada para desacoplar explicitamente a lógica numérica da interface gráfica. Em particular, nenhuma das interfaces acessa diretamente as rotinas internas do pyEIT; toda a interação com o framework ocorre por meio da classe \texttt{EITsolver}. Essa decisão permite que diferentes interfaces de visualização compartilhem a mesma base de reconstrução, reduzindo redundância de código e facilitando a comparação entre distintas estratégias de exibição das imagens. Além disso, como as interfaces dependem apenas da camada intermediária de reconstrução, alterações no fluxo numérico podem ser implementadas sem exigir modificações estruturais na apresentação.
+\begin{table}[H]
+\centering
+\caption{Principais bibliotecas utilizadas no desenvolvimento da aplicação.}
+\label{tab:dependencias}
+\begin{tabular}{lll}
+\toprule
+\textbf{Biblioteca} & \textbf{Versão} & \textbf{Função} \\
+\midrule
+\texttt{PyQt6}      & 6.7.1  & Interface gráfica \\
+\texttt{pyEIT}      & 1.2.4  & Modelagem e reconstrução em TIE \\
+\texttt{Matplotlib} & 3.9.1  & Renderização na interface principal \\
+\texttt{NumPy}      & 2.0.1  & Operações numéricas \\
+\texttt{SciPy}      & 1.14.0 & Suporte numérico \\
+\texttt{PyQtGraph}  & 0.13.7 & Renderização na interface alternativa \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Do ponto de vista do fluxo de dados, a execução da aplicação segue uma sequência bem definida. Inicialmente, a matriz de medições é carregada a partir do arquivo experimental, e o primeiro \textit{frame} é armazenado como referência por meio do método \texttt{setVref}. Em seguida, a interface escolhida inicializa um temporizador (\texttt{QTimer}) com intervalo configurável, responsável por acionar periodicamente a atualização da visualização. A cada disparo desse temporizador, o quadro corrente é enviado ao método \texttt{updateImage}, que realiza a conversão das medições, aplica o método de reconstrução selecionado e produz a distribuição de variação de condutividade correspondente. O resultado numérico é então convertido para um formato adequado de exibição e, por fim, o canvas gráfico é redesenhado, completando o ciclo de animação.
+A organização do software seguiu uma estrutura inspirada no padrão MVC (\textit{Model--View--Controller}) \cite{Reenskaug1979}, com separação entre a camada de reconstrução numérica, a camada de apresentação e o ponto de entrada da aplicação. O arquivo \texttt{main.py} atua como ponto inicial do sistema, sendo responsável pelo carregamento dos dados experimentais e pela seleção da interface de visualização a ser utilizada. A camada de reconstrução é centralizada no arquivo \texttt{pyeit\_controller.py}, por meio da classe \texttt{EITsolver}, que reúne a lógica relacionada à criação da malha, definição do protocolo de medição, armazenamento do quadro de referência, solução do problema inverso e pós-processamento das imagens. Por fim, as interfaces gráficas são implementadas nos arquivos \texttt{pyqt\_interface.py} e \texttt{pyqtgraph\_interface.py}, que compõem a camada de visualização.
+
+A Figura~\ref{fig:arquitetura_mvc} sintetiza essa organização, indicando o papel de cada arquivo principal e as relações entre as interfaces gráficas, a camada intermediária de reconstrução e o framework \texttt{pyEIT}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=1.0cm,
+    arr/.style={-{Latex[length=2.5mm]}, thick},
+    note/.style={
+        draw,
+        dashed,
+        rounded corners,
+        fill=white,
+        align=center,
+        font=\small,
+        inner sep=5pt
+    },
+    main/.style={
+        draw,
+        rounded corners,
+        fill=gray!20,
+        minimum width=7.2cm,
+        minimum height=1.0cm,
+        align=center,
+        font=\small
+    },
+    view/.style={
+        draw,
+        rounded corners,
+        fill=green!20,
+        minimum width=5.0cm,
+        minimum height=1.35cm,
+        align=center,
+        font=\small
+    },
+    model/.style={
+        draw,
+        rounded corners,
+        fill=yellow!25,
+        minimum width=5.8cm,
+        minimum height=1.25cm,
+        align=center,
+        font=\small
+    },
+    framework/.style={
+        draw,
+        rounded corners,
+        fill=blue!18,
+        minimum width=12.4cm,
+        minimum height=1.15cm,
+        align=center,
+        font=\small
+    },
+    labelarrow/.style={
+        fill=white,
+        inner sep=1.5pt,
+        font=\scriptsize
+    }
+]
+
+\node[main] (main) at (0,0)
+{\texttt{main.py}\\ ponto de entrada e janela de seleção da interface};
+
+\node[view] (view1) at (-3.8,-2.5)
+{\texttt{pyqt\_interface.py}\\ \texttt{PyQt6} + \texttt{Matplotlib}\\ \textit{View} + \textit{Controller}};
+
+\node[view] (view2) at (3.8,-2.5)
+{\texttt{pyqtgraph\_interface.py}\\ \texttt{PyQt6} + \texttt{PyQtGraph}\\ \textit{View} + \textit{Controller}};
+
+\node[model] (model) at (0,-5.4)
+{\texttt{pyeit\_controller.py}\\ classe \texttt{EITsolver}\\ \textit{Model}};
+
+\node[framework] (pyeit) at (0,-7.4)
+{\texttt{pyEIT} framework\\ FEM solver $\mid$ BP $\mid$ JAC $\mid$ GREIT};
+
+\node[note] (note1) at (0,-4.1)
+{Nenhuma interface acessa\\ \texttt{pyEIT} diretamente};
+
+% main.py instancia as duas interfaces
+\draw[arr] (main.south) -- ++(0,-0.50) 
+    -- node[labelarrow, above]{instancia} ++(-3.8,0)
+    -- (view1.north);
+
+\draw[arr] (main.south) -- ++(0,-0.50)
+    -- node[labelarrow, above]{instancia} ++(3.8,0)
+    -- (view2.north);
+
+% interfaces usam apenas a API pública do controller
+\draw[arr] (view1.south) -- ++(0,-0.45)
+    -- node[labelarrow, above]{usa API pública} ++(-1.45,0)
+    |- (model.west);
+
+\draw[arr] (view2.south) -- ++(0,-0.45)
+    -- node[labelarrow, above]{usa API pública} ++(1.45,0)
+    |- (model.east);
+
+% controller faz chamadas internas ao pyEIT
+\draw[arr] (model.south) --
+node[labelarrow, right]{chamadas internas} (pyeit.north);
+
+\end{tikzpicture}
+\caption{Arquitetura da aplicação EITduino inspirada no padrão MVC.}
+\label{fig:arquitetura_mvc}
+\end{figure}
+
+Essa organização foi adotada para desacoplar explicitamente a lógica numérica da interface gráfica. Em particular, nenhuma das interfaces acessa diretamente as rotinas internas do \texttt{pyEIT}; toda a interação com o framework ocorre por meio da classe \texttt{EITsolver}. Essa decisão permite que diferentes interfaces de visualização compartilhem a mesma base de reconstrução, reduzindo redundância de código e facilitando a comparação entre distintas estratégias de exibição das imagens. Além disso, como as interfaces dependem apenas da camada intermediária de reconstrução, alterações no fluxo numérico podem ser implementadas sem exigir modificações estruturais na apresentação.
+
+Do ponto de vista do fluxo de dados, a execução da aplicação segue uma sequência bem definida. Inicialmente, os dados experimentais são carregados no arquivo \texttt{main.py}, por meio da função \texttt{np.loadtxt()}, que lê o arquivo de medições em formato de texto estruturado a partir de um caminho predefinido. Após o carregamento, a aplicação exibe uma janela de seleção que permite ao usuário escolher entre duas interfaces de visualização disponíveis: a interface principal, baseada em \texttt{PyQt6} e \texttt{Matplotlib}, e a interface alternativa, baseada em \texttt{PyQtGraph}. A interface selecionada é então instanciada, recebendo como parâmetros a matriz de dados carregada e o número total de \textit{frames}.
+
+Em seguida, é criada uma instância da classe \texttt{EITsolver}, e o primeiro \textit{frame} é armazenado como referência por meio do método \texttt{setVref}. A interface escolhida inicializa um temporizador (\texttt{QTimer}) com intervalo configurável, responsável por acionar periodicamente a atualização da visualização. A cada disparo desse temporizador, o quadro corrente é enviado ao método \texttt{updateImage}, que realiza a conversão das medições, aplica o método de reconstrução selecionado e produz a distribuição de variação de condutividade correspondente. O resultado numérico é então convertido para um formato adequado de exibição e, por fim, o \textit{canvas} gráfico é redesenhado, completando o ciclo de animação. Esse fluxo operacional é resumido na Figura~\ref{fig:fluxo_execucao}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=1.0cm,
+    flowarrow/.style={-{Latex[length=2.5mm]}, thick},
+    flowreturn/.style={-{Latex[length=2.5mm]}, thick, dashed},
+    titleinit/.style={
+        draw,
+        rounded corners,
+        fill=blue!25,
+        minimum width=5.2cm,
+        minimum height=0.75cm,
+        align=center,
+        font=\small\bfseries
+    },
+    titleloop/.style={
+        draw,
+        rounded corners,
+        fill=yellow!35,
+        minimum width=5.2cm,
+        minimum height=0.75cm,
+        align=center,
+        font=\small\bfseries
+    },
+    flowinit/.style={
+        draw,
+        rounded corners,
+        fill=blue!12,
+        minimum width=5.2cm,
+        minimum height=0.8cm,
+        align=center,
+        font=\small
+    },
+    flowloop/.style={
+        draw,
+        rounded corners,
+        fill=yellow!20,
+        minimum width=5.2cm,
+        minimum height=0.8cm,
+        align=center,
+        font=\small
+    }
+]
+
+\node[titleinit] (ti) at (-3.2,0) {Inicialização};
+\node[titleloop] (tl) at (3.2,0) {Loop de atualização};
+
+\node[flowinit, below=of ti] (i1) {Carregar dados via \texttt{np.loadtxt()}};
+\node[flowinit, below=of i1] (i2) {Exibir janela \textit{launcher}\\ seleção de interface};
+\node[flowinit, below=of i2] (i3) {Instanciar interface selecionada\\ com dados e \texttt{nframes}};
+\node[flowinit, below=of i3] (i4) {Criar instância \texttt{EITsolver}};
+\node[flowinit, below=of i4] (i5) {\texttt{setVref}\\ \textit{frame} 0 como referência};
+
+\node[flowloop, below=of tl] (l1) {\texttt{QTimer} dispara\\ a cada $\Delta t$ ms};
+\node[flowloop, below=of l1] (l2) {\texttt{updateImage(frame\_atual)}};
+\node[flowloop, below=of l2] (l3) {Converter \textit{single-ended}\\ para diferencial};
+\node[flowloop, below=of l3] (l4) {Solver: BP $\mid$ JAC $\mid$ GREIT};
+\node[flowloop, below=of l4] (l5) {Pós-processamento e\\ atualização do \textit{canvas}};
+
+\draw[flowarrow] (i1) -- (i2);
+\draw[flowarrow] (i2) -- (i3);
+\draw[flowarrow] (i3) -- (i4);
+\draw[flowarrow] (i4) -- (i5);
+
+\draw[flowarrow] (l1) -- (l2);
+\draw[flowarrow] (l2) -- (l3);
+\draw[flowarrow] (l3) -- (l4);
+\draw[flowarrow] (l4) -- (l5);
+
+\draw[flowarrow] (i5.east) -- ++(0.8,0) |- (l1.west);
+
+\draw[flowreturn] (l5.east) -- ++(1.0,0) |- 
+node[pos=0.25,right,font=\tiny]{próximo \textit{frame}} (l1.east);
+
+\end{tikzpicture}
+\caption{Fluxo de execução da aplicação EITduino.}
+\label{fig:fluxo_execucao}
+\end{figure}
 
 Uma decisão de implementação particularmente importante diz respeito ao processo de rasterização das imagens. Nos métodos BP e JAC, os resultados reconstruídos estão naturalmente associados à malha triangular do domínio, e não a uma grade regular de pixels. Para que essas reconstruções possam ser exibidas como imagens bidimensionais contínuas, foi implementado um procedimento de interpolação baseado em coordenadas baricêntricas. Nesse procedimento, a geometria da triangulação é analisada previamente, e são armazenados, para cada pixel da grade de saída, os índices dos vértices do triângulo correspondente e os pesos baricêntricos necessários à interpolação. Essa etapa é realizada pelo método \texttt{\_build\_raster\_cache}. No caso do GREIT, esse procedimento não é necessário, pois o método produz sua saída diretamente em uma grade regular de pixels, que pode ser exibida sem etapa adicional de interpolação.
 

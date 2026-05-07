@@ -16,17 +16,18 @@
 \contentsline {subsubsection}{\numberline {3.3.4.1}Back-Projection (BP)}{7}{subsubsection.3.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.3.4.2}Jacobiano (JAC)}{7}{subsubsection.3.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.3.4.3}GREIT}{8}{subsubsection.3.3.4.3}%
-\contentsline {chapter}{\numberline {4}Metodologia}{10}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Preparação dos Dados}{10}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Arquitetura da aplicação}{10}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Resultados}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Visão geral da interface}{13}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Comparação entre métodos de reconstrução}{13}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Efeito dos parâmetros configuráveis}{17}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Densidade da malha (\(h_0\))}{17}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Suavização temporal (\(\alpha \))}{17}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Efeito da regularização (\(\lambda \))}{20}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Interface PyQtGraph}{25}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusão}{27}{chapter.6}%
-\contentsline {chapter}{Referências}{28}{chapter*.27}%
+\contentsline {section}{\numberline {3.4}Padrão de Arquitetura MVC}{9}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Metodologia}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Preparação dos Dados}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Arquitetura da aplicação}{12}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Resultados}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Visão geral da interface}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Comparação entre métodos de reconstrução}{16}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Efeito dos parâmetros configuráveis}{20}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Densidade da malha (\(h_0\))}{20}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Suavização temporal (\(\alpha \))}{20}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Efeito da regularização (\(\lambda \))}{23}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Interface PyQtGraph}{28}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusão}{30}{chapter.6}%
+\contentsline {chapter}{Referências}{31}{chapter*.30}%
 \contentsfinish 

@@ -1,4 +1,4 @@
-% !TEX root = ../raiz.tex
+% !TEX root = ../Tese_LucasMaio.tex
 
 \chapter{Introdução}
 
@@ -17,5 +17,5 @@ Uma alternativa promissora para monitoramento funcional em contextos específico
 \section{Relação com a proposta deste trabalho}
 
 
-É nesse ponto que se insere a proposta deste trabalho. Em vez de desenvolver um sistema de aquisição clínica em tempo real de um equipamento funcional, este estudo concentra-se na implementação de uma interface gráfica para reconstrução e visualização de dados previamente registrados de TIE, com foco educacional e de apoio à pesquisa, permitindo explorar de forma comparativa como diferentes parâmetros e escolhas algorítmicas afetam a imagem final. A aplicação foi desenvolvida em Python, com uso do framework \textit{open-source} pyEIT para modelagem e reconstrução, o qual disponibiliza rotinas para solução do problema direto e algoritmos como Back-Projection, Jacobiano e GREIT \cite{pyEIT}. A interface proposta busca permitir a comparação entre diferentes métodos de reconstrução e diferentes configurações de malha e visualização, de modo a explicitar como essas escolhas afetam a imagem reconstruída e sua interpretação.
+É nesse ponto que se insere a proposta deste trabalho. Este estudo concentra-se na implementação de uma interface gráfica para reconstrução e visualização de dados previamente registrados de TIE, com foco educacional e de apoio à pesquisa, permitindo explorar de forma comparativa como diferentes parâmetros e escolhas algorítmicas afetam a imagem final. A aplicação foi desenvolvida em Python, com uso do \textit{framework} de código aberto \texttt{pyEIT} \cite{pyEIT}, mantido pelo grupo eitcom e voltado à simulação e à reconstrução em TIE. A biblioteca fornece a implementação do solucionador do problema direto baseado no Método dos Elementos Finitos (FEM) e dos principais algoritmos de reconstrução inversa, incluindo Back-Projection, Jacobiano e GREIT. Sua adoção neste trabalho se justifica por consolidar, em um único framework, as ferramentas necessárias para simulação e reconstrução em TIE, reduzindo a necessidade de implementação própria dos métodos numéricos. A interface proposta busca permitir a comparação entre diferentes métodos de reconstrução e diferentes configurações de malha e visualização, de modo a explicitar como essas escolhas afetam a imagem reconstruída e sua interpretação.
 

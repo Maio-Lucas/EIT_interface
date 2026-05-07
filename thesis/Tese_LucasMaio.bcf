@@ -2374,34 +2374,36 @@
     <bcf:datasource type="file" datatype="bibtex">reference.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Gulani2025</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Silva2013</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">MRI_LMICs</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">TC_RM_Brasil</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">NICEPulmoVista2019</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">pyEIT</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Lian2025</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">KhanLing2019</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Scaramuzzo2024</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Marinho2013JBP</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Hyvonen2004CEM</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Lionheart2003EITRA</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">Gulani2025</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Silva2013</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">MRI_LMICs</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">TC_RM_Brasil</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">NICEPulmoVista2019</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">pyEIT</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Lian2025</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">KhanLing2019</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Scaramuzzo2024</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Marinho2013JBP</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Somersalo1992CEM</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">pyEITReadme</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Lionheart2003EITRA</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Putensen2019</bcf:citekey>
     <bcf:citekey order="15" intorder="1">Putensen2019</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">Putensen2019</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">pyEITReadme</bcf:citekey>
     <bcf:citekey order="17" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">BP</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">BarberBrown1984</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">pyEITReadme</bcf:citekey>
     <bcf:citekey order="20" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">AdlerHolder2021</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">AdlerHolder2021</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">GREIT2009</bcf:citekey>
     <bcf:citekey order="23" intorder="1">GREIT2009</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">GREIT2009</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">pyEITReadme</bcf:citekey>
     <bcf:citekey order="25" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">pyEITReadme</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">AdlerHolder2021</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">Reenskaug1979</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">Reenskaug1979</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">GoF1994</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">AdlerHolder2021</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">EITduinoGitHub</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">Reenskaug1979</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1,28 +1,21 @@
-% !TEX root = ../raiz.tex
+% !TEX root = ../Tese_LucasMaio.tex
 
 \chapter{Objetivos}
 
 \section{Objetivo Geral}
+
 Desenvolver uma interface gráfica interativa, em Python, voltada à reconstrução e visualização de dados de Tomografia por Impedância Elétrica (TIE), com foco educacional e de apoio à pesquisa, permitindo explorar comparativamente como diferentes métodos de reconstrução e configurações da malha afetam as imagens obtidas.
 
 \section{Objetivos Específicos}
 
 \begin{enumerate}
 
-\item Estruturar a aplicação segundo o padrão MVC, desacoplando a camada de reconstrução numérica das interfaces gráficas e implementando um ponto de entrada unificado que permita a seleção da interface de visualização.
+\item Desenvolver a aplicação EITduino, utilizando os métodos de reconstrução Back-Projection (BP), Jacobiano (JAC) e GREIT implementados pela biblioteca de código aberto \texttt{pyEIT}, com interface interativa para alternância entre métodos e visualização comparativa dos resultados.
 
-\item Implementar e disponibilizar três métodos de reconstrução presentes no pyEIT, Back-Projection (BP), Jacobiano (JAC) e GREIT, permitindo ao usuário alternar entre eles e observar suas diferenças qualitativas em termos de imagem reconstruída, estabilidade temporal e sensibilidade a ruído.
+\item Permitir a exploração interativa de parâmetros de reconstrução e de configuração da malha, como densidade, formato geométrico, resolução da grade de renderização e regularização, evidenciando o efeito dessas escolhas sobre as imagens obtidas.
 
-\item Realizar uma revisão teórica sobre os fundamentos da 
-Tomografia por Impedância Elétrica, abrangendo o princípio 
-de medição, a formulação dos problemas direto e inverso, 
-a abordagem por diferença temporal e os métodos de 
-reconstrução de imagens utilizados.
+\item Implementar uma segunda interface de visualização utilizando a biblioteca \texttt{PyQtGraph}, a fim de comparar qualitativamente essa abordagem com a interface principal baseada em \texttt{Matplotlib} em termos de organização visual e desempenho de renderização.
 
-\item Disponibilizar mecanismos de exploração interativa de parâmetros como densidade da malha, formato geométrico, resolução da grade de renderização e regularização, evidenciando como essas escolhas afetam a imagem obtida.
-
-\item Desenvolver uma segunda implementação da interface utilizando PyQtGraph como biblioteca de renderização, permitindo comparar qualitativamente essa abordagem com a interface principal em termos de organização visual e fluidez na atualização das imagens.
-
-\item Organizar o código-fonte de forma modular, favorecendo sua disponibilização, reutilização e extensão em trabalhos futuros.
+\item Disponibilizar publicamente o código-fonte da aplicação, organizado de forma modular e documentado de modo a facilitar sua reutilização, reprodução e extensão em trabalhos futuros.
 
 \end{enumerate}
