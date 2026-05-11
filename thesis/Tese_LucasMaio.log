@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.3)  3 MAY 2026 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.4)  11 MAY 2026 16:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Projects/EIT_interface/thesis/Tese_LucasMaio.tex
-(c:/Projects/EIT_interface/thesis/Tese_LucasMaio.tex
+**c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/Tese_LucasMaio.tex
+(c:/Users/4GAMERS/Documents/GitHub/EIT_interface/thesis/Tese_LucasMaio.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+L3 programming layer <2026-01-19>
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -24,20 +24,14 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-)
-(template.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.
-sty
+) (template.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.st
-y
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count284
@@ -52,10 +46,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks18
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.
-cfg))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -89,19 +80,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-
 \f@nch@headwidth=\skip51
 \f@nch@offset@elh=\skip52
 \f@nch@offset@erh=\skip53
@@ -117,9 +101,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip63
 \f@nch@widthR=\skip64
 \@temptokenb=\toks19
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box53
 \beforetitleunit=\skip65
@@ -130,14 +112,10 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen159
 \titlewidthlast=\dimen160
 \titlewidthfirst=\dimen161
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen162
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip67
 \enit@outerparindent=\dimen163
@@ -145,92 +123,64 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box54
 \enit@count@id=\count287
 \enitdp@description=\count288
-) (C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/ae\ae.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\ae.sty
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
-6.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 11
-6.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aer.fd
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 116.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-) (C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.st
-y
-Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
-TeX and XeLaTeX
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2026/03/24 v26.5 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count289
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2068.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2070.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2072.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2073.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2074.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2076.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2101.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
 \U@D=\dimen164
 \l@unhyphenated=\language79
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.d
-ef)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count290
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
-(babel)             Reported on input line 4196.
+(babel)             Reported on input line 4206.
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/inv
-alid\babel-brazil.tex)
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/invalid\babel-brazil.tex)
 
 Package babel Warning: Name 'brazil' is deprecated.
 (babel)                Use 'brazilian' instead.
-(babel)                Reported on input line 4320.
+(babel)                Reported on input line 4330.
 
 Package babel Info: Importing font and identification data for brazil
-(babel)             from babel-pt-BR.ini. Reported on input line 4320.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\bra
-zilian.ldf
+(babel)             from babel-pt-BR.ini. Reported on input line 4330.
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilian.ldf
 Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
 Package babel Info: Hyphen rules for 'brazil' set to \l@portuguese
 (babel)             (\language56). Reported on input line 100.
 Package babel Info: Making " an active character on input line 132.
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.
-sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count291
 )
@@ -241,46 +191,28 @@ Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \csq@maxlvl=\count296
 \csq@tshold=\count297
 \csq@ltx@everypar=\toks24
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.
-def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.
-cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transp
-arent.sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent.sty
 Package: transparent 2025-06-23 v1.6 Transparency with color stacks
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transp
-arent-nometadata.sty
-Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color
- stack (HO)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.st
-y
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent-nometadata.sty
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color stack (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color
-.cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdfte
-x.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor
-.ltx)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -290,12 +222,9 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\svgnam.def
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\svgnam.def
 File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count298
 \lst@gtempboxa=\box55
 \lst@token=\toks25
@@ -308,20 +237,14 @@ sty
 \lst@newlines=\count302
 \lst@lineno=\count303
 \lst@maxwidth=\dimen168
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.
-sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.s
-ty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count304
 \lst@skipnumbers=\count305
 \lst@framebox=\box56
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.
-cfg
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
@@ -332,37 +255,22 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.
-sty
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.s
-ty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/textgreek\textgree
-k.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/textgreek\textgreek.sty
 Package: textgreek 2011/10/09 v0.7 Greek symbols in text
-Package textgreek Info: Loading the definitions for the Greek fontencoding. on 
-input line 39.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\lgre
-nc.def
+Package textgreek Info: Loading the definitions for the Greek fontencoding. on input line 39.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\lgrenc.def
 File: lgrenc.def 2023-09-12 2.5 LGR Greek font encoding definitions
 Now handling font encoding LGR ...
 ... processing UTF-8 mapping file for font encoding LGR
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/greek-inputenc\lgr
-enc.dfu
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-inputenc\lgrenc.dfu
 File: lgrenc.dfu 2023-03-21 1.9 UTF-8 support for Greek
    defining Unicode char U+00A8 (decimal 168)
    defining Unicode char U+00AB (decimal 171)
@@ -713,47 +621,28 @@ File: lgrenc.dfu 2023-03-21 1.9 UTF-8 support for Greek
    defining Unicode char U+10145 (decimal 65861)
    defining Unicode char U+10146 (decimal 65862)
    defining Unicode char U+10147 (decimal 65863)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\gree
-k-fontenc.def
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-fontenc.def
 File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
-LaTeX Encoding Info:    Ignoring declaration for text command \accACUTE (encodi
-ng LGR) on input line 251.
-LaTeX Encoding Info:    Ignoring declaration for text command \accGRAVE (encodi
-ng LGR) on input line 259.
-LaTeX Encoding Info:    Ignoring declaration for text command \accTILDE (encodi
-ng LGR) on input line 267.
+LaTeX Encoding Info:    Ignoring declaration for text command \accACUTE (encoding LGR) on input line 251.
+LaTeX Encoding Info:    Ignoring declaration for text command \accGRAVE (encoding LGR) on input line 259.
+LaTeX Encoding Info:    Ignoring declaration for text command \accTILDE (encoding LGR) on input line 267.
 ))
-Package textgreek Info: Loaded fontmap: {phv/*/*}{U/psy/*/*} {*/bx/n}{U/eur/b/n
-} {*/b/n}{U/eur/b/n} {*/*/n}{U/eur/m/n} {*/*/it}{OML/*/*/*}. on input line 69.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdra
-w.sty
+Package textgreek Info: Loaded fontmap: {phv/*/*}{U/psy/*/*} {*/bx/n}{U/eur/b/n} {*/b/n}{U/eur/b/n} {*/*/n}{U/eur/m/n} {*/*/it}{OML/*/*/*}. on input line 69.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdraw.sty
 Package: pmboxdraw 2019/12/05 v1.4 Poor man's box drawing characters (HO)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.
-sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkey
-s.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvd
-efinekeys.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwar
-err.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Now handling font encoding pmboxdraw ...
 ... processing UTF-8 mapping file for font encoding pmboxdraw
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdra
-wenc.dfu
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pmboxdraw\pmboxdrawenc.dfu
 File: pmboxdrawenc.dfu 2019/12/05 v1.4 UTF-8 support for box drawing characters
-
    defining Unicode char U+2500 (decimal 9472)
    defining Unicode char U+2501 (decimal 9473)
    defining Unicode char U+2502 (decimal 9474)
@@ -888,9 +777,7 @@ File: pmboxdrawenc.dfu 2019/12/05 v1.4 UTF-8 support for box drawing characters
    defining Unicode char U+259D (decimal 9629)
    defining Unicode char U+259E (decimal 9630)
    defining Unicode char U+259F (decimal 9631)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoption
-s.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 )
 \pmbd@W=\dimen169
@@ -899,28 +786,21 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 \pmbd@Thin=\dimen172
 \pmbd@Thick=\dimen173
 \pmbd@Sep=\dimen174
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.st
-y
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip68
 
 For additional information on amsmath, use the `?' option.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.st
-y
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks26
 \ex@=\dimen175
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen176
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count306
@@ -970,34 +850,22 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks30
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.s
-ty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.
-sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/xfrac\xfrac.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.
-sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/xfrac\xfrac.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.
-sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graph
-ics.cfg
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
@@ -1028,13 +896,10 @@ LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
 
 LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
 
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.st
-y
-Package: siunitx 2026-04-15 v3.5.4 A comprehensive (SI) units package
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2026-03-26 v3.5.1 A comprehensive (SI) units package
 \l__siunitx_number_uncert_offset_int=\count318
 \l__siunitx_number_exponent_fixed_int=\count319
 \l__siunitx_number_min_decimal_int=\count320
@@ -1047,16 +912,10 @@ Package: siunitx 2026-04-15 v3.5.4 A comprehensive (SI) units package
 \l__siunitx_number_group_min_int=\count327
 \l__siunitx_number_group_minimum_int=\count328
 \l__siunitx_compound_count_int=\count329
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/translations\trans
-lations.sty
-Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
- (CN)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdfte
-xcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
@@ -1077,8 +936,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 \l__siunitx_sexagesimal_tmp_dim=\dimen195
 \l__siunitx_sexagesimal_marker_box=\box67
 \l__siunitx_sexagesimal_unit_box=\box68
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen196
 \ar@mcellbox=\box69
@@ -1101,16 +959,11 @@ Package siunitx Info: Option "multi-part-units = single" has been deprecated
 (siunitx)             Use "separate-uncertainty-units = single" as a
 (siunitx)             replacement.
 
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.st
-y
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.sty
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtool
-s.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count333
 \calc@Bcount=\count334
@@ -1122,9 +975,7 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count335
 \calc@Cskip=\skip75
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 \g_MT_multlinerow_int=\count336
@@ -1140,22 +991,16 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \xmathstrut@dim=\dimen263
 )
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 351.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/steinmetz\steinmet
-z.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/steinmetz\steinmetz.sty
 Package: steinmetz 2009/06/14 v1.0 Steinmetz symbol for electrotechnics
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.sty
 Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.cfg
 File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
 )
 Package pict2e Info: Driver file: pdftex.def on input line 112.
 Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\p2e-pdftex.
-def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\p2e-pdftex.def
 File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
 \pIIe@GRAPH=\toks32
@@ -1173,60 +1018,29 @@ File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 \stm@phaseht=\skip78
 \stm@phasetot=\skip79
 \stm@phasewd=\skip80
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2
-e\l3keys2e.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2025-12-24 L3 programming layer (loader) 
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backen
-d-pdftex.def
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count337
 ))
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/chemformula\chemfo
-rmula.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\
-tikz.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf
-.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfr
-cs.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-futil-common.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemformula\chemformula.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks33
 \pgfutil@tempdima=\dimen272
 \pgfutil@tempdimb=\dimen273
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-futil-latex.def
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box73
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-frcs.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision
-.tex)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf
-core.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pg
-fsys.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgfsys.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-fkeys.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks34
 \pgfkeys@temptoks=\toks35
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-fkeyslibraryfiltered.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks36
 ))
 \pgf@x=\dimen274
@@ -1249,76 +1063,32 @@ fkeyslibraryfiltered.code.tex
 \t@pgf@tokb=\toks38
 \t@pgf@tokc=\toks39
 \pgf@sys@id@count=\count342
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgf.cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgfsys-pdftex.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgfsys-common-pdf.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgfsyssoftpath.code.tex
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count343
 \pgfsyssoftpath@bigbuffer@items=\count344
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\
-pgfsysprotocol.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcore.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-util.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-parser.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen284
 \pgfmath@count=\count345
 \pgfmath@box=\box74
 \pgfmath@toks=\toks40
 \pgfmath@stack@operand=\toks41
 \pgfmath@stack@operation=\toks42
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.basic.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.trigonometric.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.random.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.comparison.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.base.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.round.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.misc.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-functions.integerarithmetics.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-calc.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-float.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count346
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.
-code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorepoints.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen285
 \pgf@picmaxx=\dimen286
@@ -1334,131 +1104,75 @@ File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@yy=\dimen296
 \pgf@zx=\dimen297
 \pgf@zy=\dimen298
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorepathconstruct.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen299
 \pgf@path@lasty=\dimen300
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorepathusage.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen301
 \pgf@shorten@start@additional=\dimen302
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorescopes.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box75
 \pgf@hbox=\box76
 \pgf@layerbox@main=\box77
 \pgf@picture@serial@count=\count347
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoregraphicstate.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen303
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoretransformations.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen304
 \pgf@pt@y=\dimen305
 \pgf@pt@temp=\dimen306
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorequick.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoreobjects.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorepathprocessing.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorearrows.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen307
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoreshade.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen308
 \pgf@sys@shading@range@num=\count348
 \pgf@shadingcount=\count349
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoreimage.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoreexternal.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box78
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorelayers.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcoretransparency.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorepatterns.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\p
-gfcorerdf.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-oduleshapes.code.tex
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box79
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-oduleplot.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\
-pgfcomp-version-0-65.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen309
 \pgf@nodesepend=\dimen310
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\
-pgfcomp-version-1-18.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgff
-or.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfk
-eys.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-fkeys.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.s
-ty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath
-.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pg
-ffor.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen311
 \pgffor@skip=\dimen312
 \pgffor@stack=\toks43
 \pgffor@toks=\toks44
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz\tikz.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryplothandlers.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count350
 \pgfplotmarksize=\dimen313
@@ -1479,38 +1193,30 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikznumberofchildren=\count352
 \tikznumberofcurrentchild=\count353
 \tikz@fig@count=\count354
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-odulematrix.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count355
 \pgfmatrixcurrentcolumn=\count356
 \pgf@matrix@numberofcolumns=\count357
 )
 \tikz@expandcount=\count358
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarytopaths.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip81
 \L@UnitsRaiseTextstyle=\skip82
 \L@UnitsRaiseScriptstyle=\skip83
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryarrows.meta.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowinset=\dimen322
 \pgfarrowlength=\dimen323
 \pgfarrowwidth=\dimen324
 \pgfarrowlinewidth=\dimen325
 )
-Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions 
-(CN)
+Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions (CN)
 \l__chemformula_tmpa_dim=\dimen326
 \l__chemformula_tmpb_dim=\dimen327
 \l__chemformula_tmpc_dim=\dimen328
@@ -1558,18 +1264,12 @@ Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions
 \l__chemformula_subscript_box=\box89
 \l__chemformula_plus_space_skip=\skip87
 \l__chemformula_minus_space_skip=\skip88
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
 Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgree
-k.sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\
-xparse.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgreek.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
-Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
- in chemistry (CN)
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
 \l__chemgreek_tmpa_int=\count364
 \g__chemgreek_tmpa_int=\count365
 )
@@ -1589,8 +1289,7 @@ Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
 \mhchem@option@minusmathsidebearingright=\dimen358
 \mhchem@option@minustextsidebearingleft=\dimen359
 \mhchem@option@minustextsidebearingright=\dimen360
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
 \UL@box=\box90
 \UL@hyphenbox=\box91
 \UL@skip=\skip99
@@ -1601,26 +1300,20 @@ Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
 \ULC@box=\box92
 Package: ulem 2019/11/18
 \ULdepth=\dimen363
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip100
 \fb@frw=\dimen364
 \fb@frh=\dimen365
 \FrameRule=\dimen366
 \FrameSep=\dimen367
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/mdwtools\footnote.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/mdwtools\footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box93
 \fn@width=\dimen368
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.st
-y
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen369
 \TX@old@table=\dimen370
@@ -1629,9 +1322,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen373
 \TX@cols=\count369
 \TX@ftn=\toks46
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen374
 \lightrulewidth=\dimen375
@@ -1650,23 +1341,18 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count372
 \@lastruleclass=\count373
 \@thisrulewidth=\dimen386
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen387
 \c@nlinenum=\count374
 \TeXr@lab=\toks47
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip101
 \multirow@cntb=\count375
 \multirow@dima=\skip102
 \bigstrutjot=\dimen388
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count376
 \mult@box=\box94
@@ -1736,9 +1422,7 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \colbreak@box=\box139
 \mc@col@check@num=\count385
 \g__mc_curr_col_int=\count386
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/arydshln\arydshln.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/arydshln\arydshln.sty
 Package: arydshln 2019/02/21 v1.76 
 \dashlinedash=\dimen398
 \dashlinegap=\dimen399
@@ -1762,77 +1446,48 @@ Package: arydshln 2019/02/21 v1.76
 \adl@LTpagetotal=\dimen405
 )
 ==> First Aid for arydshln.sty applied!
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.
-sty
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \everycr=\toks49
 \minrowclearance=\skip105
 \rownum=\count397
-) (C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbas
-e.sty
-Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independen
-t basics and keyval usage)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfi
-le.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
 Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfi
-le-hook.sty
-Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hook
-s)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlog
-o.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
 Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line
- 370.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspa
-ces.sty
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \c@svg@param@lastpage=\count398
 \svg@box=\box141
 \c@svg@param@currpage=\count399
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epsto
-pdf.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epsto
-pdf-base.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-
-sys.cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.
-sty
-Package: pdfpages 2026/03/30 v0.6h Insert pages of external PDF documents (AM)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.st
-y
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen406
 \ESO@tempdimb=\dimen407
@@ -1840,10 +1495,8 @@ Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \AM@pagewidth=\dimen408
 \AM@pageheight=\dimen409
 \AM@fboxrule=\dimen410
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.
-def
-File: pppdftex.def 2026/03/30 v0.6h Pdfpages driver for pdfTeX (AM)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count400
 \AM@pagebox=\box142
@@ -1853,57 +1506,29 @@ File: pppdftex.def 2026/03/30 v0.6h Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks52
 \c@AM@survey=\count402
 \AM@templatesizebox=\box143
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarythrough.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarythrough.code.tex
 File: tikzlibrarythrough.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.geometric.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.geometric.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.misc.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.misc.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.symbols.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.symbols.code.tex
 File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.symbols.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.code.tex
 File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.arrows.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.arrows.code.tex
 File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.arrows.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.code.tex
 File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.callouts.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.callouts.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryshapes.multipart.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.callouts.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/sh
-apes\pgflibraryshapes.multipart.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodepartlowerbox=\box144
 \pgfnodeparttwobox=\box145
@@ -1925,40 +1550,22 @@ File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodepartsevenbox=\box161
 \pgfnodepartsixbox=\box162
 \pgfnodepartfivebox=\box163
-)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarytrees.code.tex
+))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryfit.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarypatterns.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibrarypatterns.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarycalc.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryarrows.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryarrows.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \arrowsize=\dimen411
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarydecorations.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-oduledecorations.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen412
 \pgfdecoratedremainingdistance=\dimen413
 \pgfdecoratedinputsegmentcompleteddistance=\dimen414
@@ -1969,108 +1576,30 @@ oduledecorations.code.tex
 \pgfdecorationsegmentlength=\dimen418
 )
 \tikz@lib@dec@box=\box164
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/de
-corations\pgflibrarydecorations.pathmorphing.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarypositioning.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.
-sty
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.revision.tex)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-score.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
 \t@pgfplots@toka=\toks53
 \t@pgfplots@tokb=\toks54
 \t@pgfplots@tokc=\toks55
 \pgfplots@tmpa=\dimen419
 \c@pgfplots@coordindex=\count404
 \c@pgfplots@scanlineindex=\count405
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgf
-plotssysgeneric.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pg
-fplotslibrary.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfc
-ompatib\pgfplotsoldpgfsupp_loader.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryfpu.code.tex)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks56
 \t@pgf@tokb=\toks57
 \t@pgf@tokc=\toks58
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfc
-ompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotsutil.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststr
-ucture\pgfplotsliststructure.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststr
-ucture\pgfplotsliststructureext.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststr
-ucture\pgfplotsarray.code.tex
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
 \c@pgfplotsarray@tmp=\count406
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststr
-ucture\pgfplotsmatrix.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtabl
-e\pgfplotstableshared.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
 \c@pgfplotstable@counta=\count407
 \t@pgfplotstable@a=\toks59
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststr
-ucture\pgfplotsdeque.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotsbinary.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotsbinary.data.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotsutil.verb.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pg
-flibrarypgfplots.surfshading.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count408
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgf
-librarypgfplots.surfshading.pgfsys-pdftex.def)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotscolormap.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pg
-fplotscolor.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-sstackedplots.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-splothandlers.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-smeshplothandler.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-smeshplotimage.code.tex)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.scaling.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-scoordprocessing.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.errorbars.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.markers.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-sticks.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplot
-s.paths.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/de
-corations\pgflibrarydecorations.pathreplacing.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\ti
-kzlibrarypgfplots.contourlua.code.tex)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count409
 \pgfplots@xmin@reg=\dimen420
 \pgfplots@xmax@reg=\dimen421
@@ -2078,70 +1607,34 @@ kzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@ymax@reg=\dimen423
 \pgfplots@zmin@reg=\dimen424
 \pgfplots@zmax@reg=\dimen425
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryplotmarks.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryplotmarks.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
 \pgf@layerbox@background=\box165
 \pgf@layerboxsaved@background=\box166
 \pgf@layerbox@foreground=\box167
 \pgf@layerboxsaved@foreground=\box168
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\ti
-kzlibrarypgfplots.fillbetween.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcont
-rib\tikzlibraryfillbetween.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryintersections.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibraryintersections.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.fillbetween.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibraryfillbetween.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryintersections.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryintersections.code.tex
 \pgf@intersect@solutions=\count410
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcont
-rib\tikzlibrarydecorations.softclip.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcont
-rib\pgflibraryfillbetween.code.tex)))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\ti
-kzlibrarypgfplots.decorations.softclip.code.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\pgf-pie.st
-y
-Package: pgf-pie 2022/06/14 v0.7 Some LaTeX macros for pie chart by using PGF/T
-ikz package.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\tikzlibrar
-ypie.code.tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.
-sty)
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibrarydecorations.softclip.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\pgflibraryfillbetween.code.tex))) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.decorations.softclip.code.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\pgf-pie.sty
+Package: pgf-pie 2022/06/14 v0.7 Some LaTeX macros for pie chart by using PGF/Tikz package.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\tikzlibrarypie.code.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
 \pgfpie@angleEnd=\dimen426
 \pgfpie@explodeLength=\count411
 \pgfpie@colorLength=\count412
 \pgfpie@sliceLength=\count413
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuit
-ikz.sty
-Package: circuitikz 2026/02/04{} The CircuiTikz circuit drawing package version
- 1.8.5
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibrarybending.code.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuitikz.sty
+Package: circuitikz 2026/02/04{} The CircuiTikz circuit drawing package version 1.8.5
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybending.code.tex
 File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-odulebending.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulebending.code.tex
 File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfm
-odulenonlineartransformations.code.tex
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulenonlineartransformations.code.tex
 File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgftransformnonlinearflatness=\dimen427
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pg
-flibrarycurvilinear.code.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarycurvilinear.code.tex
 File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@curvilinear@time@a=\dimen428
 \pgf@curvilinear@length@a=\dimen429
@@ -2150,11 +1643,7 @@ File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@curvilinear@length@d=\dimen432
 )
 \pgf@arrows@the@rigidity=\dimen433
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlaye
-r/tikz/libraries\tikzlibraryfpu.code.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rc.defines.tex
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfpu.code.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirc.defines.tex
 \pgf@circ@count@a=\count414
 \pgf@circ@count@b=\count415
 \pgf@circ@count@c=\count416
@@ -2169,45 +1658,15 @@ rc.defines.tex
 \pgf@circ@Rlen=\dimen442
 \pgf@circ@scaled@Rlen=\dimen443
 \pgfstartlinewidth=\dimen444
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcutils.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircutils.tex
 \ctikz@scratchbox=\box169
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcpath.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircpath.tex
 \ctikz@vif@count=\count417
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcshapes.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcmonopoles.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcbipoles.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rctripoles.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircshapes.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmonopoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircbipoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirctripoles.tex
 \pgf@circ@res@count=\count418
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcquadpoles.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcmultipoles.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rclabel.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcvoltage.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircquadpoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmultipoles.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirclabel.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircvoltage.tex
 \pgfcirc@labelshift=\dimen445
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rccurrent.tex)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfci
-rcflow.tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/chemfig\chemfig.st
-y
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/chemfig\chemfig.
-tex
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/simplekv\simplek
-v.tex
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirccurrent.tex) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircflow.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chemfig\chemfig.sty (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/chemfig\chemfig.tex (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/simplekv\simplekv.tex
 Package: simplekv 2025/06/15 v0.32 Simple keyval package (CT)
 )
 \CF_cnt_atomgroup=\count419
@@ -2230,8 +1689,7 @@ Package: simplekv 2025/06/15 v0.32 Simple keyval package (CT)
 \CF_hreact_cnt=\count425
 )
 Package: chemfig 2025/10/30 v1.71 Draw molecule with an easy syntax (CT)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count426
 \float@exts=\toks61
@@ -2241,13 +1699,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \@float@every@lstfloat=\toks63
 \c@lstfloat=\count427
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.st
-y
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.s
-ty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen450
 \captionmargin=\dimen451
@@ -2263,160 +1717,111 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count429
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption
-.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count430
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count431
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.
-sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfesc
-ape.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.st
-y
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.s
-ty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\g
-ettitlestring.sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count432
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\string
-enc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen458
 \Hy@linkcounter=\count433
 \Hy@pagecounter=\count434
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.de
-f
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count435
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\puen
-c-greek.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\puenc-greek.def
 File: puenc-greek.def 2023-09-12 2.5 Greek LICRs for PDF strings
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\gree
-k-fontenc.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-fontenc.def
 File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
 )
-LaTeX Encoding Info:    Redeclaring text command \textmu (encoding PU) on input
- line 179.
+LaTeX Encoding Info:    Redeclaring text command \textmu (encoding PU) on input line 179.
 )
-LaTeX Encoding Info:    Redeclaring text command \textohm (encoding PU) on inpu
-t line 1176.
+LaTeX Encoding Info:    Redeclaring text command \textohm (encoding PU) on input line 1176.
 )
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
+Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count436
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4801.
+LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen459
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.st
-y
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigin
-tcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count437
 \Field@Width=\dimen460
 \Fld@charsize=\dimen461
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring OFF on input line 6098.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
 \Hy@abspage=\count438
 \c@Item=\count439
 \c@Hfootnote=\count440
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.d
-ef
-File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
 \Fld@listcount=\count441
 \c@bookmark@seq@number=\count442
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rer
-unfilecheck.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\un
-iquecounter.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-84.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip106
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/titleref\titleref.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/titleref\titleref.sty
 Package: titleref 2001/04/05 v3.1  Cross-references with titles.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/chngcntr\chngcntr.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/chngcntr\chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
-)
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
-sty
+) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count443
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
 \c@tabx@nest=\count444
@@ -2478,9 +1883,7 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \c@mincompwidth=\count489
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.de
-f
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -2571,16 +1974,12 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip128
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compa
-t.def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
-def
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \c@textcitecount=\count558
 \c@textcitetotal=\count559
@@ -2598,36 +1997,26 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee
-.bbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
 File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numer
-ic-comp.bbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
 File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numer
-ic.bbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\stand
-ard.bbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count567
 \c@bbx:relatedtotal=\count568
 ))))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numer
-ic.cbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
 File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -2643,32 +2032,23 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
-cfg
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2025-12-24 L3 programming layer (loader) 
+(biblatex)             2026-01-19 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-
-expl3.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
+)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count569
 \l__lipsum_a_int=\count570
 \l__lipsum_b_int=\count571
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.
-tex))
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\ifdraft.s
-ty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\ifdraft.sty
 Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
 )) (capa.tex)
 Package csquotes Info: Checking for multilingual support...
@@ -2696,16 +2076,12 @@ LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 10.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-0.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/cbfonts-fd\lgrcmr.
-fd
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 10.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/cbfonts-fd\lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line
- 10.
+LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -2746,9 +2122,7 @@ LaTeX Font Info:    ... okay on input line 10.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-p
-df.mkii
+(C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count572
 \scratchdimen=\dimen462
@@ -2763,22 +2137,17 @@ df.mkii
 \everyMPtoPDFconversion=\toks65
 )
 \c@lstlisting=\count578
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts
-\translations-basic-dictionary-brazil.trsl
-File: translations-basic-dictionary-brazil.trsl (brazil translation file `trans
-lations-basic-dictionary')
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-brazil.trsl
+File: translations-basic-dictionary-brazil.trsl (brazil translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `brazil'. on input line 10.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `brazil'. on input line 10.
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
 (Font)                  TS1/aer/m/n --> TS1/aer/b/n on input line 10.
 Package gensymb Info: Math companion symbols declared on input line 10.
 LaTeX Info: Redefining \degree on input line 10.
 LaTeX Info: Redefining \celsius on input line 10.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 10.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 10.
 LaTeX Info: Redefining \ohm on input line 10.
 Package gensymb Info: Using \textohm for \ohm on input line 10.
 LaTeX Info: Redefining \micro on input line 10.
@@ -2786,19 +2155,13 @@ Package gensymb Info: Using \textmu for \micro on input line 10.
 
 Package chemgreek Info: Activating mapping `textgreek' on line 10.
 
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscap
-e.sty
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscap
-e-nometadata.sty
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
-F (HO)
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package pgfplots notification 'compat/show suggested version=true': you might b
-enefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
+Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -2810,22 +2173,16 @@ Package hyperref Info: Link coloring OFF on input line 10.
 
 Package biblatex Info: Trying to load language 'brazil'...
 Package biblatex Info: ... file 'brazil.lbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazi
-l.lbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
 File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazi
-lian.lbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
 File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazi
-lian.lbx
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
 File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -2843,28 +2200,20 @@ File: pictures/logo_ufabc.png Graphic file (type png)
 <use pictures/logo_ufabc.png>
 Package pdftex.def Info: pictures/logo_ufabc.png  used on input line 12.
 (pdftex.def)             Requested size: 152.50983pt x 99.15651pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-2.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 12.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-2.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 12.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-12.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 12.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-12.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 12.
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -2874,19 +2223,14 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 12.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
-
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
-
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\4GAMERS\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+aer on input line 1
-2.
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 12.
 LaTeX Font Info:    No file TS1aer.fd. on input line 12.
 
 
@@ -2895,316 +2239,11 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 
 [1
 
-{C:/Users/goncalu001/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./pictu
-res/logo_ufabc.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+{C:/Users/4GAMERS/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./pictures/logo_ufabc.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.13     \folhaDeRosto
                        [1] (chapter/resumo.tex) (chapter/abstract.tex [1
 
 ])
-[2
-
-] (Tese_LucasMaio.toc)
-\tf@toc=\write6
-\openout6 = `Tese_LucasMaio.toc'.
-
- [3
-
-{C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit
-.enc}{C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-r
-m.enc}] (chapter/intro.tex
-Cap\'{\i }tulo 1.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.17 ...n{RelaÃ§Ã£o com a proposta deste trabalho}
-                                                   [1
-
-]
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 2
-0.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-))
-(chapter/objetivos.tex [2]
-Cap\'{\i }tulo 2.
-) (chapter/revisao_teorica.tex [3
-
-]
-Cap\'{\i }tulo 3.
-[4
-
-] [5{C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ma
-thsy.enc}]
-Overfull \hbox (3.44012pt too wide) in paragraph at lines 50--51
-[]\T1/aer/m/n/12 A in-ter-face de-sen-vol-vida uti-li-zou re-cons-tru-ção por d
-i-fe-rença tem-po-ral (\T1/aer/m/it/12 time-difference
- []
-
-
-Overfull \hbox (2.52982pt too wide) in paragraph at lines 57--58
-[]\T1/aer/m/n/12 Foram in-cor-po-ra-dos três mé-to-dos de re-cons-tru-ção pre-s
-en-tes no ecos-sis-tema do pyEIT:
- []
-
-[6] [7] [8] [9]) (chapter/metodologia.tex [10]
-Cap\'{\i }tulo 4.
-[11
-
-] [12]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 119.
- [13] [14]) (chapter/resultados.tex [15]
-Cap\'{\i }tulo 5.
-<pictures/BP_Interface_Frame43.png, id=368, 1444.64719pt x 775.39688pt>
-File: pictures/BP_Interface_Frame43.png Graphic file (type png)
-<use pictures/BP_Interface_Frame43.png>
-Package pdftex.def Info: pictures/BP_Interface_Frame43.png  used on input line 
-12.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-LaTeX Font Info:    Trying to load font information for U+eur on input line 13.
-
-(C:\Users\goncalu001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueur.fd
-File: ueur.fd 2013/01/14 v3.01 Euler Roman
-)
-[16
-
- <./pictures/BP_Interface_Frame43.png>]
-File: pictures/BP_Interface_Frame43.png Graphic file (type png)
-<use pictures/BP_Interface_Frame43.png>
-Package pdftex.def Info: pictures/BP_Interface_Frame43.png  used on input line 
-30.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/BP_Interface_Frame44.png, id=384, 1441.63594pt x 774.64406pt>
-File: pictures/BP_Interface_Frame44.png Graphic file (type png)
-<use pictures/BP_Interface_Frame44.png>
-Package pdftex.def Info: pictures/BP_Interface_Frame44.png  used on input line 
-37.
-(pdftex.def)             Requested size: 386.96027pt x 207.9274pt.
-<pictures/JAC_Interface_Frame43.png, id=385, 1444.64719pt x 776.14969pt>
-File: pictures/JAC_Interface_Frame43.png Graphic file (type png)
-<use pictures/JAC_Interface_Frame43.png>
-Package pdftex.def Info: pictures/JAC_Interface_Frame43.png  used on input line
- 44.
-(pdftex.def)             Requested size: 386.96027pt x 207.89334pt.
-<pictures/JAC_Interface_Frame44.png, id=386, 1444.64719pt x 774.64406pt>
-File: pictures/JAC_Interface_Frame44.png Graphic file (type png)
-<use pictures/JAC_Interface_Frame44.png>
-Package pdftex.def Info: pictures/JAC_Interface_Frame44.png  used on input line
- 51.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/GREIT_Interface_Frame43.png, id=387, 1444.64719pt x 775.39688pt>
-File: pictures/GREIT_Interface_Frame43.png Graphic file (type png)
-<use pictures/GREIT_Interface_Frame43.png>
-Package pdftex.def Info: pictures/GREIT_Interface_Frame43.png  used on input li
-ne 58.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/GREIT_Interface_Frame44.png, id=388, 1444.64719pt x 774.64406pt>
-File: pictures/GREIT_Interface_Frame44.png Graphic file (type png)
-<use pictures/GREIT_Interface_Frame44.png>
-Package pdftex.def Info: pictures/GREIT_Interface_Frame44.png  used on input li
-ne 65.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 73.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 73.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.79996> on input line 73.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 73.
-
-[17] [18 <./pictures/BP_Interface_Frame44.png> <./pictures/JAC_Interface_Frame4
-3.png>] [19 <./pictures/JAC_Interface_Frame44.png> <./pictures/GREIT_Interface_
-Frame43.png>]
-<pictures/JAC_Interface_Frame44_H0_05.png, id=411, 1444.64719pt x 773.89125pt>
-File: pictures/JAC_Interface_Frame44_H0_05.png Graphic file (type png)
-<use pictures/JAC_Interface_Frame44_H0_05.png>
-Package pdftex.def Info: pictures/JAC_Interface_Frame44_H0_05.png  used on inpu
-t line 82.
-(pdftex.def)             Requested size: 386.96027pt x 207.2884pt.
-<pictures/JAC_Interface_Frame44_H0_2.png, id=412, 1444.64719pt x 776.9025pt>
-File: pictures/JAC_Interface_Frame44_H0_2.png Graphic file (type png)
-<use pictures/JAC_Interface_Frame44_H0_2.png>
-Package pdftex.def Info: pictures/JAC_Interface_Frame44_H0_2.png  used on input
- line 89.
-(pdftex.def)             Requested size: 386.96027pt x 208.09497pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 94.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 94.
-
-[20 <./pictures/GREIT_Interface_Frame44.png>] [21 <./pictures/JAC_Interface_Fra
-me44_H0_05.png> <./pictures/JAC_Interface_Frame44_H0_2.png>]
-<pictures/BP_Interface_Frame43_alpha0_1.png, id=432, 1444.64719pt x 774.64406pt
->
-File: pictures/BP_Interface_Frame43_alpha0_1.png Graphic file (type png)
-<use pictures/BP_Interface_Frame43_alpha0_1.png>
-Package pdftex.def Info: pictures/BP_Interface_Frame43_alpha0_1.png  used on in
-put line 103.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/BP_Interface_Frame43_alpha0_9.png, id=433, 1444.64719pt x 775.39688pt
->
-File: pictures/BP_Interface_Frame43_alpha0_9.png Graphic file (type png)
-<use pictures/BP_Interface_Frame43_alpha0_9.png>
-Package pdftex.def Info: pictures/BP_Interface_Frame43_alpha0_9.png  used on in
-put line 110.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 115.
-
-[22 <./pictures/BP_Interface_Frame43_alpha0_1.png> <./pictures/BP_Interface_Fra
-me43_alpha0_9.png>]
-<pictures/JAC_pyQT_Reg0_0001.png, id=450, 1444.64719pt x 775.39688pt>
-File: pictures/JAC_pyQT_Reg0_0001.png Graphic file (type png)
-<use pictures/JAC_pyQT_Reg0_0001.png>
-Package pdftex.def Info: pictures/JAC_pyQT_Reg0_0001.png  used on input line 12
-8.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/JAC_pyQT_Reg0_01.png, id=451, 1444.64719pt x 775.39688pt>
-File: pictures/JAC_pyQT_Reg0_01.png Graphic file (type png)
-<use pictures/JAC_pyQT_Reg0_01.png>
-Package pdftex.def Info: pictures/JAC_pyQT_Reg0_01.png  used on input line 135.
-
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/JAC_pyQT_Reg0_1.png, id=452, 1444.64719pt x 775.39688pt>
-File: pictures/JAC_pyQT_Reg0_1.png Graphic file (type png)
-<use pictures/JAC_pyQT_Reg0_1.png>
-Package pdftex.def Info: pictures/JAC_pyQT_Reg0_1.png  used on input line 142.
-(pdftex.def)             Requested size: 386.96027pt x 207.6917pt.
-<pictures/JAC_pyQT_Reg1.png, id=453, 1444.64719pt x 774.64406pt>
-File: pictures/JAC_pyQT_Reg1.png Graphic file (type png)
-<use pictures/JAC_pyQT_Reg1.png>
-Package pdftex.def Info: pictures/JAC_pyQT_Reg1.png  used on input line 149.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/GREIT_pyQT_Reg0_0001.png, id=454, 1444.64719pt x 776.9025pt>
-File: pictures/GREIT_pyQT_Reg0_0001.png Graphic file (type png)
-<use pictures/GREIT_pyQT_Reg0_0001.png>
-Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_0001.png  used on input line 
-156.
-(pdftex.def)             Requested size: 386.96027pt x 208.09497pt.
-<pictures/GREIT_pyQT_Reg0_01.png, id=455, 1444.64719pt x 773.89125pt>
-File: pictures/GREIT_pyQT_Reg0_01.png Graphic file (type png)
-<use pictures/GREIT_pyQT_Reg0_01.png>
-Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_01.png  used on input line 16
-3.
-(pdftex.def)             Requested size: 386.96027pt x 207.2884pt.
-<pictures/GREIT_pyQT_Reg0_1.png, id=456, 1444.64719pt x 774.64406pt>
-File: pictures/GREIT_pyQT_Reg0_1.png Graphic file (type png)
-<use pictures/GREIT_pyQT_Reg0_1.png>
-Package pdftex.def Info: pictures/GREIT_pyQT_Reg0_1.png  used on input line 170
-.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
-<pictures/GREIT_pyQT_Reg1.png, id=457, 1444.64719pt x 774.64406pt>
-File: pictures/GREIT_pyQT_Reg1.png Graphic file (type png)
-<use pictures/GREIT_pyQT_Reg1.png>
-Package pdftex.def Info: pictures/GREIT_pyQT_Reg1.png  used on input line 177.
-(pdftex.def)             Requested size: 386.96027pt x 207.49005pt.
- [23] [24 <./pictures/JAC_pyQT_Reg0_0001.png> <./pictures/JAC_pyQT_Reg0_01.png>
-] [25 <./pictures/JAC_pyQT_Reg0_1.png> <./pictures/JAC_pyQT_Reg1.png>] [26 <./p
-ictures/GREIT_pyQT_Reg0_0001.png> <./pictures/GREIT_pyQT_Reg0_01.png>] [27 <./p
-ictures/GREIT_pyQT_Reg0_1.png> <./pictures/GREIT_pyQT_Reg1.png>]
-<pictures/BP_PyQtGraph_SolverTab.png, id=495, 1443.89438pt x 775.39688pt>
-File: pictures/BP_PyQtGraph_SolverTab.png Graphic file (type png)
-<use pictures/BP_PyQtGraph_SolverTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_SolverTab.png  used on input lin
-e 191.
-(pdftex.def)             Requested size: 386.96027pt x 207.79819pt.
-<pictures/BP_PyQtGraph_ControlTab.png, id=496, 396.7322pt x 774.64406pt>
-File: pictures/BP_PyQtGraph_ControlTab.png Graphic file (type png)
-<use pictures/BP_PyQtGraph_ControlTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_ControlTab.png  used on input li
-ne 200.
-(pdftex.def)             Requested size: 218.51521pt x 426.6702pt.
-<pictures/BP_PyQtGraph_MeasurementsTab.png, id=497, 365.86688pt x 773.13844pt>
-File: pictures/BP_PyQtGraph_MeasurementsTab.png Graphic file (type png)
-<use pictures/BP_PyQtGraph_MeasurementsTab.png>
-Package pdftex.def Info: pictures/BP_PyQtGraph_MeasurementsTab.png  used on inp
-ut line 206.
-(pdftex.def)             Requested size: 218.51521pt x 461.76317pt.
-) (chapter/conclusao.tex [28
-
- <./pictures/BP_PyQtGraph_SolverTab.png>]
-[29 <./pictures/BP_PyQtGraph_ControlTab.png> <./pictures/BP_PyQtGraph_Measureme
-ntsTab.png>]
-Cap\'{\i }tulo 6.
-) [30
-
-] [31
-
-] [32] [33] (Tese_LucasMaio.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
- ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `Tese_LucasMaio.out' has not changed.
-(rerunfilecheck)             Checksum: 0BCE4AC5C95AD1649A6078C83E089B19;5579.
-Package logreq Info: Writing requests to 'Tese_LucasMaio.run.xml'.
-\openout1 = `Tese_LucasMaio.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 80070 strings out of 467871
- 1976114 string characters out of 5415957
- 3291972 words of memory out of 5000000
- 107665 multiletter control sequences out of 15000+600000
- 704373 words of font info for 161 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 104i,11n,111p,1977b,2212s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\goncalu001\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\tcrm1200.pk><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmb10.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/goncalu001/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/goncalu001/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/go
-ncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-<C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr8.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/goncalu001/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/goncalu001/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/go
-ncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pf
-b><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/euler/eurm10.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/lm/lmmi10.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX/font
-s/type1/public/lm/lmmi12.pfb><C:/Users/goncalu001/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/lm/lmmi8.pfb><C:/Users/goncalu001/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/goncalu001/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/goncalu001/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/goncalu001/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/goncalu001/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Tese_LucasMaio.pdf (38 pages, 3490807 bytes).
-PDF statistics:
- 696 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
-

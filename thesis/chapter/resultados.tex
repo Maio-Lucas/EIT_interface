@@ -9,7 +9,7 @@ A Figura~\ref{fig:interface_geral_bp} apresenta a interface principal desenvolvi
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\textwidth]{pictures/BP_Interface_Frame43.png}
+    \includegraphics[width=0.85\textwidth]{pictures/JAC_Interface_Frame44_H0_05.png}
     \caption{Visão geral da interface principal com o método Back-Projection ativo (\textit{frame} 43, h0 = 0,10, α = 0,40).}
     \label{fig:interface_geral_bp}
 \end{figure}
@@ -19,52 +19,67 @@ A Figura~\ref{fig:interface_geral_bp} apresenta a interface principal desenvolvi
 
 As figuras a seguir apresentam reconstruções obtidas com os métodos BP, JAC e GREIT em \textit{frame}s consecutivos do mesmo conjunto de dados experimentais. A comparação foi realizada a partir da mesma sequência de medições, mantendo os demais parâmetros de visualização constantes dentro de cada método, de modo a evidenciar diferenças relacionadas ao próprio algoritmo de reconstrução.
 
-No método Back-Projection, mostrado nas Figuras~\ref{fig:bp_frame43} e \ref{fig:bp_frame44}, a região associada à haste pode ser identificada na porção superior-central do domínio, sobretudo pela presença de uma área azul mais intensa. Ainda assim, os contornos aparecem difusos e pouco definidos, o que dificulta a delimitação espacial mais precisa do objeto. Também se observam regiões avermelhadas na metade inferior da imagem sem correspondência física evidente com o arranjo experimental, caracterizando artefatos do processo de reconstrução. Entre os \textit{frame}s 43 e 44, a posição geral da região dominante se mantém, mas a imagem permanece espalhada e com baixo contraste local.
+No método Back-Projection, mostrado na Figura~\ref{fig:bp_comparacao}, a região associada à haste pode ser identificada na porção superior-central do domínio, sobretudo pela presença de uma área azul mais intensa. Ainda assim, os contornos aparecem difusos e pouco definidos, o que dificulta a delimitação espacial mais precisa do objeto. Também se observam regiões avermelhadas na metade inferior da imagem sem correspondência física evidente com o arranjo experimental, caracterizando artefatos do processo de reconstrução. Entre os \textit{frame}s 43 e 44, a posição geral da região dominante se mantém, mas a imagem permanece espalhada e com baixo contraste local.
 
 No método Jacobiano, apresentado nas Figuras~\ref{fig:jac_frame43} e \ref{fig:jac_frame44}, a posição da haste também é reconstruída na região superior-central do domínio, em concordância com o BP, mas com maior definição espacial e contraste mais localizado. No \textit{frame} 43, observa-se um padrão bipolar de alta intensidade, com alternância marcada entre regiões azuis e vermelhas. No \textit{frame} 44, a reconstrução assume uma forma visualmente mais limpa, com predomínio de uma região azul mais bem definida na área associada ao objeto. A comparação entre os dois \textit{frame}s mostra que o método foi capaz de preservar a localização da haste, mas também exibiu maior sensibilidade às variações entre \textit{frames} consecutivos, resultando em mudanças mais bruscas no padrão visual da reconstrução.
 
 O método GREIT, ilustrado nas Figuras~\ref{fig:greit_frame43} e \ref{fig:greit_frame44}, produziu imagens visualmente mais suaves e estáveis entre \textit{frame}s consecutivos. A região de menor condutividade relativa permanece concentrada na parte superior-central do domínio, em posição compatível com a observada nos demais métodos, o que reforça a consistência qualitativa da localização da haste ao longo da reconstrução. Em contrapartida, o contraste é mais baixo e a transição espacial entre regiões é mais gradual, o que reduz a nitidez dos contornos. Também se destaca a presença de uma borda retangular visível na área reconstruída, decorrente da saída do método em grade regular de pixels. Em conjunto, os três algoritmos localizaram o objeto na mesma região do domínio, diferindo principalmente na definição dos contornos, no contraste e na estabilidade visual entre \textit{frame}s consecutivos.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{pictures/BP_Interface_Frame43.png}
-    \caption{Reconstrução obtida com o método Back-Projection (BP) no \textit{frame} 43. Parâmetros: \(h_0 = 0{,}10\), \(\alpha = 0{,}40\), colormap \texttt{RdBu\_r}.}
-    \label{fig:bp_frame43}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/BP_Interface_Frame43.png}
+        \caption{\textit{Frame} 43}
+        \label{fig:bp_frame43}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/BP_Interface_Frame44.png}
+        \caption{\textit{Frame} 44}
+        \label{fig:bp_frame44}
+    \end{subfigure}
+    \caption{Reconstruções obtidas com o método Back-Projection (BP). Parâmetros: $h_0 = 0{,}10$, $\alpha = 0{,}40$, colormap \texttt{RdBu\_r}. O círculo indica a região de maior perturbação inferida, compatível com a presença do objeto.}
+    \label{fig:bp_comparacao}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{pictures/BP_Interface_Frame44.png}
-    \caption{Reconstrução obtida com o método Back-Projection (BP) no \textit{frame} 44. Parâmetros: \(h_0 = 0{,}10\), \(\alpha = 0{,}40\), colormap \texttt{RdBu\_r}.}
-    \label{fig:bp_frame44}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/JAC_Interface_Frame43.png}
+        \caption{\textit{Frame} 43}
+        \label{fig:jac_frame43}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/JAC_Interface_Frame44.png}
+        \caption{\textit{Frame} 44}
+        \label{fig:jac_frame44}
+    \end{subfigure}
+    \caption{Reconstruções obtidas com o método Jacobiano (JAC). Parâmetros: \(h_0 = 0{,}10\), regularização \(\lambda = 0{,}0100\), método \texttt{kotre}, colormap \texttt{RdBu\_r}. O círculo indica a região de maior perturbação de condutividade inferida.}
+    \label{fig:jac_comparacao}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{pictures/JAC_Interface_Frame43.png}
-    \caption{Reconstrução obtida com o método Jacobiano (JAC) no \textit{frame} 43. Parâmetros: \(h_0 = 0{,}10\), regularização \(\lambda = 0{,}0100\), método \texttt{kotre}, colormap \texttt{RdBu\_r}.}
-    \label{fig:jac_frame43}
-\end{figure}
-
-\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=0.85\textwidth]{pictures/JAC_Interface_Frame44.png}
-    \caption{Reconstrução obtida com o método Jacobiano (JAC) no \textit{frame} 44. Parâmetros: \(h_0 = 0{,}10\), regularização \(\lambda = 0{,}0100\), método \texttt{kotre}, colormap \texttt{RdBu\_r}.}
-    \label{fig:jac_frame44}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.85\textwidth]{pictures/GREIT_Interface_Frame43.png}
-    \caption{Reconstrução obtida com o método GREIT no \textit{frame} 43. Parâmetros: \(h_0 = 0{,}10\), resolução da grade \(= 128\), colormap \texttt{RdBu\_r}.}
+    \includegraphics[width=\textwidth]{pictures/GREIT_Interface_Frame43.png}
+    \caption{\textit{Frame} 43}
     \label{fig:greit_frame43}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.85\textwidth]{pictures/GREIT_Interface_Frame44.png}
-    \caption{Reconstrução obtida com o método GREIT no \textit{frame} 44. Parâmetros: \(h_0 = 0{,}10\), resolução da grade \(= 128\), colormap \texttt{RdBu\_r}.}
-    \label{fig:greit_frame44}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/GREIT_Interface_Frame44.png}
+        \caption{\textit{Frame} 44}
+        \label{fig:greit_frame44}
+    \end{subfigure}
+    \caption{Reconstruções obtidas com o método GREIT. Parâmetros: \(h_0 = 0{,}10\), resolução da grade \(= 128\), colormap \texttt{RdBu\_r}. O círculo indica a região de maior perturbação de condutividade inferida.}
+    \label{fig:greit_comparacao}
 \end{figure}
 
 \section{Efeito dos parâmetros configuráveis}

@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'Tese_LucasMaio.blg'
-[258] biber-MSWIN64:342> INFO - === 
-[396] Biber.pm:421> INFO - Reading 'Tese_LucasMaio.bcf'
-[516] Biber.pm:1002> INFO - Found 20 citekeys in bib section 0
-[533] Biber.pm:4487> INFO - Processing section 0
-[555] Biber.pm:4678> INFO - Looking for bibtex file 'reference.bib' for section 0
-[660] bibtex.pm:1713> INFO - LaTeX decoding ...
-[706] bibtex.pm:1519> INFO - Found BibTeX data source 'reference.bib'
-[976] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[976] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[976] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
-[976] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[1074] bbl.pm:676> INFO - Writing 'Tese_LucasMaio.bbl' with encoding 'UTF-8'
-[1089] bbl.pm:779> INFO - Output to Tese_LucasMaio.bbl
+[159] biber-MSWIN64:342> INFO - === 
+[198] Biber.pm:421> INFO - Reading 'Tese_LucasMaio.bcf'
+[318] Biber.pm:1002> INFO - Found 20 citekeys in bib section 0
+[332] Biber.pm:4487> INFO - Processing section 0
+[343] Biber.pm:4678> INFO - Looking for bibtex file 'reference.bib' for section 0
+[699] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1380] bibtex.pm:1519> INFO - Found BibTeX data source 'reference.bib'
+[1575] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1575] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1576] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[1576] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[1594] bbl.pm:676> INFO - Writing 'Tese_LucasMaio.bbl' with encoding 'UTF-8'
+[1609] bbl.pm:779> INFO - Output to Tese_LucasMaio.bbl

@@ -959,11 +959,11 @@
       \field{title}{Design Patterns: Elements of Reusable Object-Oriented Software}
       \field{year}{1994}
     \endentry
-    \entry{EITduinoGitHub}{misc}{}{}
+    \entry{EITinterfaceGitHub}{misc}{}{}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
-      \field{title}{GONÇALVES, Lucas Maio Nunes de Almeida. EITduino: Interface PyQt para Controle de Parâmetros em Tomografia por Impedância Elétrica. 2025.}
+      \field{title}{GONÇALVES, Lucas Maio Nunes de Almeida. EITinterface: Interface PyQt para Controle de Parâmetros em Tomografia por Impedância Elétrica. 2025.}
       \verb{urlraw}
       \verb https://github.com/Maio-Lucas/EIT_interface
       \endverb
