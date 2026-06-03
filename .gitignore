@@ -3,6 +3,7 @@ __pycache__/
 
 # Environments
 .env
+env311
 .venv
 env/
 venv/
@@ -10,6 +11,14 @@ ENV/
 env.bak/
 venv.bak/
 *.env
+.bbl
+.log
+.blg
+.bcf
+.out
+.toc
+.aux
+
 
 
 # IPython

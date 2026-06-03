@@ -1,0 +1,34 @@
+% !TEX root = Tese_LucasMaio.tex
+\documentclass[12pt, openany]{report}
+% \documentclass[12pt,showframe, openleft]{report}
+
+\input{template}
+\input{capa}
+
+\bibliography{reference.bib}
+
+\begin{document}
+
+    \capaComLogo
+    \folhaDeRosto    
+    % \folhaDeAprovacao
+    \pagestyle{toc}
+    \input{chapter/resumo}
+    \input{chapter/abstract}
+
+    \tableofcontents % Sumário
+    \pagebreak
+    
+    \pagestyle{main}
+    \input{chapter/intro}
+    \input{chapter/objetivos}
+    \input{chapter/revisao_teorica}
+    \input{chapter/metodologia}
+    \input{chapter/resultados}
+    \input{chapter/conclusao}
+    
+    \printbibliography[heading=bibintoc, title={Referências}]
+
+\end{document}
+
+

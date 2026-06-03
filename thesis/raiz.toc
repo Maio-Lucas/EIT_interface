@@ -1,0 +1,34 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Tomografia por impedância elétrica}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Princípios físicos da TIE}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Aplicações clínicas e potencial como técnica complementar}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Relação com a proposta deste trabalho}{3}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}PyQt}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Interface alternativa com PyQtGraph}{4}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}pyEIT}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Métodos de reconstrução de imagens}{5}{subsection.1.3.1}%
+\contentsline {chapter}{\numberline {2}Objetivos}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivo Geral}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Objetivos Específicos}{6}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Metodologia}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Preparação dos Dados}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Fundamentos físicos e formulação matemática da TIE}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Problema direto}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Problema inverso e caráter mal posto}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Reconstrução por diferença temporal}{9}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Métodos de reconstrução de imagens}{10}{subsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.4.1}Back-Projection (BP)}{10}{subsubsection.3.2.4.1}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}Jacobiano (JAC)}{11}{subsubsection.3.2.4.2}%
+\contentsline {subsubsection}{\numberline {3.2.4.3}GREIT}{11}{subsubsection.3.2.4.3}%
+\contentsline {section}{\numberline {3.3}Arquitetura da aplicação}{12}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Resultados}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Visão geral da interface}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Comparação entre métodos de reconstrução}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Efeito dos parâmetros configuráveis}{19}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Densidade da malha (\(h_0\))}{19}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Suavização temporal (\(\alpha \))}{19}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Interface PyQtGraph}{22}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusão}{24}{chapter.5}%
+\contentsline {chapter}{Referências}{25}{chapter*.17}%
+\contentsfinish 
