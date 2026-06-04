@@ -1,6 +1,9 @@
 import sys
+import socket
+import os
+from dotenv import load_dotenv
 import numpy as np
-from PyQt6.QtCore import QSize, QTimer, Qt
+from PyQt6.QtCore import QSize, QTimer, Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QPixmap, QPalette, QColor, QFont
 from PyQt6.QtWidgets import (
     QApplication, QMessageBox, QGridLayout, QHBoxLayout, QLabel,
@@ -166,6 +169,59 @@ class AlgoCard(QWidget):
         self.title_lbl.setText(data['title'])
         self.desc_lbl.setText(data['desc'])
 
+class ReaderThread(QThread):
+    """
+    Roda em background, lê o socket linha a linha e emite um signal
+    por frame recebido. Nunca bloqueia a thread da GUI.
+    """
+
+    frame_recebido = pyqtSignal(list)  # payload: lista de floats
+    conexao_encerrada = pyqtSignal(str)  # payload: mensagem de status
+
+    def __init__(self):
+        super().__init__()
+        self._ativo = True
+
+    def run(self):
+        """Ponto de entrada da thread — chamado por self.start()."""
+        sock = None
+        mensagem = "Desconectado"
+
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.connect((host, porta))
+
+            buffer = ""
+            while self._ativo:
+                dados = sock.recv(4096)  # bloqueia até chegar algo
+                if not dados:  # servidor fechou a conexão
+                    mensagem = "Servidor encerrou a conexão"
+                    break
+
+                buffer += dados.decode("utf-8")
+
+                # processa todas as linhas completas disponíveis no buffer
+                while "\n" in buffer:
+                    linha, buffer = buffer.split("\n", 1)
+                    linha = linha.strip()
+                    if linha:
+                        valores = [float(v) for v in linha.split("\t")]
+                        self.frame_recebido.emit(valores)
+
+        except ConnectionRefusedError:
+            mensagem = "Conexão recusada — bot está rodando?"
+        except Exception as e:
+            mensagem = f"Erro: {e}"
+        finally:
+            if sock:
+                sock.close()
+
+        self.conexao_encerrada.emit(mensagem)
+
+    def parar(self):
+        """Sinaliza a thread para encerrar no próximo ciclo."""
+        self._ativo = False
+        self.wait()  # aguarda a thread terminar antes de retornar
 
 class ParamRow(QWidget):
     """Label + tooltip icon + optional explanation box."""
@@ -235,11 +291,12 @@ class StatCard(QWidget):
 class MainWindow(QMainWindow):
 
     def __init__(self, data, nframes, method='greit'):
-        self.data = data
-        self.nframes = nframes
+        self.current_frame = None
+        self.vref_set = None
         self.method = method
         self._colorbar_ref = None
         self._greit_extent = None
+        self.thread = None
 
         super().__init__()
 
@@ -325,6 +382,12 @@ class MainWindow(QMainWindow):
 
         left_layout.addWidget(card_wrapper, stretch=1)
         left_layout.addWidget(Divider())
+
+        # botão de conectar / desconectar
+        self.btn_conn = QPushButton("Conectar")
+        self.btn_conn.setFixedHeight(36)
+        self.btn_conn.clicked.connect(self._toggle_conexao)
+        left_layout.addWidget(self.btn_conn)
 
         left_layout.addWidget(Divider())
 
@@ -636,7 +699,7 @@ class MainWindow(QMainWindow):
         self._update_method_ui(method)
 
         self.init_plots(data=data, method=method)
-        self.update_plot(data, nframes, method=method)
+        self.update_plot(method=method)
 
         # Timer
         self.timer = QTimer(self)
@@ -727,7 +790,17 @@ class MainWindow(QMainWindow):
         # Only act if the user is scrubbing (not just the slider following playback)
         if not self._is_playing:
             self.frameCounter = value
-            self.update_plot(self.data, self.nframes, method=self.method)
+            self.update_plot(method=self.method)
+
+    def _ao_receber_frame(self, valores: list):
+        frame = np.array(valores)
+
+        if not self.vref_set:
+            self.mySolver.setVref(frame)   # primeiro frame vira referência
+            self.vref_set = True
+            return                       # não reconstrói ainda, só define referência
+
+        self.current_frame = frame       # salva para o timer usar
 
     # ------------------------------------------------------------------
     # Electrode overlay
@@ -875,7 +948,7 @@ class MainWindow(QMainWindow):
         self._build_raster_cache()
 
         self.init_plots(data=self.data, method=self.method)
-        self.update_plot(self.data, self.nframes, method=self.method)
+        self.update_plot(method=self.method)
         self.timer.start()
 
     # ------------------------------------------------------------------
@@ -958,13 +1031,17 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------
 
     def _on_timer(self):
-        self.update_plot(self.data, self.nframes, method=self.method)
+        self.update_plot(method=self.method)
 
-    def update_plot(self, data, nframes, method):
+    def update_plot(self, method):
+
+        if self.current_frame is None:   # ainda não recebeu nada
+            return
+    
         if not self.isVisible():
             return
 
-        self.dataSE   = data[self.frameCounter]
+        self.dataSE   = self.current_frame
         self.dataDiff = self.mySolver.se_to_diff(self.dataSE)
 
         self._plotSE_ref.set_ydata(self.dataSE)
@@ -1082,7 +1159,7 @@ class MainWindow(QMainWindow):
             self.frameCounter   = 0
             self._update_tri_estimate()
             self.init_plots(data=self.data, method=self.method)
-            self.update_plot(self.data, self.nframes, method=self.method)
+            self.update_plot(method=self.method)
         else:
             QMessageBox.warning(self, "Reconstruir malha",
                                 f"Falha ao reconstruir com h0={h0:.3f}.\n"
@@ -1140,3 +1217,36 @@ class MainWindow(QMainWindow):
         try: self._dispose_matplotlib()
         except Exception: pass
         super().closeEvent(event)
+
+    # ----------------------------------------------
+    # Connection Button
+    # ----------------------------------------------
+
+    def _toggle_conexao(self):
+        if self.thread is None or not self.thread.isRunning():
+            self._conectar()
+        else:
+            self._desconectar()
+
+    def _conectar(self):
+        self.thread = ReaderThread()
+        self.thread.frame_recebido.connect(self._ao_receber_frame)
+        self.thread.conexao_encerrada.connect(self._ao_encerrar)
+        self.thread.start()
+        self.btn.setText("Desconectar")
+
+    def _desconectar(self):
+        if self.thread:
+            self.thread.parar()
+        self.btn.setText("Conectar")
+
+    def _ao_encerrar(self, mensagem: str):
+
+        self.btn.setText("Conectar")
+        self.thread = None
+
+    def closeEvent(self, event):
+        """Garante que a thread encerra quando a janela fecha."""
+        if self.thread and self.thread.isRunning():
+            self.thread.parar()
+        event.accept()
