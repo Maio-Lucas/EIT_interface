@@ -2,9 +2,6 @@ import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
 import numpy as np
 
-# Load the same data
-dados = np.loadtxt('stored_data/dados_gravados_0123678c.txt')
-(nframes, nmed) = dados.shape
 
 class LauncherWindow(QMainWindow):
     def __init__(self):
@@ -31,15 +28,18 @@ class LauncherWindow(QMainWindow):
 
     def launch_pyqt6(self):
         from pyqt_interface import MainWindow
-        self.app = MainWindow(dados, nframes, method='bp')
+
+        self.app = MainWindow(method="bp")
         self.app.show()
         self.close()
 
     def launch_pyqtgraph(self):
-        from pyqtgraph_interface import MainWindowPG 
-        self.app = MainWindowPG(dados, nframes, method='bp')
+        from pyqtgraph_interface import MainWindowPG
+
+        self.app = MainWindowPG(method="bp")
         self.app.show()
         self.close()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
