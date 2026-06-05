@@ -445,9 +445,30 @@ class MainWindow(QMainWindow):
         self.btn_modo_arquivo = QPushButton("Ligar Modo Arquivo (.txt)")
         self.btn_modo_arquivo.setFixedHeight(36)
         self.btn_modo_arquivo.clicked.connect(self._toggle_modo_leitura)
+        self.btn_carregar = QPushButton("📂 Carregar arquivo")
+        self.btn_carregar.clicked.connect(self._carregar_dados_de_arquivo)
+
+        _conn_style = """
+            QPushButton {
+                margin: 4px 12px;
+                padding: 7px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                background: #f5f5f5;
+                color: #333;
+                font-size: 11px;
+            }
+            QPushButton:hover { background: #ebebeb; }
+            QPushButton:disabled { color: #aaa; background: #f9f9f9; }
+        """
+        self.btn_conn.setStyleSheet(_conn_style)
+        self.btn_modo_arquivo.setStyleSheet(_conn_style)
+        self.btn_carregar.setStyleSheet(_conn_style)
 
         left_layout.addWidget(self.btn_modo_arquivo)
         left_layout.addWidget(self.btn_conn)
+        left_layout.addWidget(self.btn_carregar)
+        self.btn_carregar.hide()
 
         left_layout.addWidget(Divider())
 
@@ -1236,9 +1257,8 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------
 
     def _on_timer(self):
-        if self.mode == "file":
-            print(f"Timer tick: frameCounter={self.frameCounter}")
-            print(f"Data shape: {self.data.shape}, nframes={self.nframes}")
+        if self.mode == "file" and self.nframes > 0:
+            
             self.frameCounter += 1
             self.current_frame = self.data[self.frameCounter % self.nframes]
 
@@ -1247,6 +1267,8 @@ class MainWindow(QMainWindow):
     def update_plot(self, method):
 
         if self.current_frame is None:  # ainda não recebeu nada
+            return
+        if self._plotSE_ref is None:
             return
 
         if not self.isVisible():
@@ -1470,39 +1492,51 @@ class MainWindow(QMainWindow):
             self._desconectar()
 
     def _toggle_modo_leitura(self):
+        # resetar estado de reconstrução ao trocar de modo
+        self.vref_set = False
+        self._vref_frame = None
+        self.current_frame = None
+        self._plotSE_ref = None
+        self._plotDiff_ref = None
+        self._plotImage_ref = None
+        self.eitImage.axes.clear()
+        self.eitMeasurementsSE.axes.clear()
+        self.eitMeasurementsDiff.axes.clear()
+
         if self.mode == "serial":
             self.btn_conn.hide()
+
             self.btn_conn.setEnabled(False)
+            self.btn_carregar.setEnabled(True)
+            self.btn_carregar.show()
             self.btn_modo_arquivo.setText("Ligar Modo Serial")
             if self.thread is not None:
                 self._desconectar()
-            self._carregar_dados_de_arquivo()
             self.speed_widget.setEnabled(True)
             self.mode = "file"
         else:
             if self.thread is None or not self.thread.isRunning():
                 self.btn_modo_arquivo.setText("Ligar Modo Arquivo (.txt)")
-                self._conectar()
+                self.speed_widget.setEnabled(False)
+                self.btn_carregar.hide()
+                self.btn_carregar.setEnabled(False)
                 self.btn_conn.setEnabled(True)
                 self.btn_conn.show()
 
             self.mode = "serial"
 
     def _carregar_dados_de_arquivo(self):
-        self.data = QFileDialog.getOpenFileName(
-            self,
-            "Selecione o arquivo de dados",
-            "",
-            "Text Files (*.txt)",
-        )[0]
-        self.data = np.loadtxt(self.data)
+        path, _ = QFileDialog.getOpenFileName(
+        self, "Selecione o arquivo de dados", "", "Text Files (*.txt)"
+        )
+        if not path:  # usuário cancelou
+            return
+        try:
+            self.data = np.loadtxt(path)
+        except Exception as e:
+            QMessageBox.warning(self, "Erro ao carregar", str(e))
+            return
         self.nframes, self.nmed = self.data.shape
-        if not self.data.any():
-            QMessageBox.warning(
-                self,
-                "Nenhum arquivo selecionado",
-                "Por favor, selecione um arquivo de dados .txt.",
-            )
         self._ao_receber_arquivo()
 
     def _conectar(self):
