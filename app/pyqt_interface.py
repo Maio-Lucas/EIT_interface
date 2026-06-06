@@ -40,6 +40,7 @@ import warnings
 import time
 import math
 import pyeit.mesh.shape as shape
+import serial as pyserial
 
 # ---------------------------------------------------------------------------
 # Canvas
@@ -220,38 +221,23 @@ class ReaderThread(QThread):
 
     def run(self):
         """Ponto de entrada da thread — chamado por self.start()."""
-        sock = None
+        ser = None
         mensagem = "Desconectado"
 
         try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.connect(("localhost", 9000))
-
-            buffer = ""
+            ser = pyserial.Serial('COM6', baudrate=115200, timeout=1)
             while self._ativo:
-                dados = sock.recv(4096)  # bloqueia até chegar algo
-                if not dados:  # servidor fechou a conexão
-                    mensagem = "Servidor encerrou a conexão"
-                    break
-
-                buffer += dados.decode("utf-8")
-
-                # processa todas as linhas completas disponíveis no buffer
-                while "\n" in buffer:
-                    linha, buffer = buffer.split("\n", 1)
-                    linha = linha.strip()
-                    if linha:
-                        valores = [float(v) for v in linha.split("\t")]
-                        self.frame_recebido.emit(valores)
-
-        except ConnectionRefusedError:
-            mensagem = "Conexão recusada — bot está rodando?"
+                linha = ser.readline().decode('utf-8').strip()
+                if linha:
+                    valores = [float(v) for v in linha.split('\t')]
+                    self.frame_recebido.emit(valores)
+        except pyserial.SerialException as e:
+            mensagem = f"Erro serial: {e}"
         except Exception as e:
             mensagem = f"Erro: {e}"
         finally:
-            if sock:
-                sock.close()
-
+            if ser and ser.is_open:
+                ser.close()
         self.conexao_encerrada.emit(mensagem)
 
     def parar(self):
@@ -842,6 +828,7 @@ class MainWindow(QMainWindow):
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self.frameCounter = 0
+        self._is_playing = True
         self._last_t = None
         self._fps_alpha = 0.9
         self._fps_est = 0.0
@@ -986,6 +973,9 @@ class MainWindow(QMainWindow):
         self.current_frame = frame_ref
         if self._plotSE_ref is None:
             self.init_plots(method=self.method)
+
+        self.sldFrame.setRange(0, self.nframes - 1)
+        self.sldFrame.setEnabled(True)
 
     # ------------------------------------------------------------------
     # Electrode overlay
@@ -1300,7 +1290,7 @@ class MainWindow(QMainWindow):
             self.sldFrame.setValue(self.frameCounter)
             self.sldFrame.blockSignals(False)
             self.lblFramePos.setText(f"{self.frameCounter} / {self.nframes - 1}")
-            self.frameCounter = (self.frameCounter + 1) % self.nframes
+            self.frameCounter = (self.frameCounter) % self.nframes
 
         t = time.perf_counter()
         if self._last_t is not None:
@@ -1526,6 +1516,15 @@ class MainWindow(QMainWindow):
             self.mode = "serial"
 
     def _carregar_dados_de_arquivo(self):
+        self.vref_set = False
+        self._vref_frame = None
+        self.current_frame = None
+        self._plotSE_ref = None
+        self._plotDiff_ref = None
+        self._plotImage_ref = None
+        self.eitImage.axes.clear()
+        self.eitMeasurementsSE.axes.clear()
+        self.eitMeasurementsDiff.axes.clear()
         path, _ = QFileDialog.getOpenFileName(
         self, "Selecione o arquivo de dados", "", "Text Files (*.txt)"
         )

@@ -1,7 +1,7 @@
-import socket
 import time
 import os
 from dotenv import load_dotenv
+import serial, time
 
 # carrega configurações do arquivo .env
 load_dotenv()
@@ -9,7 +9,8 @@ load_dotenv()
 # acessa variáveis de ambiente
 arquivo = os.getenv("ARQUIVO")
 host = os.getenv("HOST")
-porta = int(os.getenv("PORTA"))
+porta = 'COM5'
+baudrate = 115200
 fps = 5
 delay = 1.0 / fps
 
@@ -26,35 +27,15 @@ with open(arquivo, "r") as f:
 print(f"Frames carregados: {len(frames)}")
 print(f"Valores por frame: {len(frames[0])}")
 
-# Cria e configura o socket servidor
-servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-servidor.setsockopt(
-    socket.SOL_SOCKET, socket.SO_REUSEADDR, 1
-)  # evita erro "porta em uso"
-servidor.bind((host, porta))
-servidor.listen(1)
+ser = serial.Serial(porta, baudrate=baudrate, timeout=1)
+print(f"Enviando para {porta}...")
 
-print(f"Bot aguardando conexão em {host}:{porta} ...")
-conexao, endereco = servidor.accept()  # bloqueia até alguém conectar
-print(f"Cliente conectado: {endereco}")
-
-# Loop de envio em loop infinito
-indice = 0
+i = 0
 try:
     while True:
-        frame = frames[indice]
+        ser.write(('\t'.join(f'{v:.6f}' for v in frames[i]) + '\n').encode('utf-8'))
+        time.sleep(0.2)
+        i = (i + 1) % len(frames)
+except KeyboardInterrupt:
+    ser.close()
 
-        # Serializa: 64 números separados por tab + newline no final
-        linha = "\t".join(f"{v:.6f}" for v in frame) + "\n"
-
-        conexao.sendall(linha.encode("utf-8"))
-
-        time.sleep(delay)  # controla a taxa de envio
-        indice = (indice + 1) % len(frames)  # volta ao 0 depois do 118
-
-except (BrokenPipeError, ConnectionResetError):
-    print("Cliente desconectou.")
-finally:
-    conexao.close()
-    servidor.close()
-    print("Bot encerrado.")
