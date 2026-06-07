@@ -433,6 +433,9 @@ class MainWindow(QMainWindow):
         self.btn_modo_arquivo.clicked.connect(self._toggle_modo_leitura)
         self.btn_carregar = QPushButton("📂 Carregar arquivo")
         self.btn_carregar.clicked.connect(self._carregar_dados_de_arquivo)
+        self.btn_grava_arquivo = QPushButton("Gravar dados seriais")
+        self.btn_grava_arquivo.setFixedHeight(36)
+        self.btn_grava_arquivo.clicked.connect(self._toggle_gravacao)
 
         _conn_style = """
             QPushButton {
@@ -952,6 +955,8 @@ class MainWindow(QMainWindow):
 
     def _ao_receber_frame(self, valores: list):
         frame = np.array(valores)
+        if self.gravando: 
+
 
         if not self.vref_set:
             self.mySolver.setVref(frame)  # primeiro frame vira referência
@@ -1472,7 +1477,7 @@ class MainWindow(QMainWindow):
             pass
 
     # ----------------------------------------------
-    # Connection Button
+    # Serial and file reading modes
     # ----------------------------------------------
 
     def _toggle_conexao(self):
@@ -1514,6 +1519,11 @@ class MainWindow(QMainWindow):
                 self.btn_conn.show()
 
             self.mode = "serial"
+    
+    def _toggle_gravacao(self):
+        if self._gravando:
+            if self.thread is None:
+                self._gravando = True
 
     def _carregar_dados_de_arquivo(self):
         self.vref_set = False
@@ -1573,3 +1583,28 @@ class MainWindow(QMainWindow):
         if self._arquivo_gravacao:
             self._arquivo_gravacao.close()
         event.accept()
+
+    #--------------------------------------------
+    # Save Data to File
+    #--------------------------------------------
+
+    def save_data_to_file(data_to_save):
+        # 1. Open the file dialog to get a save path
+        file_path, _ = QFileDialog.getSaveFileName(
+            None,                             # Parent widget
+            "Save File As",                  # Dialog title
+            "",                               # Default directory
+            "Text Files (*.txt);;All Files (*)" # File filters
+        )
+        
+        # 2. Check if the user cancelled the dialog
+        if not file_path:
+            return  # User clicked Cancel
+            
+        # 3. Write your data to the selected file path
+        try:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(data_to_save)
+            print("File saved successfully!")
+        except Exception as e:
+            QMessageBox.critical(None, "Error", f"Could not save file: {e}")
