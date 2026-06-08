@@ -1,7 +1,5 @@
 import sys
-import socket
 import os
-from dotenv import load_dotenv
 import numpy as np
 from PyQt6.QtCore import QSize, QTimer, Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QPixmap, QPalette, QColor, QFont
@@ -38,7 +36,6 @@ from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 import warnings
 import time
-import math
 import pyeit.mesh.shape as shape
 import serial as pyserial
 
@@ -220,10 +217,9 @@ class ReaderThread(QThread):
         self._ativo = True
 
     def run(self):
-        """Ponto de entrada da thread — chamado por self.start()."""
+    
         ser = None
         mensagem = "Desconectado"
-
         try:
             ser = pyserial.Serial('COM6', baudrate=115200, timeout=1)
             while self._ativo:
@@ -433,7 +429,7 @@ class MainWindow(QMainWindow):
         self.btn_modo_arquivo.clicked.connect(self._toggle_modo_leitura)
         self.btn_carregar = QPushButton("📂 Carregar arquivo")
         self.btn_carregar.clicked.connect(self._carregar_dados_de_arquivo)
-        self.btn_grava_arquivo = QPushButton("Gravar dados seriais")
+        self.btn_grava_arquivo = QPushButton("⏺ Iniciar Gravação")
         self.btn_grava_arquivo.setFixedHeight(36)
         self.btn_grava_arquivo.clicked.connect(self._toggle_gravacao)
 
@@ -453,10 +449,12 @@ class MainWindow(QMainWindow):
         self.btn_conn.setStyleSheet(_conn_style)
         self.btn_modo_arquivo.setStyleSheet(_conn_style)
         self.btn_carregar.setStyleSheet(_conn_style)
+        self.btn_grava_arquivo.setStyleSheet(_conn_style)
 
         left_layout.addWidget(self.btn_modo_arquivo)
         left_layout.addWidget(self.btn_conn)
         left_layout.addWidget(self.btn_carregar)
+        left_layout.addWidget(self.btn_grava_arquivo)
         self.btn_carregar.hide()
 
         left_layout.addWidget(Divider())
@@ -955,18 +953,25 @@ class MainWindow(QMainWindow):
 
     def _ao_receber_frame(self, valores: list):
         frame = np.array(valores)
-        if self.gravando: 
 
+        if self._gravando and self._arquivo_gravacao:
+            self._arquivo_gravacao.write('\t'.join(f'{v:.6f}' for v in valores) + '\n')
+            self._arquivo_gravacao.flush()
 
-        if not self.vref_set:
-            self.mySolver.setVref(frame)  # primeiro frame vira referência
-            self._vref_frame = frame.copy()
-            self.vref_set = True
-            return  # não reconstrói ainda, só define referência
+        try:
+            if not self.vref_set:
+                self.mySolver.setVref(frame)
+                self._vref_frame = frame.copy()
+                self.vref_set = True
+                return
 
-        self.current_frame = frame  # salva para o timer usar
-        if self._plotSE_ref is None:
-            self.init_plots(method=self.method)
+            self.current_frame = frame
+            if self._plotSE_ref is None:
+                self.init_plots(method=self.method)
+
+        except Exception as e:
+            print(f"[_ao_receber_frame] erro: {e}")
+            # não derruba a aplicação — ignora o frame problemático
 
     def _ao_receber_arquivo(self):
         frame_ref = self.data[0]
@@ -1521,9 +1526,32 @@ class MainWindow(QMainWindow):
             self.mode = "serial"
     
     def _toggle_gravacao(self):
-        if self._gravando:
-            if self.thread is None:
-                self._gravando = True
+        if not self._gravando:
+            if self.thread is None or not self.thread.isRunning():
+                QMessageBox.warning(self, "Gravação", "Conecte à porta serial antes de gravar.")
+                return
+
+            from datetime import datetime
+            timestamp = datetime.now().strftime('%Y%m%d%H%M')
+            pasta = os.path.join(os.path.dirname(__file__), "gravacoes")
+            os.makedirs(pasta, exist_ok=True)
+            file_path = os.path.join(pasta, f"eit_{timestamp}.txt")
+
+            try:
+                self._arquivo_gravacao = open(file_path, 'w', encoding='utf-8')
+            except Exception as e:
+                QMessageBox.critical(self, "Erro", f"Não foi possível criar o arquivo:\n{e}")
+                return
+
+            self._gravando = True
+            self.btn_grava_arquivo.setText("⏹ Parar Gravação")
+
+        else:
+            self._gravando = False
+            if self._arquivo_gravacao:
+                self._arquivo_gravacao.close()
+                self._arquivo_gravacao = None
+            self.btn_grava_arquivo.setText("⏺ Iniciar Gravação")
 
     def _carregar_dados_de_arquivo(self):
         self.vref_set = False
@@ -1552,8 +1580,12 @@ class MainWindow(QMainWindow):
         self.thread = ReaderThread()
         self.thread.frame_recebido.connect(self._ao_receber_frame)
         self.thread.conexao_encerrada.connect(self._ao_encerrar)
+        self.thread.finished.connect(self._on_thread_finished)
         self.thread.start()
         self.btn_conn.setText("Desconectar")
+
+    def _on_thread_finished(self):
+        self.thread = None
 
     def _desconectar(self):
         if self.thread:
@@ -1566,9 +1598,16 @@ class MainWindow(QMainWindow):
         self.btn_conn.setText("Conectar")
 
     def _ao_encerrar(self, mensagem: str):
-
+        if mensagem != "Desconectado":
+            QMessageBox.warning(self, "Conexão encerrada", mensagem)
+        if self._gravando:
+            self._gravando = False
+            if self._arquivo_gravacao:
+                self._arquivo_gravacao.close()
+                self._arquivo_gravacao = None
+            self.btn_gravar.setText("⏺ Iniciar Gravação")
         self.btn_conn.setText("Conectar")
-        self.thread = None
+        # self.thread = None removido daqui — _on_thread_finished cuida disso
 
     def closeEvent(self, event):
         # responsabilidade 1: parar a thread
@@ -1583,28 +1622,3 @@ class MainWindow(QMainWindow):
         if self._arquivo_gravacao:
             self._arquivo_gravacao.close()
         event.accept()
-
-    #--------------------------------------------
-    # Save Data to File
-    #--------------------------------------------
-
-    def save_data_to_file(data_to_save):
-        # 1. Open the file dialog to get a save path
-        file_path, _ = QFileDialog.getSaveFileName(
-            None,                             # Parent widget
-            "Save File As",                  # Dialog title
-            "",                               # Default directory
-            "Text Files (*.txt);;All Files (*)" # File filters
-        )
-        
-        # 2. Check if the user cancelled the dialog
-        if not file_path:
-            return  # User clicked Cancel
-            
-        # 3. Write your data to the selected file path
-        try:
-            with open(file_path, 'w', encoding='utf-8') as file:
-                file.write(data_to_save)
-            print("File saved successfully!")
-        except Exception as e:
-            QMessageBox.critical(None, "Error", f"Could not save file: {e}")
