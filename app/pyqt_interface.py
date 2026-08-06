@@ -36,8 +36,11 @@ from pyeit.eit.interp2d import sim2pts
 from pyeit_controller import EITsolver
 import warnings
 import time
+from datetime import datetime
 import pyeit.mesh.shape as shape
 import serial as pyserial
+from serial.tools.list_ports import comports
+
 
 # ---------------------------------------------------------------------------
 # Canvas
@@ -211,22 +214,30 @@ class ReaderThread(QThread):
 
     frame_recebido = pyqtSignal(list)  # payload: lista de floats
     conexao_encerrada = pyqtSignal(str)  # payload: mensagem de status
+    linha_descartada = pyqtSignal(str)
 
-    def __init__(self):
+    def __init__(self, port: str):
         super().__init__()
         self._ativo = True
+        self._port = port
+
 
     def run(self):
     
         ser = None
         mensagem = "Desconectado"
         try:
-            ser = pyserial.Serial('COM6', baudrate=115200, timeout=1)
+            ser = pyserial.Serial(self._port, baudrate=115200, timeout=1)
             while self._ativo:
                 linha = ser.readline().decode('utf-8').strip()
-                if linha:
+                if not linha:
+                    continue
+                try:
                     valores = [float(v) for v in linha.split('\t')]
-                    self.frame_recebido.emit(valores)
+                except ValueError:
+                    self.linha_descartada.emit(linha)
+                    continue
+                self.frame_recebido.emit(valores)
         except pyserial.SerialException as e:
             mensagem = f"Erro serial: {e}"
         except Exception as e:
@@ -326,10 +337,13 @@ class MainWindow(QMainWindow):
         self._vref_frame = None
         self.current_frame = None
         self.vref_set = None
+        self._coletando_referencia = False
+        self._buffer_vref = []
         self.method = method
         self._colorbar_ref = None
         self._greit_extent = None
-        self.thread = None
+        self.log_path = None
+        self.novo_frame_disponivel = False
 
         super().__init__()
 
@@ -424,11 +438,32 @@ class MainWindow(QMainWindow):
         self.btn_conn = QPushButton("Conectar")
         self.btn_conn.setFixedHeight(36)
         self.btn_conn.clicked.connect(self._toggle_conexao)
+
+        # Agrupamento de listagem de portas
+        ports_container = QWidget()
+        dc_vertical_layout = QVBoxLayout(ports_container)
+
+        self.btn_ports_list = QPushButton("Listar Portas")
+        self.btn_ports_list.clicked.connect(self._list_serial_ports)
+
+        self.combo_box_ports = QComboBox()
+        self.combo_box_ports.addItem("Sem portas")
+        dc_horizontal_layout = QHBoxLayout()
+        dc_horizontal_layout.setContentsMargins(12, 0, 12, 8)
+        dc_horizontal_layout.addWidget(self.combo_box_ports)
+        dc_horizontal_layout.addWidget(self.btn_ports_list)
+
+        dc_vertical_layout.addLayout(dc_horizontal_layout)
+        dc_vertical_layout.addWidget(self.btn_conn)
+
+        # Botão de modo arquivo
         self.btn_modo_arquivo = QPushButton("Ligar Modo Arquivo (.txt)")
         self.btn_modo_arquivo.setFixedHeight(36)
         self.btn_modo_arquivo.clicked.connect(self._toggle_modo_leitura)
         self.btn_carregar = QPushButton("📂 Carregar arquivo")
         self.btn_carregar.clicked.connect(self._carregar_dados_de_arquivo)
+
+        # Botão de gravação
         self.btn_grava_arquivo = QPushButton("⏺ Iniciar Gravação")
         self.btn_grava_arquivo.setFixedHeight(36)
         self.btn_grava_arquivo.clicked.connect(self._toggle_gravacao)
@@ -446,13 +481,45 @@ class MainWindow(QMainWindow):
             QPushButton:hover { background: #ebebeb; }
             QPushButton:disabled { color: #aaa; background: #f9f9f9; }
         """
+        _arrow = os.path.join(os.path.dirname(__file__), "assets", "arrow_down.svg").replace("\\", "/")
+
+        _combo_box_style = f"""
+            QComboBox {{margin: 4px 4px 4px 12px;
+                padding: 4px 6px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                background: #f5f5f5;
+                color: #333;
+                font-size: 11px;}}
+            QComboBox::drop-down {{
+                width: 20px;
+                border-left: 1px solid #ccc;
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                background: #ebebeb;
+            }}
+            QComboBox::down-arrow {{
+                image: url({_arrow});
+                width: 10px;
+                height: 6px;
+            }}
+            QComboBox QAbstractItemView {{
+                background: white;
+                border: 1px solid #ccc;
+                color: #333;
+                selection-background-color: #e0e0e0;
+                selection-color: #333;
+            }}"""
+
         self.btn_conn.setStyleSheet(_conn_style)
         self.btn_modo_arquivo.setStyleSheet(_conn_style)
+        self.combo_box_ports.setStyleSheet(_combo_box_style)
+        self.btn_ports_list.setStyleSheet(_conn_style)
         self.btn_carregar.setStyleSheet(_conn_style)
         self.btn_grava_arquivo.setStyleSheet(_conn_style)
 
         left_layout.addWidget(self.btn_modo_arquivo)
-        left_layout.addWidget(self.btn_conn)
+        left_layout.addWidget(ports_container)
         left_layout.addWidget(self.btn_carregar)
         left_layout.addWidget(self.btn_grava_arquivo)
         self.btn_carregar.hide()
@@ -766,6 +833,48 @@ class MainWindow(QMainWindow):
         params_layout.addWidget(self.spnLamb)
 
         right_layout.addWidget(params_container)
+
+        # -- Drift Reference
+
+        ref_widget = QWidget()
+        ref_layout =QHBoxLayout(ref_widget)
+        ref_layout.setContentsMargins(0,0,0,0)
+        ref_layout.setSpacing(6)
+
+        self.spnNRef = QSpinBox()
+        self.spnNRef.setRange(1,30)
+        self.spnNRef.setValue(5)
+        self.spnNRef.setFixedWidth(60)
+        self.spnNRef.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.spnNRef.setStyleSheet("font-size: 11px; background: white; color: #333;")
+
+        frames_lbl = QLabel("frames")
+        frames_lbl.setStyleSheet("font-size: 10px; color: #888;")
+
+        self.btnNovaRef = QPushButton("↺ Nova Referência")
+        self.btnNovaRef.setEnabled(False)
+        self.btnNovaRef.setStyleSheet("""
+        QPushButton {
+            padding: 5px 8px; border-radius: 6px;
+            border: 1px solid #ccc; background: #f5f5f5;
+            color: #555; font-size: 11px;
+        }
+        QPushButton:hover { background: #ebebeb; }
+        QPushButton:disabled { color: #aaa; background: #f9f9f9; }
+    """)
+        self.btnNovaRef.clicked.connect(self._nova_referencia)
+
+        ref_layout.addWidget(self.spnNRef)
+        ref_layout.addWidget(frames_lbl)
+        ref_layout.addStretch()
+        ref_layout.addWidget(self.btnNovaRef)
+
+        right_layout.addWidget(_ctrl_block(
+            "Referência de drift",
+            "Número de frames usados para calcular a referência. Mais frames = mais estável, mas demora mais para iniciar.",
+            ref_widget
+        ))
+
         right_layout.addWidget(Divider())
 
         # -- Action buttons
@@ -805,6 +914,7 @@ class MainWindow(QMainWindow):
             "Aplicar colormap / níveis", self._apply_levels_and_cmap, green=True
         )
         btnRebuild = _action_btn("Reconstruir malha", self._rebuild_mesh_from_controls)
+        
         btnSwitch = _action_btn("Alternar para PyQtGraph", self.switch_to_pyqtgraph)
 
         for btn in [btnApply, btnRebuild, btnSwitch]:
@@ -815,6 +925,8 @@ class MainWindow(QMainWindow):
             right_layout.addWidget(wrapper)
 
         right_layout.addWidget(Divider())
+
+        
 
         # -- Assemble root
         root_layout.addWidget(left)
@@ -959,19 +1071,31 @@ class MainWindow(QMainWindow):
             self._arquivo_gravacao.flush()
 
         try:
-            if not self.vref_set:
-                self.mySolver.setVref(frame)
-                self._vref_frame = frame.copy()
-                self.vref_set = True
-                return
+            if self._coletando_referencia:
+                self._buffer_vref.append(frame)
+                n = self.spnNRef.value()
+                count = len(self._buffer_vref)
+                self.statusBar().showMessage(f"Coletando nova referência... ({count}/{n})")
+
+                if count >= n:
+                    media = np.mean(self._buffer_vref, axis=0)
+                    self.mySolver.setVref(media)
+                    self._vref_frame = media.copy()
+                    self.vref_set = True
+                    self._buffer_vref = []
+                    self._coletando_referencia = False
+                    self.statusBar().clearMessage()
+
+                return  # sai aqui nos dois casos: coleta completa ou ainda em andamento
 
             self.current_frame = frame
+            self.frameCounter += 1
+            self.novo_frame_disponivel = True
             if self._plotSE_ref is None:
                 self.init_plots(method=self.method)
 
         except Exception as e:
             print(f"[_ao_receber_frame] erro: {e}")
-            # não derruba a aplicação — ignora o frame problemático
 
     def _ao_receber_arquivo(self):
         frame_ref = self.data[0]
@@ -1258,9 +1382,12 @@ class MainWindow(QMainWindow):
 
     def _on_timer(self):
         if self.mode == "file" and self.nframes > 0:
-            
             self.frameCounter += 1
             self.current_frame = self.data[self.frameCounter % self.nframes]
+        elif self.mode == "serial":
+            if not self.novo_frame_disponivel:
+                return
+            self.novo_frame_disponivel = False
 
         self.update_plot(method=self.method)
 
@@ -1301,6 +1428,8 @@ class MainWindow(QMainWindow):
             self.sldFrame.blockSignals(False)
             self.lblFramePos.setText(f"{self.frameCounter} / {self.nframes - 1}")
             self.frameCounter = (self.frameCounter) % self.nframes
+        elif self.mode == "serial":
+            self.lblFramePos.setText(f"Frame {self.frameCounter}")
 
         t = time.perf_counter()
         if self._last_t is not None:
@@ -1328,6 +1457,18 @@ class MainWindow(QMainWindow):
             # For GREIT, resolution controls the reconstruction grid
             self.mySolver.hp["greit_n"] = value // 4  # map px to grid size
             self.mySolver.setup()
+
+    # ------------------------------------------------------------------
+    # Drift Reference
+    # ------------------------------------------------------------------
+
+    def _nova_referencia(self):
+        self._buffer_vref = []
+        self._coletando_referencia = True
+        # vref_set continua True — a referência antiga segue válida
+        # até a nova terminar de ser calculada. A imagem congela
+        # sozinha, porque current_frame não vai mais ser atualizado
+        # enquanto _coletando_referencia for True.
 
     # ------------------------------------------------------------------
     # Controls
@@ -1496,6 +1637,8 @@ class MainWindow(QMainWindow):
         self.vref_set = False
         self._vref_frame = None
         self.current_frame = None
+        self._coletando_referencia = False
+        self._buffer_vref = []
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self._plotImage_ref = None
@@ -1531,7 +1674,6 @@ class MainWindow(QMainWindow):
                 QMessageBox.warning(self, "Gravação", "Conecte à porta serial antes de gravar.")
                 return
 
-            from datetime import datetime
             timestamp = datetime.now().strftime('%Y%m%d%H%M')
             pasta = os.path.join(os.path.dirname(__file__), "gravacoes")
             os.makedirs(pasta, exist_ok=True)
@@ -1557,6 +1699,8 @@ class MainWindow(QMainWindow):
         self.vref_set = False
         self._vref_frame = None
         self.current_frame = None
+        self._coletando_referencia = False
+        self._buffer_vref = []
         self._plotSE_ref = None
         self._plotDiff_ref = None
         self._plotImage_ref = None
@@ -1577,12 +1721,40 @@ class MainWindow(QMainWindow):
         self._ao_receber_arquivo()
 
     def _conectar(self):
-        self.thread = ReaderThread()
+        port = self.combo_box_ports.currentData()
+        if not port:
+            self.statusBar().showMessage("Selecione uma porta antes de conectar.")
+            return
+        self.thread = ReaderThread(port)
         self.thread.frame_recebido.connect(self._ao_receber_frame)
         self.thread.conexao_encerrada.connect(self._ao_encerrar)
         self.thread.finished.connect(self._on_thread_finished)
+        self.thread.linha_descartada.connect(self._ao_descartar_linha)
+
+        self.vref_set = False
+        self._coletando_referencia = True
+        self._buffer_vref = []
+        self.frameCounter = 0
+        self.btnNovaRef.setEnabled(True)
+
         self.thread.start()
         self.btn_conn.setText("Desconectar")
+        timestamp = datetime.now().strftime('%Y%m%d%H%M')
+        log_dir = os.path.join(os.path.dirname(__file__), "logs")
+        os.makedirs(log_dir, exist_ok=True)
+        self.log_path = os.path.join(log_dir, f"mensagens_{timestamp}.txt")
+
+
+    def _list_serial_ports(self):
+        portas = comports()
+        self.combo_box_ports.clear()
+        if not portas:
+            self.combo_box_ports.addItem("Sem portas detectadas")
+            return
+        for p in sorted(portas, key=lambda x: x.device):
+            self.combo_box_ports.addItem(f"{p.device} — {p.description}", p.device)
+
+        self.combo_box_ports.model().sort(1, Qt.SortOrder.AscendingOrder)
 
     def _on_thread_finished(self):
         self.thread = None
@@ -1595,6 +1767,7 @@ class MainWindow(QMainWindow):
                 pass
             self.thread.parar()
             self.thread = None  # seguro agora — wait() já retornou
+        self.btnNovaRef.setEnabled(False)
         self.btn_conn.setText("Conectar")
 
     def _ao_encerrar(self, mensagem: str):
@@ -1605,9 +1778,20 @@ class MainWindow(QMainWindow):
             if self._arquivo_gravacao:
                 self._arquivo_gravacao.close()
                 self._arquivo_gravacao = None
-            self.btn_gravar.setText("⏺ Iniciar Gravação")
+            self.btn_grava_arquivo.setText("⏺ Iniciar Gravação")
+        self.btnNovaRef.setEnabled(False)
         self.btn_conn.setText("Conectar")
         # self.thread = None removido daqui — _on_thread_finished cuida disso
+
+    def _ao_descartar_linha(self, line: str):
+        line_timestamp = datetime.now().strftime("%H:%M:%S")
+
+        file_line = f"[{line_timestamp}] {line}\n"
+        
+        with open(self.log_path, "a", encoding= "utf-8") as file:
+            file.write(file_line)
+
+        self.statusBar().showMessage(f"Última msg: {line}")
 
     def closeEvent(self, event):
         # responsabilidade 1: parar a thread

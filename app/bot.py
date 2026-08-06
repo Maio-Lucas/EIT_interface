@@ -36,6 +36,8 @@ try:
         ser.write(('\t'.join(f'{v:.6f}' for v in frames[i]) + '\n').encode('utf-8'))
         time.sleep(0.2)
         i = (i + 1) % len(frames)
+        if i % 5 == 0:
+            time.sleep(2)
 except KeyboardInterrupt:
     ser.close()
 
