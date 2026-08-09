@@ -37,6 +37,7 @@ try:
         time.sleep(0.2)
         i = (i + 1) % len(frames)
         if i % 5 == 0:
+            ser.write(b'\xff\n')
             time.sleep(2)
 except KeyboardInterrupt:
     ser.close()

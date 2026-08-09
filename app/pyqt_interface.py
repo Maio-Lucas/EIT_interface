@@ -229,7 +229,7 @@ class ReaderThread(QThread):
         try:
             ser = pyserial.Serial(self._port, baudrate=115200, timeout=1)
             while self._ativo:
-                linha = ser.readline().decode('utf-8').strip()
+                linha = ser.readline().decode('utf-8', errors='replace').strip()
                 if not linha:
                     continue
                 try:
